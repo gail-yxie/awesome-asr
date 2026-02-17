@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Node (if using JS tooling)
+node_modules/
+
+# Generated content (keep templates, ignore generated output)
+# Uncomment these if you want to ignore generated files:
+# daily/*.json
+# podcasts/*.mp3
+# mindmaps/*.html
