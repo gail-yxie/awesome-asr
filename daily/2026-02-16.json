@@ -1,39 +1,68 @@
 {
   "date": "2026-02-16",
-  "summary": "A quieter day in ASR research with one notable paper on efficient CTC decoding using speculative methods, bringing 3x speedup to beam search. A new Cantonese ASR model was released on HuggingFace with strong performance on the Common Voice benchmark.",
+  "summary": "Notable ASR research today includes a comprehensive analysis of the Pashto Common Voice dataset documenting its growth from 1.5 hours to 2,769 hours, and a study on enabling ASR for disordered Akan speech with a new 50-hour corpus. The DAMA framework for depth-aware model adaptation shows strong results across 18 low-resource languages with 80% fewer trainable parameters.",
   "ideas": [
-    "Speculative decoding techniques from LLMs are being successfully adapted for CTC-based ASR models",
-    "Community-driven ASR models for underrepresented languages continue to improve through Common Voice"
+    "Depth-aware adaptation (DAMA) reveals a U-shaped adaptability pattern in speech models: early and late layers need more adaptation while intermediate layers retain shared semantics",
+    "Community-driven datasets like Common Voice show extreme contributor inequality (Gini 0.941 for Pashto), highlighting the need for diversified data collection",
+    "Disordered speech ASR remains a critical gap, with new curated corpora emerging for underrepresented languages"
   ],
   "papers": [
     {
-      "id": "2602.11234",
-      "title": "SpecCTC: Speculative Decoding for Efficient CTC Beam Search",
-      "authors": ["Kevin Nakamura", "Lisa Patel"],
-      "abstract": "We apply speculative decoding to CTC beam search, achieving 3x decoding speedup with no quality degradation.",
-      "categories": ["cs.CL"],
-      "published": "2026-02-16",
-      "url": "https://arxiv.org/abs/2602.11234",
-      "pdf_url": "https://arxiv.org/pdf/2602.11234"
+      "id": "2602.14062",
+      "title": "From Scarcity to Scale: A Release-Level Analysis of the Pashto Common Voice Dataset",
+      "authors": ["Jandad Jahani", "Mursal Dawodi", "Jawid Ahmad Baktash"],
+      "abstract": "Examines Pashto segment of Common Voice, documenting growth from ~1.5 hours to ~2,769 hours. Identifies challenges: extreme contributor inequality (Gini 0.941), 40% missing gender labels.",
+      "categories": ["cs.CL", "cs.SD"],
+      "published": "2026-02-15",
+      "url": "https://arxiv.org/abs/2602.14062",
+      "pdf_url": "https://arxiv.org/pdf/2602.14062"
+    },
+    {
+      "id": "2602.05406",
+      "title": "Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language",
+      "authors": ["Isaac Wiafe", "Akon Obu Ekpezu", "Sumaya Ahmed Salihs", "Elikem Doe Atsakpo", "Fiifi Baffoe Payin Winful", "Jamal-Deen Abdulai"],
+      "abstract": "Introduces a curated corpus of Akan impaired speech containing 50.01 hours across four impairment categories: stammering, cerebral palsy, cleft palate, and stroke-induced speech disorder.",
+      "categories": ["cs.SD", "cs.AI"],
+      "published": "2026-02-05",
+      "url": "https://arxiv.org/abs/2602.05406",
+      "pdf_url": "https://arxiv.org/pdf/2602.05406"
+    },
+    {
+      "id": "2602.01008",
+      "title": "Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition in Low-Resource Languages",
+      "authors": ["Yang Xiao", "Eun-Jung Holden", "Ting Dang"],
+      "abstract": "Proposes DAMA framework for depth-aware model adaptation that allocates adaptation capacity by layer role, achieving results with 80% fewer trainable parameters across 18 low-resource languages.",
+      "categories": ["eess.AS", "cs.CL", "cs.SD"],
+      "published": "2026-02-01",
+      "url": "https://arxiv.org/abs/2602.01008",
+      "pdf_url": "https://arxiv.org/pdf/2602.01008"
     }
   ],
   "models": [
     {
-      "model_id": "cantonese-asr/wav2vec2-cantonese-cv17",
-      "author": "cantonese-asr",
-      "downloads": 892,
-      "likes": 31,
-      "url": "https://huggingface.co/cantonese-asr/wav2vec2-cantonese-cv17",
-      "last_modified": "2026-02-16",
+      "model_id": "nvidia/parakeet-tdt-0.6b-v2",
+      "author": "nvidia",
+      "downloads": 283638,
+      "likes": 156,
+      "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2",
+      "last_modified": "2025-05-15",
       "pipeline_tag": "automatic-speech-recognition"
     }
   ],
-  "datasets": [],
+  "datasets": [
+    {
+      "dataset_id": "openslr/librispeech_asr",
+      "author": "openslr",
+      "downloads": 69504,
+      "url": "https://huggingface.co/datasets/openslr/librispeech_asr",
+      "last_modified": "2024-01-18"
+    }
+  ],
   "tweets": [],
   "stats": {
-    "paper_count": 1,
+    "paper_count": 3,
     "model_count": 1,
-    "dataset_count": 0,
+    "dataset_count": 1,
     "tweet_count": 0
   }
 }

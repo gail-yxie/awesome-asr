@@ -1,77 +1,116 @@
 {
   "date": "2026-02-17",
-  "summary": "Today saw several notable developments in ASR research. A new paper proposes a streaming Conformer variant that achieves sub-100ms latency while maintaining competitive WER on LibriSpeech. Meanwhile, HuggingFace saw the release of a fine-tuned Whisper model optimized for medical transcription, and a new multilingual dataset covering 15 low-resource African languages was published.",
+  "summary": "A strong day for ASR research. Mistral AI releases Voxtral Realtime, a natively streaming ASR model matching offline transcription quality at sub-500ms latency across 13 languages. A decoder-only Conformer with modality-aware sparse MoE achieves 2.8% WER on LibriSpeech test-clean with only 113M parameters. Research on very long context ASR shows optimal performance at ~21.8 minutes of context, and URSA-GAN tackles cross-domain speech adaptation with 16% relative improvement.",
   "ideas": [
-    "Streaming ASR can now achieve sub-100ms latency without significant quality degradation using chunked attention patterns",
-    "Domain-specific fine-tuning of Whisper continues to show strong results, particularly for medical terminology",
-    "The gap in ASR performance for low-resource African languages is being actively addressed with new curated datasets",
-    "Self-supervised pre-training on unlabeled speech data remains the most effective approach for low-resource settings"
+    "Streaming ASR has reached parity with offline systems: Voxtral Realtime matches Whisper quality at 480ms delay",
+    "Decoder-only architectures with modality-aware MoE can surpass encoder-decoder baselines without external pretrained components",
+    "Very long context ASR (up to 1 hour) shows optimal performance at ~21 minutes, suggesting diminishing returns beyond that",
+    "Cross-domain robustness via GAN-based adaptation (URSA-GAN) shows promise for handling noise and channel variability"
   ],
   "papers": [
     {
-      "id": "2602.12345",
-      "title": "StreamConformer: Ultra-Low Latency Streaming ASR with Chunked Attention",
-      "authors": ["Alice Chen", "Bob Zhang", "Carol Liu", "David Park"],
-      "abstract": "We propose StreamConformer, a novel architecture for streaming automatic speech recognition that achieves sub-100ms latency while maintaining competitive word error rates.",
-      "categories": ["cs.CL", "eess.AS"],
-      "published": "2026-02-17",
-      "url": "https://arxiv.org/abs/2602.12345",
-      "pdf_url": "https://arxiv.org/pdf/2602.12345"
+      "id": "2602.11298",
+      "title": "Voxtral Realtime",
+      "authors": ["Alexander H. Liu", "Andy Ehrenberg", "Andy Lo", "Chen-Yo Sun", "Guillaume Lample"],
+      "abstract": "Introduces a natively streaming ASR model that matches offline transcription quality at sub-second latency. Built on the Delayed Streams Modeling framework with a causal audio encoder. At 480ms delay, performance matches Whisper. Supports 13 languages. Apache 2.0 license.",
+      "categories": ["cs.AI"],
+      "published": "2026-02-11",
+      "url": "https://arxiv.org/abs/2602.11298",
+      "pdf_url": "https://arxiv.org/pdf/2602.11298"
     },
     {
-      "id": "2602.12346",
-      "title": "WhisperMed: Domain-Adapted Speech Recognition for Clinical Documentation",
-      "authors": ["Eva Martinez", "Frank Wu"],
-      "abstract": "We present WhisperMed, a fine-tuned version of Whisper Large V3 specifically optimized for medical transcription tasks, achieving 12% relative WER reduction on clinical datasets.",
+      "id": "2602.12546",
+      "title": "Decoder-only Conformer with Modality-aware Sparse Mixtures of Experts for ASR",
+      "authors": ["Jaeyoung Lee", "Masato Mimura"],
+      "abstract": "Presents a unified decoder-only Conformer for ASR that handles speech and text without external encoders. Uses modality-aware sparse MoE. The 113M model achieves 2.8% WER on LibriSpeech test-clean vs 3.2% for a 139M AED baseline.",
+      "categories": ["eess.AS", "cs.AI", "cs.CL", "cs.SD"],
+      "published": "2026-02-13",
+      "url": "https://arxiv.org/abs/2602.12546",
+      "pdf_url": "https://arxiv.org/pdf/2602.12546"
+    },
+    {
+      "id": "2602.09044",
+      "title": "Beyond the Utterance: An Empirical Study of Very Long Context Speech Recognition",
+      "authors": ["Robert Flynn", "Anton Ragni"],
+      "abstract": "Investigates ASR with extended audio sequences over 1 hour. Optimal performance at ~21.8 minutes of context yields 14.2% relative improvement over short context baselines. Accepted to IEEE/ACM TASLP 2026.",
+      "categories": ["eess.AS", "cs.SD"],
+      "published": "2026-02-04",
+      "url": "https://arxiv.org/abs/2602.09044",
+      "pdf_url": "https://arxiv.org/pdf/2602.09044"
+    },
+    {
+      "id": "2602.04307",
+      "title": "Universal Robust Speech Adaptation for Cross-Domain Speech Recognition and Enhancement",
+      "authors": ["Chien-Chun Wang", "Hung-Shin Lee", "Hsin-Min Wang", "Berlin Chen"],
+      "abstract": "Presents URSA-GAN for handling domain shifts using dual encoders for noise and channel characteristics. Achieves 16.16% relative improvement in speech recognition across challenging scenarios. Accepted to IEEE TASLP.",
+      "categories": ["eess.AS", "cs.CL", "cs.LG", "cs.SD"],
+      "published": "2026-02-04",
+      "url": "https://arxiv.org/abs/2602.04307",
+      "pdf_url": "https://arxiv.org/pdf/2602.04307"
+    },
+    {
+      "id": "2602.09785",
+      "title": "Where Are We At with Automatic Speech Recognition for the Bambara Language?",
+      "authors": ["Seydou Diallo", "Yacouba Diarra", "Mamadou K. Keita", "Panga Azazia Kamate", "Adam Bouno Kampo", "Aboubacar Ouattara"],
+      "abstract": "First standardized evaluation benchmark for Bambara ASR. Evaluated 37 models. Best WER is 46.76%. Several prominent multilingual models exceeded 100% WER, showing scale alone is insufficient for underrepresented languages.",
       "categories": ["cs.CL"],
-      "published": "2026-02-17",
-      "url": "https://arxiv.org/abs/2602.12346",
-      "pdf_url": "https://arxiv.org/pdf/2602.12346"
+      "published": "2026-02-10",
+      "url": "https://arxiv.org/abs/2602.09785",
+      "pdf_url": "https://arxiv.org/pdf/2602.09785"
     },
     {
-      "id": "2602.12347",
-      "title": "AfriSpeech-15: A Multilingual ASR Dataset for 15 African Languages",
-      "authors": ["Grace Okafor", "Henry Mensah", "Irene Adeyemi"],
-      "abstract": "We introduce AfriSpeech-15, a carefully curated multilingual speech dataset covering 15 African languages with over 2,000 hours of transcribed audio.",
-      "categories": ["cs.CL", "cs.SD"],
-      "published": "2026-02-17",
-      "url": "https://arxiv.org/abs/2602.12347",
-      "pdf_url": "https://arxiv.org/pdf/2602.12347"
+      "id": "2602.10350",
+      "title": "When Less Is More? Diagnosing ASR Predictions in Sardinian via Layer-Wise Decoding",
+      "authors": ["Domenico De Cristofaro", "Alessandro Vietti", "Marianne Pouplier", "Aleese Block"],
+      "abstract": "Investigates how phoneme predictions evolve across encoder layers in Wav2Vec2 for Sardinian. Truncating upper layers improves error rates. Introduces 'regressive errors' where deeper layers abstract away acoustic detail.",
+      "categories": ["cs.CL"],
+      "published": "2026-02-10",
+      "url": "https://arxiv.org/abs/2602.10350",
+      "pdf_url": "https://arxiv.org/pdf/2602.10350"
     }
   ],
   "models": [
     {
-      "model_id": "medai/whisper-large-v3-medical",
-      "author": "medai",
-      "downloads": 1523,
-      "likes": 42,
-      "url": "https://huggingface.co/medai/whisper-large-v3-medical",
-      "last_modified": "2026-02-17",
+      "model_id": "openai/whisper-large-v3-turbo",
+      "author": "openai",
+      "downloads": 3149596,
+      "likes": 1200,
+      "url": "https://huggingface.co/openai/whisper-large-v3-turbo",
+      "last_modified": "2024-10-01",
       "pipeline_tag": "automatic-speech-recognition"
     },
     {
-      "model_id": "streaming-asr/stream-conformer-base",
-      "author": "streaming-asr",
-      "downloads": 387,
-      "likes": 18,
-      "url": "https://huggingface.co/streaming-asr/stream-conformer-base",
-      "last_modified": "2026-02-17",
+      "model_id": "distil-whisper/distil-large-v3",
+      "author": "distil-whisper",
+      "downloads": 1111537,
+      "likes": 892,
+      "url": "https://huggingface.co/distil-whisper/distil-large-v3",
+      "last_modified": "2024-11-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Qwen/Qwen3-ASR-1.7B",
+      "author": "Qwen",
+      "downloads": 335458,
+      "likes": 487,
+      "url": "https://huggingface.co/Qwen/Qwen3-ASR-1.7B",
+      "last_modified": "2026-01-29",
       "pipeline_tag": "automatic-speech-recognition"
     }
   ],
   "datasets": [
     {
-      "dataset_id": "afrispeech/afrispeech-15",
-      "author": "afrispeech",
-      "downloads": 256,
-      "url": "https://huggingface.co/datasets/afrispeech/afrispeech-15",
-      "last_modified": "2026-02-17"
+      "dataset_id": "espnet/yodas-granary",
+      "author": "espnet",
+      "downloads": 35262,
+      "url": "https://huggingface.co/datasets/espnet/yodas-granary",
+      "last_modified": "2025-05-01"
     }
   ],
   "tweets": [],
   "stats": {
-    "paper_count": 3,
-    "model_count": 2,
+    "paper_count": 6,
+    "model_count": 3,
     "dataset_count": 1,
     "tweet_count": 0
   }
