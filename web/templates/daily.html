@@ -41,14 +41,14 @@
     <h2>Models ({{ report.models|length }})</h2>
     <table>
         <thead>
-            <tr><th>Model</th><th>Author</th><th>Downloads</th><th>Link</th></tr>
+            <tr><th>Model</th><th>Architecture</th><th>Key Innovation</th><th>Link</th></tr>
         </thead>
         <tbody>
             {% for m in report.models %}
             <tr>
                 <td>{{ m.model_id }}</td>
-                <td>{{ m.author }}</td>
-                <td>{{ m.downloads }}</td>
+                <td>{{ m.architecture if m.architecture else '—' }}</td>
+                <td>{{ m.innovation if m.innovation else '—' }}</td>
                 <td><a href="{{ m.url }}" target="_blank">HF</a></td>
             </tr>
             {% endfor %}

@@ -46,7 +46,9 @@
       "likes": 156,
       "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2",
       "last_modified": "2025-05-15",
-      "pipeline_tag": "automatic-speech-recognition"
+      "pipeline_tag": "automatic-speech-recognition",
+      "architecture": "FastConformer-TDT (600M)",
+      "innovation": "High-quality English ASR with word-level timestamps, punctuation, and capitalization; 3380 RTFx throughput"
     }
   ],
   "datasets": [

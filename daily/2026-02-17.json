@@ -77,7 +77,9 @@
       "likes": 1200,
       "url": "https://huggingface.co/openai/whisper-large-v3-turbo",
       "last_modified": "2024-10-01",
-      "pipeline_tag": "automatic-speech-recognition"
+      "pipeline_tag": "automatic-speech-recognition",
+      "architecture": "Encoder-decoder Transformer, pruned decoder (809M, 4 layers)",
+      "innovation": "Decoder pruned from 32 to 4 layers for 5-8x faster inference with minimal accuracy loss"
     },
     {
       "model_id": "distil-whisper/distil-large-v3",
@@ -86,7 +88,9 @@
       "likes": 892,
       "url": "https://huggingface.co/distil-whisper/distil-large-v3",
       "last_modified": "2024-11-15",
-      "pipeline_tag": "automatic-speech-recognition"
+      "pipeline_tag": "automatic-speech-recognition",
+      "architecture": "Distilled encoder-decoder Transformer (756M)",
+      "innovation": "Knowledge-distilled Whisper: 6.3x faster, within 1% WER on long-form audio"
     },
     {
       "model_id": "Qwen/Qwen3-ASR-1.7B",
@@ -95,7 +99,9 @@
       "likes": 487,
       "url": "https://huggingface.co/Qwen/Qwen3-ASR-1.7B",
       "last_modified": "2026-01-29",
-      "pipeline_tag": "automatic-speech-recognition"
+      "pipeline_tag": "automatic-speech-recognition",
+      "architecture": "AuT audio encoder (300M) + Qwen3 LLM decoder (1.7B)",
+      "innovation": "SOTA open-source ASR via GSPO reinforcement learning, 52 languages, streaming + offline"
     }
   ],
   "datasets": [

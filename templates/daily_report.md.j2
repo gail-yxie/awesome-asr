@@ -19,13 +19,13 @@ No new papers found today.
 ## New Models & Datasets ({{ models | length + datasets | length }})
 
 {% if models or datasets %}
-| Name | Author | Type | Link |
-|------|--------|------|------|
+| Name | Architecture | Key Innovation | Link |
+|------|-------------|----------------|------|
 {% for model in models %}
-| {{ model.model_id }} | {{ model.author }} | model | [HF]({{ model.url }}) |
+| {{ model.model_id }} | {{ model.architecture if model.architecture else '—' }} | {{ model.innovation if model.innovation else '—' }} | [HF]({{ model.url }}) |
 {% endfor %}
 {% for dataset in datasets %}
-| {{ dataset.dataset_id }} | {{ dataset.author }} | dataset | [HF]({{ dataset.url }}) |
+| {{ dataset.dataset_id }} | — | {{ dataset.author }} | [HF]({{ dataset.url }}) |
 {% endfor %}
 {% else %}
 No new models or datasets found today.
