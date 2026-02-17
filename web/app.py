@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = PROJECT_ROOT / "daily"
+DATA_DIR = PROJECT_ROOT / "data"
 PODCASTS_DIR = PROJECT_ROOT / "podcasts"
 MINDMAPS_DIR = PROJECT_ROOT / "mindmaps"
 
@@ -121,6 +122,17 @@ def podcasts():
         episodes=episodes,
         script_map=script_map,
     )
+
+
+@app.route("/models")
+def models():
+    """Open-source ASR models catalog."""
+    models_path = DATA_DIR / "models.json"
+    model_list = []
+    if models_path.exists():
+        with open(models_path) as f:
+            model_list = json.load(f)
+    return render_template("models.html", models=model_list)
 
 
 @app.route("/mindmaps")

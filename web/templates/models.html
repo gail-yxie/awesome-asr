@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Awesome ASR — Models{% endblock %}
+
+{% block content %}
+<h1>Open-Source ASR Models</h1>
+
+{% if models %}
+<div class="models-grid">
+    {% for m in models %}
+    <section class="card model-card">
+        <div class="model-header">
+            <h2>{{ m.name }}</h2>
+            <span class="stat">{{ m.params }}</span>
+        </div>
+        <p class="date">{{ m.organization }} &middot; {{ m.date }}</p>
+
+        <table class="model-details">
+            <tr>
+                <th>Architecture</th>
+                <td>{{ m.architecture }}</td>
+            </tr>
+            <tr>
+                <th>Key Innovation</th>
+                <td>{{ m.innovation }}</td>
+            </tr>
+        </table>
+
+        <div class="model-links">
+            {% if m.paper_url %}
+            <a href="{{ m.paper_url }}" class="btn" target="_blank">Paper</a>
+            {% endif %}
+            {% if m.model_url %}
+            <a href="{{ m.model_url }}" class="btn btn-secondary" target="_blank">HuggingFace</a>
+            {% endif %}
+        </div>
+    </section>
+    {% endfor %}
+</div>
+{% else %}
+<section class="card">
+    <p>No models cataloged yet.</p>
+</section>
+{% endif %}
+{% endblock %}

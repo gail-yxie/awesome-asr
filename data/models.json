@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Whisper Large V3",
+    "organization": "OpenAI",
+    "date": "2023-11",
+    "params": "1.5B",
+    "architecture": "Encoder-decoder Transformer",
+    "innovation": "Trained on 5M hours of weakly/pseudo-labeled audio for 10-20% WER reduction",
+    "paper_url": "https://arxiv.org/abs/2212.04356",
+    "model_url": "https://huggingface.co/openai/whisper-large-v3"
+  },
+  {
+    "name": "Whisper Turbo",
+    "organization": "OpenAI",
+    "date": "2024-10",
+    "params": "809M",
+    "architecture": "Encoder-decoder Transformer, pruned decoder (4 layers)",
+    "innovation": "Decoder pruned from 32 to 4 layers for 5-8x faster inference",
+    "paper_url": "https://arxiv.org/abs/2212.04356",
+    "model_url": "https://huggingface.co/openai/whisper-large-v3-turbo"
+  },
+  {
+    "name": "W2v-BERT (wav2vec2-bert-CV16-en)",
+    "organization": "hf-audio",
+    "date": "2021-08",
+    "params": "0.6B",
+    "architecture": "Conformer with contrastive + MLM modules",
+    "innovation": "Combines wav2vec 2.0 contrastive learning with BERT-style MLM in one model",
+    "paper_url": "https://arxiv.org/abs/2108.06209",
+    "model_url": "https://huggingface.co/hf-audio/wav2vec2-bert-CV16-en"
+  },
+  {
+    "name": "wav2vec 2.0",
+    "organization": "Meta",
+    "date": "2020-06",
+    "params": "95M",
+    "architecture": "CNN encoder + Transformer context network",
+    "innovation": "Self-supervised contrastive learning over quantized speech, strong ASR with 10 min labeled data",
+    "paper_url": "https://arxiv.org/abs/2006.11477",
+    "model_url": "https://huggingface.co/facebook/wav2vec2-base-960h"
+  },
+  {
+    "name": "Qwen3-ASR-1.7B",
+    "organization": "Alibaba Qwen",
+    "date": "2026-01",
+    "params": "1.7B",
+    "architecture": "AuT audio encoder (300M) + Qwen3 LLM decoder",
+    "innovation": "SOTA open-source ASR via GSPO reinforcement learning, 52 languages",
+    "paper_url": "https://arxiv.org/abs/2601.21337",
+    "model_url": "https://huggingface.co/Qwen/Qwen3-ASR-1.7B"
+  },
+  {
+    "name": "Qwen3-ASR-0.6B",
+    "organization": "Alibaba Qwen",
+    "date": "2026-01",
+    "params": "0.6B",
+    "architecture": "AuT audio encoder (180M) + Qwen3 LLM decoder",
+    "innovation": "Best accuracy-efficiency trade-off: 92ms TTFT, 2000x throughput",
+    "paper_url": "https://arxiv.org/abs/2601.21337",
+    "model_url": "https://huggingface.co/Qwen/Qwen3-ASR-0.6B"
+  },
+  {
+    "name": "Qwen3-ForcedAligner-0.6B",
+    "organization": "Alibaba Qwen",
+    "date": "2026-01",
+    "params": "0.6B",
+    "architecture": "Non-autoregressive LLM-based aligner on Qwen3",
+    "innovation": "First LLM-based forced aligner, 67-77% alignment error reduction",
+    "paper_url": "https://arxiv.org/abs/2601.21337",
+    "model_url": "https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B"
+  },
+  {
+    "name": "HuBERT XL",
+    "organization": "Meta",
+    "date": "2021-06",
+    "params": "1B",
+    "architecture": "CNN encoder + bidirectional Transformer (48 layers)",
+    "innovation": "Masked prediction of k-means pseudo-labels for self-supervised speech",
+    "paper_url": "https://arxiv.org/abs/2106.07447",
+    "model_url": "https://huggingface.co/facebook/hubert-xlarge-ls960-ft"
+  }
+]

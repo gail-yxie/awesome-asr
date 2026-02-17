@@ -187,6 +187,47 @@ iframe {
     margin-bottom: 0.3rem;
 }
 
+/* Model cards */
+.model-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.model-header h2 {
+    margin-bottom: 0;
+}
+
+.model-card .date {
+    margin-bottom: 0.5rem;
+}
+
+.model-details {
+    margin: 0.75rem 0;
+}
+
+.model-details th {
+    width: 140px;
+    white-space: nowrap;
+}
+
+.model-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.btn-secondary {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--border);
+}
+
 /* Footer */
 .footer {
     text-align: center;

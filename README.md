@@ -30,7 +30,11 @@
 ## Papers
 
 ### Foundational
-<!-- Add foundational ASR papers here -->
+
+- [Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356) — Radford et al., OpenAI, Dec 2022. Introduced Whisper.
+- [wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations](https://arxiv.org/abs/2006.11477) — Baevski et al., Meta, Jun 2020.
+- [HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units](https://arxiv.org/abs/2106.07447) — Hsu et al., Meta, Jun 2021.
+- [W2v-BERT: Combining Contrastive Learning and Masked Language Modeling for Self-Supervised Speech Pre-Training](https://arxiv.org/abs/2108.06209) — Chung et al., Google, Aug 2021.
 
 ### Recent
 
@@ -38,16 +42,16 @@
 
 ## Open-Source Models
 
-| Model | Organization | Description | Link |
-|-------|-------------|-------------|------|
-| Whisper Large V3 | OpenAI | Large-scale multilingual ASR model | [HF Space](https://huggingface.co/spaces/hf-audio/whisper-large-v3) |
-| Whisper Turbo | OpenAI | Fast transcription from mic, files, or YouTube | [HF Space](https://huggingface.co/spaces/hf-audio/whisper-turbo) |
-| wav2vec2-bert-CV16-en | hf-audio | ASR model (0.6B params) | [Model](https://huggingface.co/hf-audio/wav2vec2-bert-CV16-en) |
-| wav2vec2-base-960h | Meta | Pre-trained wav2vec 2.0 base model | [Model](https://huggingface.co/facebook/wav2vec2-base-960h) |
-| Qwen3-ASR-1.7B | Alibaba Qwen | Multilingual ASR (52 langs), language detection, timestamps (1.7B params) | [Model](https://huggingface.co/Qwen/Qwen3-ASR-1.7B) |
-| Qwen3-ASR-0.6B | Alibaba Qwen | Lightweight multilingual ASR, 2000x throughput at concurrency 128 (0.6B params) | [Model](https://huggingface.co/Qwen/Qwen3-ASR-0.6B) |
-| Qwen3-ForcedAligner-0.6B | Alibaba Qwen | Non-autoregressive forced alignment for 11 languages | [Model](https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B) |
-| HuBERT XL | Meta | Fine-tuned HuBERT model for ASR | [Model](https://huggingface.co/facebook/hubert-xlarge-ls960-ft) |
+| Model | Org | Date | Architecture | Key Innovation | Link |
+|-------|-----|------|-------------|----------------|------|
+| [Whisper Large V3](https://arxiv.org/abs/2212.04356) | OpenAI | Nov 2023 | Encoder-decoder Transformer (1.5B) | Trained on 5M hours of weakly/pseudo-labeled audio for 10-20% WER reduction | [HF](https://huggingface.co/openai/whisper-large-v3) |
+| [Whisper Turbo](https://arxiv.org/abs/2212.04356) | OpenAI | Oct 2024 | Encoder-decoder Transformer, pruned decoder (809M) | Decoder pruned from 32 to 4 layers for 5-8x faster inference | [HF](https://huggingface.co/openai/whisper-large-v3-turbo) |
+| [W2v-BERT](https://arxiv.org/abs/2108.06209) | hf-audio | Aug 2021 | Conformer with contrastive + MLM modules (0.6B) | Combines wav2vec 2.0 contrastive learning with BERT-style MLM in one model | [HF](https://huggingface.co/hf-audio/wav2vec2-bert-CV16-en) |
+| [wav2vec 2.0](https://arxiv.org/abs/2006.11477) | Meta | Jun 2020 | CNN encoder + Transformer context network | Self-supervised contrastive learning over quantized speech, strong ASR with 10 min labeled data | [HF](https://huggingface.co/facebook/wav2vec2-base-960h) |
+| [Qwen3-ASR-1.7B](https://arxiv.org/abs/2601.21337) | Alibaba Qwen | Jan 2026 | AuT audio encoder (300M) + Qwen3 LLM decoder | SOTA open-source ASR via GSPO reinforcement learning, 52 languages | [HF](https://huggingface.co/Qwen/Qwen3-ASR-1.7B) |
+| [Qwen3-ASR-0.6B](https://arxiv.org/abs/2601.21337) | Alibaba Qwen | Jan 2026 | AuT audio encoder (180M) + Qwen3 LLM decoder | Best accuracy-efficiency trade-off: 92ms TTFT, 2000x throughput | [HF](https://huggingface.co/Qwen/Qwen3-ASR-0.6B) |
+| [Qwen3-ForcedAligner](https://arxiv.org/abs/2601.21337) | Alibaba Qwen | Jan 2026 | Non-autoregressive LLM-based aligner on Qwen3 | First LLM-based forced aligner, 67-77% alignment error reduction | [HF](https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B) |
+| [HuBERT](https://arxiv.org/abs/2106.07447) | Meta | Jun 2021 | CNN encoder + bidirectional Transformer (XL: 48 layers) | Masked prediction of k-means pseudo-labels for self-supervised speech | [HF](https://huggingface.co/facebook/hubert-xlarge-ls960-ft) |
 
 ## Datasets
 
