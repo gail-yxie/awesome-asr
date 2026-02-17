@@ -12,6 +12,7 @@
 
 ## Table of Contents
 
+- [Leaderboards](#leaderboards)
 - [Papers](#papers)
 - [Open-Source Models](#open-source-models)
 - [Datasets](#datasets)
@@ -21,6 +22,10 @@
 - [Podcasts](#podcasts)
 - [Mindmaps](#mindmaps)
 - [Contributing](#contributing)
+
+## Leaderboards
+
+- [Open ASR Leaderboard](https://huggingface.co/spaces/hf-audio/open_asr_leaderboard) — Explore and compare speech recognition model benchmarks. Maintained by [hf-audio](https://huggingface.co/hf-audio). [[Paper](https://arxiv.org/abs/2510.06961)]
 
 ## Papers
 
@@ -34,17 +39,22 @@
 
 | Model | Organization | Description | Link |
 |-------|-------------|-------------|------|
-<!-- Open-source models will be tracked and listed here -->
+| Whisper Large V3 | OpenAI | Large-scale multilingual ASR model | [HF Space](https://huggingface.co/spaces/hf-audio/whisper-large-v3) |
+| Whisper Turbo | OpenAI | Fast transcription from mic, files, or YouTube | [HF Space](https://huggingface.co/spaces/hf-audio/whisper-turbo) |
+| wav2vec2-bert-CV16-en | hf-audio | ASR model (0.6B params) | [Model](https://huggingface.co/hf-audio/wav2vec2-bert-CV16-en) |
+| wav2vec2-base-960h | Meta | Pre-trained wav2vec 2.0 base model | [Model](https://huggingface.co/facebook/wav2vec2-base-960h) |
+| HuBERT XL | Meta | Fine-tuned HuBERT model for ASR | [Model](https://huggingface.co/facebook/hubert-xlarge-ls960-ft) |
 
 ## Datasets
 
 | Dataset | Language | Hours | Description | Link |
 |---------|----------|-------|-------------|------|
-<!-- ASR datasets listed here -->
+| ESB Datasets | Multi | — | End-to-end Speech Benchmark test sets | [Dataset](https://huggingface.co/datasets/hf-audio/esb-datasets-test-only-sorted) |
+| ASR Leaderboard Longform | Multi | — | Long-form evaluation data for the Open ASR Leaderboard | [Dataset](https://huggingface.co/datasets/hf-audio/asr-leaderboard-longform) |
 
 ## Tools & Libraries
 
-<!-- ASR tools and libraries -->
+- [hf-audio](https://huggingface.co/hf-audio) — A one-stop shop for all things audio at Hugging Face. Maintains the Open ASR Leaderboard, ASR models, datasets, and audio codec models (Vocos, Xcodec).
 
 ## Tutorials & Courses
 
