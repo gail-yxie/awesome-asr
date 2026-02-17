@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Leaderboard — Awesome ASR{% endblock %}
+
+{% block content %}
+<style>.container { max-width: 1200px; }</style>
+<h1>Open ASR Leaderboard</h1>
+<p class="date">
+    Top 10 models by average Word Error Rate (WER) across 9 ESB benchmark datasets.
+    {% if leaderboard.last_updated %}
+    <br>Last updated: {{ leaderboard.last_updated }}
+    {% endif %}
+</p>
+
+{% if leaderboard.models %}
+<div class="leaderboard-table-wrap">
+<table class="leaderboard-table">
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Model</th>
+            <th>Avg WER</th>
+            <th>RTFx</th>
+            <th>LS Clean</th>
+            <th>LS Other</th>
+            <th>CV</th>
+            <th>VP</th>
+            <th>TED</th>
+            <th>GS</th>
+            <th>SPGI</th>
+            <th>E22</th>
+            <th>AMI</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for m in leaderboard.models %}
+        <tr class="{% if m.rank == 1 %}rank-gold{% elif m.rank == 2 %}rank-silver{% elif m.rank == 3 %}rank-bronze{% endif %}">
+            <td>
+                {% if m.rank == 1 %}&#129351;{% elif m.rank == 2 %}&#129352;{% elif m.rank == 3 %}&#129353;{% else %}{{ m.rank }}{% endif %}
+            </td>
+            <td>
+                <a href="https://huggingface.co/{{ m.model_id }}">{{ m.model_id }}</a>
+            </td>
+            <td><strong>{{ m.avg_wer }}%</strong></td>
+            <td>{{ m.rtfx if m.rtfx else '—' }}</td>
+            <td>{{ m.scores.librispeech_clean if m.scores.librispeech_clean else '—' }}</td>
+            <td>{{ m.scores.librispeech_other if m.scores.librispeech_other else '—' }}</td>
+            <td>{{ m.scores.common_voice if m.scores.common_voice else '—' }}</td>
+            <td>{{ m.scores.voxpopuli if m.scores.voxpopuli else '—' }}</td>
+            <td>{{ m.scores.tedlium if m.scores.tedlium else '—' }}</td>
+            <td>{{ m.scores.gigaspeech if m.scores.gigaspeech else '—' }}</td>
+            <td>{{ m.scores.spgispeech if m.scores.spgispeech else '—' }}</td>
+            <td>{{ m.scores.earnings22 if m.scores.earnings22 else '—' }}</td>
+            <td>{{ m.scores.ami if m.scores.ami else '—' }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<div class="card" style="margin-top: 1.5rem;">
+    <h2>About the Benchmarks</h2>
+    <p style="color: var(--text-muted); font-size: 0.9rem;">
+        Models are evaluated on 9 datasets from the
+        <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">ESB (End-to-end Speech Benchmark)</a>:
+        LibriSpeech Clean/Other, Common Voice (CV), VoxPopuli (VP), TED-LIUM (TED),
+        GigaSpeech (GS), SPGISpeech (SPGI), Earnings-22 (E22), and AMI.
+        WER = Word Error Rate (lower is better). RTFx = Real-Time Factor (higher is faster).
+    </p>
+</div>
+{% else %}
+<div class="card">
+    <p>No leaderboard data available yet. Run the daily tracker to populate this page.</p>
+</div>
+{% endif %}
+{% endblock %}

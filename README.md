@@ -27,6 +27,25 @@
 
 - [Open ASR Leaderboard](https://huggingface.co/spaces/hf-audio/open_asr_leaderboard) — Explore and compare speech recognition model benchmarks. Maintained by [hf-audio](https://huggingface.co/hf-audio). [[Paper](https://arxiv.org/abs/2510.06961)]
 
+### Top 10 Models (by Average WER)
+
+<!-- leaderboard-top10-start -->
+| Rank | Model | Avg WER |
+|------|-------|---------|
+| 1 | [nvidia/canary-1b](https://huggingface.co/nvidia/canary-1b) | 6.67% |
+| 2 | [nvidia/parakeet-tdt-1.1b](https://huggingface.co/nvidia/parakeet-tdt-1.1b) | 6.95% |
+| 3 | [nvidia/parakeet-rnnt-1.1b](https://huggingface.co/nvidia/parakeet-rnnt-1.1b) | 7.04% |
+| 4 | [nvidia/parakeet-ctc-1.1b](https://huggingface.co/nvidia/parakeet-ctc-1.1b) | 7.58% |
+| 5 | [nvidia/parakeet-rnnt-0.6b](https://huggingface.co/nvidia/parakeet-rnnt-0.6b) | 7.63% |
+| 6 | [openai/whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | 7.70% |
+| 7 | [nvidia/parakeet-ctc-0.6b](https://huggingface.co/nvidia/parakeet-ctc-0.6b) | 7.99% |
+| 8 | [nvidia/stt_en_fastconformer_transducer_xlarge](https://huggingface.co/nvidia/stt_en_fastconformer_transducer_xlarge) | 8.06% |
+| 9 | [openai/whisper-large-v2](https://huggingface.co/openai/whisper-large-v2) | 8.06% |
+| 10 | [nvidia/stt_en_fastconformer_transducer_xxlarge](https://huggingface.co/nvidia/stt_en_fastconformer_transducer_xxlarge) | 8.07% |
+<!-- leaderboard-top10-end -->
+
+*Auto-updated daily. Evaluated on 9 ESB benchmark datasets (lower WER is better).*
+
 ## Papers
 
 ### Foundational

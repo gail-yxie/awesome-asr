@@ -1,0 +1,175 @@
+{
+  "last_updated": "2026-02-17",
+  "models": [
+    {
+      "rank": 1,
+      "model_id": "nvidia/canary-1b",
+      "avg_wer": 6.67,
+      "rtfx": 9.8,
+      "scores": {
+        "ami": 14.0,
+        "earnings22": 12.25,
+        "gigaspeech": 10.19,
+        "librispeech_clean": 1.49,
+        "librispeech_other": 2.94,
+        "spgispeech": 2.06,
+        "tedlium": 3.58,
+        "voxpopuli": 5.81,
+        "common_voice": 7.75
+      }
+    },
+    {
+      "rank": 2,
+      "model_id": "nvidia/parakeet-tdt-1.1b",
+      "avg_wer": 6.95,
+      "rtfx": 1.7,
+      "scores": {
+        "ami": 15.9,
+        "earnings22": 14.65,
+        "gigaspeech": 9.55,
+        "librispeech_clean": 1.39,
+        "librispeech_other": 2.62,
+        "spgispeech": 3.42,
+        "tedlium": 3.56,
+        "voxpopuli": 5.48,
+        "common_voice": 5.97
+      }
+    },
+    {
+      "rank": 3,
+      "model_id": "nvidia/parakeet-rnnt-1.1b",
+      "avg_wer": 7.04,
+      "rtfx": 2.4,
+      "scores": {
+        "ami": 17.1,
+        "earnings22": 14.15,
+        "gigaspeech": 9.96,
+        "librispeech_clean": 1.46,
+        "librispeech_other": 2.48,
+        "spgispeech": 3.11,
+        "tedlium": 3.92,
+        "voxpopuli": 5.39,
+        "common_voice": 5.8
+      }
+    },
+    {
+      "rank": 4,
+      "model_id": "nvidia/parakeet-ctc-1.1b",
+      "avg_wer": 7.58,
+      "rtfx": 0.6,
+      "scores": {
+        "ami": 15.6,
+        "earnings22": 13.69,
+        "gigaspeech": 10.27,
+        "librispeech_clean": 1.83,
+        "librispeech_other": 3.54,
+        "spgispeech": 4.2,
+        "tedlium": 3.53,
+        "voxpopuli": 6.52,
+        "common_voice": 9.0
+      }
+    },
+    {
+      "rank": 5,
+      "model_id": "nvidia/parakeet-rnnt-0.6b",
+      "avg_wer": 7.63,
+      "rtfx": 2.0,
+      "scores": {
+        "ami": 17.56,
+        "earnings22": 14.9,
+        "gigaspeech": 10.07,
+        "librispeech_clean": 1.62,
+        "librispeech_other": 3.06,
+        "spgispeech": 3.47,
+        "tedlium": 3.87,
+        "voxpopuli": 6.05,
+        "common_voice": 8.07
+      }
+    },
+    {
+      "rank": 6,
+      "model_id": "openai/whisper-large-v3",
+      "avg_wer": 7.7,
+      "rtfx": 7.5,
+      "scores": {
+        "ami": 16.01,
+        "earnings22": 11.3,
+        "gigaspeech": 10.02,
+        "librispeech_clean": 2.03,
+        "librispeech_other": 3.91,
+        "spgispeech": 2.95,
+        "tedlium": 3.9,
+        "voxpopuli": 9.52,
+        "common_voice": 9.67
+      }
+    },
+    {
+      "rank": 7,
+      "model_id": "nvidia/parakeet-ctc-0.6b",
+      "avg_wer": 7.99,
+      "rtfx": 0.4,
+      "scores": {
+        "ami": 16.3,
+        "earnings22": 14.17,
+        "gigaspeech": 10.34,
+        "librispeech_clean": 1.87,
+        "librispeech_other": 3.76,
+        "spgispeech": 4.12,
+        "tedlium": 3.78,
+        "voxpopuli": 6.99,
+        "common_voice": 10.57
+      }
+    },
+    {
+      "rank": 8,
+      "model_id": "nvidia/stt_en_fastconformer_transducer_xlarge",
+      "avg_wer": 8.06,
+      "rtfx": 2.0,
+      "scores": {
+        "ami": 18.28,
+        "earnings22": 16.37,
+        "gigaspeech": 11.58,
+        "librispeech_clean": 1.5,
+        "librispeech_other": 2.88,
+        "spgispeech": 4.4,
+        "tedlium": 4.49,
+        "voxpopuli": 5.74,
+        "common_voice": 7.26
+      }
+    },
+    {
+      "rank": 9,
+      "model_id": "openai/whisper-large-v2",
+      "avg_wer": 8.06,
+      "rtfx": 7.5,
+      "scores": {
+        "ami": 16.82,
+        "earnings22": 12.02,
+        "gigaspeech": 10.57,
+        "librispeech_clean": 2.56,
+        "librispeech_other": 5.16,
+        "spgispeech": 3.77,
+        "tedlium": 4.01,
+        "voxpopuli": 7.5,
+        "common_voice": 10.11
+      }
+    },
+    {
+      "rank": 10,
+      "model_id": "nvidia/stt_en_fastconformer_transducer_xxlarge",
+      "avg_wer": 8.07,
+      "rtfx": 2.4,
+      "scores": {
+        "ami": 18.81,
+        "earnings22": 16.66,
+        "gigaspeech": 11.95,
+        "librispeech_clean": 1.38,
+        "librispeech_other": 2.52,
+        "spgispeech": 4.98,
+        "tedlium": 4.74,
+        "voxpopuli": 5.56,
+        "common_voice": 6.07
+      }
+    }
+  ]
+}

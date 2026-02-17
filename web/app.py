@@ -124,6 +124,17 @@ def podcasts():
     )
 
 
+@app.route("/leaderboard")
+def leaderboard():
+    """Open ASR Leaderboard top models."""
+    lb_path = DATA_DIR / "leaderboard.json"
+    lb_data = {"last_updated": None, "models": []}
+    if lb_path.exists():
+        with open(lb_path) as f:
+            lb_data = json.load(f)
+    return render_template("leaderboard.html", leaderboard=lb_data)
+
+
 @app.route("/models")
 def models():
     """Open-source ASR models catalog."""

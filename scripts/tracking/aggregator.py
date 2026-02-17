@@ -6,6 +6,7 @@ from datetime import datetime
 from scripts.summarization.summarizer import extract_ideas, summarize_daily
 from scripts.tracking.arxiv_tracker import fetch_papers
 from scripts.tracking.huggingface_tracker import fetch_datasets, fetch_models
+from scripts.tracking.leaderboard_tracker import update_leaderboard
 from scripts.tracking.twitter_tracker import fetch_tweets
 from scripts.utils import (
     daily_report_path,
@@ -52,10 +53,21 @@ def run_daily_aggregation() -> dict:
     # Deduplicate
     papers = _deduplicate_papers(papers)
 
+    # Update leaderboard
+    logger.info("Updating Open ASR Leaderboard...")
+    leaderboard_top, newly_promoted = update_leaderboard()
+
     # Summarize with LLM
     logger.info("Generating daily summary...")
     summary = summarize_daily(papers, models, tweets)
     ideas = extract_ideas(papers)
+
+    # Add notes about newly promoted leaderboard models
+    for m in newly_promoted:
+        ideas.append(
+            f"New model on Open ASR Leaderboard top 10: {m['model_id']} "
+            f"(avg WER: {m['avg_wer']}%)"
+        )
 
     # Build report data
     report_data = {

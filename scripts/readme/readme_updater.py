@@ -74,8 +74,35 @@ def _replace_section(readme: str, marker: str, content: str) -> str:
     return new_readme
 
 
+def _format_leaderboard(models: list[dict]) -> str:
+    """Format leaderboard top models as a markdown table."""
+    lines = [
+        "| Rank | Model | Avg WER |",
+        "|------|-------|---------|",
+    ]
+    for m in models:
+        mid = m["model_id"]
+        lines.append(
+            f"| {m['rank']} | [{mid}](https://huggingface.co/{mid}) | {m['avg_wer']}% |"
+        )
+    return "\n".join(lines)
+
+
+def _replace_between_markers(readme: str, start: str, end: str, content: str) -> str:
+    """Replace content between paired HTML comment markers."""
+    pattern = re.compile(
+        rf"({re.escape(start)})\n.*?\n({re.escape(end)})",
+        re.DOTALL,
+    )
+    replacement = f"{start}\n{content}\n{end}"
+    new_readme, count = pattern.subn(replacement, readme)
+    if count == 0:
+        logger.warning("Markers not found in README: %s ... %s", start, end)
+    return new_readme
+
+
 def update_readme() -> None:
-    """Update README.md with foundational papers and recent papers."""
+    """Update README.md with foundational papers, recent papers, and leaderboard."""
     readme = read_text(README_PATH)
 
     # Update foundational papers
@@ -96,6 +123,18 @@ def update_readme() -> None:
         "<!-- Recent papers will be auto-tracked and added here -->",
         recent_content,
     )
+
+    # Update leaderboard top 10
+    leaderboard_path = DATA_DIR / "leaderboard.json"
+    if leaderboard_path.exists():
+        lb_data = read_json(leaderboard_path)
+        lb_content = _format_leaderboard(lb_data.get("models", []))
+        readme = _replace_between_markers(
+            readme,
+            "<!-- leaderboard-top10-start -->",
+            "<!-- leaderboard-top10-end -->",
+            lb_content,
+        )
 
     write_text(README_PATH, readme)
     logger.info("README.md updated successfully")

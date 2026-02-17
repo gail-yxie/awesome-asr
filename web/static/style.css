@@ -228,6 +228,39 @@ iframe {
     background: var(--border);
 }
 
+/* Leaderboard */
+.leaderboard-container {
+    max-width: 1200px;
+}
+
+.leaderboard-table-wrap {
+    overflow-x: auto;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    white-space: nowrap;
+    text-align: center;
+    padding: 0.5rem 0.6rem;
+}
+
+.leaderboard-table th:nth-child(2),
+.leaderboard-table td:nth-child(2) {
+    text-align: left;
+}
+
+.rank-gold {
+    background: #fef9c3;
+}
+
+.rank-silver {
+    background: #f1f5f9;
+}
+
+.rank-bronze {
+    background: #fef3e2;
+}
+
 /* Footer */
 .footer {
     text-align: center;
