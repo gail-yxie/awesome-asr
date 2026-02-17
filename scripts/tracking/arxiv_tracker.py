@@ -12,7 +12,9 @@ from scripts.utils import DATA_DIR, read_json
 
 logger = logging.getLogger(__name__)
 
-ARXIV_API_URL = "http://export.arxiv.org/api/query"
+ARXIV_API_URL = "https://export.arxiv.org/api/query"
+MAX_RETRIES = 3
+RETRY_DELAY = 10  # seconds
 
 
 def _build_query() -> str:
@@ -21,7 +23,7 @@ def _build_query() -> str:
     terms = queries["arxiv_queries"]
     categories = queries["arxiv_categories"]
 
-    term_query = " OR ".join(f'ti:"{t}" OR abs:"{t}"' for t in terms)
+    term_query = " OR ".join(f'all:"{t}"' for t in terms)
     cat_query = " OR ".join(f"cat:{c}" for c in categories)
     return f"({term_query}) AND ({cat_query})"
 
@@ -47,8 +49,18 @@ def fetch_papers(lookback_hours: int = 48, max_results: int = 100) -> list[dict]
     }
 
     logger.info("Querying arXiv API...")
-    resp = requests.get(ARXIV_API_URL, params=params, timeout=30)
-    resp.raise_for_status()
+    for attempt in range(1, MAX_RETRIES + 1):
+        resp = requests.get(ARXIV_API_URL, params=params, timeout=60)
+        if resp.status_code == 429:
+            delay = RETRY_DELAY * attempt
+            logger.warning("arXiv rate limit hit (attempt %d/%d), retrying in %ds...", attempt, MAX_RETRIES, delay)
+            time.sleep(delay)
+            continue
+        resp.raise_for_status()
+        break
+    else:
+        logger.error("arXiv API rate limit exceeded after %d retries", MAX_RETRIES)
+        return []
 
     feed = feedparser.parse(resp.text)
     cutoff = datetime.utcnow() - timedelta(hours=lookback_hours)
