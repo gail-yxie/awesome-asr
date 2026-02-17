@@ -33,7 +33,8 @@
 <!-- Add foundational ASR papers here -->
 
 ### Recent
-<!-- Recent papers will be auto-tracked and added here -->
+
+- [Qwen3-ASR Technical Report](https://arxiv.org/abs/2601.21337) — Qwen Team, 2026. Multilingual ASR with language detection, timestamps, and forced alignment.
 
 ## Open-Source Models
 
@@ -43,6 +44,9 @@
 | Whisper Turbo | OpenAI | Fast transcription from mic, files, or YouTube | [HF Space](https://huggingface.co/spaces/hf-audio/whisper-turbo) |
 | wav2vec2-bert-CV16-en | hf-audio | ASR model (0.6B params) | [Model](https://huggingface.co/hf-audio/wav2vec2-bert-CV16-en) |
 | wav2vec2-base-960h | Meta | Pre-trained wav2vec 2.0 base model | [Model](https://huggingface.co/facebook/wav2vec2-base-960h) |
+| Qwen3-ASR-1.7B | Alibaba Qwen | Multilingual ASR (52 langs), language detection, timestamps (1.7B params) | [Model](https://huggingface.co/Qwen/Qwen3-ASR-1.7B) |
+| Qwen3-ASR-0.6B | Alibaba Qwen | Lightweight multilingual ASR, 2000x throughput at concurrency 128 (0.6B params) | [Model](https://huggingface.co/Qwen/Qwen3-ASR-0.6B) |
+| Qwen3-ForcedAligner-0.6B | Alibaba Qwen | Non-autoregressive forced alignment for 11 languages | [Model](https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B) |
 | HuBERT XL | Meta | Fine-tuned HuBERT model for ASR | [Model](https://huggingface.co/facebook/hubert-xlarge-ls960-ft) |
 
 ## Datasets
@@ -62,15 +66,15 @@
 
 ## Daily Updates
 
-Daily updates are generated automatically and stored in the [`daily/`](daily/) directory.
+Daily updates are generated automatically via GitHub Actions (daily at 06:00 UTC) and stored in the [`daily/`](daily/) directory. Each report includes new papers from arXiv, models from HuggingFace, and Twitter/X discussions.
 
 ## Podcasts
 
-Auto-generated podcast episodes summarizing ASR developments are available in the [`podcasts/`](podcasts/) directory.
+Weekly podcast episodes summarizing ASR developments are auto-generated every Sunday and published as [GitHub Releases](https://github.com/gail-yxie/awesome-asr/releases). See the [`podcasts/`](podcasts/) directory for the episode index.
 
 ## Mindmaps
 
-Interactive mindmaps exploring ASR topics are available in the [`mindmaps/`](mindmaps/) directory.
+Interactive mindmaps exploring ASR topics are regenerated weekly and available in the [`mindmaps/`](mindmaps/) directory. Rendered using [markmap](https://markmap.js.org/).
 
 ## Contributing
 

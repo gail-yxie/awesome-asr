@@ -36,7 +36,6 @@ jobs:
         run: python -m scripts.readme.readme_updater
 
       - name: Send daily email
-        if: ${{ secrets.SMTP_HOST != '' }}
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
@@ -44,6 +43,7 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           SMTP_FROM_ADDRESS: ${{ secrets.SMTP_FROM_ADDRESS }}
           SITE_URL: ${{ vars.SITE_URL }}
+        if: env.SMTP_HOST != ''
         run: python -m scripts.email.sender
 
       - name: Commit and push
