@@ -1,0 +1,39 @@
+{
+  "date": "2026-02-16",
+  "summary": "A quieter day in ASR research with one notable paper on efficient CTC decoding using speculative methods, bringing 3x speedup to beam search. A new Cantonese ASR model was released on HuggingFace with strong performance on the Common Voice benchmark.",
+  "ideas": [
+    "Speculative decoding techniques from LLMs are being successfully adapted for CTC-based ASR models",
+    "Community-driven ASR models for underrepresented languages continue to improve through Common Voice"
+  ],
+  "papers": [
+    {
+      "id": "2602.11234",
+      "title": "SpecCTC: Speculative Decoding for Efficient CTC Beam Search",
+      "authors": ["Kevin Nakamura", "Lisa Patel"],
+      "abstract": "We apply speculative decoding to CTC beam search, achieving 3x decoding speedup with no quality degradation.",
+      "categories": ["cs.CL"],
+      "published": "2026-02-16",
+      "url": "https://arxiv.org/abs/2602.11234",
+      "pdf_url": "https://arxiv.org/pdf/2602.11234"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "cantonese-asr/wav2vec2-cantonese-cv17",
+      "author": "cantonese-asr",
+      "downloads": 892,
+      "likes": 31,
+      "url": "https://huggingface.co/cantonese-asr/wav2vec2-cantonese-cv17",
+      "last_modified": "2026-02-16",
+      "pipeline_tag": "automatic-speech-recognition"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 1,
+    "model_count": 1,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
