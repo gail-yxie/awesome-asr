@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}ASR Weekly Podcast{% endblock %}
+
+{% block content %}
+<h1>ASR Weekly Podcast</h1>
+<p>Auto-generated podcast episodes summarizing the latest ASR developments.</p>
+
+{% if episodes %}
+{% for ep in episodes %}
+<section class="card">
+    <h2>{{ ep.episode }}</h2>
+    <p class="date">{{ ep.date }}</p>
+
+    {% if ep.audio_url %}
+    <audio controls>
+        <source src="{{ ep.audio_url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+
+    {% if script_map.get(ep.episode) %}
+    <details>
+        <summary>View Script</summary>
+        <div class="markdown-content">
+            {{ script_map[ep.episode] | safe }}
+        </div>
+    </details>
+    {% endif %}
+</section>
+{% endfor %}
+{% else %}
+<p>No podcast episodes yet. Episodes are generated weekly on Sundays.</p>
+{% endif %}
+{% endblock %}

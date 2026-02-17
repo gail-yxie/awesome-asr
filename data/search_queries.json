@@ -1,0 +1,18 @@
+{
+  "arxiv_queries": [
+    "automatic speech recognition",
+    "speech-to-text",
+    "end-to-end ASR",
+    "whisper model speech",
+    "speech foundation model",
+    "multilingual speech recognition",
+    "speech language model",
+    "conformer speech",
+    "CTC speech recognition",
+    "voice activity detection"
+  ],
+  "arxiv_categories": ["cs.CL", "cs.SD", "eess.AS"],
+  "huggingface_tasks": [
+    "automatic-speech-recognition"
+  ]
+}

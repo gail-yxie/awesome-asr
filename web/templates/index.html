@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Awesome ASR — Dashboard{% endblock %}
+
+{% block content %}
+<h1>ASR Research Dashboard</h1>
+
+{% if latest_report %}
+<section class="card">
+    <h2>Today's Highlights — {{ latest_report.date }}</h2>
+    <p class="summary">{{ latest_report.summary }}</p>
+
+    <div class="stats">
+        <span class="stat">{{ latest_report.stats.paper_count }} papers</span>
+        <span class="stat">{{ latest_report.stats.model_count }} models</span>
+        <span class="stat">{{ latest_report.stats.dataset_count }} datasets</span>
+    </div>
+
+    {% if latest_report.ideas %}
+    <h3>Key Ideas</h3>
+    <ul>
+        {% for idea in latest_report.ideas %}
+        <li>{{ idea }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <a href="/daily/{{ latest_report.date }}" class="btn">View Full Report</a>
+</section>
+{% else %}
+<section class="card">
+    <p>No daily reports yet. Run the daily tracker to generate your first report.</p>
+</section>
+{% endif %}
+
+{% if latest_podcast %}
+<section class="card">
+    <h2>Latest Podcast</h2>
+    <p>Episode: {{ latest_podcast.episode }} ({{ latest_podcast.date }})</p>
+    {% if latest_podcast.audio_url %}
+    <audio controls>
+        <source src="{{ latest_podcast.audio_url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+    <a href="/podcasts" class="btn">All Episodes</a>
+</section>
+{% endif %}
+
+{% if recent_reports|length > 1 %}
+<section class="card">
+    <h2>Recent Updates</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Papers</th>
+                <th>Models</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in recent_reports %}
+            <tr>
+                <td><a href="/daily/{{ r.date }}">{{ r.date }}</a></td>
+                <td>{{ r.stats.paper_count }}</td>
+                <td>{{ r.stats.model_count }}</td>
+                <td>{{ r.summary[:120] }}{% if r.summary|length > 120 %}...{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endif %}
+{% endblock %}

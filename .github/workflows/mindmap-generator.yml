@@ -1,0 +1,50 @@
+name: Weekly Mindmap Generator
+
+on:
+  schedule:
+    - cron: '0 14 * * 0'  # Every Sunday at 14:00 UTC
+  workflow_dispatch:       # Manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install markmap-cli
+        run: npm install -g markmap-cli
+
+      - name: Generate mindmap markdown
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -m scripts.mindmap.taxonomy_builder
+
+      - name: Render mindmaps to HTML
+        run: python -m scripts.mindmap.markmap_renderer
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add mindmaps/ data/topic_taxonomy.json
+          git diff --cached --quiet || git commit -m "mindmap: Regenerate ASR mindmaps"
+          git push

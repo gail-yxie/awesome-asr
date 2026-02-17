@@ -28,8 +28,9 @@ Thumbs.db
 # Node (if using JS tooling)
 node_modules/
 
-# Generated content (keep templates, ignore generated output)
-# Uncomment these if you want to ignore generated files:
-# daily/*.json
-# podcasts/*.mp3
-# mindmaps/*.html
+# Generated content
+podcasts/*.mp3
+podcasts/*.wav
+
+# Subscriber data (contains email addresses)
+data/subscribers.csv

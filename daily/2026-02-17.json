@@ -1,0 +1,78 @@
+{
+  "date": "2026-02-17",
+  "summary": "Today saw several notable developments in ASR research. A new paper proposes a streaming Conformer variant that achieves sub-100ms latency while maintaining competitive WER on LibriSpeech. Meanwhile, HuggingFace saw the release of a fine-tuned Whisper model optimized for medical transcription, and a new multilingual dataset covering 15 low-resource African languages was published.",
+  "ideas": [
+    "Streaming ASR can now achieve sub-100ms latency without significant quality degradation using chunked attention patterns",
+    "Domain-specific fine-tuning of Whisper continues to show strong results, particularly for medical terminology",
+    "The gap in ASR performance for low-resource African languages is being actively addressed with new curated datasets",
+    "Self-supervised pre-training on unlabeled speech data remains the most effective approach for low-resource settings"
+  ],
+  "papers": [
+    {
+      "id": "2602.12345",
+      "title": "StreamConformer: Ultra-Low Latency Streaming ASR with Chunked Attention",
+      "authors": ["Alice Chen", "Bob Zhang", "Carol Liu", "David Park"],
+      "abstract": "We propose StreamConformer, a novel architecture for streaming automatic speech recognition that achieves sub-100ms latency while maintaining competitive word error rates.",
+      "categories": ["cs.CL", "eess.AS"],
+      "published": "2026-02-17",
+      "url": "https://arxiv.org/abs/2602.12345",
+      "pdf_url": "https://arxiv.org/pdf/2602.12345"
+    },
+    {
+      "id": "2602.12346",
+      "title": "WhisperMed: Domain-Adapted Speech Recognition for Clinical Documentation",
+      "authors": ["Eva Martinez", "Frank Wu"],
+      "abstract": "We present WhisperMed, a fine-tuned version of Whisper Large V3 specifically optimized for medical transcription tasks, achieving 12% relative WER reduction on clinical datasets.",
+      "categories": ["cs.CL"],
+      "published": "2026-02-17",
+      "url": "https://arxiv.org/abs/2602.12346",
+      "pdf_url": "https://arxiv.org/pdf/2602.12346"
+    },
+    {
+      "id": "2602.12347",
+      "title": "AfriSpeech-15: A Multilingual ASR Dataset for 15 African Languages",
+      "authors": ["Grace Okafor", "Henry Mensah", "Irene Adeyemi"],
+      "abstract": "We introduce AfriSpeech-15, a carefully curated multilingual speech dataset covering 15 African languages with over 2,000 hours of transcribed audio.",
+      "categories": ["cs.CL", "cs.SD"],
+      "published": "2026-02-17",
+      "url": "https://arxiv.org/abs/2602.12347",
+      "pdf_url": "https://arxiv.org/pdf/2602.12347"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "medai/whisper-large-v3-medical",
+      "author": "medai",
+      "downloads": 1523,
+      "likes": 42,
+      "url": "https://huggingface.co/medai/whisper-large-v3-medical",
+      "last_modified": "2026-02-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "streaming-asr/stream-conformer-base",
+      "author": "streaming-asr",
+      "downloads": 387,
+      "likes": 18,
+      "url": "https://huggingface.co/streaming-asr/stream-conformer-base",
+      "last_modified": "2026-02-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "afrispeech/afrispeech-15",
+      "author": "afrispeech",
+      "downloads": 256,
+      "url": "https://huggingface.co/datasets/afrispeech/afrispeech-15",
+      "last_modified": "2026-02-17"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 3,
+    "model_count": 2,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}

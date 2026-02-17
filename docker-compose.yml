@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./daily:/app/daily
+      - ./podcasts:/app/podcasts
+      - ./mindmaps:/app/mindmaps
+      - ./data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped

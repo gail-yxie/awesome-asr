@@ -1,0 +1,7 @@
+{
+  "name": "awesome-asr-tools",
+  "private": true,
+  "devDependencies": {
+    "markmap-cli": "^0.17.0"
+  }
+}
