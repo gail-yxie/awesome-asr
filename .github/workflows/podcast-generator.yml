@@ -1,0 +1,77 @@
+name: Weekly Podcast Generator
+
+on:
+  schedule:
+    - cron: '0 12 * * 0'  # Every Sunday at noon UTC
+  workflow_dispatch:       # Manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    # NOTE: For Qwen3-TTS, a GPU runner is recommended for faster generation.
+    # Replace 'ubuntu-latest' with your self-hosted GPU runner label if available.
+    # Example: runs-on: [self-hosted, gpu]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt soundfile
+
+      - name: Generate podcast script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -m scripts.podcast.script_generator
+
+      - name: Generate podcast audio
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python -m scripts.podcast.tts_engine
+
+      - name: Set week tag
+        run: echo "WEEK_TAG=$(date +%Y-W%V)" >> $GITHUB_ENV
+
+      - name: Upload podcast to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: podcast-${{ env.WEEK_TAG }}
+          name: "ASR Podcast — ${{ env.WEEK_TAG }}"
+          files: podcasts/*.mp3
+          body: "Auto-generated weekly ASR podcast episode."
+
+      - name: Update podcast index
+        run: |
+          WEEK_TAG="${{ env.WEEK_TAG }}"
+          REPO="${{ github.repository }}"
+          MP3_URL="https://github.com/${REPO}/releases/download/podcast-${WEEK_TAG}/${WEEK_TAG}.mp3"
+
+          # Create or update podcasts/index.md
+          if [ ! -f podcasts/index.md ]; then
+            echo "# ASR Podcast Episodes" > podcasts/index.md
+            echo "" >> podcasts/index.md
+            echo "| Episode | Date | Audio |" >> podcasts/index.md
+            echo "|---------|------|-------|" >> podcasts/index.md
+          fi
+
+          echo "| ${WEEK_TAG} | $(date +%Y-%m-%d) | [Listen](${MP3_URL}) |" >> podcasts/index.md
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add podcasts/
+          git diff --cached --quiet || git commit -m "podcast: Add episode for $(date +%Y-W%V)"
+          git push

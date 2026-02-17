@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks",
+    "authors": ["Alex Graves", "Santiago Fernández", "Faustino Gomez", "Jürgen Schmidhuber"],
+    "year": 2006,
+    "arxiv_id": null,
+    "url": "https://dl.acm.org/doi/10.1145/1143844.1143891",
+    "description": "Introduced CTC loss for training sequence-to-sequence models without requiring aligned labels"
+  },
+  {
+    "title": "Deep Speech: Scaling up end-to-end speech recognition",
+    "authors": ["Awni Hannun", "Carl Case", "Jared Casper", "Bryan Catanzaro", "Greg Diamos", "Erich Elsen", "Ryan Prenger", "Sanjeev Satheesh", "Shubho Sengupta", "Adam Coates", "Andrew Y. Ng"],
+    "year": 2014,
+    "arxiv_id": "1412.5567",
+    "url": "https://arxiv.org/abs/1412.5567",
+    "description": "End-to-end deep learning approach to speech recognition, demonstrating competitive performance without traditional pipeline components"
+  },
+  {
+    "title": "Listen, Attend and Spell",
+    "authors": ["William Chan", "Navdeep Jaitly", "Quoc V. Le", "Oriol Vinyals"],
+    "year": 2016,
+    "arxiv_id": "1508.01211",
+    "url": "https://arxiv.org/abs/1508.01211",
+    "description": "Attention-based sequence-to-sequence model for speech recognition (LAS architecture)"
+  },
+  {
+    "title": "Attention Is All You Need",
+    "authors": ["Ashish Vaswani", "Noam Shazeer", "Niki Parmar", "Jakob Uszkoreit", "Llion Jones", "Aidan N. Gomez", "Łukasz Kaiser", "Illia Polosukhin"],
+    "year": 2017,
+    "arxiv_id": "1706.03762",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "description": "Introduced the Transformer architecture that became the foundation for modern ASR models"
+  },
+  {
+    "title": "Speech-Transformer: A No-Recurrence Sequence-to-Sequence Model for Speech Recognition",
+    "authors": ["Linhao Dong", "Shuang Xu", "Bo Xu"],
+    "year": 2018,
+    "arxiv_id": null,
+    "url": "https://ieeexplore.ieee.org/document/8462506",
+    "description": "First application of the Transformer architecture directly to speech recognition"
+  },
+  {
+    "title": "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition",
+    "authors": ["Daniel S. Park", "William Chan", "Yu Zhang", "Chung-Cheng Chiu", "Barret Zoph", "Ekin D. Cubuk", "Quoc V. Le"],
+    "year": 2019,
+    "arxiv_id": "1904.08779",
+    "url": "https://arxiv.org/abs/1904.08779",
+    "description": "Simple yet effective data augmentation for ASR using spectrogram masking and warping"
+  },
+  {
+    "title": "wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations",
+    "authors": ["Alexei Baevski", "Yuhao Zhou", "Abdelrahman Mohamed", "Michael Auli"],
+    "year": 2020,
+    "arxiv_id": "2006.11477",
+    "url": "https://arxiv.org/abs/2006.11477",
+    "description": "Self-supervised pre-training framework for speech that learns representations from unlabeled audio"
+  },
+  {
+    "title": "Conformer: Convolution-augmented Transformer for Speech Recognition",
+    "authors": ["Anmol Gulati", "James Qin", "Chung-Cheng Chiu", "Niki Parmar", "Yu Zhang", "Jiahui Yu", "Wei Han", "Shibo Wang", "Zhengdong Zhang", "Yonghui Wu", "Ruoming Pang"],
+    "year": 2020,
+    "arxiv_id": "2005.08100",
+    "url": "https://arxiv.org/abs/2005.08100",
+    "description": "Combines convolutions and transformers for state-of-the-art ASR, capturing both local and global dependencies"
+  },
+  {
+    "title": "HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units",
+    "authors": ["Wei-Ning Hsu", "Benjamin Bolte", "Yao-Hung Hubert Tsai", "Kushal Lakhotia", "Ruslan Salakhutdinov", "Abdelrahman Mohamed"],
+    "year": 2021,
+    "arxiv_id": "2106.07447",
+    "url": "https://arxiv.org/abs/2106.07447",
+    "description": "Self-supervised speech model using masked prediction of discrete hidden units"
+  },
+  {
+    "title": "Robust Speech Recognition via Large-Scale Weak Supervision",
+    "authors": ["Alec Radford", "Jong Wook Kim", "Tao Xu", "Greg Brockman", "Christine McLeavey", "Ilya Sutskever"],
+    "year": 2022,
+    "arxiv_id": "2212.04356",
+    "url": "https://arxiv.org/abs/2212.04356",
+    "description": "Introduced Whisper, a large-scale weakly supervised ASR model trained on 680k hours of web audio"
+  },
+  {
+    "title": "Google USM: Scaling Automatic Speech Recognition Beyond 100 Languages",
+    "authors": ["Yu Zhang", "Wei Han", "James Qin", "Yongqiang Wang", "Ankur Bapna", "Zhehuai Chen", "Nanxin Chen", "Bo Li", "Vera Axelrod", "Gary Wang", "Zhong Meng", "Ke Hu", "Andrew Rosenberg", "Rohit Prabhavalkar", "Daniel S. Park", "Parisa Haghani", "Jason Riesa", "Ginger Perng", "Hagen Soltau", "Trevor Strohman", "Bhuvana Ramabhadran", "Tara Sainath", "Pedro Moreno", "Chung-Cheng Chiu", "Johan Schalkwyk", "Françoise Beaufays", "Yonghui Wu"],
+    "year": 2023,
+    "arxiv_id": "2303.01037",
+    "url": "https://arxiv.org/abs/2303.01037",
+    "description": "Universal Speech Model scaling ASR to 100+ languages with 2B parameters"
+  },
+  {
+    "title": "SeamlessM4T: Massively Multilingual & Multimodal Machine Translation",
+    "authors": ["Seamless Communication Team"],
+    "year": 2023,
+    "arxiv_id": "2308.11596",
+    "url": "https://arxiv.org/abs/2308.11596",
+    "description": "Multimodal model supporting speech-to-text, speech-to-speech, text-to-speech, and text-to-text translation across 100 languages"
+  }
+]

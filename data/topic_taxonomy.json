@@ -1,0 +1,41 @@
+{
+  "Automatic Speech Recognition": {
+    "Architectures": {
+      "CTC-based": ["wav2vec 2.0", "Conformer-CTC", "Deep Speech"],
+      "Attention-based": ["Whisper", "LAS", "Speech-Transformer"],
+      "Transducer": ["RNN-T", "Conformer-Transducer"],
+      "Foundation Models": ["USM", "SeamlessM4T", "MMS"]
+    },
+    "Self-Supervised Learning": {
+      "Contrastive": ["wav2vec 2.0", "WavLM"],
+      "Masked Prediction": ["HuBERT", "data2vec"],
+      "Multi-task": ["W2v-BERT"]
+    },
+    "Tasks": {
+      "Transcription": ["Real-time", "Offline", "Long-form"],
+      "Multilingual": ["Code-switching", "Low-resource", "Cross-lingual"],
+      "Multimodal": ["Audio-Visual ASR", "Speech Translation"],
+      "Specialized": ["Medical Transcription", "Meeting Transcription", "Call Center"]
+    },
+    "Datasets": {
+      "English": ["LibriSpeech", "Common Voice", "GigaSpeech", "SPGISpeech"],
+      "Multilingual": ["MLS", "FLEURS", "CoVoST", "VoxPopuli"],
+      "Benchmarks": ["ESB", "Open ASR Leaderboard"]
+    },
+    "Techniques": {
+      "Data Augmentation": ["SpecAugment", "Speed Perturbation", "Noise Injection"],
+      "Decoding": ["Beam Search", "CTC Decoding", "Language Model Fusion"],
+      "Compression": ["Quantization", "Distillation", "Pruning"]
+    },
+    "Evaluation": {
+      "Metrics": ["WER", "CER", "RTF", "BLEU (for ST)"],
+      "Benchmarks": ["Open ASR Leaderboard", "ESB", "SUPERB"]
+    },
+    "Applications": {
+      "Voice Assistants": [],
+      "Accessibility": ["Captioning", "Hearing Aid"],
+      "Content Creation": ["Podcasting", "Subtitling"],
+      "Enterprise": ["Call Analytics", "Meeting Notes"]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Awesome ASR{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">Awesome ASR</a>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/daily">Daily Updates</a>
+            <a href="/podcasts">Podcasts</a>
+            <a href="/mindmaps">Mindmaps</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>Awesome ASR &mdash; Automated ASR research tracking.
+           <a href="https://github.com/gail-yxie/awesome-asr">GitHub</a></p>
+    </footer>
+</body>
+</html>

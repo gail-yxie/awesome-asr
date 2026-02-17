@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0; padding:0; background:#f5f5f5; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5; padding:20px 0;">
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:8px; overflow:hidden;">
+                    <!-- Header -->
+                    <tr>
+                        <td style="background:#2563eb; padding:24px 32px;">
+                            <h1 style="margin:0; color:#ffffff; font-size:20px;">ASR Daily Update</h1>
+                            <p style="margin:4px 0 0; color:#dbeafe; font-size:14px;">{{ report.date }}</p>
+                        </td>
+                    </tr>
+
+                    <!-- Summary -->
+                    <tr>
+                        <td style="padding:24px 32px;">
+                            <h2 style="margin:0 0 12px; font-size:16px; color:#1a1a1a;">Summary</h2>
+                            <p style="margin:0; font-size:15px; color:#333; line-height:1.6;">{{ report.summary }}</p>
+                        </td>
+                    </tr>
+
+                    <!-- Stats -->
+                    <tr>
+                        <td style="padding:0 32px 16px;">
+                            <table width="100%" cellpadding="0" cellspacing="8">
+                                <tr>
+                                    <td style="background:#f0f7ff; padding:12px; border-radius:6px; text-align:center;">
+                                        <strong style="font-size:20px; color:#2563eb;">{{ report.stats.paper_count }}</strong>
+                                        <br><span style="font-size:12px; color:#666;">Papers</span>
+                                    </td>
+                                    <td style="background:#f0fdf4; padding:12px; border-radius:6px; text-align:center;">
+                                        <strong style="font-size:20px; color:#16a34a;">{{ report.stats.model_count }}</strong>
+                                        <br><span style="font-size:12px; color:#666;">Models</span>
+                                    </td>
+                                    <td style="background:#fefce8; padding:12px; border-radius:6px; text-align:center;">
+                                        <strong style="font-size:20px; color:#ca8a04;">{{ report.stats.dataset_count }}</strong>
+                                        <br><span style="font-size:12px; color:#666;">Datasets</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Top Papers -->
+                    {% if report.papers %}
+                    <tr>
+                        <td style="padding:8px 32px 16px;">
+                            <h2 style="margin:0 0 12px; font-size:16px; color:#1a1a1a;">Top Papers</h2>
+                            <table width="100%" cellpadding="8" cellspacing="0" style="font-size:13px; border-collapse:collapse;">
+                                {% for p in report.papers[:5] %}
+                                <tr style="border-bottom:1px solid #eee;">
+                                    <td style="padding:8px 0;">
+                                        <a href="{{ p.url }}" style="color:#2563eb; text-decoration:none; font-weight:500;">{{ p.title }}</a>
+                                        <br><span style="color:#666; font-size:12px;">{{ p.authors[:3]|join(', ') }}{% if p.authors|length > 3 %} et al.{% endif %}</span>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </td>
+                    </tr>
+                    {% endif %}
+
+                    <!-- Key Ideas -->
+                    {% if report.ideas %}
+                    <tr>
+                        <td style="padding:8px 32px 16px;">
+                            <h2 style="margin:0 0 12px; font-size:16px; color:#1a1a1a;">Key Ideas</h2>
+                            <ul style="margin:0; padding-left:20px; font-size:14px; color:#333; line-height:1.8;">
+                                {% for idea in report.ideas %}
+                                <li>{{ idea }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endif %}
+
+                    <!-- CTA -->
+                    <tr>
+                        <td style="padding:16px 32px 24px;" align="center">
+                            <a href="{{ site_url }}/daily/{{ report.date }}" style="display:inline-block; padding:10px 24px; background:#2563eb; color:#ffffff; text-decoration:none; border-radius:6px; font-size:14px; font-weight:500;">View Full Report</a>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding:16px 32px; background:#f9fafb; border-top:1px solid #eee; text-align:center;">
+                            <p style="margin:0; font-size:12px; color:#999;">
+                                You're receiving this because you subscribed to ASR Daily updates.
+                                <br>
+                                <a href="{{ site_url }}" style="color:#999;">Awesome ASR</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

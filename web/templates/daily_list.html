@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}ASR Daily Updates Archive{% endblock %}
+
+{% block content %}
+<h1>Daily Updates Archive</h1>
+
+{% if reports %}
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Papers</th>
+            <th>Models</th>
+            <th>Datasets</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in reports %}
+        <tr>
+            <td><a href="/daily/{{ r.date }}">{{ r.date }}</a></td>
+            <td>{{ r.stats.paper_count }}</td>
+            <td>{{ r.stats.model_count }}</td>
+            <td>{{ r.stats.dataset_count }}</td>
+            <td>{{ r.summary[:150] }}{% if r.summary|length > 150 %}...{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No daily reports yet. Run the daily tracker to start generating reports.</p>
+{% endif %}
+{% endblock %}

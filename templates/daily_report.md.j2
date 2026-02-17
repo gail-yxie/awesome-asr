@@ -1,0 +1,46 @@
+# ASR Daily Update — {{ date }}
+
+## Summary
+
+{{ summary }}
+
+## New Papers ({{ papers | length }})
+
+{% if papers %}
+| Title | Authors | Category | Link |
+|-------|---------|----------|------|
+{% for paper in papers %}
+| {{ paper.title }} | {{ paper.authors[:3] | join(', ') }}{% if paper.authors | length > 3 %} et al.{% endif %} | {{ paper.categories[0] if paper.categories else 'N/A' }} | [arXiv]({{ paper.url }}) |
+{% endfor %}
+{% else %}
+No new papers found today.
+{% endif %}
+
+## New Models & Datasets ({{ models | length + datasets | length }})
+
+{% if models or datasets %}
+| Name | Author | Type | Link |
+|------|--------|------|------|
+{% for model in models %}
+| {{ model.model_id }} | {{ model.author }} | model | [HF]({{ model.url }}) |
+{% endfor %}
+{% for dataset in datasets %}
+| {{ dataset.dataset_id }} | {{ dataset.author }} | dataset | [HF]({{ dataset.url }}) |
+{% endfor %}
+{% else %}
+No new models or datasets found today.
+{% endif %}
+
+{% if tweets %}
+## Twitter/X Highlights
+
+{% for tweet in tweets %}
+- **@{{ tweet.author }}**: {{ tweet.text[:200] }}{% if tweet.text | length > 200 %}...{% endif %} ([link]({{ tweet.url }}))
+{% endfor %}
+{% endif %}
+
+## Key Ideas
+
+{% for idea in ideas %}
+- {{ idea }}
+{% endfor %}
