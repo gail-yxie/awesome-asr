@@ -21,7 +21,7 @@ from scripts.deep_dive.mindmap_generator import generate_paper_mindmap
 from scripts.deep_dive.script_generator import generate_deep_dive_script
 from scripts.mindmap.markmap_renderer import render_single_mindmap
 from scripts.podcast.tts_engine import generate_audio
-from scripts.utils import MINDMAPS_DIR, PODCASTS_DIR, read_text, today_str, write_text
+from scripts.utils import MINDMAPS_DIR, PODCASTS_DIR, read_text, retry, today_str, write_text
 
 logger = logging.getLogger(__name__)
 
@@ -47,6 +47,7 @@ def run_pipeline(
     github_url: str | None = None,
     skip_audio: bool = False,
     skip_mindmap: bool = False,
+    on_progress: "callable | None" = None,
 ) -> dict:
     """Execute the full deep-dive pipeline.
 
@@ -56,11 +57,18 @@ def run_pipeline(
         github_url: Optional GitHub repository URL.
         skip_audio: If True, skip TTS generation.
         skip_mindmap: If True, skip mindmap generation.
+        on_progress: Optional callback(step_label) called before each step.
 
     Returns:
         Dict with paths to generated artifacts.
     """
+    def _progress(label: str) -> None:
+        logger.info("--- %s ---", label)
+        if on_progress:
+            on_progress(label)
+
     # 1. Parse input and fetch paper
+    _progress("Fetching paper metadata")
     arxiv_id = parse_arxiv_input(arxiv_input)
     paper = fetch_paper(arxiv_id)
     if hf_models:
@@ -69,19 +77,22 @@ def run_pipeline(
         paper.github_url = github_url
 
     # 2. Attempt full text extraction
+    _progress("Extracting full text")
     paper.full_text = fetch_full_text(arxiv_id)
 
-    # 3. Generate podcast script
-    logger.info("--- Generating podcast script ---")
-    script = generate_deep_dive_script(paper)
+    # 3. Generate podcast script (with retry)
+    _progress("Generating podcast script")
+    script = retry(lambda: generate_deep_dive_script(paper))
 
     # 4. Generate audio (unless skipped)
     audio_path = None
     if not skip_audio and script:
-        logger.info("--- Generating audio ---")
-        audio_path = generate_audio(
-            script_text=script,
-            output_stem=f"{paper.slug}-deep-dive",
+        _progress("Generating audio (this takes a few minutes)")
+        audio_path = retry(
+            lambda: generate_audio(
+                script_text=script,
+                output_stem=f"{paper.slug}-deep-dive",
+            )
         )
         if audio_path:
             _update_podcast_index(paper.slug, today_str())
@@ -90,9 +101,10 @@ def run_pipeline(
     mindmap_md_path = None
     mindmap_html_path = None
     if not skip_mindmap:
-        logger.info("--- Generating mindmap ---")
-        mindmap_md_path = generate_paper_mindmap(paper)
+        _progress("Generating mindmap")
+        mindmap_md_path = retry(lambda: generate_paper_mindmap(paper))
         if mindmap_md_path:
+            _progress("Rendering mindmap to HTML")
             mindmap_html_path = render_single_mindmap(mindmap_md_path)
 
     return {

@@ -202,6 +202,84 @@
     createSession();
   });
 
+  // ── Progress display ──
+  var progressEl = null;
+
+  function showProgress() {
+    if (progressEl) return;
+    progressEl = document.createElement("div");
+    progressEl.className = "chat-progress";
+    messagesEl.appendChild(progressEl);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function addProgressStep(label, status) {
+    if (!progressEl) showProgress();
+    // Check if step already exists (update from "running" to "done")
+    var existing = progressEl.querySelector('[data-tool="' + label + '"]');
+    if (existing) {
+      existing.className = "progress-step " + status;
+      existing.querySelector(".step-icon").textContent = status === "done" ? "\u2713" : "\u00B7\u00B7\u00B7";
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      return;
+    }
+    var step = document.createElement("div");
+    step.className = "progress-step " + status;
+    step.dataset.tool = label;
+    var icon = status === "running" ? "\u00B7\u00B7\u00B7" : "\u2713";
+    step.innerHTML = '<span class="step-icon">' + icon + '</span><span class="step-label">' + label + "</span>";
+    progressEl.appendChild(step);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function clearProgress() {
+    if (progressEl) {
+      progressEl.remove();
+      progressEl = null;
+    }
+  }
+
+  // ── SSE stream reader ──
+  async function readStream(response) {
+    var reader = response.body.getReader();
+    var decoder = new TextDecoder();
+    var buffer = "";
+    var result = null;
+
+    while (true) {
+      var chunk = await reader.read();
+      if (chunk.done) break;
+      buffer += decoder.decode(chunk.value, { stream: true });
+
+      var lines = buffer.split("\n");
+      buffer = lines.pop() || "";
+
+      for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].trim();
+        if (!line.startsWith("data: ")) continue;
+        try {
+          var event = JSON.parse(line.substring(6));
+          if (event.type === "thinking") {
+            addProgressStep(event.message, "running");
+          } else if (event.type === "tool_start") {
+            addProgressStep(event.label, "running");
+          } else if (event.type === "tool_done") {
+            addProgressStep(event.label, "done");
+          } else if (event.type === "substep") {
+            addProgressStep(event.label, "running");
+          } else if (event.type === "reply") {
+            result = event;
+          } else if (event.type === "error") {
+            result = { error: event.message };
+          }
+        } catch (e) {
+          // skip malformed lines
+        }
+      }
+    }
+    return result;
+  }
+
   // ── Submit handler ──
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -225,7 +303,6 @@
     chatHistory.push({ role: "user", parts: [{ text: text }] });
     input.value = "";
     setEnabled(false);
-    showTyping(true);
 
     // Auto-title from first user message
     var isFirst = chatHistory.filter(function (m) { return m.role === "user"; }).length === 1;
@@ -239,9 +316,13 @@
 
       if (!res.ok) throw new Error("Server error: " + res.status);
 
-      var data = await res.json();
-      var reply = data.reply || "Sorry, I could not generate a response.";
+      var data = await readStream(res);
+      clearProgress();
 
+      if (!data) throw new Error("No response received");
+      if (data.error) throw new Error(data.error);
+
+      var reply = data.text || "Sorry, I could not generate a response.";
       addMessage("assistant", renderMarkdown(reply));
       chatHistory.push({ role: "model", parts: [{ text: reply }] });
 
@@ -256,9 +337,9 @@
       var title = isFirst ? text.substring(0, 50) : undefined;
       await saveSession(title);
     } catch (err) {
+      clearProgress();
       addMessage("assistant", '<span class="error">Error: ' + err.message + "</span>");
     } finally {
-      showTyping(false);
       setEnabled(true);
       input.focus();
     }

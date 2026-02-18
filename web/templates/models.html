@@ -35,6 +35,27 @@
             {% if m.model_url %}
             <a href="{{ m.model_url }}" class="btn btn-secondary btn-sm" target="_blank">HuggingFace</a>
             {% endif %}
+            {% if m.podcast_url %}
+            <a href="{{ m.podcast_url }}" class="btn btn-podcast btn-sm" target="_blank">Podcast</a>
+            {% endif %}
+            {% if m.mindmap_url %}
+            <a href="{{ m.mindmap_url }}" class="btn btn-mindmap btn-sm" target="_blank">Mind Map</a>
+            {% endif %}
+        </div>
+
+        <div class="model-notes" data-slug="{{ m.slug }}">
+            <div class="notes-header">
+                <span class="notes-label">Notes</span>
+                <button class="btn-notes-toggle" onclick="toggleNotes(this)">Edit</button>
+            </div>
+            <div class="notes-display {% if not m.notes %}notes-empty{% endif %}">{{ m.notes or 'Click Edit to add notes...' }}</div>
+            <div class="notes-edit" style="display: none;">
+                <textarea class="notes-textarea" placeholder="Write your notes, ideas, or observations about this model...">{{ m.notes }}</textarea>
+                <div class="notes-actions">
+                    <button class="btn btn-sm" onclick="saveNotes(this)">Save</button>
+                    <button class="btn btn-secondary btn-sm" onclick="cancelNotes(this)">Cancel</button>
+                </div>
+            </div>
         </div>
     </section>
     {% endfor %}
@@ -44,4 +65,8 @@
     <p>No models cataloged yet.</p>
 </div>
 {% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='models.js') }}"></script>
 {% endblock %}

@@ -84,7 +84,7 @@ TOOL_DECLARATIONS = [
     ),
     types.FunctionDeclaration(
         name="generate_deep_dive",
-        description="Generate a deep-dive podcast and mindmap for a specific arXiv paper. Provide the arXiv ID and optionally HuggingFace model IDs and GitHub URL.",
+        description="Generate a deep-dive podcast and mindmap for a specific arXiv paper. Provide the arXiv ID and optionally HuggingFace model IDs and GitHub URL. The generated podcast and mindmap buttons will automatically appear on model cards that share this paper.",
         parameters={
             "type": "OBJECT",
             "properties": {
@@ -103,6 +103,23 @@ TOOL_DECLARATIONS = [
                 },
             },
             "required": ["arxiv_id"],
+        },
+    ),
+    types.FunctionDeclaration(
+        name="generate_all_model_media",
+        description="Batch-generate podcasts and mindmaps for all models in the catalog. Only processes papers that haven't been generated yet. This can take a long time.",
+        parameters={
+            "type": "OBJECT",
+            "properties": {
+                "skip_audio": {
+                    "type": "BOOLEAN",
+                    "description": "Skip podcast audio generation (mindmaps only). Default false.",
+                },
+                "skip_mindmap": {
+                    "type": "BOOLEAN",
+                    "description": "Skip mindmap generation (podcasts only). Default false.",
+                },
+            },
         },
     ),
     # Notes
@@ -272,27 +289,104 @@ def _generate_mindmaps() -> dict:
     }
 
 
+MEDIA_PATH = DATA_DIR / "model_media.json"
+
+
+def _update_model_media(arxiv_id: str, paper, result: dict) -> None:
+    """Update model_media.json with generated podcast/mindmap info."""
+    media = read_json(MEDIA_PATH) if MEDIA_PATH.exists() else {}
+    entry = {
+        "slug": paper.slug,
+        "generated_at": datetime.utcnow().isoformat(),
+    }
+    if result.get("audio_path"):
+        entry["podcast_audio"] = result["audio_path"].name
+        entry["podcast_script"] = f"{paper.slug}-deep-dive-script.md"
+    if result.get("mindmap_html_path"):
+        entry["mindmap_html"] = result["mindmap_html_path"].name
+        entry["mindmap_md"] = f"{paper.slug}-deep-dive.md"
+    media[arxiv_id] = entry
+    write_json(MEDIA_PATH, media)
+
+
 def _generate_deep_dive(
     arxiv_id: str,
     hf_models: list[str] | None = None,
     github_url: str | None = None,
+    _progress_cb: "callable | None" = None,
 ) -> dict:
+    from scripts.deep_dive.paper_fetcher import parse_arxiv_input
     from scripts.deep_dive.pipeline import run_pipeline
 
+    parsed_id = parse_arxiv_input(arxiv_id)
     result = run_pipeline(
         arxiv_input=arxiv_id,
         hf_models=hf_models,
         github_url=github_url,
         skip_audio=False,
         skip_mindmap=False,
+        on_progress=_progress_cb,
     )
     paper = result["paper"]
+    _update_model_media(parsed_id, paper, result)
     return {
         "status": "success",
         "title": paper.title,
         "script_path": str(result["script_path"]),
         "has_audio": result["audio_path"] is not None,
         "has_mindmap": result["mindmap_html_path"] is not None,
+    }
+
+
+def _generate_all_model_media(
+    skip_audio: bool = False,
+    skip_mindmap: bool = False,
+) -> dict:
+    import re
+
+    from scripts.deep_dive.pipeline import run_pipeline
+
+    models = read_json(DATA_DIR / "models.json")
+    media = read_json(MEDIA_PATH) if MEDIA_PATH.exists() else {}
+
+    # Deduplicate by arXiv ID
+    papers = {}
+    for m in models:
+        url = m.get("paper_url", "")
+        if not url:
+            continue
+        for prefix in (
+            "https://arxiv.org/abs/",
+            "https://arxiv.org/pdf/",
+            "http://arxiv.org/abs/",
+        ):
+            if url.startswith(prefix):
+                aid = url[len(prefix):].rstrip("/")
+                if aid not in media:
+                    papers[aid] = url
+                break
+
+    generated = []
+    failed = []
+    for aid in papers:
+        try:
+            result = run_pipeline(
+                arxiv_input=aid,
+                skip_audio=skip_audio,
+                skip_mindmap=skip_mindmap,
+            )
+            paper = result["paper"]
+            _update_model_media(aid, paper, result)
+            generated.append(paper.title)
+        except Exception as e:
+            logger.exception("Failed to process arXiv %s", aid)
+            failed.append(aid)
+
+    return {
+        "status": "success",
+        "generated": generated,
+        "failed": failed,
+        "total_in_index": len(read_json(MEDIA_PATH) if MEDIA_PATH.exists() else {}),
     }
 
 
@@ -342,6 +436,7 @@ HANDLERS = {
     "generate_podcast": _generate_podcast,
     "generate_mindmaps": _generate_mindmaps,
     "generate_deep_dive": _generate_deep_dive,
+    "generate_all_model_media": _generate_all_model_media,
     "save_note": _save_note,
     "list_notes": _list_notes,
     "delete_note": _delete_note,

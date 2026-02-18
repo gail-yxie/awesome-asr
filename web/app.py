@@ -2,12 +2,15 @@
 
 import json
 import logging
+import queue
+import re
+import threading
 import uuid
 from datetime import datetime
 from pathlib import Path
 
 import markdown
-from flask import Flask, abort, jsonify, render_template, request, send_from_directory
+from flask import Flask, Response, abort, jsonify, render_template, request, send_from_directory
 from google import genai
 from google.genai import types
 
@@ -23,6 +26,46 @@ DAILY_DIR = PROJECT_ROOT / "daily"
 DATA_DIR = PROJECT_ROOT / "data"
 PODCASTS_DIR = PROJECT_ROOT / "podcasts"
 MINDMAPS_DIR = PROJECT_ROOT / "mindmaps"
+
+
+MEDIA_PATH = DATA_DIR / "model_media.json"
+NOTES_PATH = DATA_DIR / "model_notes.json"
+
+
+def _model_slug(name: str) -> str:
+    """Generate a URL-safe slug from a model name."""
+    slug = name.lower()
+    slug = re.sub(r"[^a-z0-9\s-]", "", slug)
+    slug = re.sub(r"[\s]+", "-", slug).strip("-")
+    return slug
+
+
+def _extract_arxiv_id(paper_url: str) -> str | None:
+    """Extract arXiv ID from a paper URL."""
+    if not paper_url:
+        return None
+    for prefix in (
+        "https://arxiv.org/abs/",
+        "https://arxiv.org/pdf/",
+        "http://arxiv.org/abs/",
+    ):
+        if paper_url.startswith(prefix):
+            return paper_url[len(prefix) :].rstrip("/")
+    return None
+
+
+def _load_model_media() -> dict:
+    if MEDIA_PATH.exists():
+        with open(MEDIA_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def _load_model_notes() -> dict:
+    if NOTES_PATH.exists():
+        with open(NOTES_PATH) as f:
+            return json.load(f)
+    return {}
 
 
 def _load_daily_reports(limit: int = 30) -> list[dict]:
@@ -153,6 +196,26 @@ def models():
     if models_path.exists():
         with open(models_path) as f:
             model_list = json.load(f)
+
+    media = _load_model_media()
+    notes = _load_model_notes()
+
+    for m in model_list:
+        slug = _model_slug(m["name"])
+        m["slug"] = slug
+
+        # Attach podcast/mindmap URLs if generated for this paper
+        arxiv_id = _extract_arxiv_id(m.get("paper_url", ""))
+        if arxiv_id and arxiv_id in media:
+            entry = media[arxiv_id]
+            if entry.get("podcast_audio"):
+                m["podcast_url"] = f"/podcasts/audio/{entry['podcast_audio']}"
+            if entry.get("mindmap_html"):
+                m["mindmap_url"] = f"/mindmaps/{entry['mindmap_html']}"
+
+        # Attach notes
+        m["notes"] = notes.get(slug, {}).get("text", "")
+
     return render_template("models.html", models=model_list)
 
 
@@ -174,6 +237,29 @@ def serve_podcast_audio(filename: str):
 def serve_mindmap(filename: str):
     """Serve a mindmap HTML file."""
     return send_from_directory(str(MINDMAPS_DIR), filename)
+
+
+# ── Model Notes API ──
+
+
+@app.route("/api/models/<slug>/notes", methods=["POST"])
+def save_model_notes(slug: str):
+    """Save personal notes for a specific model."""
+    data = request.get_json()
+    if not data or "text" not in data:
+        return jsonify({"error": "Missing 'text' field"}), 400
+
+    notes = _load_model_notes()
+    notes[slug] = {
+        "text": data["text"],
+        "updated_at": datetime.utcnow().isoformat(),
+    }
+
+    NOTES_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(NOTES_PATH, "w") as f:
+        json.dump(notes, f, indent=2, ensure_ascii=False)
+
+    return jsonify({"status": "saved", "slug": slug})
 
 
 # ── Chat ──
@@ -204,9 +290,33 @@ def chat():
     return render_template("chat.html")
 
 
+TOOL_LABELS = {
+    "search_papers": "Searching papers",
+    "get_daily_report": "Loading daily report",
+    "get_leaderboard": "Fetching leaderboard",
+    "list_models": "Looking up models",
+    "generate_daily_report": "Generating daily report",
+    "generate_podcast": "Generating podcast",
+    "generate_mindmaps": "Generating mindmaps",
+    "generate_deep_dive": "Generating deep-dive",
+    "generate_all_model_media": "Generating all model media",
+    "save_note": "Saving note",
+    "list_notes": "Loading notes",
+    "delete_note": "Deleting note",
+}
+
+# Tools that support the _progress_cb parameter for sub-step reporting
+TOOLS_WITH_PROGRESS = {"generate_deep_dive"}
+
+
+def _sse_event(data: dict) -> str:
+    """Format a dict as an SSE data line."""
+    return f"data: {json.dumps(data)}\n\n"
+
+
 @app.route("/api/chat", methods=["POST"])
 def api_chat():
-    """Handle chat messages with Gemini function calling."""
+    """Handle chat messages with streaming progress via SSE."""
     data = request.get_json()
     if not data or "messages" not in data:
         return jsonify({"error": "Missing messages"}), 400
@@ -226,56 +336,126 @@ def api_chat():
         if parts:
             contents.append(types.Content(role=role, parts=parts))
 
-    client = genai.Client(api_key=config.gemini_api_key)
-    tools_used = []
+    def generate():
+        client = genai.Client(api_key=config.gemini_api_key)
+        tools_used = []
 
-    try:
-        for _ in range(MAX_TOOL_ROUNDS):
-            response = client.models.generate_content(
-                model=config.gemini_chat_model,
-                contents=contents,
-                config=types.GenerateContentConfig(
-                    system_instruction=SYSTEM_INSTRUCTION,
-                    tools=GEMINI_TOOLS,
-                ),
-            )
+        try:
+            yield _sse_event({"type": "thinking", "message": "Thinking..."})
 
-            # Check for function calls
-            function_calls = [
-                part for part in response.candidates[0].content.parts
-                if part.function_call
-            ]
-
-            if not function_calls:
-                # Pure text response — done
-                reply = response.text or ""
-                return jsonify({"reply": reply, "tools_used": tools_used})
-
-            # Execute each tool call and build responses
-            contents.append(response.candidates[0].content)
-
-            fn_response_parts = []
-            for part in function_calls:
-                fc = part.function_call
-                tools_used.append(fc.name)
-                logger.info("Chat tool call: %s(%s)", fc.name, fc.args)
-                result = handle_tool_call(fc.name, dict(fc.args))
-                fn_response_parts.append(
-                    types.Part.from_function_response(
-                        name=fc.name,
-                        response=result,
-                    )
+            for round_num in range(MAX_TOOL_ROUNDS):
+                response = client.models.generate_content(
+                    model=config.gemini_chat_model,
+                    contents=contents,
+                    config=types.GenerateContentConfig(
+                        system_instruction=SYSTEM_INSTRUCTION,
+                        tools=GEMINI_TOOLS,
+                    ),
                 )
 
-            contents.append(types.Content(role="user", parts=fn_response_parts))
+                # Check for function calls
+                function_calls = [
+                    part for part in response.candidates[0].content.parts
+                    if part.function_call
+                ]
 
-        # Exhausted rounds — return last text
-        reply = response.text or "I ran out of steps processing your request. Please try a simpler question."
-        return jsonify({"reply": reply, "tools_used": tools_used})
+                if not function_calls:
+                    reply = response.text or ""
+                    yield _sse_event({
+                        "type": "reply",
+                        "text": reply,
+                        "tools_used": tools_used,
+                    })
+                    return
 
-    except Exception as e:
-        logger.exception("Chat API error")
-        return jsonify({"error": str(e)}), 500
+                contents.append(response.candidates[0].content)
+
+                fn_response_parts = []
+                for part in function_calls:
+                    fc = part.function_call
+                    tool_name = fc.name
+                    tools_used.append(tool_name)
+                    label = TOOL_LABELS.get(tool_name, tool_name)
+
+                    yield _sse_event({
+                        "type": "tool_start",
+                        "tool": tool_name,
+                        "label": f"{label}...",
+                    })
+
+                    logger.info("Chat tool call: %s(%s)", fc.name, fc.args)
+                    tool_args = dict(fc.args)
+
+                    if tool_name in TOOLS_WITH_PROGRESS:
+                        # Run in thread with progress queue for sub-step events
+                        progress_q = queue.Queue()
+                        tool_result_holder = [None, None]  # [result, exception]
+
+                        def _run_tool(q=progress_q, h=tool_result_holder,
+                                      n=tool_name, a=tool_args):
+                            a["_progress_cb"] = lambda step: q.put(step)
+                            try:
+                                h[0] = handle_tool_call(n, a)
+                            except Exception as exc:
+                                h[1] = exc
+
+                        t = threading.Thread(target=_run_tool)
+                        t.start()
+                        while t.is_alive():
+                            try:
+                                step = progress_q.get(timeout=0.5)
+                                yield _sse_event({
+                                    "type": "substep",
+                                    "label": f"{step}...",
+                                })
+                            except queue.Empty:
+                                pass
+                        # Drain remaining events
+                        while not progress_q.empty():
+                            step = progress_q.get_nowait()
+                            yield _sse_event({
+                                "type": "substep",
+                                "label": f"{step}...",
+                            })
+                        if tool_result_holder[1]:
+                            raise tool_result_holder[1]
+                        result = tool_result_holder[0]
+                    else:
+                        result = handle_tool_call(tool_name, tool_args)
+
+                    yield _sse_event({
+                        "type": "tool_done",
+                        "tool": tool_name,
+                        "label": label,
+                    })
+
+                    fn_response_parts.append(
+                        types.Part.from_function_response(
+                            name=fc.name,
+                            response=result,
+                        )
+                    )
+
+                contents.append(types.Content(role="user", parts=fn_response_parts))
+
+                if round_num < MAX_TOOL_ROUNDS - 1:
+                    yield _sse_event({
+                        "type": "thinking",
+                        "message": "Analyzing results...",
+                    })
+
+            reply = response.text or "I ran out of steps processing your request. Please try a simpler question."
+            yield _sse_event({
+                "type": "reply",
+                "text": reply,
+                "tools_used": tools_used,
+            })
+
+        except Exception as e:
+            logger.exception("Chat API error")
+            yield _sse_event({"type": "error", "message": str(e)})
+
+    return Response(generate(), mimetype="text/event-stream")
 
 
 # ── Chat Sessions ──
