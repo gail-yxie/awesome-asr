@@ -37,7 +37,7 @@
 | 3 | [nvidia/parakeet-rnnt-1.1b](https://huggingface.co/nvidia/parakeet-rnnt-1.1b) | 7.04% |
 | 4 | [nvidia/parakeet-ctc-1.1b](https://huggingface.co/nvidia/parakeet-ctc-1.1b) | 7.58% |
 | 5 | [nvidia/parakeet-rnnt-0.6b](https://huggingface.co/nvidia/parakeet-rnnt-0.6b) | 7.63% |
-| 6 | [openai/whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | 7.70% |
+| 6 | [openai/whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | 7.7% |
 | 7 | [nvidia/parakeet-ctc-0.6b](https://huggingface.co/nvidia/parakeet-ctc-0.6b) | 7.99% |
 | 8 | [nvidia/stt_en_fastconformer_transducer_xlarge](https://huggingface.co/nvidia/stt_en_fastconformer_transducer_xlarge) | 8.06% |
 | 9 | [openai/whisper-large-v2](https://huggingface.co/openai/whisper-large-v2) | 8.06% |
