@@ -41,7 +41,11 @@
             {% if m.mindmap_url %}
             <a href="{{ m.mindmap_url }}" class="btn btn-mindmap btn-sm" target="_blank">Mind Map</a>
             {% endif %}
+            {% if m.arxiv_id and not m.podcast_url and not m.mindmap_url %}
+            <button class="btn btn-generate btn-sm" data-arxiv="{{ m.arxiv_id }}" onclick="generateMedia(this)">Generate Podcast & Mind Map</button>
+            {% endif %}
         </div>
+        <div class="generate-progress" style="display: none;"></div>
 
         <div class="model-notes" data-slug="{{ m.slug }}">
             <div class="notes-header">

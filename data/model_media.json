@@ -6,5 +6,13 @@
     "podcast_script": "qwen3-omni-technical-report-deep-dive-script.md",
     "mindmap_html": "qwen3-omni-technical-report-deep-dive.html",
     "mindmap_md": "qwen3-omni-technical-report-deep-dive.md"
+  },
+  "2212.04356": {
+    "slug": "robust-speech-recognition-via-large-scale-weak-supervision",
+    "generated_at": "2026-02-18T05:49:52.313309",
+    "podcast_audio": "robust-speech-recognition-via-large-scale-weak-supervision-deep-dive.mp3",
+    "podcast_script": "robust-speech-recognition-via-large-scale-weak-supervision-deep-dive-script.md",
+    "mindmap_html": "robust-speech-recognition-via-large-scale-weak-supervision-deep-dive.html",
+    "mindmap_md": "robust-speech-recognition-via-large-scale-weak-supervision-deep-dive.md"
   }
 }

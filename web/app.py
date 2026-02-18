@@ -30,6 +30,109 @@ MINDMAPS_DIR = PROJECT_ROOT / "mindmaps"
 
 MEDIA_PATH = DATA_DIR / "model_media.json"
 NOTES_PATH = DATA_DIR / "model_notes.json"
+PODCAST_NAMES_PATH = DATA_DIR / "podcast_names.json"
+
+# ── Podcast keyword highlighting ──
+
+PODCAST_KEYWORDS = [
+    # Architecture & methods
+    "Mixture-of-Experts", "MoE", "CTC", "Encoder-Decoder", "Transducer",
+    "autoregressive", "non-autoregressive", "Thinker-Talker",
+    "multi-codebook", "flash attention", "window attention",
+    "block-wise", "Rotary Position Embedding", "KV cache",
+    "Fbank", "downsampling", "token rate",
+    # Training & optimisation techniques
+    "contrastive learning", "supervised fine-tuning", "SFT",
+    "reinforcement learning", "GSPO", "pseudo-labeled",
+    "context biasing", "domain adaptation", "pretraining",
+    "noise robustness", "instruction injection",
+    # Innovation concepts
+    "Large Audio-Language Model", "LALM", "native audio processing",
+    "multimodal", "foundation model", "end-to-end",
+    "semantic-acoustic", "embedding space", "depth-aware",
+    "modality tax", "on-device", "edge-device",
+    "intent recognition", "Audio Reasoning",
+    # ASR-specific expert terms
+    "forced alignment", "forced aligner", "word-level timestamps",
+    "phoneme", "phonetic decoding", "acoustic variability",
+    "code-switching", "disfluency", "paraphasia",
+    "long-form audio", "streaming inference",
+    "first-packet latency", "Time-to-First-Token",
+    # Metrics
+    "Word Error Rate", "WER", "Real-Time Factor", "RTF",
+    "state-of-the-art",
+]
+
+_kw_pattern = re.compile(
+    r"\b("
+    + "|".join(re.escape(kw) for kw in sorted(PODCAST_KEYWORDS, key=len, reverse=True))
+    + r")\b",
+    re.IGNORECASE,
+)
+
+
+def _highlight_keywords(text: str) -> str:
+    """Wrap recognised ASR keywords in <mark> tags."""
+    return _kw_pattern.sub(r'<mark class="keyword">\1</mark>', text)
+
+
+def _render_podcast_script(raw_text: str) -> str:
+    """Convert a podcast script markdown file to styled HTML with dialogue blocks."""
+    import html as html_mod
+
+    lines = raw_text.strip().split("\n")
+    header_lines: list[str] = []
+    body_lines: list[str] = []
+
+    # Separate header (title + optional metadata) from dialogue
+    in_header = True
+    for line in lines:
+        if in_header:
+            if line.startswith("#") or line.startswith("*") or line.strip() == "":
+                header_lines.append(line)
+            else:
+                in_header = False
+                body_lines.append(line)
+        else:
+            body_lines.append(line)
+
+    # Render header via markdown
+    header_html = markdown.markdown("\n".join(header_lines)) if header_lines else ""
+
+    # Parse dialogue paragraphs (split on blank lines)
+    paragraphs = "\n".join(body_lines).split("\n\n")
+    dialogue_html_parts: list[str] = []
+
+    for para in paragraphs:
+        para = para.strip()
+        if not para:
+            continue
+
+        if para.startswith("Host:"):
+            speaker = "host"
+            label = "Host"
+            text = para[5:].strip()
+        elif para.startswith("Guest:"):
+            speaker = "guest"
+            label = "Guest"
+            text = para[6:].strip()
+        else:
+            # Non-dialogue paragraph (metadata, etc.)
+            safe_text = html_mod.escape(para)
+            safe_text = _highlight_keywords(safe_text)
+            dialogue_html_parts.append(f'<p class="script-meta">{safe_text}</p>')
+            continue
+
+        safe_text = html_mod.escape(text)
+        safe_text = _highlight_keywords(safe_text)
+        dialogue_html_parts.append(
+            f'<div class="dialogue dialogue-{speaker}">'
+            f'<span class="speaker-label">{label}</span>'
+            f"<p>{safe_text}</p>"
+            f"</div>"
+        )
+
+    return header_html + "\n".join(dialogue_html_parts)
 
 
 def _model_slug(name: str) -> str:
@@ -64,6 +167,13 @@ def _load_model_media() -> dict:
 def _load_model_notes() -> dict:
     if NOTES_PATH.exists():
         with open(NOTES_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def _load_podcast_names() -> dict:
+    if PODCAST_NAMES_PATH.exists():
+        with open(PODCAST_NAMES_PATH) as f:
             return json.load(f)
     return {}
 
@@ -163,17 +273,20 @@ def podcasts():
     """Podcast episodes listing."""
     episodes = _load_podcast_index()
 
-    # Also list script files
+    # Render script files with dialogue blocks and keyword highlights
     scripts = sorted(PODCASTS_DIR.glob("*-script.md"), reverse=True)
     script_map = {}
     for s in scripts:
         key = s.stem.replace("-script", "")
-        script_map[key] = markdown.markdown(s.read_text())
+        script_map[key] = _render_podcast_script(s.read_text())
+
+    podcast_names = _load_podcast_names()
 
     return render_template(
         "podcasts.html",
         episodes=episodes,
         script_map=script_map,
+        podcast_names=podcast_names,
     )
 
 
@@ -206,6 +319,7 @@ def models():
 
         # Attach podcast/mindmap URLs if generated for this paper
         arxiv_id = _extract_arxiv_id(m.get("paper_url", ""))
+        m["arxiv_id"] = arxiv_id or ""
         if arxiv_id and arxiv_id in media:
             entry = media[arxiv_id]
             if entry.get("podcast_audio"):
@@ -262,6 +376,120 @@ def save_model_notes(slug: str):
     return jsonify({"status": "saved", "slug": slug})
 
 
+# ── Model Media Generation API ──
+
+
+@app.route("/api/models/generate", methods=["POST"])
+def generate_model_media():
+    """Generate podcast and mindmap for a model's paper via SSE streaming."""
+    data = request.get_json()
+    if not data or "arxiv_id" not in data:
+        return jsonify({"error": "Missing 'arxiv_id' field"}), 400
+
+    arxiv_id = data["arxiv_id"]
+
+    def generate():
+        from scripts.deep_dive.pipeline import run_pipeline
+        from scripts.deep_dive.paper_fetcher import parse_arxiv_input
+        from scripts.utils import write_json, read_json
+
+        progress_q = queue.Queue()
+
+        def on_progress(step):
+            progress_q.put(step)
+
+        result_holder = [None, None]  # [result, exception]
+
+        def _run():
+            try:
+                result_holder[0] = run_pipeline(
+                    arxiv_input=arxiv_id,
+                    on_progress=on_progress,
+                )
+            except Exception as exc:
+                result_holder[1] = exc
+
+        t = threading.Thread(target=_run)
+        t.start()
+
+        while t.is_alive():
+            try:
+                step = progress_q.get(timeout=0.5)
+                yield _sse_event({"type": "progress", "label": step})
+            except queue.Empty:
+                pass
+
+        # Drain remaining
+        while not progress_q.empty():
+            step = progress_q.get_nowait()
+            yield _sse_event({"type": "progress", "label": step})
+
+        if result_holder[1]:
+            yield _sse_event({"type": "error", "message": str(result_holder[1])})
+            return
+
+        result = result_holder[0]
+        paper = result["paper"]
+        parsed_id = parse_arxiv_input(arxiv_id)
+
+        # Update model_media.json
+        media = read_json(MEDIA_PATH) if MEDIA_PATH.exists() else {}
+        entry = {
+            "slug": paper.slug,
+            "generated_at": datetime.utcnow().isoformat(),
+        }
+        if result.get("audio_path"):
+            entry["podcast_audio"] = result["audio_path"].name
+            entry["podcast_script"] = f"{paper.slug}-deep-dive-script.md"
+        if result.get("mindmap_html_path"):
+            entry["mindmap_html"] = result["mindmap_html_path"].name
+            entry["mindmap_md"] = f"{paper.slug}-deep-dive.md"
+        media[parsed_id] = entry
+        write_json(MEDIA_PATH, media)
+
+        # Build URLs for client to update buttons
+        urls = {}
+        if entry.get("podcast_audio"):
+            urls["podcast_url"] = f"/podcasts/audio/{entry['podcast_audio']}"
+        if entry.get("mindmap_html"):
+            urls["mindmap_url"] = f"/mindmaps/{entry['mindmap_html']}"
+
+        yield _sse_event({
+            "type": "done",
+            "title": paper.title,
+            "urls": urls,
+        })
+
+    return Response(generate(), mimetype="text/event-stream")
+
+
+# ── Podcast Names API ──
+
+
+@app.route("/api/podcast-name/<path:episode>", methods=["POST"])
+def save_podcast_name(episode: str):
+    """Save a custom display name for a podcast episode."""
+    data = request.get_json()
+    if not data or "name" not in data:
+        return jsonify({"error": "Missing 'name' field"}), 400
+
+    names = _load_podcast_names()
+    name_text = data["name"].strip()
+    if name_text:
+        names[episode] = {
+            "name": name_text,
+            "updated_at": datetime.utcnow().isoformat(),
+        }
+    else:
+        names.pop(episode, None)
+
+    PODCAST_NAMES_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(PODCAST_NAMES_PATH, "w") as f:
+        json.dump(names, f, indent=2, ensure_ascii=False)
+
+    return jsonify({"status": "saved", "episode": episode})
+
+
 # ── Chat ──
 
 SYSTEM_INSTRUCTION = """You are an ASR (Automatic Speech Recognition) research assistant for the Awesome ASR project.
@@ -273,11 +501,12 @@ When answering questions:
 - When listing papers or models, format them clearly with titles and links.
 - For generation tasks (daily report, podcast, mindmaps, deep-dive), let the user know these take time.
 - You can save and retrieve personal research notes for the user.
+- When asked to generate a podcast or mindmap for a model by name, use list_models to find the model first, extract the arXiv ID from its paper_url, then call generate_deep_dive with that arXiv ID. Do NOT ask the user for the arXiv ID if the model is in the catalog.
 
 Available data sources:
 - Daily reports with arXiv papers and HuggingFace models
 - Open ASR Leaderboard (ESB benchmark, WER scores)
-- Model catalog with architecture and download info
+- Model catalog with architecture, paper_url (arXiv), and model_url (HuggingFace)
 - Personal notes stored locally
 """
 

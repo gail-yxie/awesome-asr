@@ -55,7 +55,7 @@ TOOL_DECLARATIONS = [
     ),
     types.FunctionDeclaration(
         name="list_models",
-        description="List or search open-source ASR models from the catalog. Returns model name, date, architecture, downloads, and links.",
+        description="List or search open-source ASR models from the catalog. Returns model name, date, architecture, paper_url (arXiv), and model_url (HuggingFace). Use this to look up a model's arXiv paper URL before generating a deep-dive.",
         parameters={
             "type": "OBJECT",
             "properties": {
@@ -242,7 +242,8 @@ def _list_models(query: str | None = None) -> dict:
         query_lower = query.lower()
         models = [
             m for m in models
-            if query_lower in m.get("model_id", "").lower()
+            if query_lower in m.get("name", "").lower()
+            or query_lower in m.get("organization", "").lower()
             or query_lower in m.get("architecture", "").lower()
         ]
     # Limit to top 20 for context window
