@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}ASR Chat Assistant{% endblock %}
+
+{% block content %}
+<div class="chat-layout">
+    <aside class="chat-sidebar" id="chatSidebar">
+        <button class="btn new-chat-btn" id="newChatBtn">+ New Chat</button>
+        <div class="session-list" id="sessionList"></div>
+    </aside>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <button class="sidebar-toggle" id="sidebarToggle" title="Toggle history">&#9776;</button>
+            <div>
+                <h1>ASR Chat Assistant</h1>
+                <p>Ask questions about ASR research, generate reports, podcasts, mindmaps, and manage notes.</p>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message assistant">
+                <div class="message-bubble">
+                    Hi! I'm your ASR research assistant. I can help you:
+                    <ul>
+                        <li>Search and summarize recent papers</li>
+                        <li>View the ASR leaderboard and model catalog</li>
+                        <li>Generate daily reports, podcasts, and mindmaps</li>
+                        <li>Create deep-dive episodes for specific papers</li>
+                        <li>Save and manage your research notes</li>
+                    </ul>
+                    What would you like to know?
+                </div>
+            </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+            <span></span><span></span><span></span>
+        </div>
+
+        <form class="chat-input-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask about ASR research..." autocomplete="off" />
+            <button type="submit" id="sendBtn">Send</button>
+        </form>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+{% endblock %}

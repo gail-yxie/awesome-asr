@@ -34,3 +34,6 @@ podcasts/*.wav
 
 # Subscriber data (contains email addresses)
 data/subscribers.csv
+
+# Chat session data (personal/ephemeral)
+data/chat_sessions.json

@@ -1,10 +1,20 @@
 """Flask web application for displaying ASR daily trends, podcasts, and mindmaps."""
 
 import json
+import logging
+import uuid
+from datetime import datetime
 from pathlib import Path
 
 import markdown
-from flask import Flask, abort, render_template, send_from_directory
+from flask import Flask, abort, jsonify, render_template, request, send_from_directory
+from google import genai
+from google.genai import types
+
+from scripts.chat.tools import GEMINI_TOOLS, handle_tool_call
+from scripts.config import config
+
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -164,6 +174,192 @@ def serve_podcast_audio(filename: str):
 def serve_mindmap(filename: str):
     """Serve a mindmap HTML file."""
     return send_from_directory(str(MINDMAPS_DIR), filename)
+
+
+# ── Chat ──
+
+SYSTEM_INSTRUCTION = """You are an ASR (Automatic Speech Recognition) research assistant for the Awesome ASR project.
+You help users explore recent papers, models, leaderboards, and generate content like podcasts and mindmaps.
+
+When answering questions:
+- Use the available tools to fetch real data before responding.
+- Be concise but informative.
+- When listing papers or models, format them clearly with titles and links.
+- For generation tasks (daily report, podcast, mindmaps, deep-dive), let the user know these take time.
+- You can save and retrieve personal research notes for the user.
+
+Available data sources:
+- Daily reports with arXiv papers and HuggingFace models
+- Open ASR Leaderboard (ESB benchmark, WER scores)
+- Model catalog with architecture and download info
+- Personal notes stored locally
+"""
+
+MAX_TOOL_ROUNDS = 5
+
+
+@app.route("/chat")
+def chat():
+    """Chat assistant page."""
+    return render_template("chat.html")
+
+
+@app.route("/api/chat", methods=["POST"])
+def api_chat():
+    """Handle chat messages with Gemini function calling."""
+    data = request.get_json()
+    if not data or "messages" not in data:
+        return jsonify({"error": "Missing messages"}), 400
+
+    messages = data["messages"]
+    if not messages:
+        return jsonify({"error": "Empty messages"}), 400
+
+    # Build contents for Gemini
+    contents = []
+    for msg in messages:
+        role = msg.get("role", "user")
+        parts = []
+        for part in msg.get("parts", []):
+            if "text" in part:
+                parts.append(types.Part.from_text(text=part["text"]))
+        if parts:
+            contents.append(types.Content(role=role, parts=parts))
+
+    client = genai.Client(api_key=config.gemini_api_key)
+    tools_used = []
+
+    try:
+        for _ in range(MAX_TOOL_ROUNDS):
+            response = client.models.generate_content(
+                model=config.gemini_chat_model,
+                contents=contents,
+                config=types.GenerateContentConfig(
+                    system_instruction=SYSTEM_INSTRUCTION,
+                    tools=GEMINI_TOOLS,
+                ),
+            )
+
+            # Check for function calls
+            function_calls = [
+                part for part in response.candidates[0].content.parts
+                if part.function_call
+            ]
+
+            if not function_calls:
+                # Pure text response — done
+                reply = response.text or ""
+                return jsonify({"reply": reply, "tools_used": tools_used})
+
+            # Execute each tool call and build responses
+            contents.append(response.candidates[0].content)
+
+            fn_response_parts = []
+            for part in function_calls:
+                fc = part.function_call
+                tools_used.append(fc.name)
+                logger.info("Chat tool call: %s(%s)", fc.name, fc.args)
+                result = handle_tool_call(fc.name, dict(fc.args))
+                fn_response_parts.append(
+                    types.Part.from_function_response(
+                        name=fc.name,
+                        response=result,
+                    )
+                )
+
+            contents.append(types.Content(role="user", parts=fn_response_parts))
+
+        # Exhausted rounds — return last text
+        reply = response.text or "I ran out of steps processing your request. Please try a simpler question."
+        return jsonify({"reply": reply, "tools_used": tools_used})
+
+    except Exception as e:
+        logger.exception("Chat API error")
+        return jsonify({"error": str(e)}), 500
+
+
+# ── Chat Sessions ──
+
+SESSIONS_PATH = DATA_DIR / "chat_sessions.json"
+
+
+def _load_sessions() -> list[dict]:
+    if SESSIONS_PATH.exists():
+        with open(SESSIONS_PATH) as f:
+            return json.load(f)
+    return []
+
+
+def _save_sessions(sessions: list[dict]) -> None:
+    SESSIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(SESSIONS_PATH, "w") as f:
+        json.dump(sessions, f, indent=2, ensure_ascii=False)
+
+
+@app.route("/api/chat/sessions", methods=["GET"])
+def list_sessions():
+    """List all chat sessions (id, title, updated), most recent first."""
+    sessions = _load_sessions()
+    # Return lightweight list without full messages
+    summary = [
+        {"id": s["id"], "title": s["title"], "updated": s["updated"]}
+        for s in sorted(sessions, key=lambda x: x["updated"], reverse=True)
+    ]
+    return jsonify({"sessions": summary})
+
+
+@app.route("/api/chat/sessions", methods=["POST"])
+def create_session():
+    """Create a new chat session."""
+    session = {
+        "id": str(uuid.uuid4())[:8],
+        "title": "New Chat",
+        "created": datetime.utcnow().isoformat(),
+        "updated": datetime.utcnow().isoformat(),
+        "messages": [],
+    }
+    sessions = _load_sessions()
+    sessions.append(session)
+    _save_sessions(sessions)
+    return jsonify(session)
+
+
+@app.route("/api/chat/sessions/<session_id>", methods=["GET"])
+def get_session(session_id: str):
+    """Get a full chat session with messages."""
+    sessions = _load_sessions()
+    for s in sessions:
+        if s["id"] == session_id:
+            return jsonify(s)
+    return jsonify({"error": "Session not found"}), 404
+
+
+@app.route("/api/chat/sessions/<session_id>", methods=["PUT"])
+def update_session(session_id: str):
+    """Update a session's messages and title."""
+    data = request.get_json()
+    sessions = _load_sessions()
+    for s in sessions:
+        if s["id"] == session_id:
+            if "messages" in data:
+                s["messages"] = data["messages"]
+            if "title" in data:
+                s["title"] = data["title"]
+            s["updated"] = datetime.utcnow().isoformat()
+            _save_sessions(sessions)
+            return jsonify(s)
+    return jsonify({"error": "Session not found"}), 404
+
+
+@app.route("/api/chat/sessions/<session_id>", methods=["DELETE"])
+def delete_session(session_id: str):
+    """Delete a chat session."""
+    sessions = _load_sessions()
+    new_sessions = [s for s in sessions if s["id"] != session_id]
+    if len(new_sessions) == len(sessions):
+        return jsonify({"error": "Session not found"}), 404
+    _save_sessions(new_sessions)
+    return jsonify({"status": "deleted"})
 
 
 if __name__ == "__main__":

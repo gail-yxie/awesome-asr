@@ -211,9 +211,40 @@ def test_navigation(page: Page, base_url: str):
     page.click("nav >> text=Mindmaps")
     expect(page).to_have_url(f"{base_url}/mindmaps")
 
+    # Click "Chat" nav link
+    page.click("nav >> text=Chat")
+    expect(page).to_have_url(f"{base_url}/chat")
+
     # Click logo to go home
     page.click("nav >> text=Awesome ASR")
     expect(page).to_have_url(f"{base_url}/")
+
+
+def test_chat_page(page: Page, base_url: str):
+    """Test the chat assistant page."""
+    page.goto(f"{base_url}/chat")
+
+    # Verify page heading
+    expect(page.locator("h1")).to_have_text("ASR Chat Assistant")
+
+    # Verify welcome message
+    expect(page.locator("text=ASR research assistant")).to_be_visible()
+
+    # Verify sidebar with New Chat button
+    expect(page.locator("#newChatBtn")).to_be_visible()
+    expect(page.locator("#sessionList")).to_be_visible()
+
+    # Verify input form
+    chat_input = page.locator("#chatInput")
+    expect(chat_input).to_be_visible()
+    expect(chat_input).to_have_attribute("placeholder", "Ask about ASR research...")
+
+    # Verify send button
+    send_btn = page.locator("#sendBtn")
+    expect(send_btn).to_be_visible()
+    expect(send_btn).to_have_text("Send")
+
+    page.screenshot(path=f"{SCREENSHOTS_DIR}/07-chat.png", full_page=True)
 
 
 def test_404_page(page: Page, base_url: str):
