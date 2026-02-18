@@ -11,9 +11,6 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    # NOTE: For Qwen3-TTS, a GPU runner is recommended for faster generation.
-    # Replace 'ubuntu-latest' with your self-hosted GPU runner label if available.
-    # Example: runs-on: [self-hosted, gpu]
 
     steps:
       - name: Checkout repository
@@ -38,6 +35,7 @@ jobs:
 
       - name: Generate podcast audio
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python -m scripts.podcast.tts_engine
 

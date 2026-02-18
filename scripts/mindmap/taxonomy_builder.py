@@ -116,14 +116,18 @@ def generate_mindmap_markdown() -> None:
         data = read_json(path)
         for p in data.get("papers", []):
             cat = p.get("categories", ["Uncategorized"])[0]
-            papers_by_cat.setdefault(cat, []).append(p["title"])
+            url = p.get("url", "")
+            papers_by_cat.setdefault(cat, []).append((p["title"], url))
 
     if papers_by_cat:
         lines = ["# Recent ASR Papers", ""]
-        for cat, titles in sorted(papers_by_cat.items()):
+        for cat, papers in sorted(papers_by_cat.items()):
             lines.append(f"## {cat}")
-            for t in titles[:10]:
-                lines.append(f"- {t}")
+            for title, url in papers[:10]:
+                if url:
+                    lines.append(f"- [{title}]({url})")
+                else:
+                    lines.append(f"- {title}")
             lines.append("")
         write_text(MINDMAPS_DIR / "recent-papers.md", "\n".join(lines))
         logger.info("Generated recent-papers.md")
@@ -143,7 +147,7 @@ def generate_mindmap_markdown() -> None:
         for author, model_ids in sorted(models_by_author.items()):
             lines.append(f"## {author}")
             for mid in model_ids[:10]:
-                lines.append(f"- {mid}")
+                lines.append(f"- [{mid}](https://huggingface.co/{mid})")
             lines.append("")
         write_text(MINDMAPS_DIR / "models.md", "\n".join(lines))
         logger.info("Generated models.md")

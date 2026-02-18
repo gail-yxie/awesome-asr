@@ -2,9 +2,10 @@
 {% block title %}ASR Daily — {{ report.date }}{% endblock %}
 
 {% block content %}
-<h1>ASR Daily Update — {{ report.date }}</h1>
-
-<a href="/daily" class="btn">&larr; All Updates</a>
+<div class="page-header">
+    <h1>ASR Daily Update — {{ report.date }}</h1>
+    <a href="/daily" class="btn btn-secondary btn-sm">&larr; All Updates</a>
+</div>
 
 {% if html_content %}
 <section class="card markdown-content">
@@ -13,7 +14,7 @@
 {% else %}
 <section class="card">
     <h2>Summary</h2>
-    <p>{{ report.summary }}</p>
+    <p class="summary">{{ report.summary }}</p>
 </section>
 
 {% if report.papers %}

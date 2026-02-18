@@ -47,8 +47,8 @@ def test_dashboard(page: Page, base_url: str):
 
     # Verify today's highlights card is present
     expect(page.locator("text=Today's Highlights")).to_be_visible()
-    expect(page.locator("text=6 papers")).to_be_visible()
-    expect(page.locator("text=3 models")).to_be_visible()
+    expect(page.locator("text=1 papers")).to_be_visible()
+    expect(page.locator("text=100 models")).to_be_visible()
 
     # Screenshot
     page.screenshot(path=f"{SCREENSHOTS_DIR}/01-dashboard.png", full_page=True)
@@ -74,27 +74,63 @@ def test_daily_detail(page: Page, base_url: str):
     expect(page.locator("h1").first).to_contain_text("2026-02-17")
 
     # Verify paper content is rendered
-    expect(page.locator("text=Voxtral Realtime").first).to_be_visible()
-    expect(page.locator("text=Decoder-only Conformer").first).to_be_visible()
+    expect(page.locator("text=CLAP-Based").first).to_be_visible()
+    expect(page.locator("text=Aphasia").first).to_be_visible()
 
     page.screenshot(path=f"{SCREENSHOTS_DIR}/03-daily-detail.png", full_page=True)
 
 
 def test_podcasts_page(page: Page, base_url: str):
-    """Test the podcasts page."""
+    """Test the podcasts page with generated episode."""
     page.goto(f"{base_url}/podcasts")
 
-    expect(page.locator("h1")).to_have_text("ASR Weekly Podcast")
+    expect(page.locator("h1").first).to_have_text("ASR Weekly Podcast")
     expect(page.locator("text=Auto-generated podcast")).to_be_visible()
+
+    # Verify the episode card is present
+    expect(page.locator("h2", has_text="2026-W08")).to_be_visible()
+    expect(page.locator(".date", has_text="2026-02-17").first).to_be_visible()
+
+    # Verify audio player is rendered
+    audio = page.locator("audio").first
+    expect(audio).to_be_visible()
+
+    # Verify "View Script" expandable section exists
+    details_summary = page.locator("summary", has_text="View Script").first
+    expect(details_summary).to_be_visible()
+
+    # Expand the script and verify Host/Guest dialogue
+    details_summary.click()
+    expect(page.locator(".markdown-content").locator("text=Host:").first).to_be_visible()
 
     page.screenshot(path=f"{SCREENSHOTS_DIR}/04-podcasts.png", full_page=True)
 
 
 def test_mindmaps_page(page: Page, base_url: str):
-    """Test the mindmaps page."""
+    """Test the mindmaps page with generated mindmaps."""
     page.goto(f"{base_url}/mindmaps")
 
     expect(page.locator("h1")).to_have_text("Interactive ASR Mindmaps")
+
+    # Verify mindmap cards are rendered (3 standard + deep-dive)
+    cards = page.locator(".mindmap-grid .card")
+    expect(cards).to_have_count(4)
+
+    # Verify standard card headings
+    expect(page.locator("h2", has_text="Asr Overview")).to_be_visible()
+    expect(page.locator("h2", has_text="Recent Papers")).to_be_visible()
+    expect(page.locator("h2", has_text="Models")).to_be_visible()
+
+    # Verify deep-dive mindmap card
+    expect(page.locator("h2", has_text="Qwen3 Asr Technical Report Deep Dive")).to_be_visible()
+
+    # Verify iframes for each mindmap
+    iframes = page.locator("iframe")
+    expect(iframes).to_have_count(4)
+
+    # Verify "Open Full Screen" links
+    full_screen_links = page.locator("a", has_text="Open Full Screen")
+    expect(full_screen_links).to_have_count(4)
 
     page.screenshot(path=f"{SCREENSHOTS_DIR}/05-mindmaps.png", full_page=True)
 

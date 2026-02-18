@@ -2,8 +2,10 @@
 {% block title %}ASR Weekly Podcast{% endblock %}
 
 {% block content %}
-<h1>ASR Weekly Podcast</h1>
-<p>Auto-generated podcast episodes summarizing the latest ASR developments.</p>
+<div class="page-header">
+    <h1>ASR Weekly Podcast</h1>
+    <p>Auto-generated podcast episodes summarizing the latest ASR developments.</p>
+</div>
 
 {% if episodes %}
 {% for ep in episodes %}
@@ -29,6 +31,8 @@
 </section>
 {% endfor %}
 {% else %}
-<p>No podcast episodes yet. Episodes are generated weekly on Sundays.</p>
+<div class="card empty-state">
+    <p>No podcast episodes yet. Episodes are generated weekly on Sundays.</p>
+</div>
 {% endif %}
 {% endblock %}

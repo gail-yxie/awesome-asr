@@ -154,6 +154,12 @@ def mindmaps():
     return render_template("mindmaps.html", maps=maps)
 
 
+@app.route("/podcasts/audio/<filename>")
+def serve_podcast_audio(filename: str):
+    """Serve a podcast audio file."""
+    return send_from_directory(str(PODCASTS_DIR), filename)
+
+
 @app.route("/mindmaps/<filename>")
 def serve_mindmap(filename: str):
     """Serve a mindmap HTML file."""

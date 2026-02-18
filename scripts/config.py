@@ -10,7 +10,7 @@ load_dotenv()
 class Config:
     # LLM (Gemini)
     gemini_api_key: str = os.getenv("GEMINI_API_KEY", "")
-    gemini_model: str = os.getenv("GEMINI_MODEL", "gemini-3-pro-preview")
+    gemini_model: str = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
 
     # HuggingFace
     hf_token: str = os.getenv("HF_TOKEN", "")
@@ -18,7 +18,15 @@ class Config:
     # Twitter (optional)
     twitter_bearer_token: str = os.getenv("TWITTER_BEARER_TOKEN", "")
 
-    # TTS (Qwen3-TTS)
+    # TTS
+    tts_backend: str = os.getenv("TTS_BACKEND", "gemini")  # "gemini" or "local"
+    gemini_tts_model: str = os.getenv(
+        "GEMINI_TTS_MODEL", "gemini-2.5-flash-preview-tts"
+    )
+    tts_host_voice: str = os.getenv("TTS_HOST_VOICE", "Charon")
+    tts_guest_voice: str = os.getenv("TTS_GUEST_VOICE", "Puck")
+
+    # TTS (local Qwen3-TTS fallback)
     tts_model: str = os.getenv("TTS_MODEL", "Qwen/Qwen3-TTS-12Hz-0.6B-Base")
     tts_voice_prompt: str = os.getenv(
         "TTS_VOICE_PROMPT",

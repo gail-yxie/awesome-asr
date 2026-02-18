@@ -15,6 +15,39 @@ MINDMAP_FILES = [
 ]
 
 
+def render_single_mindmap(md_path: Path) -> Path | None:
+    """Render a single mindmap markdown file to HTML using markmap-cli.
+
+    Args:
+        md_path: Path to the markdown file.
+
+    Returns:
+        Path to the generated HTML file, or None on failure.
+    """
+    html_path = md_path.with_suffix(".html")
+    logger.info("Rendering %s → %s", md_path.name, html_path.name)
+
+    try:
+        subprocess.run(
+            ["npx", "markmap-cli", str(md_path), "-o", str(html_path), "--no-open"],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        logger.info("Generated %s", html_path)
+        return html_path
+    except FileNotFoundError:
+        logger.error("markmap-cli not found. Install with: npm install -g markmap-cli")
+        return None
+    except subprocess.CalledProcessError as e:
+        logger.error("markmap-cli failed for %s: %s", md_path.name, e.stderr)
+        return None
+    except subprocess.TimeoutExpired:
+        logger.error("markmap-cli timed out for %s", md_path.name)
+        return None
+
+
 def render_mindmaps() -> list[Path]:
     """Render all mindmap markdown files to HTML using markmap-cli.
 
@@ -29,36 +62,9 @@ def render_mindmaps() -> list[Path]:
             logger.info("Skipping %s (not found)", md_file)
             continue
 
-        html_file = md_file.replace(".md", ".html")
-        html_path = MINDMAPS_DIR / html_file
-
-        logger.info("Rendering %s → %s", md_file, html_file)
-        try:
-            subprocess.run(
-                [
-                    "npx",
-                    "markmap-cli",
-                    str(md_path),
-                    "-o",
-                    str(html_path),
-                    "--no-open",
-                ],
-                check=True,
-                capture_output=True,
-                text=True,
-                timeout=60,
-            )
-            generated.append(html_path)
-            logger.info("Generated %s", html_path)
-        except FileNotFoundError:
-            logger.error(
-                "markmap-cli not found. Install with: npm install -g markmap-cli"
-            )
-            break
-        except subprocess.CalledProcessError as e:
-            logger.error("markmap-cli failed for %s: %s", md_file, e.stderr)
-        except subprocess.TimeoutExpired:
-            logger.error("markmap-cli timed out for %s", md_file)
+        result = render_single_mindmap(md_path)
+        if result:
+            generated.append(result)
 
     # Generate an index
     if generated:

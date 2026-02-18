@@ -43,7 +43,10 @@ Return 3-7 bullet points (just the text, no bullet markers):"""
 
 
 def _get_client() -> genai.Client:
-    return genai.Client(api_key=config.gemini_api_key)
+    return genai.Client(
+        api_key=config.gemini_api_key,
+        http_options={"base_url": "https://generativelanguage.googleapis.com"},
+    )
 
 
 def _call_gemini(prompt: str, max_retries: int = 3) -> str:

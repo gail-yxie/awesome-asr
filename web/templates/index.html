@@ -2,10 +2,13 @@
 {% block title %}Awesome ASR — Dashboard{% endblock %}
 
 {% block content %}
-<h1>ASR Research Dashboard</h1>
+<div class="page-header">
+    <h1>ASR Research Dashboard</h1>
+    <p>Tracking the latest in automatic speech recognition research, models, and tools.</p>
+</div>
 
 {% if latest_report %}
-<section class="card">
+<section class="card hero-card">
     <h2>Today's Highlights — {{ latest_report.date }}</h2>
     <p class="summary">{{ latest_report.summary }}</p>
 
@@ -24,7 +27,7 @@
     </ul>
     {% endif %}
 
-    <a href="/daily/{{ latest_report.date }}" class="btn">View Full Report</a>
+    <a href="/daily/{{ latest_report.date }}" class="btn">View Full Report &rarr;</a>
 </section>
 {% else %}
 <section class="card">
@@ -35,14 +38,14 @@
 {% if latest_podcast %}
 <section class="card">
     <h2>Latest Podcast</h2>
-    <p>Episode: {{ latest_podcast.episode }} ({{ latest_podcast.date }})</p>
+    <p class="date">Episode: {{ latest_podcast.episode }} &middot; {{ latest_podcast.date }}</p>
     {% if latest_podcast.audio_url %}
     <audio controls>
         <source src="{{ latest_podcast.audio_url }}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     {% endif %}
-    <a href="/podcasts" class="btn">All Episodes</a>
+    <a href="/podcasts" class="btn btn-secondary">All Episodes &rarr;</a>
 </section>
 {% endif %}
 

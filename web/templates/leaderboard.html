@@ -3,13 +3,15 @@
 
 {% block content %}
 <style>.container { max-width: 1200px; }</style>
-<h1>Open ASR Leaderboard</h1>
-<p class="date">
-    Top 10 models by average Word Error Rate (WER) across 9 ESB benchmark datasets.
+
+<div class="page-header">
+    <h1>Open ASR Leaderboard</h1>
+    <p>Top 10 models by average Word Error Rate (WER) across 9 ESB benchmark datasets.
     {% if leaderboard.last_updated %}
-    <br>Last updated: {{ leaderboard.last_updated }}
+     &middot; Last updated: {{ leaderboard.last_updated }}
     {% endif %}
-</p>
+    </p>
+</div>
 
 {% if leaderboard.models %}
 <div class="leaderboard-table-wrap">
@@ -57,9 +59,9 @@
 </table>
 </div>
 
-<div class="card" style="margin-top: 1.5rem;">
+<div class="card" style="margin-top: 1rem;">
     <h2>About the Benchmarks</h2>
-    <p style="color: var(--text-muted); font-size: 0.9rem;">
+    <p class="summary">
         Models are evaluated on 9 datasets from the
         <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">ESB (End-to-end Speech Benchmark)</a>:
         LibriSpeech Clean/Other, Common Voice (CV), VoxPopuli (VP), TED-LIUM (TED),
@@ -68,7 +70,7 @@
     </p>
 </div>
 {% else %}
-<div class="card">
+<div class="card empty-state">
     <p>No leaderboard data available yet. Run the daily tracker to populate this page.</p>
 </div>
 {% endif %}

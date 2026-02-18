@@ -9,9 +9,9 @@
 {% if papers %}
 | Title | Authors | Category | Link |
 |-------|---------|----------|------|
-{% for paper in papers %}
+{%- for paper in papers %}
 | {{ paper.title }} | {{ paper.authors[:3] | join(', ') }}{% if paper.authors | length > 3 %} et al.{% endif %} | {{ paper.categories[0] if paper.categories else 'N/A' }} | [arXiv]({{ paper.url }}) |
-{% endfor %}
+{%- endfor %}
 {% else %}
 No new papers found today.
 {% endif %}
@@ -21,12 +21,12 @@ No new papers found today.
 {% if models or datasets %}
 | Name | Architecture | Key Innovation | Link |
 |------|-------------|----------------|------|
-{% for model in models %}
+{%- for model in models %}
 | {{ model.model_id }} | {{ model.architecture if model.architecture else '—' }} | {{ model.innovation if model.innovation else '—' }} | [HF]({{ model.url }}) |
-{% endfor %}
-{% for dataset in datasets %}
+{%- endfor %}
+{%- for dataset in datasets %}
 | {{ dataset.dataset_id }} | — | {{ dataset.author }} | [HF]({{ dataset.url }}) |
-{% endfor %}
+{%- endfor %}
 {% else %}
 No new models or datasets found today.
 {% endif %}

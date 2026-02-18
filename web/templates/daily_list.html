@@ -2,9 +2,13 @@
 {% block title %}ASR Daily Updates Archive{% endblock %}
 
 {% block content %}
-<h1>Daily Updates Archive</h1>
+<div class="page-header">
+    <h1>Daily Updates Archive</h1>
+    <p>Browse all daily ASR research tracking reports.</p>
+</div>
 
 {% if reports %}
+<div class="card">
 <table>
     <thead>
         <tr>
@@ -27,7 +31,10 @@
         {% endfor %}
     </tbody>
 </table>
+</div>
 {% else %}
-<p>No daily reports yet. Run the daily tracker to start generating reports.</p>
+<div class="card empty-state">
+    <p>No daily reports yet. Run the daily tracker to start generating reports.</p>
+</div>
 {% endif %}
 {% endblock %}

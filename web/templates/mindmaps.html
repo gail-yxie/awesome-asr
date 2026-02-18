@@ -2,8 +2,10 @@
 {% block title %}ASR Mindmaps{% endblock %}
 
 {% block content %}
-<h1>Interactive ASR Mindmaps</h1>
-<p>Explore ASR topics through interactive mindmaps. Click nodes to expand/collapse.</p>
+<div class="page-header">
+    <h1>Interactive ASR Mindmaps</h1>
+    <p>Explore ASR topics through interactive mindmaps. Click nodes to expand and collapse.</p>
+</div>
 
 {% if maps %}
 <div class="mindmap-grid">
@@ -11,11 +13,13 @@
     <section class="card">
         <h2>{{ m.name | replace('-', ' ') | title }}</h2>
         <iframe src="/mindmaps/{{ m.filename }}" width="100%" height="500" frameborder="0"></iframe>
-        <a href="/mindmaps/{{ m.filename }}" target="_blank" class="btn">Open Full Screen</a>
+        <a href="/mindmaps/{{ m.filename }}" target="_blank" class="btn btn-secondary">Open Full Screen &rarr;</a>
     </section>
     {% endfor %}
 </div>
 {% else %}
-<p>No mindmaps generated yet. Mindmaps are regenerated weekly on Sundays.</p>
+<div class="card empty-state">
+    <p>No mindmaps generated yet. Mindmaps are regenerated weekly on Sundays.</p>
+</div>
 {% endif %}
 {% endblock %}

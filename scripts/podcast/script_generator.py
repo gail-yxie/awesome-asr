@@ -17,17 +17,23 @@ from scripts.utils import (
 logger = logging.getLogger(__name__)
 
 PODCAST_PROMPT = """\
-You are a professional podcast host for "ASR Weekly", a podcast about
+You are writing a script for "ASR Weekly", a two-person podcast about
 Automatic Speech Recognition research and developments.
 
-Write a podcast script summarizing this week's ASR developments. The script
-should be conversational but informative, suitable for spoken delivery.
+The podcast has two speakers:
+- Host: The main presenter who introduces topics and drives the conversation.
+- Guest: A knowledgeable co-host who adds insights, asks clarifying questions,
+  and provides alternative perspectives.
+
+Format every line of dialogue as:
+  Host: <text>
+  Guest: <text>
 
 Guidelines:
 - Target length: {target_words} words (~10-12 minutes of audio)
 - Structure: intro → paper highlights → model releases → trend analysis → outro
+- Make it a natural conversation — the speakers should react to each other
 - Explain significance to practitioners, not just academics
-- Use smooth transitions between topics
 - Avoid overly academic language; be engaging and accessible
 - Reference specific paper titles and model names
 - End with a forward-looking statement about where the field is heading
@@ -36,7 +42,7 @@ Guidelines:
 
 {reports}
 
-Write the full podcast script now (just the spoken text, no stage directions):"""
+Write the full podcast script now (only Host: and Guest: dialogue lines, no stage directions):"""
 
 
 def generate_script() -> str:
@@ -77,7 +83,10 @@ def generate_script() -> str:
     )
 
     logger.info("Generating podcast script with Gemini...")
-    client = genai.Client(api_key=config.gemini_api_key)
+    client = genai.Client(
+        api_key=config.gemini_api_key,
+        http_options={"base_url": "https://generativelanguage.googleapis.com"},
+    )
     response = client.models.generate_content(
         model=config.gemini_model,
         contents=prompt,
