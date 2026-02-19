@@ -15,7 +15,7 @@ echo "=== awesome-asr VM setup ==="
 echo "[1/8] Installing system packages..."
 apt-get update
 apt-get install -y --no-install-recommends \
-  python3.11 python3.11-venv python3.11-dev \
+  python3 python3-venv python3-dev \
   ffmpeg git curl gnupg software-properties-common \
   nginx
 
@@ -54,7 +54,7 @@ fi
 
 # 6. Python virtual environment
 echo "[6/8] Setting up Python venv..."
-python3.11 -m venv "$VENV_DIR"
+python3 -m venv "$VENV_DIR"
 "${VENV_DIR}/bin/pip" install --upgrade pip
 "${VENV_DIR}/bin/pip" install -r "${REPO_DIR}/requirements.txt" soundfile
 
