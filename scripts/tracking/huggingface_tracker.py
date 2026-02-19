@@ -11,14 +11,17 @@ logger = logging.getLogger(__name__)
 
 
 def fetch_models(lookback_hours: int = 48) -> list[dict]:
-    """Fetch recently updated ASR models from HuggingFace.
+    """Fetch newly published ASR models from HuggingFace.
+
+    Only includes models whose ``created_at`` falls within the lookback
+    window, so models that were merely *updated* are excluded.
 
     Args:
         lookback_hours: How far back to search.
 
     Returns:
         List of model dicts with keys: model_id, author, downloads, likes, url,
-        last_modified, pipeline_tag.
+        created_at, pipeline_tag.
     """
     api = HfApi(token=config.hf_token or None)
     cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
@@ -26,11 +29,12 @@ def fetch_models(lookback_hours: int = 48) -> list[dict]:
     models = []
     for model in api.list_models(
         pipeline_tag="automatic-speech-recognition",
-        sort="lastModified",
+        sort="createdAt",
         direction=-1,
-        limit=100,
+        limit=200,
     ):
-        if model.last_modified and model.last_modified < cutoff:
+        created = getattr(model, "created_at", None)
+        if created and created < cutoff:
             break
 
         models.append(
@@ -40,39 +44,41 @@ def fetch_models(lookback_hours: int = 48) -> list[dict]:
                 "downloads": model.downloads or 0,
                 "likes": model.likes or 0,
                 "url": f"https://huggingface.co/{model.id}",
-                "last_modified": (
-                    model.last_modified.strftime("%Y-%m-%d")
-                    if model.last_modified
-                    else None
+                "created_at": (
+                    created.strftime("%Y-%m-%d") if created else None
                 ),
                 "pipeline_tag": model.pipeline_tag,
             }
         )
 
-    logger.info("Found %d recent ASR models on HuggingFace", len(models))
+    logger.info("Found %d newly published ASR models on HuggingFace", len(models))
     return models
 
 
 def fetch_datasets(lookback_hours: int = 48) -> list[dict]:
-    """Fetch recently updated ASR-related datasets from HuggingFace.
+    """Fetch newly published ASR-related datasets from HuggingFace.
+
+    Only includes datasets whose ``created_at`` falls within the lookback
+    window.
 
     Args:
         lookback_hours: How far back to search.
 
     Returns:
         List of dataset dicts with keys: dataset_id, author, downloads, url,
-        last_modified.
+        created_at.
     """
     api = HfApi(token=config.hf_token or None)
     cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
 
     datasets = []
     for ds in api.list_datasets(
-        sort="lastModified",
+        sort="createdAt",
         direction=-1,
         limit=200,
     ):
-        if ds.last_modified and ds.last_modified < cutoff:
+        created = getattr(ds, "created_at", None)
+        if created and created < cutoff:
             break
 
         # Filter by tags — look for ASR-related datasets
@@ -92,15 +98,13 @@ def fetch_datasets(lookback_hours: int = 48) -> list[dict]:
                 "author": ds.author or ds.id.split("/")[0],
                 "downloads": ds.downloads or 0,
                 "url": f"https://huggingface.co/datasets/{ds.id}",
-                "last_modified": (
-                    ds.last_modified.strftime("%Y-%m-%d")
-                    if ds.last_modified
-                    else None
+                "created_at": (
+                    created.strftime("%Y-%m-%d") if created else None
                 ),
             }
         )
 
-    logger.info("Found %d recent ASR datasets on HuggingFace", len(datasets))
+    logger.info("Found %d newly published ASR datasets on HuggingFace", len(datasets))
     return datasets
 
 

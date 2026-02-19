@@ -1,9 +1,9 @@
 name: Daily ASR Tracker
 
 on:
-  schedule:
-    - cron: '0 6 * * *'  # Daily at 06:00 UTC
-  workflow_dispatch:       # Manual trigger
+  # schedule:
+  #   - cron: '0 6 * * *'  # Migrated to Cloud Run Jobs + Cloud Scheduler
+  workflow_dispatch:       # Manual trigger (emergency fallback)
 
 permissions:
   contents: write
@@ -51,5 +51,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add daily/ README.md
+          git add data/seen_hf_ids.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "daily: Add ASR update for $(date +%Y-%m-%d)"
           git push

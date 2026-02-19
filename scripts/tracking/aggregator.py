@@ -1,5 +1,6 @@
 """Daily aggregator: fetches from all sources, summarizes, and writes reports."""
 
+import json
 import logging
 from datetime import datetime
 
@@ -9,6 +10,7 @@ from scripts.tracking.huggingface_tracker import fetch_datasets, fetch_models
 from scripts.tracking.leaderboard_tracker import update_leaderboard
 from scripts.tracking.twitter_tracker import fetch_tweets
 from scripts.utils import (
+    DATA_DIR,
     daily_report_path,
     render_template,
     today_str,
@@ -17,6 +19,54 @@ from scripts.utils import (
 )
 
 logger = logging.getLogger(__name__)
+
+_SEEN_HF_PATH = DATA_DIR / "seen_hf_ids.json"
+_SEEN_DAYS_TO_KEEP = 14
+
+
+def _load_seen_hf_ids() -> dict[str, list[str]]:
+    """Load the seen-IDs state file. Returns {date: [id, ...]}."""
+    if _SEEN_HF_PATH.exists():
+        with open(_SEEN_HF_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def _save_seen_hf_ids(seen: dict[str, list[str]]) -> None:
+    """Save the seen-IDs state file, pruning entries older than N days."""
+    dates = sorted(seen.keys())
+    if len(dates) > _SEEN_DAYS_TO_KEEP:
+        for d in dates[: len(dates) - _SEEN_DAYS_TO_KEEP]:
+            del seen[d]
+    write_json(_SEEN_HF_PATH, seen)
+
+
+def _deduplicate_hf(items: list[dict], id_key: str) -> list[dict]:
+    """Remove items that were already reported in previous days."""
+    seen = _load_seen_hf_ids()
+    all_seen_ids: set[str] = set()
+    for ids in seen.values():
+        all_seen_ids.update(ids)
+
+    unique = []
+    new_ids = []
+    for item in items:
+        item_id = item[id_key]
+        if item_id not in all_seen_ids:
+            unique.append(item)
+            new_ids.append(item_id)
+
+    # Record today's new IDs
+    date = today_str()
+    seen.setdefault(date, [])
+    seen[date].extend(new_ids)
+    _save_seen_hf_ids(seen)
+
+    logger.info(
+        "HF dedup (%s): %d fetched, %d already seen, %d new",
+        id_key, len(items), len(items) - len(unique), len(unique),
+    )
+    return unique
 
 
 def _deduplicate_papers(papers: list[dict]) -> list[dict]:
@@ -52,6 +102,8 @@ def run_daily_aggregation() -> dict:
 
     # Deduplicate
     papers = _deduplicate_papers(papers)
+    models = _deduplicate_hf(models, "model_id")
+    datasets = _deduplicate_hf(datasets, "dataset_id")
 
     # Update leaderboard
     logger.info("Updating Open ASR Leaderboard...")

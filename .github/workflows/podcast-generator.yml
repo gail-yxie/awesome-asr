@@ -1,9 +1,9 @@
 name: Weekly Podcast Generator
 
 on:
-  schedule:
-    - cron: '0 12 * * 0'  # Every Sunday at noon UTC
-  workflow_dispatch:       # Manual trigger
+  # schedule:
+  #   - cron: '0 12 * * 0'  # Migrated to Cloud Run Jobs + Cloud Scheduler
+  workflow_dispatch:       # Manual trigger (emergency fallback)
 
 permissions:
   contents: write

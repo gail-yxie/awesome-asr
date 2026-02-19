@@ -1,0 +1,30 @@
+FROM python:3.11-slim
+
+# System deps: ffmpeg (podcast TTS), git (clone/push), gh CLI (releases),
+# Node.js 20 + markmap-cli (mindmap rendering)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    git \
+    curl \
+    gnupg \
+    && curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+       | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+       > /etc/apt/sources.list.d/github-cli.list \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get update && apt-get install -y --no-install-recommends \
+    gh \
+    nodejs \
+    && npm install -g markmap-cli \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt soundfile
+
+# Copy only the entrypoint scripts — app code is git-cloned at runtime
+COPY scripts/jobs/ /app/jobs/
+RUN chmod +x /app/jobs/*.sh
+
+ENTRYPOINT ["/bin/bash"]
