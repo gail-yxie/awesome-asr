@@ -28,8 +28,7 @@ if [ -n "${SMTP_HOST:-}" ]; then
 fi
 
 # Commit and push
-git add daily/ README.md
-git add data/seen_hf_ids.json 2>/dev/null || true
+git add daily/ README.md data/
 git diff --cached --quiet || {
   git commit -m "daily: Add ASR update for $(date -u +%Y-%m-%d)"
   git pull --rebase origin main
