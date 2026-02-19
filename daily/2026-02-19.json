@@ -1,13 +1,12 @@
 {
   "date": "2026-02-19",
-  "summary": "Today’s research highlights **ZeroSyl**, a novel zero-resource syllable tokenization method that addresses the sequence length bottleneck in textless spoken language modeling (SLM) by aggregating self-supervised discrete units into more compact, phonetically-inspired structures. This development reflects an emerging trend in the field toward \"syllable-aware\" tokenization to better capture supra-segmental information and improve the efficiency of generative speech models without relying on orthographic resources. On the model front, a series of adapter-based fine-tunes for Meta's **MMS-1B** (targeting low-resource codes like kcn, hch, and el-CY) and the release of **faster-whisper-tilsync** demonstrate the ongoing community focus on specializing large-scale multilingual architectures for niche linguistic tasks and optimized inference. Together, these updates underscore a dual movement toward more sophisticated discrete unit discovery and the democratization of massive pre-trained models through efficient fine-tuning.",
+  "summary": "Today's research highlights a push toward more efficient Spoken Language Modeling (SLM) with the introduction of **ZeroSyl**, a zero-resource syllable tokenization method designed to mitigate the sequence length explosion typical of discrete units from self-supervised encoders. This work addresses a critical bottleneck in \"textless\" NLP by demonstrating that syllable-like units can be derived without textual supervision to improve the modeling efficiency and performance of raw audio-based models. Complementing this, new model releases include several language-specific fine-tunes of **Meta’s MMS-1b** (covering codes such as aft, meh, and koo) and a **Whisper-large-v2** fine-tune for Welsh, continuing the trend of adapting massive foundation models to low-resource and regional languages. Together, these developments reflect a dual focus on architectural efficiency for speech-only models and the practical expansion of multilingual ASR coverage through targeted fine-tuning.",
   "ideas": [
-    "ZeroSyl introduces a zero-resource method for segmenting speech into syllable-like units without requiring any textual data or phonetic transcripts.",
-    "The technique significantly compresses the sequence length of speech representations compared to standard frame-level discrete tokens from self-supervised models.",
-    "By reducing sequence length, ZeroSyl allows spoken language models to capture longer-range dependencies and improves computational efficiency during training.",
-    "The approach provides a simpler alternative to existing syllable-based tokenizers by eliminating the need for complex multi-stage training objectives.",
-    "This method facilitates the development of spoken language models for low-resource languages that lack written corpora or established orthographies.",
-    "ZeroSyl demonstrates that linguistically motivated units can be extracted directly from raw audio features through a streamlined segmentation process."
+    "ZeroSyl introduces a simplified, zero-resource approach to grouping discrete speech units into syllable-like tokens to address the high sequence length of self-supervised representations.",
+    "The method effectively reduces the number of tokens required to represent speech, allowing spoken language models to process longer-range dependencies more efficiently.",
+    "Unlike existing techniques that require complex training or textual resources, ZeroSyl relies on a straightforward heuristic to define segment boundaries without any supervision.",
+    "The research demonstrates that syllable-level tokenization enhances the performance of pure speech language models on downstream tasks while decreasing computational costs.",
+    "This approach highlights the potential for linguistically motivated units to be derived directly from the acoustic characteristics of self-supervised speech representations."
   ],
   "papers": [
     {
@@ -31,56 +30,66 @@
   ],
   "models": [
     {
-      "model_id": "vitthalbhandari/mms-1b-all-aft-all-kcn",
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-meh",
       "author": "vitthalbhandari",
       "downloads": 0,
       "likes": 0,
-      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-kcn",
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-meh",
       "created_at": "2026-02-19",
       "pipeline_tag": "automatic-speech-recognition"
     },
     {
-      "model_id": "vitthalbhandari/mms-1b-all-aft-all-hch",
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-lke",
       "author": "vitthalbhandari",
       "downloads": 0,
       "likes": 0,
-      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-hch",
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-lke",
       "created_at": "2026-02-19",
       "pipeline_tag": "automatic-speech-recognition"
     },
     {
-      "model_id": "kzmaker/faster-whisper-tilsync",
+      "model_id": "kzmaker/faster-whisper-tilsync-34000",
       "author": "kzmaker",
       "downloads": 0,
       "likes": 0,
-      "url": "https://huggingface.co/kzmaker/faster-whisper-tilsync",
+      "url": "https://huggingface.co/kzmaker/faster-whisper-tilsync-34000",
       "created_at": "2026-02-19",
       "pipeline_tag": "automatic-speech-recognition"
     },
     {
-      "model_id": "vitthalbhandari/mms-1b-all-aft-all-el-CY",
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-led",
       "author": "vitthalbhandari",
       "downloads": 0,
       "likes": 0,
-      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-el-CY",
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-led",
       "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-koo",
+      "author": "vitthalbhandari",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-koo",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "DewiBrynJones/whisper-large-v2-ft-cy-2602",
+      "author": "DewiBrynJones",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/DewiBrynJones/whisper-large-v2-ft-cy-2602",
+      "created_at": "2026-02-18",
       "pipeline_tag": "automatic-speech-recognition"
     }
   ],
-  "datasets": [
-    {
-      "dataset_id": "LAION-Voice/podcast-pile-770k",
-      "author": "LAION-Voice",
-      "downloads": 0,
-      "url": "https://huggingface.co/datasets/LAION-Voice/podcast-pile-770k",
-      "created_at": "2026-02-19"
-    }
-  ],
+  "datasets": [],
   "tweets": [],
   "stats": {
     "paper_count": 1,
-    "model_count": 4,
-    "dataset_count": 1,
+    "model_count": 6,
+    "dataset_count": 0,
     "tweet_count": 0
   }
 }

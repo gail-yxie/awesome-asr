@@ -78,6 +78,12 @@
     "vitthalbhandari/mms-1b-all-aft-all-hch",
     "kzmaker/faster-whisper-tilsync",
     "vitthalbhandari/mms-1b-all-aft-all-el-CY",
-    "LAION-Voice/podcast-pile-770k"
+    "LAION-Voice/podcast-pile-770k",
+    "vitthalbhandari/mms-1b-all-aft-all-meh",
+    "vitthalbhandari/mms-1b-all-aft-all-lke",
+    "kzmaker/faster-whisper-tilsync-34000",
+    "vitthalbhandari/mms-1b-all-aft-all-led",
+    "vitthalbhandari/mms-1b-all-aft-all-koo",
+    "DewiBrynJones/whisper-large-v2-ft-cy-2602"
   ]
 }
