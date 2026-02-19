@@ -93,7 +93,7 @@ Daily updates are generated automatically via GitHub Actions (daily at 06:00 UTC
 
 ## Podcasts
 
-Weekly podcast episodes summarizing ASR developments are auto-generated every Sunday and published as [GitHub Releases](https://github.com/gail-yxie/awesome-asr/releases). See the [`podcasts/`](podcasts/) directory for the episode index.
+Daily podcast episodes summarizing ASR developments are auto-generated and published as [GitHub Releases](https://github.com/gail-yxie/awesome-asr/releases). See the [`podcasts/`](podcasts/) directory for the episode index.
 
 ## Mindmaps
 

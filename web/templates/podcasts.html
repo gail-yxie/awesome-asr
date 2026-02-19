@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %}ASR Weekly Podcast{% endblock %}
+{% block title %}ASR Daily Podcast{% endblock %}
 
 {% block content %}
 <div class="page-header">
-    <h1>ASR Weekly Podcast</h1>
+    <h1>ASR Daily Podcast</h1>
     <p>Auto-generated podcast episodes summarizing the latest ASR developments.</p>
 </div>
 
@@ -68,7 +68,7 @@
 {% endfor %}
 {% else %}
 <div class="card empty-state">
-    <p>No podcast episodes yet. Episodes are generated weekly on Sundays.</p>
+    <p>No podcast episodes yet. Episodes are generated daily.</p>
 </div>
 {% endif %}
 {% endblock %}

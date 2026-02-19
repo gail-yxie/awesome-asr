@@ -6,7 +6,7 @@ REPO_URL="https://x-access-token:${GITHUB_PAT}@github.com/gail-yxie/awesome-asr.
 REPO_SLUG="gail-yxie/awesome-asr"
 WORKDIR="/workspace/awesome-asr"
 
-echo "=== Weekly Podcast Generator Job ==="
+echo "=== Daily Podcast Generator Job ==="
 echo "Date: $(date -u +%Y-%m-%d) UTC"
 
 # Configure git + gh auth
@@ -24,17 +24,17 @@ python -m scripts.podcast.script_generator
 # Generate podcast audio
 python -m scripts.podcast.tts_engine
 
-# Determine week tag
-WEEK_TAG=$(date -u +%Y-W%V)
+# Determine day tag
+DAY_TAG=$(date -u +%Y-%m-%d)
 
 # Upload to GitHub Release
-gh release create "podcast-${WEEK_TAG}" \
-  --title "ASR Podcast — ${WEEK_TAG}" \
-  --notes "Auto-generated weekly ASR podcast episode." \
+gh release create "podcast-${DAY_TAG}" \
+  --title "ASR Podcast — ${DAY_TAG}" \
+  --notes "Auto-generated daily ASR podcast episode." \
   podcasts/*.mp3 || echo "Warning: release may already exist, continuing..."
 
 # Update podcast index
-MP3_URL="https://github.com/${REPO_SLUG}/releases/download/podcast-${WEEK_TAG}/${WEEK_TAG}.mp3"
+MP3_URL="https://github.com/${REPO_SLUG}/releases/download/podcast-${DAY_TAG}/${DAY_TAG}.mp3"
 
 if [ ! -f podcasts/index.md ]; then
   echo "# ASR Podcast Episodes" > podcasts/index.md
@@ -43,12 +43,12 @@ if [ ! -f podcasts/index.md ]; then
   echo "|---------|------|-------|" >> podcasts/index.md
 fi
 
-echo "| ${WEEK_TAG} | $(date -u +%Y-%m-%d) | [Listen](${MP3_URL}) |" >> podcasts/index.md
+echo "| ${DAY_TAG} | $(date -u +%Y-%m-%d) | [Listen](${MP3_URL}) |" >> podcasts/index.md
 
 # Commit and push
 git add podcasts/
 git diff --cached --quiet || {
-  git commit -m "podcast: Add episode for ${WEEK_TAG}"
+  git commit -m "podcast: Add episode for ${DAY_TAG}"
   git pull --rebase origin main
   git push
 }

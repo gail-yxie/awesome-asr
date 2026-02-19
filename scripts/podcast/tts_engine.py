@@ -11,7 +11,7 @@ import wave
 from pathlib import Path
 
 from scripts.config import config
-from scripts.utils import PODCASTS_DIR, read_text, week_tag
+from scripts.utils import PODCASTS_DIR, day_tag, read_text
 
 logger = logging.getLogger(__name__)
 
@@ -96,7 +96,7 @@ def generate_audio_gemini(script_text: str, output_stem: str | None = None) -> P
 
     Args:
         script_text: The podcast script text.
-        output_stem: Base name for output files. Defaults to week_tag().
+        output_stem: Base name for output files. Defaults to day_tag().
     """
     from google import genai
 
@@ -120,7 +120,7 @@ def generate_audio_gemini(script_text: str, output_stem: str | None = None) -> P
         logger.error("No audio generated from Gemini TTS")
         return None
 
-    stem = output_stem or week_tag()
+    stem = output_stem or day_tag()
     wav_path = PODCASTS_DIR / f"{stem}.wav"
     mp3_path = PODCASTS_DIR / f"{stem}.mp3"
 
@@ -191,7 +191,7 @@ def generate_audio_local(script_text: str, output_stem: str | None = None) -> Pa
 
     Args:
         script_text: The podcast script text.
-        output_stem: Base name for output files. Defaults to week_tag().
+        output_stem: Base name for output files. Defaults to day_tag().
     """
     import numpy as np
     import torch
@@ -240,7 +240,7 @@ def generate_audio_local(script_text: str, output_stem: str | None = None) -> Pa
 
     full_audio = np.concatenate(all_audio)
 
-    stem = output_stem or week_tag()
+    stem = output_stem or day_tag()
     wav_path = PODCASTS_DIR / f"{stem}.wav"
     mp3_path = PODCASTS_DIR / f"{stem}.mp3"
 
@@ -273,15 +273,15 @@ def generate_audio(script_text: str | None = None, output_stem: str | None = Non
 
     Args:
         script_text: The podcast script text. If None, reads the latest script file.
-        output_stem: Base name for output files. Defaults to week_tag().
+        output_stem: Base name for output files. Defaults to day_tag().
 
     Returns:
         Path to the generated MP3 file, or None on failure.
     """
-    wt = week_tag()
+    dt = day_tag()
 
     if script_text is None:
-        script_path = PODCASTS_DIR / f"{wt}-script.md"
+        script_path = PODCASTS_DIR / f"{dt}-script.md"
         if not script_path.exists():
             logger.error("No script found at %s", script_path)
             return None

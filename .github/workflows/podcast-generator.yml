@@ -1,8 +1,8 @@
-name: Weekly Podcast Generator
+name: Daily Podcast Generator
 
 on:
   # schedule:
-  #   - cron: '0 12 * * 0'  # Migrated to Cloud Run Jobs + Cloud Scheduler
+  #   - cron: '0 8 * * *'  # Migrated to Cloud Run Jobs + Cloud Scheduler
   workflow_dispatch:       # Manual trigger (emergency fallback)
 
 permissions:
@@ -39,22 +39,22 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python -m scripts.podcast.tts_engine
 
-      - name: Set week tag
-        run: echo "WEEK_TAG=$(date +%Y-W%V)" >> $GITHUB_ENV
+      - name: Set day tag
+        run: echo "DAY_TAG=$(date +%Y-%m-%d)" >> $GITHUB_ENV
 
       - name: Upload podcast to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: podcast-${{ env.WEEK_TAG }}
-          name: "ASR Podcast — ${{ env.WEEK_TAG }}"
+          tag_name: podcast-${{ env.DAY_TAG }}
+          name: "ASR Podcast — ${{ env.DAY_TAG }}"
           files: podcasts/*.mp3
-          body: "Auto-generated weekly ASR podcast episode."
+          body: "Auto-generated daily ASR podcast episode."
 
       - name: Update podcast index
         run: |
-          WEEK_TAG="${{ env.WEEK_TAG }}"
+          DAY_TAG="${{ env.DAY_TAG }}"
           REPO="${{ github.repository }}"
-          MP3_URL="https://github.com/${REPO}/releases/download/podcast-${WEEK_TAG}/${WEEK_TAG}.mp3"
+          MP3_URL="https://github.com/${REPO}/releases/download/podcast-${DAY_TAG}/${DAY_TAG}.mp3"
 
           # Create or update podcasts/index.md
           if [ ! -f podcasts/index.md ]; then
@@ -64,12 +64,12 @@ jobs:
             echo "|---------|------|-------|" >> podcasts/index.md
           fi
 
-          echo "| ${WEEK_TAG} | $(date +%Y-%m-%d) | [Listen](${MP3_URL}) |" >> podcasts/index.md
+          echo "| ${DAY_TAG} | $(date +%Y-%m-%d) | [Listen](${MP3_URL}) |" >> podcasts/index.md
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add podcasts/
-          git diff --cached --quiet || git commit -m "podcast: Add episode for $(date +%Y-W%V)"
+          git diff --cached --quiet || git commit -m "podcast: Add episode for $(date +%Y-%m-%d)"
           git push

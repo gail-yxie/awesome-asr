@@ -74,7 +74,7 @@ TOOL_DECLARATIONS = [
     ),
     types.FunctionDeclaration(
         name="generate_podcast",
-        description="Generate a weekly podcast episode summarizing recent ASR developments. This takes several minutes.",
+        description="Generate a daily podcast episode summarizing today's ASR developments. This takes several minutes.",
         parameters={"type": "OBJECT", "properties": {}},
     ),
     types.FunctionDeclaration(

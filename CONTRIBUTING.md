@@ -27,7 +27,7 @@ If you find broken links or inaccurate information, please open an issue.
 This repository includes automated pipelines:
 
 - **Daily Tracker** — Runs daily at 06:00 UTC via GitHub Actions. Fetches new papers from arXiv, models from HuggingFace, and optionally tweets. Generates a daily report in `daily/`.
-- **Podcast Generator** — Runs weekly on Sundays. Generates a podcast script with Gemini and audio with Qwen3-TTS. Episodes are uploaded as GitHub Releases.
+- **Podcast Generator** — Runs daily at 08:00 UTC. Generates a podcast script with Gemini and audio with TTS. Episodes are uploaded as GitHub Releases.
 - **Mindmap Generator** — Runs weekly on Sundays. Updates the ASR topic taxonomy and renders interactive mindmaps in `mindmaps/`.
 - **Email Sender** — Sends daily reports to subscribers via self-hosted SMTP.
 - **Website** — Flask app serving daily reports, podcasts, and mindmaps. Deploy with `docker-compose up`.

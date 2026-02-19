@@ -84,7 +84,7 @@ def test_podcasts_page(page: Page, base_url: str):
     """Test the podcasts page with generated episode."""
     page.goto(f"{base_url}/podcasts")
 
-    expect(page.locator("h1").first).to_have_text("ASR Weekly Podcast")
+    expect(page.locator("h1").first).to_have_text("ASR Daily Podcast")
     expect(page.locator("text=Auto-generated podcast")).to_be_visible()
 
     # Verify the episode card is present

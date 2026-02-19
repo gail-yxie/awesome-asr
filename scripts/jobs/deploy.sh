@@ -199,8 +199,8 @@ create_or_update_schedule() {
 # Daily at 06:00 UTC
 create_or_update_schedule awesome-asr-daily-schedule "0 6 * * *" awesome-asr-daily
 
-# Podcast: Sundays at 12:00 UTC
-create_or_update_schedule awesome-asr-podcast-schedule "0 12 * * 0" awesome-asr-podcast
+# Podcast: Daily at 08:00 UTC (after daily tracker at 06:00)
+create_or_update_schedule awesome-asr-podcast-schedule "0 8 * * *" awesome-asr-podcast
 
 # Mindmap: Sundays at 14:00 UTC
 create_or_update_schedule awesome-asr-mindmap-schedule "0 14 * * 0" awesome-asr-mindmap

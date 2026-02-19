@@ -1,4 +1,4 @@
-"""Generate a podcast script from the week's daily reports using Gemini."""
+"""Generate a podcast script from today's daily report using Gemini."""
 
 import logging
 
@@ -7,17 +7,17 @@ from google import genai
 from scripts.config import config
 from scripts.utils import (
     PODCASTS_DIR,
+    day_tag,
     list_daily_json_reports,
     read_json,
     render_template,
-    week_tag,
     write_text,
 )
 
 logger = logging.getLogger(__name__)
 
 PODCAST_PROMPT = """\
-You are writing a script for "ASR Weekly", a two-person podcast about
+You are writing a script for "ASR Daily", a two-person podcast about
 Automatic Speech Recognition research and developments.
 
 The podcast has two speakers:
@@ -38,7 +38,7 @@ Guidelines:
 - Reference specific paper titles and model names
 - End with a forward-looking statement about where the field is heading
 
-## This Week's Daily Reports
+## Today's Report
 
 {reports}
 
@@ -46,12 +46,12 @@ Write the full podcast script now (only Host: and Guest: dialogue lines, no stag
 
 
 def generate_script() -> str:
-    """Generate a weekly podcast script and save it.
+    """Generate a daily podcast script and save it.
 
     Returns:
         The podcast script text.
     """
-    reports = list_daily_json_reports(days=7)
+    reports = list_daily_json_reports(days=1)
     if not reports:
         logger.warning("No daily reports found — cannot generate podcast script")
         return ""
@@ -94,9 +94,9 @@ def generate_script() -> str:
     script = response.text.strip()
 
     # Save script
-    wt = week_tag()
-    content = render_template("podcast_script.md.j2", week_label=wt, script=script)
-    script_path = PODCASTS_DIR / f"{wt}-script.md"
+    dt = day_tag()
+    content = render_template("podcast_script.md.j2", date_label=dt, script=script)
+    script_path = PODCASTS_DIR / f"{dt}-script.md"
     write_text(script_path, content)
     logger.info("Podcast script written to %s (%d words)", script_path, len(script.split()))
 

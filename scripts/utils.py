@@ -19,6 +19,10 @@ def today_str() -> str:
     return datetime.utcnow().strftime("%Y-%m-%d")
 
 
+def day_tag() -> str:
+    return datetime.utcnow().strftime("%Y-%m-%d")
+
+
 def week_tag() -> str:
     now = datetime.utcnow()
     return now.strftime("%Y-W%V")
