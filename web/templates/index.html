@@ -40,10 +40,17 @@
     <h2>Latest Podcast</h2>
     <p class="date">Episode: {{ latest_podcast.episode }} &middot; {{ latest_podcast.date }}</p>
     {% if latest_podcast.audio_url %}
-    <audio controls>
-        <source src="{{ latest_podcast.audio_url }}" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <div class="podcast-player" id="home-player">
+        <audio controls>
+            <source src="{{ latest_podcast.audio_url }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+    document.querySelector("#home-player audio").addEventListener("error", function() {
+        this.parentElement.innerHTML = '<p class="audio-unavailable">Audio not yet available.</p>';
+    });
+    </script>
     {% endif %}
     <a href="/podcasts" class="btn btn-secondary">All Episodes &rarr;</a>
 </section>

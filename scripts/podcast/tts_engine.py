@@ -56,11 +56,14 @@ def _gemini_tts_chunk(client, text: str) -> bytes:
         ),
     )
 
+    if not response.candidates or not response.candidates[0].content:
+        raise RuntimeError("Gemini TTS returned empty response (500/overloaded)")
+
     data = response.candidates[0].content.parts[0].inline_data.data
     return data
 
 
-def _split_script_for_gemini(text: str, max_chars: int = 7000) -> list[str]:
+def _split_script_for_gemini(text: str, max_chars: int = 1500) -> list[str]:
     """Split script into chunks that fit the Gemini TTS input limit.
 
     Splits on blank lines (dialogue turn boundaries) to keep speaker
@@ -102,7 +105,10 @@ def generate_audio_gemini(script_text: str, output_stem: str | None = None) -> P
 
     client = genai.Client(
         api_key=config.gemini_api_key,
-        http_options={"base_url": "https://generativelanguage.googleapis.com"},
+        http_options={
+            "base_url": "https://generativelanguage.googleapis.com",
+            "timeout": 120_000,  # 120s per request — TTS can be slow for long chunks
+        },
     )
 
     chunks = _split_script_for_gemini(script_text)

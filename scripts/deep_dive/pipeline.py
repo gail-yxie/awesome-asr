@@ -11,6 +11,9 @@ Usage:
 import argparse
 import logging
 
+import shutil
+import subprocess
+
 from scripts.deep_dive.paper_fetcher import (
     PaperInfo,
     fetch_full_text,
@@ -23,7 +26,47 @@ from scripts.mindmap.markmap_renderer import render_single_mindmap
 from scripts.podcast.tts_engine import generate_audio
 from scripts.utils import MINDMAPS_DIR, PODCASTS_DIR, read_text, retry, today_str, write_text
 
+GITHUB_REPO_SLUG = "gail-yxie/awesome-asr"
+GITHUB_RELEASE_TAG = "podcast-audio"
+
 logger = logging.getLogger(__name__)
+
+
+def _upload_to_github_release(audio_path: "Path") -> bool:
+    """Upload an audio file to the GitHub Release, creating the release if needed.
+
+    Returns True on success, False if gh CLI is unavailable or upload fails.
+    """
+    if not shutil.which("gh"):
+        logger.warning("gh CLI not found; skipping GitHub Release upload")
+        return False
+
+    # Ensure the release exists
+    subprocess.run(
+        [
+            "gh", "release", "create", GITHUB_RELEASE_TAG,
+            "--repo", GITHUB_REPO_SLUG,
+            "--title", "Podcast Audio",
+            "--notes", "Auto-generated podcast audio files.",
+        ],
+        capture_output=True,
+    )
+
+    # Upload (--clobber overwrites if the asset already exists)
+    result = subprocess.run(
+        [
+            "gh", "release", "upload", GITHUB_RELEASE_TAG,
+            str(audio_path), "--clobber",
+            "--repo", GITHUB_REPO_SLUG,
+        ],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode == 0:
+        logger.info("Uploaded %s to GitHub Release %s", audio_path.name, GITHUB_RELEASE_TAG)
+        return True
+    logger.warning("GitHub Release upload failed: %s", result.stderr)
+    return False
 
 
 def _update_podcast_index(slug: str, date: str) -> None:
@@ -95,6 +138,7 @@ def run_pipeline(
             )
         )
         if audio_path:
+            _upload_to_github_release(audio_path)
             _update_podcast_index(paper.slug, today_str())
 
     # 5. Generate mindmap (unless skipped)

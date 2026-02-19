@@ -121,12 +121,10 @@ systemctl enable nginx
 echo "Installing crontab..."
 cat > /tmp/asr-crontab << 'EOF'
 # awesome-asr scheduled jobs (times in UTC)
-# Daily tracker at 06:00 UTC
-0 6 * * * /opt/awesome-asr/run-job.sh daily
-# Podcast generator at 08:00 UTC
-0 8 * * * /opt/awesome-asr/run-job.sh podcast
-# Mindmap generator at 14:00 UTC on Sundays
-0 14 * * 0 /opt/awesome-asr/run-job.sh mindmap
+# All jobs at 12:00 UTC (04:00 PST)
+0 12 * * * /opt/awesome-asr/run-job.sh daily
+0 12 * * * /opt/awesome-asr/run-job.sh podcast
+0 12 * * * /opt/awesome-asr/run-job.sh mindmap
 EOF
 crontab -u "$APP_USER" /tmp/asr-crontab
 rm /tmp/asr-crontab

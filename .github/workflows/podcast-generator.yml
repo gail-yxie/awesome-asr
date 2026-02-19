@@ -2,7 +2,7 @@ name: Daily Podcast Generator
 
 on:
   # schedule:
-  #   - cron: '0 8 * * *'  # Migrated to Cloud Run Jobs + Cloud Scheduler
+  #   - cron: '0 12 * * *'  # 04:00 PST — Migrated to Cloud Run Jobs + Cloud Scheduler
   workflow_dispatch:       # Manual trigger (emergency fallback)
 
 permissions:

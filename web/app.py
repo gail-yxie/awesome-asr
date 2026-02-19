@@ -341,10 +341,25 @@ def mindmaps():
     return render_template("mindmaps.html", maps=maps)
 
 
+GITHUB_REPO_SLUG = "gail-yxie/awesome-asr"
+GITHUB_RELEASE_TAG = "podcast-audio"
+
+
 @app.route("/podcasts/audio/<filename>")
 def serve_podcast_audio(filename: str):
-    """Serve a podcast audio file."""
-    return send_from_directory(str(PODCASTS_DIR), filename)
+    """Serve a podcast audio file, falling back to a GitHub Release download."""
+    local_path = PODCASTS_DIR / filename
+    if local_path.exists():
+        return send_from_directory(str(PODCASTS_DIR), filename)
+
+    # Redirect to GitHub Release asset
+    from flask import redirect
+
+    gh_url = (
+        f"https://github.com/{GITHUB_REPO_SLUG}/releases/download/"
+        f"{GITHUB_RELEASE_TAG}/{filename}"
+    )
+    return redirect(gh_url, code=302)
 
 
 @app.route("/mindmaps/<filename>")

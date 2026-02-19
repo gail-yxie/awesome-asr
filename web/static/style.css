@@ -1110,6 +1110,13 @@ iframe {
     margin: 0;
 }
 
+.audio-unavailable {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
 .podcast-script-details {
     margin: 0;
     border-top: 1px solid var(--border-light);

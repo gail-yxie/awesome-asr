@@ -1,6 +1,18 @@
 (function () {
     "use strict";
 
+    // Handle audio loading errors — show a friendly message instead of a broken player
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".podcast-player audio").forEach(function (audio) {
+            audio.addEventListener("error", function () {
+                var player = audio.closest(".podcast-player");
+                player.innerHTML =
+                    '<p class="audio-unavailable">Audio file not yet available. ' +
+                    "Regenerate the episode to create the audio.</p>";
+            });
+        });
+    });
+
     window.toggleRename = function (btn) {
         var card = btn.closest(".podcast-card");
         var display = card.querySelector(".podcast-name-display");
