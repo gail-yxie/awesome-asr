@@ -1,5 +1,6 @@
 """Flask web application for displaying ASR daily trends, podcasts, and mindmaps."""
 
+import base64
 import json
 import logging
 import queue
@@ -517,6 +518,7 @@ When answering questions:
 - For generation tasks (daily report, podcast, mindmaps, deep-dive), let the user know these take time.
 - You can save and retrieve personal research notes for the user.
 - When asked to generate a podcast or mindmap for a model by name, use list_models to find the model first, extract the arXiv ID from its paper_url, then call generate_deep_dive with that arXiv ID. Do NOT ask the user for the arXiv ID if the model is in the catalog.
+- Users may send voice messages (audio). Listen to the audio and respond to their spoken request just like a text message.
 
 Available data sources:
 - Daily reports with arXiv papers and HuggingFace models
@@ -569,6 +571,9 @@ def api_chat():
     if not messages:
         return jsonify({"error": "Empty messages"}), 400
 
+    # Extract optional audio attachment
+    audio_data = data.get("audio")  # {data: base64, mime_type: "audio/webm"}
+
     # Build contents for Gemini
     contents = []
     for msg in messages:
@@ -579,6 +584,17 @@ def api_chat():
                 parts.append(types.Part.from_text(text=part["text"]))
         if parts:
             contents.append(types.Content(role=role, parts=parts))
+
+    # Append audio to the last user message if present
+    if audio_data and contents:
+        audio_bytes = base64.b64decode(audio_data["data"])
+        mime_type = audio_data.get("mime_type", "audio/webm")
+        audio_part = types.Part.from_bytes(data=audio_bytes, mime_type=mime_type)
+        # Add to the last user content
+        for i in range(len(contents) - 1, -1, -1):
+            if contents[i].role == "user":
+                contents[i].parts.append(audio_part)
+                break
 
     def generate():
         client = genai.Client(api_key=config.gemini_api_key)

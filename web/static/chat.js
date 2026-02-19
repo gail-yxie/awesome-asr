@@ -10,9 +10,20 @@
   const newChatBtn = document.getElementById("newChatBtn");
   const sidebarToggle = document.getElementById("sidebarToggle");
   const sidebar = document.getElementById("chatSidebar");
+  const micBtn = document.getElementById("micBtn");
+  const audioPreview = document.getElementById("audioPreview");
+  const audioPlayback = document.getElementById("audioPlayback");
+  const discardAudioBtn = document.getElementById("discardAudioBtn");
 
   let chatHistory = [];
   let currentSessionId = null;
+
+  // ── Audio recording state ──
+  var mediaRecorder = null;
+  var audioChunks = [];
+  var pendingAudioBlob = null;
+  var recordingTimer = null;
+  var recordingSeconds = 0;
 
   // ── Markdown-lite renderer ──
   function renderMarkdown(text) {
@@ -280,11 +291,96 @@
     return result;
   }
 
+  // ── Audio recording ──
+  function startRecording() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      alert("Microphone access requires HTTPS. Please access the site via https://.");
+      return;
+    }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      audioChunks = [];
+      mediaRecorder = new MediaRecorder(stream, { mimeType: "audio/webm;codecs=opus" });
+      mediaRecorder.addEventListener("dataavailable", function (e) {
+        if (e.data.size > 0) audioChunks.push(e.data);
+      });
+      mediaRecorder.addEventListener("stop", function () {
+        stream.getTracks().forEach(function (t) { t.stop(); });
+        pendingAudioBlob = new Blob(audioChunks, { type: "audio/webm" });
+        audioPlayback.src = URL.createObjectURL(pendingAudioBlob);
+        audioPreview.style.display = "flex";
+        clearInterval(recordingTimer);
+        recordingSeconds = 0;
+        micBtn.classList.remove("recording");
+        micBtn.querySelector(".mic-icon").style.display = "";
+        micBtn.querySelector(".stop-icon").style.display = "none";
+        micBtn.title = "Record audio";
+      });
+      mediaRecorder.start();
+      micBtn.classList.add("recording");
+      micBtn.querySelector(".mic-icon").style.display = "none";
+      micBtn.querySelector(".stop-icon").style.display = "";
+      micBtn.title = "Stop recording";
+
+      recordingSeconds = 0;
+      recordingTimer = setInterval(function () {
+        recordingSeconds++;
+        if (recordingSeconds >= 120) stopRecording(); // 2 min max
+      }, 1000);
+    }).catch(function (err) {
+      console.error("Microphone access denied", err);
+      alert("Microphone access is required for audio recording.");
+    });
+  }
+
+  function stopRecording() {
+    if (mediaRecorder && mediaRecorder.state === "recording") {
+      mediaRecorder.stop();
+    }
+  }
+
+  function discardAudio() {
+    pendingAudioBlob = null;
+    audioPreview.style.display = "none";
+    audioPlayback.src = "";
+  }
+
+  micBtn.addEventListener("click", function () {
+    if (mediaRecorder && mediaRecorder.state === "recording") {
+      stopRecording();
+    } else {
+      startRecording();
+    }
+  });
+
+  discardAudioBtn.addEventListener("click", function () {
+    discardAudio();
+  });
+
+  function blobToBase64(blob) {
+    return new Promise(function (resolve) {
+      var reader = new FileReader();
+      reader.onloadend = function () {
+        // Strip "data:audio/webm;base64," prefix
+        resolve(reader.result.split(",")[1]);
+      };
+      reader.readAsDataURL(blob);
+    });
+  }
+
   // ── Submit handler ──
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
     var text = input.value.trim();
-    if (!text) return;
+    var hasAudio = !!pendingAudioBlob;
+    if (!text && !hasAudio) return;
+
+    // Stop any in-progress recording
+    if (mediaRecorder && mediaRecorder.state === "recording") {
+      stopRecording();
+      // Wait a moment for the stop event to fire
+      await new Promise(function (r) { setTimeout(r, 200); });
+      hasAudio = !!pendingAudioBlob;
+    }
 
     // Auto-create session on first message if none active
     if (!currentSessionId) {
@@ -299,8 +395,27 @@
       }
     }
 
-    addMessage("user", renderMarkdown(text));
-    chatHistory.push({ role: "user", parts: [{ text: text }] });
+    // Build display message
+    var displayHtml = "";
+    if (hasAudio) {
+      displayHtml += '<div class="user-audio-badge">Voice message</div>';
+    }
+    if (text) {
+      displayHtml += renderMarkdown(text);
+    }
+    addMessage("user", displayHtml);
+
+    // Build history entry (text only for session storage)
+    var historyText = text || "(voice message)";
+    chatHistory.push({ role: "user", parts: [{ text: historyText }] });
+
+    // Prepare audio payload
+    var audioBase64 = null;
+    if (hasAudio) {
+      audioBase64 = await blobToBase64(pendingAudioBlob);
+      discardAudio();
+    }
+
     input.value = "";
     setEnabled(false);
 
@@ -308,10 +423,14 @@
     var isFirst = chatHistory.filter(function (m) { return m.role === "user"; }).length === 1;
 
     try {
+      var payload = { messages: chatHistory };
+      if (audioBase64) {
+        payload.audio = { data: audioBase64, mime_type: "audio/webm" };
+      }
       var res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: chatHistory }),
+        body: JSON.stringify(payload),
       });
 
       if (!res.ok) throw new Error("Server error: " + res.status);
@@ -334,7 +453,7 @@
       }
 
       // Save session after each exchange
-      var title = isFirst ? text.substring(0, 50) : undefined;
+      var title = isFirst ? (text || "Voice message").substring(0, 50) : undefined;
       await saveSession(title);
     } catch (err) {
       clearProgress();
