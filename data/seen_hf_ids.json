@@ -73,6 +73,11 @@
     "nkkbr/whisper-large-v3-zatoichi-ja-JDG_ver_20260217_lr_2.4e-5",
     "wandererupak/whisper-small-n-demo-ultimate-train-Z",
     "wandererupak/whisper-small-n-demo-ultimate-train-XX",
-    "wandererupak/whisper-small-n-demo-ultimate-train-Y"
+    "wandererupak/whisper-small-n-demo-ultimate-train-Y",
+    "vitthalbhandari/mms-1b-all-aft-all-kcn",
+    "vitthalbhandari/mms-1b-all-aft-all-hch",
+    "kzmaker/faster-whisper-tilsync",
+    "vitthalbhandari/mms-1b-all-aft-all-el-CY",
+    "LAION-Voice/podcast-pile-770k"
   ]
 }
