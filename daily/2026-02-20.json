@@ -1,0 +1,447 @@
+{
+  "date": "2026-02-20",
+  "summary": "Today's research highlights a shift toward goal-oriented ASR in specialized domains, notably with the paper on \"Voice-Driven Semantic Perception for UAV-Assisted Emergency Networks,\" which explores semantic communication to improve command-and-control reliability in infrastructure-deprived environments. The community continues to prioritize linguistic diversity through new fine-tuned Whisper checkpoints for low-resource languages, including Amharic, Swahili, Kalenjin, and Telugu. Furthermore, the release of ONNX-optimized Moonshine-base and CoreML-compatible WhisperKit models underscores a significant industry focus on edge deployment and inference efficiency for modern architectures. Overall, these developments reflect a dual effort to expand ASR accessibility to underserved linguistic groups while refining hardware-specific optimization for real-time, mission-critical applications.",
+  "ideas": [
+    "Integrating voice-driven semantic perception into UAV networks enables more intuitive and efficient emergency response coordination in infrastructure-less environments.",
+    "Semantic communication frameworks prioritize the transmission of meaningful intent over raw audio bits to minimize bandwidth usage in bandwidth-constrained aerial networks.",
+    "The system maps voice radio signals directly to actionable semantic representations to facilitate autonomous UAV navigation and situational awareness.",
+    "By focusing on semantic integrity rather than bit-level accuracy, the framework maintains high operational reliability despite the signal degradation common in emergency zones.",
+    "This approach bridges the gap between traditional emergency radio communications and modern autonomous aerial systems through real-time speech-to-intent processing."
+  ],
+  "papers": [
+    {
+      "id": "2602.17394v1",
+      "title": "Voice-Driven Semantic Perception for UAV-Assisted Emergency Networks",
+      "authors": [
+        "Nuno Saavedra",
+        "Pedro Ribeiro",
+        "André Coelho",
+        "Rui Campos"
+      ],
+      "abstract": "Unmanned Aerial Vehicle (UAV)-assisted networks are increasingly foreseen as a promising approach for emergency response, providing rapid, flexible, and resilient communications in environments where terrestrial infrastructure is degraded or unavailable. In such scenarios, voice radio communications remain essential for first responders due to their robustness; however, their unstructured nature prevents direct integration with automated UAV-assisted network management. This paper proposes SIREN, an AI-driven framework that enables voice-driven perception for UAV-assisted networks. By integrating Automatic Speech Recognition (ASR) with Large Language Model (LLM)-based semantic extraction and Natural Language Processing (NLP) validation, SIREN converts emergency voice traffic into structured, machine-readable information, including responding units, location references, emergency severity, and Quality-of-Service (QoS) requirements. SIREN is evaluated using synthetic emergency scenarios with controlled variations in language, speaker count, background noise, and message complexity. The results demonstrate robust transcription and reliable semantic extraction across diverse operating conditions, while highlighting speaker diarization and geographic ambiguity as the main limiting factors. These findings establish the feasibility of voice-driven situational awareness for UAV-assisted networks and show a practical foundation for human-in-the-loop decision support and adaptive network management in emergency response operations.",
+      "categories": [
+        "cs.NI",
+        "cs.AI",
+        "cs.SD"
+      ],
+      "published": "2026-02-19",
+      "url": "https://arxiv.org/abs/2602.17394v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.17394v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "korir8/sauti-whisper-small-swh",
+      "author": "korir8",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/korir8/sauti-whisper-small-swh",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RayOrz/whisperkit-coreml",
+      "author": "RayOrz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/RayOrz/whisperkit-coreml",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amanuelbyte/whisper-amharic-asr-finetuned",
+      "author": "amanuelbyte",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/amanuelbyte/whisper-amharic-asr-finetuned",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RareElf/kalenjin-asr",
+      "author": "RareElf",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/RareElf/kalenjin-asr",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "onnx-community/moonshine-base-ko-ONNX",
+      "author": "onnx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/onnx-community/moonshine-base-ko-ONNX",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/bw-voice_recog_de",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/bw-voice_recog_de",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Kush0610/whisper-medium-hi-uncurated-baseline-low-lr",
+      "author": "Kush0610",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Kush0610/whisper-medium-hi-uncurated-baseline-low-lr",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Kush0610/whisper-medium-hi-uncurated-baseline-high-lr",
+      "author": "Kush0610",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Kush0610/whisper-medium-hi-uncurated-baseline-high-lr",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Pomni/whisper-large-v3-russian-ties-podlodka-v1.2-ggml-allquants",
+      "author": "Pomni",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Pomni/whisper-large-v3-russian-ties-podlodka-v1.2-ggml-allquants",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "viswamaicoe/swecha-gonthuka-asr",
+      "author": "viswamaicoe",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/viswamaicoe/swecha-gonthuka-asr",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lucius-40/whisper-medium-bengali-finetuned-tustugi",
+      "author": "lucius-40",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lucius-40/whisper-medium-bengali-finetuned-tustugi",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "square-zero-labs/whisper-tiny",
+      "author": "square-zero-labs",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/square-zero-labs/whisper-tiny",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "square-zero-labs/whisper-base",
+      "author": "square-zero-labs",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/square-zero-labs/whisper-base",
+      "created_at": "2026-02-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Kush0610/whisper-medium-hi-uncurated-mft-1-1-1",
+      "author": "Kush0610",
+      "downloads": 5,
+      "likes": 0,
+      "url": "https://huggingface.co/Kush0610/whisper-medium-hi-uncurated-mft-1-1-1",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "recent-travels/whisper.cpp",
+      "author": "recent-travels",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/recent-travels/whisper.cpp",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alihassanshahid/finetuned-whisper-small",
+      "author": "alihassanshahid",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/alihassanshahid/finetuned-whisper-small",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alihassanshahid/finetuned-whisper-600",
+      "author": "alihassanshahid",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/alihassanshahid/finetuned-whisper-600",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alihassanshahid/finetuned-whisper-400",
+      "author": "alihassanshahid",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/alihassanshahid/finetuned-whisper-400",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alihassanshahid/finetuned-whisper-200",
+      "author": "alihassanshahid",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/alihassanshahid/finetuned-whisper-200",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-forced-aligner-0.6b-q4-k-m",
+      "author": "OpenVoiceOS",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-forced-aligner-0.6b-q4-k-m",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-forced-aligner-0.6b-q5-k-m",
+      "author": "OpenVoiceOS",
+      "downloads": 17,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-forced-aligner-0.6b-q5-k-m",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-forced-aligner-0.6b-q8-0",
+      "author": "OpenVoiceOS",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-forced-aligner-0.6b-q8-0",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-forced-aligner-0.6b-f16",
+      "author": "OpenVoiceOS",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-forced-aligner-0.6b-f16",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-asr-0.6b-q4-k-m",
+      "author": "OpenVoiceOS",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-asr-0.6b-q4-k-m",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "pisethchan/wav2vec2-large-mms-1b-khmer-colab",
+      "author": "pisethchan",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/pisethchan/wav2vec2-large-mms-1b-khmer-colab",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-asr-0.6b-q5-k-m",
+      "author": "OpenVoiceOS",
+      "downloads": 15,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-asr-0.6b-q5-k-m",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-asr-0.6b-q8-0",
+      "author": "OpenVoiceOS",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-asr-0.6b-q8-0",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "pisethchan/trainer_output",
+      "author": "pisethchan",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/pisethchan/trainer_output",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-asr-0.6b-f16",
+      "author": "OpenVoiceOS",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-asr-0.6b-f16",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Aregay01/whisper-small-tigrinya-merged",
+      "author": "Aregay01",
+      "downloads": 75,
+      "likes": 0,
+      "url": "https://huggingface.co/Aregay01/whisper-small-tigrinya-merged",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RonalLI/whisper-large-v3-2026",
+      "author": "RonalLI",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/RonalLI/whisper-large-v3-2026",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-ukv",
+      "author": "vitthalbhandari",
+      "downloads": 17,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-ukv",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kzmaker/faster-whisper-whisper-en-child-asr-1e-5-ep3-wer12",
+      "author": "kzmaker",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/kzmaker/faster-whisper-whisper-en-child-asr-1e-5-ep3-wer12",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-ttj",
+      "author": "vitthalbhandari",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-ttj",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-tob",
+      "author": "vitthalbhandari",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-tob",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-rwm",
+      "author": "vitthalbhandari",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-rwm",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "whisper-large/whisper-large-optimize-lang",
+      "author": "whisper-large",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/whisper-large/whisper-large-optimize-lang",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-ruc",
+      "author": "vitthalbhandari",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-ruc",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-pne",
+      "author": "vitthalbhandari",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-pne",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kzmaker/faster-whisper-tilsync-10500",
+      "author": "kzmaker",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/kzmaker/faster-whisper-tilsync-10500",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/mms-1b-all-aft-all-mmc",
+      "author": "vitthalbhandari",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/mms-1b-all-aft-all-mmc",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lim1t/whisper-small-lora-ko",
+      "author": "lim1t",
+      "downloads": 72,
+      "likes": 0,
+      "url": "https://huggingface.co/lim1t/whisper-small-lora-ko",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Trelis/whisper-large-v3-turbo-pilotgpt-unified-all-raw-no-pack-1s-merged-filtered",
+      "author": "Trelis",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/Trelis/whisper-large-v3-turbo-pilotgpt-unified-all-raw-no-pack-1s-merged-filtered",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "larimb/w2v-bert-2.0-ptbr2",
+      "author": "larimb",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/larimb/w2v-bert-2.0-ptbr2",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "bealore/vibevoice-asr-fp8",
+      "author": "bealore",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/bealore/vibevoice-asr-fp8",
+      "created_at": "2026-02-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 1,
+    "model_count": 45,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
