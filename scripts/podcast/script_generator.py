@@ -11,6 +11,7 @@ from scripts.utils import (
     day_tag,
     list_daily_json_reports,
     read_json,
+    read_text,
     render_template,
     set_date_override,
     write_text,
@@ -109,7 +110,34 @@ def generate_script(date: str | None = None) -> str:
     write_text(script_path, content)
     logger.info("Podcast script written to %s (%d words)", script_path, len(script.split()))
 
+    # Update podcast index
+    _update_podcast_index(dt)
+
     return script
+
+
+def _update_podcast_index(episode_date: str) -> None:
+    """Insert a daily episode row into podcasts/index.md (newest first)."""
+    index_path = PODCASTS_DIR / "index.md"
+    header = "# ASR Podcast Episodes\n\n| Episode | Date | Audio |\n|---------|------|-------|\n"
+    if index_path.exists():
+        content = read_text(index_path)
+    else:
+        content = header
+
+    entry = f"| {episode_date} | {episode_date} | [Listen](/podcasts/audio/{episode_date}.mp3) |"
+    if entry in content:
+        return
+
+    # Insert after the header row so newest episodes stay at the top
+    lines = content.splitlines()
+    insert_at = next(
+        (i + 1 for i, line in enumerate(lines) if line.startswith("|---")),
+        len(lines),
+    )
+    lines.insert(insert_at, entry)
+    write_text(index_path, "\n".join(lines) + "\n")
+    logger.info("Updated podcasts/index.md with episode %s", episode_date)
 
 
 if __name__ == "__main__":
