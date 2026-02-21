@@ -11,7 +11,7 @@ import wave
 from pathlib import Path
 
 from scripts.config import config
-from scripts.utils import PODCASTS_DIR, day_tag, read_text, set_date_override
+from scripts.utils import PODCASTS_DIR, day_tag, read_text, retry, set_date_override
 
 logger = logging.getLogger(__name__)
 
@@ -119,7 +119,7 @@ def generate_audio_gemini(script_text: str, output_stem: str | None = None) -> P
         logger.info(
             "Synthesizing chunk %d/%d (%d chars)", i + 1, len(chunks), len(chunk)
         )
-        pcm = _gemini_tts_chunk(client, chunk)
+        pcm = retry(lambda c=chunk: _gemini_tts_chunk(client, c))
         all_pcm.extend(pcm)
 
     if not all_pcm:
