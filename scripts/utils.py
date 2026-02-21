@@ -14,13 +14,21 @@ MINDMAPS_DIR = PROJECT_ROOT / "mindmaps"
 DATA_DIR = PROJECT_ROOT / "data"
 TEMPLATES_DIR = PROJECT_ROOT / "templates"
 
+_date_override: str | None = None
+
+
+def set_date_override(date_str: str) -> None:
+    """Override the date returned by day_tag() and today_str()."""
+    global _date_override
+    _date_override = date_str
+
 
 def today_str() -> str:
-    return datetime.utcnow().strftime("%Y-%m-%d")
+    return _date_override or datetime.utcnow().strftime("%Y-%m-%d")
 
 
 def day_tag() -> str:
-    return datetime.utcnow().strftime("%Y-%m-%d")
+    return _date_override or datetime.utcnow().strftime("%Y-%m-%d")
 
 
 def week_tag() -> str:

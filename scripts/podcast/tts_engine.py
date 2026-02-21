@@ -11,7 +11,7 @@ import wave
 from pathlib import Path
 
 from scripts.config import config
-from scripts.utils import PODCASTS_DIR, day_tag, read_text
+from scripts.utils import PODCASTS_DIR, day_tag, read_text, set_date_override
 
 logger = logging.getLogger(__name__)
 
@@ -314,6 +314,15 @@ def generate_audio(script_text: str | None = None, output_stem: str | None = Non
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", help="Generate for a specific date (YYYY-MM-DD)")
+    args = parser.parse_args()
+
+    if args.date:
+        set_date_override(args.date)
+
     logging.basicConfig(level=logging.INFO)
     result = generate_audio()
     if result:

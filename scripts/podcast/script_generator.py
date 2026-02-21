@@ -6,11 +6,13 @@ from google import genai
 
 from scripts.config import config
 from scripts.utils import (
+    DAILY_DIR,
     PODCASTS_DIR,
     day_tag,
     list_daily_json_reports,
     read_json,
     render_template,
+    set_date_override,
     write_text,
 )
 
@@ -45,13 +47,20 @@ Guidelines:
 Write the full podcast script now (only Host: and Guest: dialogue lines, no stage directions):"""
 
 
-def generate_script() -> str:
+def generate_script(date: str | None = None) -> str:
     """Generate a daily podcast script and save it.
+
+    Args:
+        date: Specific date (YYYY-MM-DD) to generate for. Defaults to today.
 
     Returns:
         The podcast script text.
     """
-    reports = list_daily_json_reports(days=1)
+    if date:
+        report_path = DAILY_DIR / f"{date}.json"
+        reports = [report_path] if report_path.exists() else []
+    else:
+        reports = list_daily_json_reports(days=1)
     if not reports:
         logger.warning("No daily reports found — cannot generate podcast script")
         return ""
@@ -104,5 +113,14 @@ def generate_script() -> str:
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", help="Generate for a specific date (YYYY-MM-DD)")
+    args = parser.parse_args()
+
+    if args.date:
+        set_date_override(args.date)
+
     logging.basicConfig(level=logging.INFO)
-    generate_script()
+    generate_script(date=args.date)
