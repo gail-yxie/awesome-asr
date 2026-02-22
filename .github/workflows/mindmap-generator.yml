@@ -46,5 +46,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add mindmaps/ data/topic_taxonomy.json
-          git diff --cached --quiet || git commit -m "mindmap: Regenerate ASR mindmaps"
+          git diff --cached --quiet || git commit -m "mindmap: Regenerate ASR & speech language mindmaps"
           git push

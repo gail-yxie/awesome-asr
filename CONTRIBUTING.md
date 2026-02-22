@@ -1,4 +1,4 @@
-# Contributing to Awesome ASR
+# Contributing to Awesome ASR Speech Language
 
 Thank you for your interest in contributing!
 
@@ -13,7 +13,7 @@ Thank you for your interest in contributing!
 
 ### Guidelines
 
-- Ensure the resource is related to Automatic Speech Recognition
+- Ensure the resource is related to Automatic Speech Recognition or Speech Language Models
 - Provide a brief, clear description
 - Check that the link is working
 - Avoid duplicates — search existing entries first

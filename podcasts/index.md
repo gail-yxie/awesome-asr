@@ -2,6 +2,7 @@
 
 | Episode | Date | Audio |
 |---------|------|-------|
+| 2026-02-21 | 2026-02-21 | [Listen](/podcasts/audio/2026-02-21.mp3) |
 | 2026-02-20 | 2026-02-20 | [Listen](/podcasts/audio/2026-02-20.mp3) |
 | 2026-02-19 | 2026-02-19 | [Listen](/podcasts/audio/2026-02-19.mp3) |
 | 2026-02-18 | 2026-02-18 | [Listen](/podcasts/audio/2026-02-18.mp3) |
@@ -12,3 +13,4 @@
 | qwen3-omni-technical-report-deep-dive | 2026-02-18 | [Listen](/podcasts/audio/qwen3-omni-technical-report-deep-dive.mp3) |
 | robust-speech-recognition-via-large-scale-weak-supervision-deep-dive | 2026-02-18 | [Listen](/podcasts/audio/robust-speech-recognition-via-large-scale-weak-supervision-deep-dive.mp3) |
 | hubert-self-supervised-speech-representation-learning-by-mas-deep-dive | 2026-02-18 | [Listen](/podcasts/audio/hubert-self-supervised-speech-representation-learning-by-mas-deep-dive.mp3) |
+| tac-timestamped-audio-captioning-deep-dive | 2026-02-21 | [Listen](/podcasts/audio/tac-timestamped-audio-captioning-deep-dive.mp3) |

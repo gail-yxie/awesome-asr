@@ -10,14 +10,14 @@ from scripts.config import config
 logger = logging.getLogger(__name__)
 
 DAILY_SUMMARY_PROMPT = """\
-You are an expert in Automatic Speech Recognition (ASR) research.
+You are an expert in Automatic Speech Recognition (ASR) and Speech Language Model research.
 Given today's new papers, models, and tweets, write a concise 3-5 sentence
 summary highlighting the most significant developments. Focus on:
 - The most impactful paper(s) and why they matter
-- Any notable new model releases
+- Any notable new model releases (ASR, TTS, speech language models)
 - Emerging trends or connections between papers
 
-Be specific and informative. Write for an audience of ASR researchers and practitioners.
+Be specific and informative. Write for an audience of ASR and speech language model researchers and practitioners.
 
 ## Today's Papers
 {papers}
@@ -31,10 +31,10 @@ Be specific and informative. Write for an audience of ASR researchers and practi
 Write your summary now (3-5 sentences, no headers):"""
 
 IDEAS_PROMPT = """\
-You are an expert in Automatic Speech Recognition (ASR) research.
+You are an expert in Automatic Speech Recognition (ASR) and Speech Language Model research.
 Given today's papers, extract the key ideas and breakthroughs as a bullet-pointed list.
 Each bullet should be a single, clear sentence describing one idea or finding.
-Focus on novel techniques, surprising results, and practical implications.
+Focus on novel techniques, surprising results, and practical implications for both ASR and speech language models.
 
 ## Papers
 {papers}
@@ -104,7 +104,7 @@ def summarize_daily(
     models: list[dict],
     tweets: list[dict],
 ) -> str:
-    """Generate a 3-5 sentence summary of the day's ASR developments."""
+    """Generate a 3-5 sentence summary of the day's ASR and speech language model developments."""
     prompt = DAILY_SUMMARY_PROMPT.format(
         papers=_format_papers(papers),
         models=_format_models(models),

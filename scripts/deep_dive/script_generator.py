@@ -11,12 +11,12 @@ from scripts.utils import PODCASTS_DIR, render_template, write_text
 logger = logging.getLogger(__name__)
 
 DEEP_DIVE_PROMPT = """\
-You are writing a script for "ASR Deep Dive", a two-person podcast episode
+You are writing a script for "ASR & Speech Language Deep Dive", a two-person podcast episode
 that does a thorough technical analysis of a single research paper.
 
 The podcast has two speakers:
 - Host: Introduces the paper, asks probing questions, relates the work to
-  the broader ASR landscape, and ensures accessibility for practitioners.
+  the broader ASR and speech language model landscape, and ensures accessibility for practitioners.
 - Guest: Acts as the domain expert who has read the paper in depth, explains
   methodology, highlights key innovations, discusses limitations, and
   provides practical takeaways.

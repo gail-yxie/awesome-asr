@@ -139,5 +139,107 @@
         "Meeting Notes"
       ]
     }
+  },
+  "Speech Language Models": {
+    "Architectures": {
+      "Encoder-Decoder SLMs": [
+        "AudioPaLM",
+        "SpeechGPT",
+        "LauraGPT"
+      ],
+      "Decoder-only SLMs": [
+        "GSLM",
+        "Spirit-LM",
+        "Moshi",
+        "VoxtLM"
+      ],
+      "Codec-based": [
+        "VALL-E",
+        "SoundStorm",
+        "MusicGen"
+      ]
+    },
+    "Speech Tokenization": {
+      "Semantic Tokens": [
+        "HuBERT k-means",
+        "SpeechTokenizer",
+        "WavTokenizer"
+      ],
+      "Acoustic Tokens": [
+        "EnCodec",
+        "SoundStream",
+        "DAC",
+        "Vocos"
+      ],
+      "Hybrid Approaches": [
+        "Multi-codebook tokenization",
+        "Semantic-acoustic fusion"
+      ]
+    },
+    "Text-to-Speech": {
+      "Autoregressive TTS": [
+        "VALL-E",
+        "SPEAR-TTS",
+        "CLaM-TTS"
+      ],
+      "Non-autoregressive TTS": [
+        "VITS",
+        "NaturalSpeech",
+        "Matcha-TTS"
+      ],
+      "Diffusion-based TTS": [
+        "Grad-TTS",
+        "DiffSinger"
+      ]
+    },
+    "Speech Generation Tasks": {
+      "Voice Cloning": [
+        "Zero-shot voice cloning",
+        "Few-shot adaptation"
+      ],
+      "Voice Conversion": [
+        "Any-to-any VC",
+        "Cross-lingual VC"
+      ],
+      "Speech-to-Speech": [
+        "Direct translation",
+        "Speech continuation",
+        "Spoken dialogue"
+      ],
+      "Expressive Speech": [
+        "Emotion control",
+        "Prosody transfer",
+        "Style transfer"
+      ]
+    },
+    "Training Approaches": {
+      "Pre-training": [
+        "Speech-text joint pre-training",
+        "Next-token prediction on speech",
+        "Masked speech modeling"
+      ],
+      "Alignment": [
+        "Speech-text alignment",
+        "Interleaved speech-text training"
+      ],
+      "Reinforcement Learning": [
+        "RLHF for speech",
+        "DPO for speech quality"
+      ]
+    },
+    "Evaluation": {
+      "Metrics": [
+        "MOS (Mean Opinion Score)",
+        "PESQ",
+        "UTMOS",
+        "Speaker similarity",
+        "Word Error Rate"
+      ],
+      "Benchmarks": [
+        "SUPERB",
+        "Dynamic-SUPERB",
+        "AudioBench"
+      ]
+    }
   }
 }

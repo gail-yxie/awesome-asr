@@ -9,10 +9,21 @@
     "speech language model",
     "conformer speech",
     "CTC speech recognition",
-    "voice activity detection"
+    "voice activity detection",
+    "text-to-speech synthesis",
+    "speech synthesis neural",
+    "audio language model",
+    "spoken language model",
+    "speech tokenizer",
+    "neural speech codec",
+    "voice cloning",
+    "speech-to-speech translation"
   ],
   "arxiv_categories": ["cs.CL", "cs.SD", "eess.AS"],
   "huggingface_tasks": [
-    "automatic-speech-recognition"
+    "automatic-speech-recognition",
+    "text-to-speech",
+    "text-to-audio",
+    "audio-to-audio"
   ]
 }

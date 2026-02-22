@@ -1,4 +1,4 @@
-"""Fetch recent ASR models and datasets from the HuggingFace Hub."""
+"""Fetch recent ASR and speech language models and datasets from the HuggingFace Hub."""
 
 import logging
 from datetime import datetime, timedelta, timezone
@@ -6,12 +6,25 @@ from datetime import datetime, timedelta, timezone
 from huggingface_hub import HfApi
 
 from scripts.config import config
+from scripts.utils import DATA_DIR, read_json
 
 logger = logging.getLogger(__name__)
 
+# Pipeline tags to track for speech language models
+_DEFAULT_PIPELINE_TAGS = ["automatic-speech-recognition"]
+
+
+def _get_pipeline_tags() -> list[str]:
+    """Load pipeline tags from search_queries.json, falling back to defaults."""
+    try:
+        queries = read_json(DATA_DIR / "search_queries.json")
+        return queries.get("huggingface_tasks", _DEFAULT_PIPELINE_TAGS)
+    except Exception:
+        return _DEFAULT_PIPELINE_TAGS
+
 
 def fetch_models(lookback_hours: int = 48) -> list[dict]:
-    """Fetch newly published ASR models from HuggingFace.
+    """Fetch newly published ASR and speech language models from HuggingFace.
 
     Only includes models whose ``created_at`` falls within the lookback
     window, so models that were merely *updated* are excluded.
@@ -25,33 +38,40 @@ def fetch_models(lookback_hours: int = 48) -> list[dict]:
     """
     api = HfApi(token=config.hf_token or None)
     cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
+    pipeline_tags = _get_pipeline_tags()
 
     models = []
-    for model in api.list_models(
-        pipeline_tag="automatic-speech-recognition",
-        sort="createdAt",
-        direction=-1,
-        limit=200,
-    ):
-        created = getattr(model, "created_at", None)
-        if created and created < cutoff:
-            break
+    seen_ids = set()
+    for tag in pipeline_tags:
+        for model in api.list_models(
+            pipeline_tag=tag,
+            sort="createdAt",
+            direction=-1,
+            limit=200,
+        ):
+            if model.id in seen_ids:
+                continue
 
-        models.append(
-            {
-                "model_id": model.id,
-                "author": model.author or model.id.split("/")[0],
-                "downloads": model.downloads or 0,
-                "likes": model.likes or 0,
-                "url": f"https://huggingface.co/{model.id}",
-                "created_at": (
-                    created.strftime("%Y-%m-%d") if created else None
-                ),
-                "pipeline_tag": model.pipeline_tag,
-            }
-        )
+            created = getattr(model, "created_at", None)
+            if created and created < cutoff:
+                break
 
-    logger.info("Found %d newly published ASR models on HuggingFace", len(models))
+            seen_ids.add(model.id)
+            models.append(
+                {
+                    "model_id": model.id,
+                    "author": model.author or model.id.split("/")[0],
+                    "downloads": model.downloads or 0,
+                    "likes": model.likes or 0,
+                    "url": f"https://huggingface.co/{model.id}",
+                    "created_at": (
+                        created.strftime("%Y-%m-%d") if created else None
+                    ),
+                    "pipeline_tag": model.pipeline_tag,
+                }
+            )
+
+    logger.info("Found %d newly published models on HuggingFace (tags: %s)", len(models), pipeline_tags)
     return models
 
 
@@ -81,13 +101,15 @@ def fetch_datasets(lookback_hours: int = 48) -> list[dict]:
         if created and created < cutoff:
             break
 
-        # Filter by tags — look for ASR-related datasets
+        # Filter by tags — look for ASR and speech language related datasets
         tags = set(ds.tags or [])
         asr_tags = {
             "automatic-speech-recognition",
             "speech-recognition",
             "audio",
             "speech",
+            "text-to-speech",
+            "speech-synthesis",
         }
         if not tags & asr_tags:
             continue
@@ -104,7 +126,7 @@ def fetch_datasets(lookback_hours: int = 48) -> list[dict]:
             }
         )
 
-    logger.info("Found %d newly published ASR datasets on HuggingFace", len(datasets))
+    logger.info("Found %d newly published speech datasets on HuggingFace", len(datasets))
     return datasets
 
 

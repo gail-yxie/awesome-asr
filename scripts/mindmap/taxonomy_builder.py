@@ -1,4 +1,4 @@
-"""Build and update the ASR topic taxonomy, then generate mindmap markdown files."""
+"""Build and update the ASR & speech language model topic taxonomy, then generate mindmap markdown files."""
 
 import json
 import logging
@@ -18,9 +18,9 @@ from scripts.utils import (
 logger = logging.getLogger(__name__)
 
 CLASSIFY_PROMPT = """\
-You are an expert in Automatic Speech Recognition (ASR) research.
+You are an expert in Automatic Speech Recognition (ASR) and Speech Language Model research.
 
-Given the existing ASR topic taxonomy and a list of recent papers and models,
+Given the existing ASR and Speech Language Model topic taxonomy and a list of recent papers and models,
 classify each item into the taxonomy. If an item doesn't fit any existing category,
 suggest a new leaf node (but avoid creating new top-level categories).
 
@@ -120,7 +120,7 @@ def generate_mindmap_markdown() -> None:
             papers_by_cat.setdefault(cat, []).append((p["title"], url))
 
     if papers_by_cat:
-        lines = ["# Recent ASR Papers", ""]
+        lines = ["# Recent ASR & Speech Language Papers", ""]
         for cat, papers in sorted(papers_by_cat.items()):
             lines.append(f"## {cat}")
             for title, url in papers[:10]:
@@ -143,7 +143,7 @@ def generate_mindmap_markdown() -> None:
         for m in all_models:
             models_by_author.setdefault(m["author"], []).append(m["model_id"])
 
-        lines = ["# ASR Models", ""]
+        lines = ["# ASR & Speech Language Models", ""]
         for author, model_ids in sorted(models_by_author.items()):
             lines.append(f"## {author}")
             for mid in model_ids[:10]:

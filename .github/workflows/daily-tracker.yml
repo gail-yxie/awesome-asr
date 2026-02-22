@@ -1,4 +1,4 @@
-name: Daily ASR Tracker
+name: Daily ASR & Speech Language Tracker
 
 on:
   # schedule:
@@ -52,5 +52,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add daily/ README.md
           git add data/seen_hf_ids.json 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "daily: Add ASR update for $(date +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "daily: Add ASR & speech language update for $(date +%Y-%m-%d)"
           git push

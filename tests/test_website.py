@@ -1,4 +1,4 @@
-"""Playwright tests for the Awesome ASR Flask website.
+"""Playwright tests for the Awesome ASR Speech Language Flask website.
 
 Starts the Flask dev server, navigates to each page, takes screenshots,
 and verifies key content is present.
@@ -42,8 +42,8 @@ def test_dashboard(page: Page, base_url: str):
     page.goto(base_url)
 
     # Verify key elements
-    expect(page.locator("nav .nav-brand")).to_have_text("Awesome ASR")
-    expect(page.locator("h1")).to_have_text("ASR Research Dashboard")
+    expect(page.locator("nav .nav-brand")).to_have_text("Awesome ASR Speech Language")
+    expect(page.locator("h1")).to_have_text("ASR & Speech Language Research Dashboard")
 
     # Verify today's highlights card is present
     expect(page.locator("text=Today's Highlights")).to_be_visible()
@@ -84,7 +84,7 @@ def test_podcasts_page(page: Page, base_url: str):
     """Test the podcasts page with generated episode."""
     page.goto(f"{base_url}/podcasts")
 
-    expect(page.locator("h1").first).to_have_text("ASR Daily Podcast")
+    expect(page.locator("h1").first).to_have_text("ASR & Speech Language Daily Podcast")
     expect(page.locator("text=Auto-generated podcast")).to_be_visible()
 
     # Verify the episode card is present
@@ -110,7 +110,7 @@ def test_mindmaps_page(page: Page, base_url: str):
     """Test the mindmaps page with generated mindmaps."""
     page.goto(f"{base_url}/mindmaps")
 
-    expect(page.locator("h1")).to_have_text("Interactive ASR Mindmaps")
+    expect(page.locator("h1")).to_have_text("Interactive ASR & Speech Language Mindmaps")
 
     # Verify mindmap cards are rendered (3 standard + deep-dive)
     cards = page.locator(".mindmap-grid .card")
@@ -216,7 +216,7 @@ def test_navigation(page: Page, base_url: str):
     expect(page).to_have_url(f"{base_url}/chat")
 
     # Click logo to go home
-    page.click("nav >> text=Awesome ASR")
+    page.click("nav >> text=Awesome ASR Speech Language")
     expect(page).to_have_url(f"{base_url}/")
 
 
@@ -225,10 +225,10 @@ def test_chat_page(page: Page, base_url: str):
     page.goto(f"{base_url}/chat")
 
     # Verify page heading
-    expect(page.locator("h1")).to_have_text("ASR Chat Assistant")
+    expect(page.locator("h1")).to_have_text("ASR & Speech Language Chat Assistant")
 
     # Verify welcome message
-    expect(page.locator("text=ASR research assistant")).to_be_visible()
+    expect(page.locator("text=speech language model research assistant")).to_be_visible()
 
     # Verify sidebar with New Chat button
     expect(page.locator("#newChatBtn")).to_be_visible()
@@ -237,7 +237,7 @@ def test_chat_page(page: Page, base_url: str):
     # Verify input form
     chat_input = page.locator("#chatInput")
     expect(chat_input).to_be_visible()
-    expect(chat_input).to_have_attribute("placeholder", "Ask about ASR research...")
+    expect(chat_input).to_have_attribute("placeholder", "Ask about ASR & speech language research...")
 
     # Verify send button
     send_btn = page.locator("#sendBtn")

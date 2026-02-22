@@ -1,4 +1,4 @@
-"""Fetch recent ASR-related papers from the arXiv API."""
+"""Fetch recent ASR and speech language model papers from the arXiv API."""
 
 import logging
 import time
@@ -29,7 +29,7 @@ def _build_query() -> str:
 
 
 def fetch_papers(lookback_hours: int = 48, max_results: int = 100) -> list[dict]:
-    """Fetch recent ASR papers from arXiv.
+    """Fetch recent ASR and speech language model papers from arXiv.
 
     Args:
         lookback_hours: How far back to search (arXiv updates can be delayed).
@@ -85,7 +85,7 @@ def fetch_papers(lookback_hours: int = 48, max_results: int = 100) -> list[dict]
             }
         )
 
-    logger.info("Found %d recent ASR papers on arXiv", len(papers))
+    logger.info("Found %d recent ASR/speech language papers on arXiv", len(papers))
     return papers
 
 

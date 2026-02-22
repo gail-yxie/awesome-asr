@@ -18,7 +18,7 @@ TOOL_DECLARATIONS = [
     # Research & Data
     types.FunctionDeclaration(
         name="search_papers",
-        description="Search recent daily reports for ASR papers matching a query. Returns matching papers with title, authors, abstract, and URL.",
+        description="Search recent daily reports for ASR and speech language model papers matching a query. Returns matching papers with title, authors, abstract, and URL.",
         parameters={
             "type": "OBJECT",
             "properties": {
@@ -55,7 +55,7 @@ TOOL_DECLARATIONS = [
     ),
     types.FunctionDeclaration(
         name="list_models",
-        description="List or search open-source ASR models from the catalog. Returns model name, date, architecture, paper_url (arXiv), and model_url (HuggingFace). Use this to look up a model's arXiv paper URL before generating a deep-dive.",
+        description="List or search open-source ASR and speech language models from the catalog. Returns model name, date, architecture, paper_url (arXiv), and model_url (HuggingFace). Use this to look up a model's arXiv paper URL before generating a deep-dive.",
         parameters={
             "type": "OBJECT",
             "properties": {
@@ -69,17 +69,17 @@ TOOL_DECLARATIONS = [
     # Generation
     types.FunctionDeclaration(
         name="generate_daily_report",
-        description="Run the daily tracking pipeline to fetch the latest ASR papers from arXiv and models from HuggingFace. This takes about 1-2 minutes.",
+        description="Run the daily tracking pipeline to fetch the latest ASR and speech language model papers from arXiv and models from HuggingFace. This takes about 1-2 minutes.",
         parameters={"type": "OBJECT", "properties": {}},
     ),
     types.FunctionDeclaration(
         name="generate_podcast",
-        description="Generate a daily podcast episode summarizing today's ASR developments. This takes several minutes.",
+        description="Generate a daily podcast episode summarizing today's ASR and speech language model developments. This takes several minutes.",
         parameters={"type": "OBJECT", "properties": {}},
     ),
     types.FunctionDeclaration(
         name="generate_mindmaps",
-        description="Regenerate the ASR taxonomy mindmaps (overview, papers, models). This takes about 1-2 minutes.",
+        description="Regenerate the ASR and speech language model taxonomy mindmaps (overview, papers, models). This takes about 1-2 minutes.",
         parameters={"type": "OBJECT", "properties": {}},
     ),
     types.FunctionDeclaration(

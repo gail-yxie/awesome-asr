@@ -1,4 +1,4 @@
-"""Flask web application for displaying ASR daily trends, podcasts, and mindmaps."""
+"""Flask web application for displaying ASR & speech language model daily trends, podcasts, and mindmaps."""
 
 import base64
 import json
@@ -59,6 +59,13 @@ PODCAST_KEYWORDS = [
     "code-switching", "disfluency", "paraphasia",
     "long-form audio", "streaming inference",
     "first-packet latency", "Time-to-First-Token",
+    # Speech language model terms
+    "speech language model", "speech synthesis", "text-to-speech", "TTS",
+    "speech tokenizer", "speech token", "audio codec", "neural codec",
+    "voice cloning", "voice conversion", "speech-to-speech",
+    "audio language model", "spoken language model",
+    "GSLM", "AudioPaLM", "Spirit-LM", "Moshi", "VoxtLM",
+    "speech generation", "speech continuation", "speech prompting",
     # Metrics
     "Word Error Rate", "WER", "Real-Time Factor", "RTF",
     "state-of-the-art",
@@ -508,7 +515,7 @@ def save_podcast_name(episode: str):
 
 # ── Chat ──
 
-SYSTEM_INSTRUCTION = """You are an ASR (Automatic Speech Recognition) research assistant for the Awesome ASR project.
+SYSTEM_INSTRUCTION = """You are a research assistant for the Awesome ASR Speech Language project, covering both Automatic Speech Recognition (ASR) and Speech Language Models (SLMs).
 You help users explore recent papers, models, leaderboards, and generate content like podcasts and mindmaps.
 
 When answering questions:
@@ -521,7 +528,7 @@ When answering questions:
 - Users may send voice messages (audio). Listen to the audio and respond to their spoken request just like a text message.
 
 Available data sources:
-- Daily reports with arXiv papers and HuggingFace models
+- Daily reports with arXiv papers and HuggingFace models (ASR and speech language models)
 - Open ASR Leaderboard (ESB benchmark, WER scores)
 - Model catalog with architecture, paper_url (arXiv), and model_url (HuggingFace)
 - Personal notes stored locally

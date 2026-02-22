@@ -1,13 +1,13 @@
-# Awesome ASR [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome ASR Speech Language [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of awesome Automatic Speech Recognition (ASR) resources — with daily tracking of the latest research, papers, Twitter/X discussions, and open-source models.
+> A curated list of awesome Automatic Speech Recognition (ASR) and Speech Language Model resources — with daily tracking of the latest research, papers, Twitter/X discussions, and open-source models.
 
 ## Features
 
-- **Curated Resources** — Hand-picked collection of ASR papers, models, datasets, tools, and tutorials
-- **Daily Tracking** — Automated tracking of new research papers, Twitter/X posts, and open-source model releases
-- **Podcast Generation** — Auto-generated audio podcasts summarizing the latest ASR developments
-- **Ideas Summary** — Concise summaries of new ideas and breakthroughs in speech recognition
+- **Curated Resources** — Hand-picked collection of ASR and speech language model papers, models, datasets, tools, and tutorials
+- **Daily Tracking** — Automated tracking of new research papers, Twitter/X posts, and open-source ASR & speech language model releases
+- **Podcast Generation** — Auto-generated audio podcasts summarizing the latest ASR and speech language developments
+- **Ideas Summary** — Concise summaries of new ideas and breakthroughs in speech recognition and speech language models
 - **Mindmap Generation** — Interactive mindmaps for exploring topics and connections (inspired by NotebookLM)
 
 ## Table of Contents
@@ -57,6 +57,7 @@
 
 ### Recent
 
+- [TAC: Timestamped Audio Captioning](https://arxiv.org/abs/2602.15766) — Kumar et al., Adobe Research, Feb 2026. Dense temporally grounded audio captioning with minimal hallucination; includes audiovisual variant TAC-V achieving SOTA on multimodal benchmarks.
 - [Qwen3-ASR Technical Report](https://arxiv.org/abs/2601.21337) — Qwen Team, 2026. Multilingual ASR with language detection, timestamps, and forced alignment.
 
 ## Open-Source Models
@@ -89,15 +90,15 @@
 
 ## Daily Updates
 
-Daily updates are generated automatically via GitHub Actions (daily at 06:00 UTC) and stored in the [`daily/`](daily/) directory. Each report includes new papers from arXiv, models from HuggingFace, and Twitter/X discussions.
+Daily updates are generated automatically via GitHub Actions (daily at 06:00 UTC) and stored in the [`daily/`](daily/) directory. Each report includes new papers from arXiv, ASR and speech language models from HuggingFace, and Twitter/X discussions.
 
 ## Podcasts
 
-Daily podcast episodes summarizing ASR developments are auto-generated and published as [GitHub Releases](https://github.com/gail-yxie/awesome-asr/releases). See the [`podcasts/`](podcasts/) directory for the episode index.
+Daily podcast episodes summarizing ASR and speech language model developments are auto-generated and published as [GitHub Releases](https://github.com/gail-yxie/awesome-asr/releases). See the [`podcasts/`](podcasts/) directory for the episode index.
 
 ## Mindmaps
 
-Interactive mindmaps exploring ASR topics are regenerated weekly and available in the [`mindmaps/`](mindmaps/) directory. Rendered using [markmap](https://markmap.js.org/).
+Interactive mindmaps exploring ASR and speech language model topics are regenerated weekly and available in the [`mindmaps/`](mindmaps/) directory. Rendered using [markmap](https://markmap.js.org/).
 
 ## Contributing
 

@@ -46,9 +46,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: podcast-${{ env.DAY_TAG }}
-          name: "ASR Podcast — ${{ env.DAY_TAG }}"
+          name: "ASR & Speech Language Podcast — ${{ env.DAY_TAG }}"
           files: podcasts/*.mp3
-          body: "Auto-generated daily ASR podcast episode."
+          body: "Auto-generated daily ASR & speech language podcast episode."
 
       - name: Update podcast index
         run: |
@@ -58,7 +58,7 @@ jobs:
 
           # Create or update podcasts/index.md
           if [ ! -f podcasts/index.md ]; then
-            echo "# ASR Podcast Episodes" > podcasts/index.md
+            echo "# ASR & Speech Language Podcast Episodes" > podcasts/index.md
             echo "" >> podcasts/index.md
             echo "| Episode | Date | Audio |" >> podcasts/index.md
             echo "|---------|------|-------|" >> podcasts/index.md

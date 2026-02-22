@@ -75,7 +75,7 @@ def _update_podcast_index(slug: str, date: str) -> None:
     if index_path.exists():
         content = read_text(index_path)
     else:
-        content = "# ASR Podcast Episodes\n\n| Episode | Date | Audio |\n|---------|------|-------|\n"
+        content = "# ASR & Speech Language Podcast Episodes\n\n| Episode | Date | Audio |\n|---------|------|-------|\n"
 
     entry = f"| {slug}-deep-dive | {date} | [Listen](/podcasts/audio/{slug}-deep-dive.mp3) |"
     if entry not in content:

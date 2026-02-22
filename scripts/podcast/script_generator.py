@@ -20,8 +20,8 @@ from scripts.utils import (
 logger = logging.getLogger(__name__)
 
 PODCAST_PROMPT = """\
-You are writing a script for "ASR Daily", a two-person podcast about
-Automatic Speech Recognition research and developments.
+You are writing a script for "ASR & Speech Language Daily", a two-person podcast about
+Automatic Speech Recognition and Speech Language Model research and developments.
 
 The podcast has two speakers:
 - Host: The main presenter who introduces topics and drives the conversation.
@@ -119,7 +119,7 @@ def generate_script(date: str | None = None) -> str:
 def _update_podcast_index(episode_date: str) -> None:
     """Insert a daily episode row into podcasts/index.md (newest first)."""
     index_path = PODCASTS_DIR / "index.md"
-    header = "# ASR Podcast Episodes\n\n| Episode | Date | Audio |\n|---------|------|-------|\n"
+    header = "# ASR & Speech Language Podcast Episodes\n\n| Episode | Date | Audio |\n|---------|------|-------|\n"
     if index_path.exists():
         content = read_text(index_path)
     else:
