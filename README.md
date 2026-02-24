@@ -9,6 +9,9 @@
 - **Podcast Generation** — Auto-generated audio podcasts summarizing the latest ASR and speech language developments
 - **Ideas Summary** — Concise summaries of new ideas and breakthroughs in speech recognition and speech language models
 - **Mindmap Generation** — Interactive mindmaps for exploring topics and connections (inspired by NotebookLM)
+- **Web App Dashboard** — Browse daily reports, models, leaderboard, podcasts, and mindmaps in a Flask UI
+- **Chat Assistant + Voice Input** — Ask questions with text or recorded audio, call built-in tools, and keep session history
+- **VM Automation** — Production jobs run on a GCP Compute Engine VM via cron, with GitHub Actions kept as manual fallback
 
 ## Table of Contents
 
@@ -21,6 +24,7 @@
 - [Daily Updates](#daily-updates)
 - [Podcasts](#podcasts)
 - [Mindmaps](#mindmaps)
+- [Automation & Deployment](#automation--deployment)
 - [Contributing](#contributing)
 
 ## Leaderboards
@@ -90,15 +94,45 @@
 
 ## Daily Updates
 
-Daily updates are generated automatically via GitHub Actions (daily at 06:00 UTC) and stored in the [`daily/`](daily/) directory. Each report includes new papers from arXiv, ASR and speech language models from HuggingFace, and Twitter/X discussions.
+Daily updates are generated automatically on a VM using cron (`scripts/vm/run-job.sh daily`) and stored in the [`daily/`](daily/) directory. GitHub Actions workflows are retained as manual emergency fallback (`workflow_dispatch`).
+
+Each report includes new papers from arXiv, ASR and speech language models from HuggingFace, and Twitter/X discussions.
 
 ## Podcasts
 
-Daily podcast episodes summarizing ASR and speech language model developments are auto-generated and published as [GitHub Releases](https://github.com/gail-yxie/awesome-asr/releases). See the [`podcasts/`](podcasts/) directory for the episode index.
+Daily podcast episodes summarizing ASR and speech language model developments are auto-generated via `scripts/vm/run-job.sh podcast`.
+
+Episodes are published to [GitHub Releases](https://github.com/gail-yxie/awesome-asr/releases), indexed in [`podcasts/`](podcasts/), and served in the web app under `/podcasts/audio/<filename>`.
 
 ## Mindmaps
 
-Interactive mindmaps exploring ASR and speech language model topics are regenerated weekly and available in the [`mindmaps/`](mindmaps/) directory. Rendered using [markmap](https://markmap.js.org/).
+Interactive mindmaps exploring ASR and speech language model topics are regenerated automatically (currently daily in VM cron) and available in the [`mindmaps/`](mindmaps/) directory. Rendered using [markmap](https://markmap.js.org/).
+
+## Automation & Deployment
+
+The repo includes VM scripts for GCP Compute Engine deployment:
+
+- `scripts/vm/deploy.sh` — provisions VM + static IP + firewall
+- `scripts/vm/setup.sh` — installs system dependencies, app services, Nginx, and cron jobs
+- `scripts/vm/run-job.sh` — unified job runner for `daily`, `podcast`, and `mindmap`
+
+Quick start:
+
+```bash
+# Local machine (with gcloud auth)
+export GCP_PROJECT=<your-gcp-project-id>
+bash scripts/vm/deploy.sh
+
+# On VM
+export GITHUB_REPO=https://github.com/<owner>/<repo>.git
+sudo bash scripts/vm/setup.sh
+```
+
+For VM job execution, configure `/opt/awesome-asr/.env` with at least:
+
+- `GEMINI_API_KEY`
+- `GITHUB_PAT`
+- `HF_TOKEN` (recommended)
 
 ## Contributing
 
