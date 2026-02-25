@@ -4,6 +4,7 @@
 - wav2vec 2.0
 - Conformer-CTC
 - Deep Speech
+- saidaAo/wav2vec2-base-librispeech-demo
 
 ### Attention-based
 - Whisper
@@ -11,6 +12,8 @@
 - Speech-Transformer
 - Kush0610/whisper-medium-hi-uncurated-reverse-mft-1
 - MinaNasser/whisper-base-arabic
+- dmartu/VibeVoice-ASR-HFI
+- dianavdavidson/wh_l_v3_turbo_mucs_no_langid_mucs_48419_trial
 
 ### Transducer
 - RNN-T
@@ -24,6 +27,13 @@
 - MMS
 - W2v-BERT 2.0
 - XLS-R
+- vitthalbhandari/mms-1b-all-aft-all-meh
+- vitthalbhandari/mms-1b-all-aft-all-lke
+- Professor/mms-300m-fongbe
+
+### LLM-based ASR
+- Jonxxxxxx/Qwen3-ASR-0.6B
+- Kushtrim/Qwen3-ASR-0.6B-Albanian-728h
 
 
 ## Self-Supervised Learning
@@ -53,6 +63,10 @@
 - Cross-lingual
 - DewiBrynJones/whisper-large-v2-ft-cy-2601
 - afaqalinagra/whisper-base-ps
+- Cong123779/AI2Text-Bilingual-ASR
+- kesavamas/whisper-small-fleurs-id
+- korir8/sauti-whisper-small-swh
+- amanuelbyte/whisper-amharic-asr-finetuned
 
 ### Multimodal
 - Audio-Visual ASR
@@ -65,6 +79,12 @@
 - Call Center
 - Disordered Speech Recognition (Aphasia, Impaired Speech)
 - Word Naming Recognition
+- gabrielbuzzi/medasr-public
+- Phonetic Transcription (IPA)
+- neurlang/ipa-whisper-medium
+- Religious/Liturgical Speech
+- wasimlhr/whisper-large-v3-Tarteel-even-g2
+- CLAP-Based Automatic Word Naming Recognition in Post-Stroke Aphasia
 
 
 ## Datasets
@@ -102,6 +122,8 @@
 - Quantization
 - Distillation
 - Pruning
+- RayOrz/whisperkit-coreml
+- kzmaker/faster-whisper-tilsync-34000
 
 ### Adaptation
 - Depth-Aware Adaptation
@@ -137,5 +159,117 @@
 ### Enterprise
 - Call Analytics
 - Meeting Notes
+
+### Edge & Robotics
+- UAV-Assisted Emergency Networks
+- Voice-Driven Semantic Perception
+
+
+
+# Speech Language Models
+## Architectures
+### Encoder-Decoder SLMs
+- AudioPaLM
+- SpeechGPT
+- LauraGPT
+
+### Decoder-only SLMs
+- GSLM
+- Spirit-LM
+- Moshi
+- VoxtLM
+
+### Codec-based
+- VALL-E
+- SoundStorm
+- MusicGen
+
+
+## Speech Tokenization
+### Semantic Tokens
+- HuBERT k-means
+- SpeechTokenizer
+- WavTokenizer
+- Mimi1782/KMEANS
+
+### Acoustic Tokens
+- EnCodec
+- SoundStream
+- DAC
+- Vocos
+
+### Hybrid Approaches
+- Multi-codebook tokenization
+- Semantic-acoustic fusion
+- ZeroSyl: Zero-Resource Syllable Tokenization
+
+
+## Text-to-Speech
+### Autoregressive TTS
+- VALL-E
+- SPEAR-TTS
+- CLaM-TTS
+
+### Non-autoregressive TTS
+- VITS
+- NaturalSpeech
+- Matcha-TTS
+
+### Diffusion-based TTS
+- Grad-TTS
+- DiffSinger
+
+### LLM-based TTS
+- CTC-TTS: Dual-streaming text-to-speech
+
+
+## Speech Generation Tasks
+### Voice Cloning
+- Zero-shot voice cloning
+- Few-shot adaptation
+
+### Voice Conversion
+- Any-to-any VC
+- Cross-lingual VC
+
+### Speech-to-Speech
+- Direct translation
+- Speech continuation
+- Spoken dialogue
+
+### Expressive Speech
+- Emotion control
+- Prosody transfer
+- Style transfer
+
+
+## Training Approaches
+### Pre-training
+- Speech-text joint pre-training
+- Next-token prediction on speech
+- Masked speech modeling
+
+### Alignment
+- Speech-text alignment
+- Interleaved speech-text training
+- Cross-lingual Matryoshka Representation Learning
+
+### Reinforcement Learning
+- RLHF for speech
+- DPO for speech quality
+
+
+## Evaluation
+### Metrics
+- MOS (Mean Opinion Score)
+- PESQ
+- UTMOS
+- Speaker similarity
+- Word Error Rate
+
+### Benchmarks
+- SUPERB
+- Dynamic-SUPERB
+- AudioBench
 
 

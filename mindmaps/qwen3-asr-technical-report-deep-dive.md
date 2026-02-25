@@ -1,112 +1,82 @@
 # Qwen3-ASR Technical Report
 ## Problem & Motivation
-### Paradigm Shift
 - Transition from traditional E2E (Transducer/AED) to Large Audio-Language Model (LALM) paradigm
-- Need to leverage LLM world knowledge and language modeling for ASR robustness
-
-### Current Limitations
-- Inconsistencies in ASR quality in real-world scenarios vs open benchmarks
-- Lack of unified, multilingual forced alignment systems for LALMs
-- Difficulty in balancing high accuracy with low latency for on-device deployment
-
-### Functional Gaps
-- Requirement for accurate word-level/sentence-level timestamps for subtitles
-- Need for robustness to noise, accents, dialects, and singing voice
-
+- Leveraging LLM world knowledge and reasoning for challenging scenarios (long-form, noise, named entities)
+- Need for robust multilingual and dialectal ASR (standard models often hit annotation error limits)
+- Requirement for high-accuracy timestamps in ASR outputs (e.g., subtitles)
+- Lack of a unified, multilingual, and efficient forced alignment system
 
 ## Architecture / Method
-### Model Family
-- Qwen3-ASR-1.7B: SOTA open-source performance, competitive with proprietary APIs
-- Qwen3-ASR-0.6B: Optimized for accuracy-efficiency trade-off and on-device deployment
-- Qwen3-ForcedAligner-0.6B: LLM-based Non-Autoregressive (NAR) timestamp predictor
+### Qwen3-ASR Family
+- Models: Qwen3-ASR-1.7B (300M encoder + 1.7B LLM) and Qwen3-ASR-0.6B (180M encoder + 0.6B LLM)
+- Foundation: Built on Qwen3-Omni with strong audio understanding
+- AuT Encoder: AED-based, 8x downsampling, 12.5Hz token rate, 128-dim Fbank features
+- Dynamic Flash Attention: Window size 1s to 8s supporting both streaming and offline inference
+- Projector: Connects AuT encoder embeddings to the Qwen3 LLM backbone
 
-### Foundation Model
-- Post-trained from Qwen3-Omni foundation model
-- Inherits multi-modal understanding capabilities
-
-### Audio Encoder (AuT)
-- AED-based architecture with 8x downsampling
-- Fbank features: 128 dimensions
-- Token rate: 12.5Hz (80ms frame duration)
-- Dynamic Flash Attention: Window sizes 1s to 8s for unified streaming/offline inference
-- Parameters: 300M (for 1.7B model, 1024 hidden size) and 180M (for 0.6B model, 896 hidden size)
-
-### Qwen3-ForcedAligner-0.6B Architecture
-- Reframes forced alignment as a slot-filling task
-- Uses [time] special tokens as word/character boundary slots
-- Non-autoregressive (NAR) decoding for simultaneous timestamp prediction
-- Supports speech inputs up to 300 seconds
+### Qwen3-ForcedAligner-0.6B
+- Formulation: Reframes forced alignment as a Non-Autoregressive (NAR) slot-filling task
+- Special Tokens: Uses [time] tokens inserted into transcripts as timestamp slots
+- Prediction: A linear layer predicts discrete timestamp indices (80ms frame duration)
+- Capacity: Supports up to 300s audio (3,750 classes) with 11 languages
 
 
 ## Training
-### Four-Stage Pipeline
-#### 1. AuT Pretraining
-- AED framework with ~40 million hours of pseudo-labeled ASR data
-- Focus on Chinese and English for stable audio representations
-
-#### 2. Omni Pretraining
-- Trained on 3 trillion tokens across audio, vision, and text tasks
-
-#### 3. ASR Supervised Finetuning (SFT)
-- Style transfer for input/output formatting
-- Includes non-speech data, streaming-enhancement data, and context biasing
-- Mitigates instruction injection by making it ASR-only (no instruction following)
-
-#### 4. ASR Reinforcement Learning (RL)
-- Utilizes Group Sequence Policy Optimization (GSPO)
-- Data: 50k utterances (35% CN/EN, 35% Multilingual, 30% Functional)
-- Improves noise robustness and transcription stability
-
+### ASR Training Pipeline
+- Stage 1: AuT Pretraining - 40 million hours of pseudo-labeled data (primarily English/Chinese)
+- Stage 2: Omni Pretraining - 3 trillion tokens across audio, vision, and text for multimodal capability
+- Stage 3: ASR SFT - Style transfer on input/output formats, includes context biasing and streaming-enhancement data
+- Stage 4: ASR RL - Group Sequence Policy Optimization (GSPO) using 50k utterances for noise robustness and stability
 
 ### ForcedAligner Training
-- Distilled and smoothed from Montreal Forced Aligner (MFA) pseudo-labels
-- Causal training strategy to ensure global consistency without position offsets
-- Dynamic slot insertion strategy to improve generalization
+- Data: Distillation and smoothing of pseudo-labels from Montreal Forced Aligner (MFA)
+- Loss: Cross-entropy loss applied specifically to timestamp slots
+- Strategy: Causal training with non-shifted sequences; dynamic slot insertion for generalization
 
 
 ## Key Results
-### ASR Performance
-- Supports 30 languages and 22 Chinese dialects
-- SOTA on WenetSpeech (4.97-5.88 CER) and LibriSpeech (1.63-3.38 WER)
-- Outperforms Whisper-large-v3 and competitive with GPT-4o-Transcribe on internal robustness suites
-- Robust to singing voice (M4Singer, Popcs) and full songs with BGM
+### ASR Accuracy
+- Qwen3-ASR-1.7B: SOTA among open-source models; competitive with GPT-4o and Gemini-2.5-Pro
+- WenetSpeech (Mandarin): 4.97 CER (Meeting subset) for 1.7B model
+- GigaSpeech (English): 8.45 WER for 1.7B model
+- Dialects: Supports 22 Chinese dialects; 15.94 average CER on internal dialect suite
 
-### Inference Efficiency (0.6B Model)
-- Average TTFT (Time-to-First-Token): 92ms
-- Real-Time Factor (RTF): 0.064
-- Throughput: 2,000 seconds of audio per second at concurrency 128
+### Efficiency (0.6B Model)
+- TTFT: Average as low as 92ms
+- RTF: 0.064 at concurrency 128
+- Throughput: Processes 2,000 seconds of audio per 1 second of wall time
 
-### Language Identification (LID)
-- Average accuracy of 97.9% for 1.7B model across 4 benchmarks
-- Stable performance on 30 languages including long-tail distributions
+### Forced Alignment
+- Accuracy: 67% to 77% reduction in accumulated average shift (AAS) vs MFA/NFA/WhisperX
+- AAS: 32.4ms on human-labeled test sets (vs 101.2ms for NFA)
 
-### Forced Alignment Accuracy
-- Accumulated Average Shift (AAS) reduced by 67%~77% compared to MFA/NFA/WhisperX
-- Maintains high accuracy on long utterances (300s) where baselines often degrade
+### Specialized Tasks
+- Singing Voice: Strong performance on M4Singer and Opencpop
+- Song Transcription: Robust to background music (BGM) in long-form songs
 
 
 ## Contributions
-### Unified Modeling
-- First Large Language Model based speech forced aligner for flexible granularities
-- Supports offline and streaming inference in a single model
+### Novel Architecture
 
-### Capability Expansion
-- Robust support for 52 languages and dialects
-- Advanced singing-voice recognition and robustness to background music (BGM)
+### Language Coverage
 
-### Open Science
-- Released model weights under Apache 2.0 license
-- Open-source codebase for inference and fine-tuning recipes
+### Unified Inference
+
+### Robustness
+
+### Alignment Versatility
 
 
 ## Available Resources
 ### Models
-- Qwen/Qwen3-ASR-1.7B (HuggingFace)
-- Qwen/Qwen3-ASR-0.6B (HuggingFace)
-- Qwen/Qwen3-ForcedAligner-0.6B (HuggingFace)
+- Qwen3-ASR-1.7B (HuggingFace)
+- Qwen3-ASR-0.6B (HuggingFace)
+- Qwen3-ForcedAligner-0.6B
 
-### Code
-- GitHub: QwenLM/Qwen3-ASR
-- Unified toolkit for multi-granularity alignment, streaming, and SFT
+### Code & Tools
+- GitHub: https://github.com/QwenLM/Qwen3-ASR
+- Inference framework: vLLM-based (ASR) and Transformers-based (FA)
+
+### License
 
 
