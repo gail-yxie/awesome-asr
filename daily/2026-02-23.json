@@ -1,0 +1,177 @@
+{
+  "date": "2026-02-23",
+  "summary": "Today’s developments center on model optimization for edge deployment and specialized transcription tasks, notably with the CoreML adaptation of NVIDIA’s Parakeet-TDT architecture for high-efficiency on-device ASR. Whisper remains the dominant foundation for community fine-tuning, with new variants like `ipa-whisper-medium` targeting International Phonetic Alphabet (IPA) transcription and various regional low-resource language refinements. The release of Voxtral-Mini-4B further signals the ongoing research trend of merging speech capabilities with small language models (SLMs) to create more integrated, multimodal conversational agents. Collectively, these releases reflect a dual priority in the field: porting high-performance transducer-based models to local hardware while pushing the boundaries of phonetic and bilingual accuracy through targeted fine-tuning.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "Cong123779/AI2Text-Bilingual-ASR",
+      "author": "Cong123779",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Cong123779/AI2Text-Bilingual-ASR",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "neurlang/ipa-whisper-medium",
+      "author": "neurlang",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/neurlang/ipa-whisper-medium",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kesavamas/whisper-small-fleurs-id",
+      "author": "kesavamas",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kesavamas/whisper-small-fleurs-id",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "richtext/parakeet-tdt-0.6b-v2-coreml",
+      "author": "richtext",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/richtext/parakeet-tdt-0.6b-v2-coreml",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "richtext/parakeet-tdt-0.6b-v3-coreml",
+      "author": "richtext",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/richtext/parakeet-tdt-0.6b-v3-coreml",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "csikasote/mms-1b-all-bemgen-combined-sd-0.1614",
+      "author": "csikasote",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/csikasote/mms-1b-all-bemgen-combined-sd-0.1614",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vysakh25/whisper-large-v3-ki",
+      "author": "vysakh25",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vysakh25/whisper-large-v3-ki",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mavleo96/whisper-small.en-decoder-layernorm-english-accent",
+      "author": "mavleo96",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mavleo96/whisper-small.en-decoder-layernorm-english-accent",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sanvo/vietnamese-whisper-asr",
+      "author": "sanvo",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sanvo/vietnamese-whisper-asr",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "frankmorales2020/Voxtral-Mini-4B-H2E-FineTune",
+      "author": "frankmorales2020",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/frankmorales2020/Voxtral-Mini-4B-H2E-FineTune",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alihassanshahid/whisper_ar_finetuned",
+      "author": "alihassanshahid",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/alihassanshahid/whisper_ar_finetuned",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "HitmanReborn/whisper-tiny-pan-1",
+      "author": "HitmanReborn",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/HitmanReborn/whisper-tiny-pan-1",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MuzaffarSharofitdinov/mms-tts-uzbek-girl-voice_cyrillic",
+      "author": "MuzaffarSharofitdinov",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MuzaffarSharofitdinov/mms-tts-uzbek-girl-voice_cyrillic",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "beleata74/mio-tts-0.6b-bg-finetuned",
+      "author": "beleata74",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/beleata74/mio-tts-0.6b-bg-finetuned",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "David-A-Amoo/ACE-Step-1.5-Naija-Legacy-Rhythms-LoRA-v1",
+      "author": "David-A-Amoo",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/David-A-Amoo/ACE-Step-1.5-Naija-Legacy-Rhythms-LoRA-v1",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "diskrot/acestep-5Hz-lm-0.6B-diskrot",
+      "author": "diskrot",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/diskrot/acestep-5Hz-lm-0.6B-diskrot",
+      "created_at": "2026-02-23",
+      "pipeline_tag": "text-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "Bateesa/preacher-tts-dataset",
+      "author": "Bateesa",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Bateesa/preacher-tts-dataset",
+      "created_at": "2026-02-23"
+    },
+    {
+      "dataset_id": "Bateesa/tobydata-tts-dataset",
+      "author": "Bateesa",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Bateesa/tobydata-tts-dataset",
+      "created_at": "2026-02-23"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 16,
+    "dataset_count": 2,
+    "tweet_count": 0
+  }
+}

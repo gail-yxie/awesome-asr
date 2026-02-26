@@ -1,0 +1,47 @@
+{
+  "2026-02-16": [
+    "2602.14062",
+    "from scarcity to scale: a release-level analysis of the pashto common voice dataset",
+    "2602.05406",
+    "enabling automatic disordered speech recognition: an impaired speech dataset in the akan language",
+    "2602.01008",
+    "adapting where it matters: depth-aware adaptation for efficient multilingual speech recognition in low-resource languages"
+  ],
+  "2026-02-17": [
+    "2602.14584v1",
+    "clap-based automatic word naming recognition in post-stroke aphasia"
+  ],
+  "2026-02-18": [
+    "2602.15537v1",
+    "zerosyl: simple zero-resource syllable tokenization for spoken language modeling"
+  ],
+  "2026-02-19": [
+    "2602.15537v1",
+    "zerosyl: simple zero-resource syllable tokenization for spoken language modeling"
+  ],
+  "2026-02-20": [
+    "2602.17394v1",
+    "voice-driven semantic perception for uav-assisted emergency networks"
+  ],
+  "2026-02-23": [],
+  "2026-02-24": [
+    "2602.19991v1",
+    "cross-lingual matryoshka representation learning across speech and text",
+    "2602.19574v1",
+    "ctc-tts: llm-based dual-streaming text-to-speech with ctc alignment"
+  ],
+  "2026-02-26": [
+    "2602.22039v1",
+    "tg-asr: translation-guided learning with parallel gated cross attention for low-resource automatic speech recognition",
+    "2602.21741v1",
+    "robust long-form bangla speech processing: automatic speech recognition and speaker diarization",
+    "2602.21647v1",
+    "mitigating structural noise in low-resource s2tt: an optimized cascaded nepali-english pipeline with punctuation restoration",
+    "2602.21646v1",
+    "scalable multilingual multimodal machine translation with speech-text fusion",
+    "2602.21183v1",
+    "823-olt @ buet dl sprint 4.0: context-aware windowing for asr and fine-tuned speaker diarization in bengali long form audio",
+    "2602.20967v1",
+    "training-free intelligibility-guided observation addition for noisy asr"
+  ]
+}

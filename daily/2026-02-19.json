@@ -1,33 +1,14 @@
 {
   "date": "2026-02-19",
-  "summary": "Today's research highlights a push toward more efficient Spoken Language Modeling (SLM) with the introduction of **ZeroSyl**, a zero-resource syllable tokenization method designed to mitigate the sequence length explosion typical of discrete units from self-supervised encoders. This work addresses a critical bottleneck in \"textless\" NLP by demonstrating that syllable-like units can be derived without textual supervision to improve the modeling efficiency and performance of raw audio-based models. Complementing this, new model releases include several language-specific fine-tunes of **Meta’s MMS-1b** (covering codes such as aft, meh, and koo) and a **Whisper-large-v2** fine-tune for Welsh, continuing the trend of adapting massive foundation models to low-resource and regional languages. Together, these developments reflect a dual focus on architectural efficiency for speech-only models and the practical expansion of multilingual ASR coverage through targeted fine-tuning.",
+  "summary": "Today’s model releases highlight the continued expansion of multilingual ASR coverage through targeted fine-tuning of foundation models. **Vitthal Bhandari** released a series of **MMS-1b** fine-tunes for underrepresented African languages including Meh (meh), Lke (lke), Led (led), and Koo (koo), demonstrating that Meta’s massively multilingual speech model can be effectively adapted for very low-resource language communities. Meanwhile, **DewiBrynJones** released an updated **Whisper-large-v2** fine-tune for Welsh (cy), continuing a lineage of progressively improved regional language models. A **faster-whisper-tilsync** model was also released for audio-text synchronization use cases. Together, these releases reflect the community’s ongoing effort to democratize speech recognition by bringing foundation model quality to languages and tasks previously underserved by commercial ASR systems.",
   "ideas": [
-    "ZeroSyl introduces a simplified, zero-resource approach to grouping discrete speech units into syllable-like tokens to address the high sequence length of self-supervised representations.",
-    "The method effectively reduces the number of tokens required to represent speech, allowing spoken language models to process longer-range dependencies more efficiently.",
-    "Unlike existing techniques that require complex training or textual resources, ZeroSyl relies on a straightforward heuristic to define segment boundaries without any supervision.",
-    "The research demonstrates that syllable-level tokenization enhances the performance of pure speech language models on downstream tasks while decreasing computational costs.",
-    "This approach highlights the potential for linguistically motivated units to be derived directly from the acoustic characteristics of self-supervised speech representations."
+    "Batch fine-tuning of MMS-1b across multiple African language codes demonstrates an efficient pipeline for rapidly expanding ASR coverage to underrepresented languages.",
+    "The Welsh Whisper-large-v2 fine-tune represents an iterative improvement cycle where community-driven models are regularly updated with new data and training techniques.",
+    "The faster-whisper-tilsync model highlights emerging demand for specialized ASR variants optimized for audio-text alignment and synchronization rather than pure transcription.",
+    "Low-resource language adaptation of large foundation models like MMS-1b and Whisper continues to be the dominant strategy for expanding multilingual ASR coverage.",
+    "Community contributors are playing a critical role in filling gaps left by commercial ASR providers, particularly for languages spoken by smaller populations."
   ],
-  "papers": [
-    {
-      "id": "2602.15537v1",
-      "title": "ZeroSyl: Simple Zero-Resource Syllable Tokenization for Spoken Language Modeling",
-      "authors": [
-        "Nicol Visser",
-        "Simon Malan",
-        "Danel Slabbert",
-        "Herman Kamper"
-      ],
-      "abstract": "Pure speech language models aim to learn language directly from raw audio without textual resources. A key challenge is that discrete tokens from self-supervised speech encoders result in excessively long sequences, motivating recent work on syllable-like units. However, methods like Sylber and SyllableLM rely on intricate multi-stage training pipelines. We propose ZeroSyl, a simple training-free method to extract syllable boundaries and embeddings directly from a frozen WavLM model. Using L2 norms of features in WavLM's intermediate layers, ZeroSyl achieves competitive syllable segmentation performance. The resulting segments are mean-pooled, discretized using K-means, and used to train a language model. ZeroSyl outperforms prior syllabic tokenizers across lexical, syntactic, and narrative benchmarks. Scaling experiments show that while finer-grained units are beneficial for lexical tasks, our discovered syllabic units exhibit better scaling behavior for syntactic modeling.",
-      "categories": [
-        "cs.CL",
-        "eess.AS"
-      ],
-      "published": "2026-02-17",
-      "url": "https://arxiv.org/abs/2602.15537v1",
-      "pdf_url": "https://arxiv.org/pdf/2602.15537v1"
-    }
-  ],
+  "papers": [],
   "models": [
     {
       "model_id": "vitthalbhandari/mms-1b-all-aft-all-meh",
@@ -87,7 +68,7 @@
   "datasets": [],
   "tweets": [],
   "stats": {
-    "paper_count": 1,
+    "paper_count": 0,
     "model_count": 6,
     "dataset_count": 0,
     "tweet_count": 0
