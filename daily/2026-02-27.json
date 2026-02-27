@@ -1,0 +1,589 @@
+{
+  "date": "2026-02-27",
+  "summary": "The most significant development today is the introduction of TADA, a generative framework that addresses the sequence length bottleneck in speech LLMs by employing a text-acoustic dual alignment approach to replace traditional fixed-frame-rate tokenization. Concurrent research emphasizes a major push for robust long-form processing in low-resource contexts, particularly through two independent holistic frameworks for Bengali ASR and speaker diarization that utilize extreme augmentation and CTC-based alignment. New model releases continue to be dominated by domain-specific fine-tuning of Whisper—targeting languages like Marathi and Yoruba—alongside specialized encoders like wav2vec2 for singing phoneme recognition. Together, these papers signal an emerging trend toward modular, mixture-of-expert architectures for multimodal tasks and more efficient, dialect-aware modeling for endangered languages.",
+  "ideas": [
+    "A Mixture-of-Experts architecture called MiSTER-E effectively integrates temporal speech and text features to capture emotional flow in multi-turn conversations.",
+    "Extreme data augmentation and precise alignment techniques facilitate the development of robust joint ASR and speaker diarization models for long-form audio in low-resource languages.",
+    "The TADA framework improves speech generation efficiency by replacing traditional fixed-frame-rate acoustic tokenization with a dual text-acoustic alignment approach that reduces sequence length.",
+    "Optimized Voice Activity Detection combined with CTC-based alignment significantly enhances the stability and accuracy of ASR and diarization for audio segments exceeding sixty seconds.",
+    "Dialect-aware conditioning and multi-script modeling enable ASR systems to handle high dialectal variability and dual writing systems in endangered languages like Taiwanese Hakka."
+  ],
+  "papers": [
+    {
+      "id": "2602.23300v1",
+      "title": "A Mixture-of-Experts Model for Multimodal Emotion Recognition in Conversations",
+      "authors": [
+        "Soumya Dutta",
+        "Smruthi Balaji",
+        "Sriram Ganapathy"
+      ],
+      "abstract": "Emotion Recognition in Conversations (ERC) presents unique challenges, requiring models to capture the temporal flow of multi-turn dialogues and to effectively integrate cues from multiple modalities. We propose Mixture of Speech-Text Experts for Recognition of Emotions (MiSTER-E), a modular Mixture-of-Experts (MoE) framework designed to decouple two core challenges in ERC: modality-specific context modeling and multimodal information fusion. MiSTER-E leverages large language models (LLMs) fine-tuned for both speech and text to provide rich utterance-level embeddings, which are then enhanced through a convolutional-recurrent context modeling layer. The system integrates predictions from three experts-speech-only, text-only, and cross-modal-using a learned gating mechanism that dynamically weighs their outputs. To further encourage consistency and alignment across modalities, we introduce a supervised contrastive loss between paired speech-text representations and a KL-divergence-based regulariza-tion across expert predictions. Importantly, MiSTER-E does not rely on speaker identity at any stage. Experiments on three benchmark datasets-IEMOCAP, MELD, and MOSI-show that our proposal achieves 70.9%, 69.5%, and 87.9% weighted F1-scores respectively, outperforming several baseline speech-text ERC systems. We also provide various ablations to highlight the contributions made in the proposed approach.",
+      "categories": [
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-02-26",
+      "url": "https://arxiv.org/abs/2602.23300v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.23300v1"
+    },
+    {
+      "id": "2602.23070v1",
+      "title": "Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization via Extreme Augmentation and Perfect Alignment",
+      "authors": [
+        "Sanjid Hasan",
+        "Risalat Labib",
+        "A H M Fuad",
+        "Bayazid Hasan"
+      ],
+      "abstract": "Although Automatic Speech Recognition (ASR) in Bengali has seen significant progress, processing long-duration audio and performing robust speaker diarization remain critical research gaps. To address the severe scarcity of joint ASR and diarization resources for this language, we introduce Lipi-Ghor-882, a comprehensive 882-hour multi-speaker Bengali dataset. In this paper, detailing our submission to the DL Sprint 4.0 competition, we systematically evaluate various architectures and approaches for long-form Bengali speech. For ASR, we demonstrate that raw data scaling is ineffective; instead, targeted fine-tuning utilizing perfectly aligned annotations paired with synthetic acoustic degradation (noise and reverberation) emerges as the singular most effective approach. Conversely, for speaker diarization, we observed that global open-source state-of-the-art models (such as Diarizen) performed surprisingly poorly on this complex dataset. Extensive model retraining yielded negligible improvements; instead, strategic, heuristic post-processing of baseline model outputs proved to be the primary driver for increasing accuracy. Ultimately, this work outlines a highly optimized dual pipeline achieving a $\\sim$0.019 Real-Time Factor (RTF), establishing a practical, empirically backed benchmark for low-resource, long-form speech processing.",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-02-26",
+      "url": "https://arxiv.org/abs/2602.23070v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.23070v1"
+    },
+    {
+      "id": "2602.23068v1",
+      "title": "TADA: A Generative Framework for Speech Modeling via Text-Acoustic Dual Alignment",
+      "authors": [
+        "Trung Dang",
+        "Sharath Rao",
+        "Ananya Gupta",
+        "Christopher Gagne",
+        "Panagiotis Tzirakis",
+        "Alice Baird",
+        "Jakub Piotr Cłapa",
+        "Peter Chin",
+        "Alan Cowen"
+      ],
+      "abstract": "Modern Text-to-Speech (TTS) systems increasingly leverage Large Language Model (LLM) architectures to achieve scalable, high-fidelity, zero-shot generation. However, these systems typically rely on fixed-frame-rate acoustic tokenization, resulting in speech sequences that are significantly longer than, and asynchronous with their corresponding text. Beyond computational inefficiency, this sequence length disparity often triggers hallucinations in TTS and amplifies the modality gap in spoken language modeling (SLM). In this paper, we propose a novel tokenization scheme that establishes one-to-one synchronization between continuous acoustic features and text tokens, enabling unified, single-stream modeling within an LLM. We demonstrate that these synchronous tokens maintain high-fidelity audio reconstruction and can be effectively modeled in a latent space by a large language model with a flow matching head. Moreover, the ability to seamlessly toggle speech modality within the context enables text-only guidance--a technique that blends logits from text-only and text-speech modes to flexibly bridge the gap toward text-only LLM intelligence. Experimental results indicate that our approach achieves performance competitive with state-of-the-art TTS and SLM systems while virtually eliminating content hallucinations and preserving linguistic integrity, all at a significantly reduced inference cost.",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-02-26",
+      "url": "https://arxiv.org/abs/2602.23068v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.23068v1"
+    },
+    {
+      "id": "2602.22935v1",
+      "title": "A Holistic Framework for Robust Bangla ASR and Speaker Diarization with Optimized VAD and CTC Alignment",
+      "authors": [
+        "Zarif Ishmam",
+        "Zarif Mahir",
+        "Shafnan Wasif",
+        "Md. Ishtiak Moin"
+      ],
+      "abstract": "Despite being one of the most widely spoken languages globally, Bangla remains a low-resource language in the field of Natural Language Processing (NLP). Mainstream Automatic Speech Recognition (ASR) and Speaker Diarization systems for Bangla struggles when processing longform audio exceeding 3060 seconds. This paper presents a robust framework specifically engineered for extended Bangla content by leveraging preexisting models enhanced with novel optimization pipelines for the DL Sprint 4.0 contest. Our approach utilizes Voice Activity Detection (VAD) optimization and Connectionist Temporal Classification (CTC) segmentation via forced word alignment to maintain temporal accuracy and transcription integrity over long durations. Additionally, we employed several finetuning techniques and preprocessed the data using augmentation techniques and noise removal. By bridging the performance gap in complex, multi-speaker environments, this work provides a scalable solution for real-world, longform Bangla speech applications.",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "published": "2026-02-26",
+      "url": "https://arxiv.org/abs/2602.22935v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.22935v1"
+    },
+    {
+      "id": "2602.22522v1",
+      "title": "Efficient Dialect-Aware Modeling and Conditioning for Low-Resource Taiwanese Hakka Speech Processing",
+      "authors": [
+        "An-Ci Peng",
+        "Kuan-Tang Huang",
+        "Tien-Hong Lo",
+        "Hung-Shin Lee",
+        "Hsin-Min Wang",
+        "Berlin Chen"
+      ],
+      "abstract": "Taiwanese Hakka is a low-resource, endangered language that poses significant challenges for automatic speech recognition (ASR), including high dialectal variability and the presence of two distinct writing systems (Hanzi and Pinyin). Traditional ASR models often encounter difficulties in this context, as they tend to conflate essential linguistic content with dialect-specific variations across both phonological and lexical dimensions. To address these challenges, we propose a unified framework grounded in the Recurrent Neural Network Transducers (RNN-T). Central to our approach is the introduction of dialect-aware modeling strategies designed to disentangle dialectal \"style\" from linguistic \"content\", which enhances the model's capacity to learn robust and generalized representations. Additionally, the framework employs parameter-efficient prediction networks to concurrently model ASR (Hanzi and Pinyin). We demonstrate that these tasks create a powerful synergy, wherein the cross-script objective serves as a mutual regularizer to improve the primary ASR tasks. Experiments conducted on the HAT corpus reveal that our model achieves 57.00% and 40.41% relative error rate reduction on Hanzi and Pinyin ASR, respectively. To our knowledge, this is the first systematic investigation into the impact of Hakka dialectal variations on ASR and the first single model capable of jointly addressing these tasks.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SD",
+        "eess.AS"
+      ],
+      "published": "2026-02-26",
+      "url": "https://arxiv.org/abs/2602.22522v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.22522v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "smkrv/whisper-podlodka-turbo-coreml",
+      "author": "smkrv",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/smkrv/whisper-podlodka-turbo-coreml",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AWARRITech/whisper-small-yoruba-v1",
+      "author": "AWARRITech",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AWARRITech/whisper-small-yoruba-v1",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "fiendshadow/whisper-large-v3",
+      "author": "fiendshadow",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/fiendshadow/whisper-large-v3",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lyonlu13/wav2vec2-large-zh-singing-phoneme-ctc",
+      "author": "lyonlu13",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lyonlu13/wav2vec2-large-zh-singing-phoneme-ctc",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "geexmmo/whisper-tiny.en-ONNX",
+      "author": "geexmmo",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/geexmmo/whisper-tiny.en-ONNX",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vivekb29/whisper-small-30-report-sentences",
+      "author": "vivekb29",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vivekb29/whisper-small-30-report-sentences",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lewiswoncy/m_test_9_98",
+      "author": "lewiswoncy",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lewiswoncy/m_test_9_98",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Prasad12344321/whisper-Marathi-small-finetuned",
+      "author": "Prasad12344321",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Prasad12344321/whisper-Marathi-small-finetuned",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "wasimlhr/whisper-quran-phase1-step4500",
+      "author": "wasimlhr",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/wasimlhr/whisper-quran-phase1-step4500",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "larimb/w2v-bert-2.0-ccv-kaggle-v1",
+      "author": "larimb",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/larimb/w2v-bert-2.0-ccv-kaggle-v1",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "GJATT/xls-r-2b-punjabi-finetuned_20songs",
+      "author": "GJATT",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/GJATT/xls-r-2b-punjabi-finetuned_20songs",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "TigreGotico/parakeet-tdt_ctc-110m-coreml",
+      "author": "TigreGotico",
+      "downloads": 29,
+      "likes": 0,
+      "url": "https://huggingface.co/TigreGotico/parakeet-tdt_ctc-110m-coreml",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ahmadrgul/mujawwad-v1",
+      "author": "ahmadrgul",
+      "downloads": 60,
+      "likes": 0,
+      "url": "https://huggingface.co/ahmadrgul/mujawwad-v1",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/wh_l_v3_turbo_iv_no_lang_id_indic_voices_49414_trial",
+      "author": "dianavdavidson",
+      "downloads": 34,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/wh_l_v3_turbo_iv_no_lang_id_indic_voices_49414_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/wh_l_v3_iv_no_lang_id_indic_voices_49414_trial",
+      "author": "dianavdavidson",
+      "downloads": 46,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/wh_l_v3_iv_no_lang_id_indic_voices_49414_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/audiox_iv_no_lang_id_indic_voices_49398_trial",
+      "author": "dianavdavidson",
+      "downloads": 45,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/audiox_iv_no_lang_id_indic_voices_49398_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/audiox_iv_no_lang_id_indic_voices_49393_trial",
+      "author": "dianavdavidson",
+      "downloads": 53,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/audiox_iv_no_lang_id_indic_voices_49393_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/audiox_fleurs_no_lang_id_fleurs_49398_trial",
+      "author": "dianavdavidson",
+      "downloads": 40,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/audiox_fleurs_no_lang_id_fleurs_49398_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/wh_l_v3_iv_no_lang_id_indic_voices_49392_trial",
+      "author": "dianavdavidson",
+      "downloads": 49,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/wh_l_v3_iv_no_lang_id_indic_voices_49392_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/wh_medium_iv_no_lang_id_indic_voices_49389_trial",
+      "author": "dianavdavidson",
+      "downloads": 43,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/wh_medium_iv_no_lang_id_indic_voices_49389_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/wh_small_iv_no_lang_id_indic_voices_49389_trial",
+      "author": "dianavdavidson",
+      "downloads": 33,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/wh_small_iv_no_lang_id_indic_voices_49389_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RedHatAI/nemotron-speech-streaming-en-0.6b",
+      "author": "RedHatAI",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/RedHatAI/nemotron-speech-streaming-en-0.6b",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RedHatAI/Voxtral-Mini-4B-Realtime-2602",
+      "author": "RedHatAI",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/RedHatAI/Voxtral-Mini-4B-Realtime-2602",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/seamless-m4t_v2_iv_no_lang_id_indic_voices_49371_trial",
+      "author": "dianavdavidson",
+      "downloads": 49,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/seamless-m4t_v2_iv_no_lang_id_indic_voices_49371_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/seamless-m4t_v2_iv_indic_voices_49370_trial",
+      "author": "dianavdavidson",
+      "downloads": 36,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/seamless-m4t_v2_iv_indic_voices_49370_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/seamless_m4t_v2_cv_no_lang_id_common_voices_49371_trial",
+      "author": "dianavdavidson",
+      "downloads": 45,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/seamless_m4t_v2_cv_no_lang_id_common_voices_49371_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/seamless-m4t_v2_mucs_no_lang_id_mucs_49371_trial",
+      "author": "dianavdavidson",
+      "downloads": 37,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/seamless-m4t_v2_mucs_no_lang_id_mucs_49371_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/seamless_m4t_v2_fleurs_no_lang_id_fleurs_49371_trial",
+      "author": "dianavdavidson",
+      "downloads": 50,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/seamless_m4t_v2_fleurs_no_lang_id_fleurs_49371_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/seamless_m4t_v2_fleurs_fleurs_49370_trial",
+      "author": "dianavdavidson",
+      "downloads": 45,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/seamless_m4t_v2_fleurs_fleurs_49370_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "speaklar/speaklar_stt_bn_fastconformer",
+      "author": "speaklar",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/speaklar/speaklar_stt_bn_fastconformer",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lewiswoncy/m_test_9_99",
+      "author": "lewiswoncy",
+      "downloads": 27,
+      "likes": 0,
+      "url": "https://huggingface.co/lewiswoncy/m_test_9_99",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "weiren119/Qwen3-ASR-1.7B-CoreML",
+      "author": "weiren119",
+      "downloads": 5,
+      "likes": 0,
+      "url": "https://huggingface.co/weiren119/Qwen3-ASR-1.7B-CoreML",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/seamless_m4t_v2_mucs_mucs_49308_trial",
+      "author": "dianavdavidson",
+      "downloads": 41,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/seamless_m4t_v2_mucs_mucs_49308_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "wageehkhad/whisper-medium-finetuned-sada-asr",
+      "author": "wageehkhad",
+      "downloads": 68,
+      "likes": 0,
+      "url": "https://huggingface.co/wageehkhad/whisper-medium-finetuned-sada-asr",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "7ocho/WMCA1-S2",
+      "author": "7ocho",
+      "downloads": 44,
+      "likes": 0,
+      "url": "https://huggingface.co/7ocho/WMCA1-S2",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/seamless_m4t_v2_cv_common_voices_49267_trial",
+      "author": "dianavdavidson",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/seamless_m4t_v2_cv_common_voices_49267_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "weepower/CustomASRModel",
+      "author": "weepower",
+      "downloads": 89,
+      "likes": 0,
+      "url": "https://huggingface.co/weepower/CustomASRModel",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lewiswoncy/m_test_9_3",
+      "author": "lewiswoncy",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/lewiswoncy/m_test_9_3",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vysakh25/whisper-tiny-ki-edge",
+      "author": "vysakh25",
+      "downloads": 55,
+      "likes": 0,
+      "url": "https://huggingface.co/vysakh25/whisper-tiny-ki-edge",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/audiox_mucs_mucs_49234_trial",
+      "author": "dianavdavidson",
+      "downloads": 31,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/audiox_mucs_mucs_49234_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lewiswoncy/m_test_9_1",
+      "author": "lewiswoncy",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/lewiswoncy/m_test_9_1",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/audiox_cv_common_voices_49226_trial",
+      "author": "dianavdavidson",
+      "downloads": 44,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/audiox_cv_common_voices_49226_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/wh_medium_cv_common_voices_49223_trial",
+      "author": "dianavdavidson",
+      "downloads": 30,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/wh_medium_cv_common_voices_49223_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dianavdavidson/wh_small_cv_common_voices_49223_trial",
+      "author": "dianavdavidson",
+      "downloads": 38,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/wh_small_cv_common_voices_49223_trial",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/irish-whisper-combined-aug_attempt3old",
+      "author": "Eimhin03",
+      "downloads": 110,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/irish-whisper-combined-aug_attempt3old",
+      "created_at": "2026-02-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "daksh-neo/MOSS-TTS",
+      "author": "daksh-neo",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/daksh-neo/MOSS-TTS",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "beleata74/bg-tts-v7",
+      "author": "beleata74",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/beleata74/bg-tts-v7",
+      "created_at": "2026-02-27",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "diskrot/bark-diskrot",
+      "author": "diskrot",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/diskrot/bark-diskrot",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "chilakavyshnavi/XTTS-v2",
+      "author": "chilakavyshnavi",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/chilakavyshnavi/XTTS-v2",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "iBoostAI/Demucs-v4",
+      "author": "iBoostAI",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/iBoostAI/Demucs-v4",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "Varij179/yashil",
+      "author": "Varij179",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Varij179/yashil",
+      "created_at": "2026-02-26",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "raditotev/bg-audiobooks-tts",
+      "author": "raditotev",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/raditotev/bg-audiobooks-tts",
+      "created_at": "2026-02-27"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 5,
+    "model_count": 51,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}

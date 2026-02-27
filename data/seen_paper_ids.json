@@ -43,5 +43,17 @@
     "823-olt @ buet dl sprint 4.0: context-aware windowing for asr and fine-tuned speaker diarization in bengali long form audio",
     "2602.20967v1",
     "training-free intelligibility-guided observation addition for noisy asr"
+  ],
+  "2026-02-27": [
+    "2602.23300v1",
+    "a mixture-of-experts model for multimodal emotion recognition in conversations",
+    "2602.23070v1",
+    "make it hard to hear, easy to learn: long-form bengali asr and speaker diarization via extreme augmentation and perfect alignment",
+    "2602.23068v1",
+    "tada: a generative framework for speech modeling via text-acoustic dual alignment",
+    "2602.22935v1",
+    "a holistic framework for robust bangla asr and speaker diarization with optimized vad and ctc alignment",
+    "2602.22522v1",
+    "efficient dialect-aware modeling and conditioning for low-resource taiwanese hakka speech processing"
   ]
 }
