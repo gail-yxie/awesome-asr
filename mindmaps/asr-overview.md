@@ -10,10 +10,15 @@
 - Whisper
 - LAS
 - Speech-Transformer
+- fiendshadow/whisper-large-v3
 - Kush0610/whisper-medium-hi-uncurated-reverse-mft-1
 - MinaNasser/whisper-base-arabic
 - dmartu/VibeVoice-ASR-HFI
 - dianavdavidson/wh_l_v3_turbo_mucs_no_langid_mucs_48419_trial
+- lewiswoncy/m_test_10
+- lewiswoncy/m_test_8
+- 7ocho/WMAC1
+- 7ocho/WMAC
 
 ### Transducer
 - RNN-T
@@ -57,10 +62,19 @@
 - Offline
 - Long-form
 
+### Speaker Diarization
+- Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization
+- A Holistic Framework for Robust Bangla ASR and Speaker Diarization
+- Robust Long-Form Bangla Speech Processing
+- 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing and Fine-Tuned Diarization
+
 ### Multilingual
 - Code-switching
 - Low-resource
 - Cross-lingual
+- Dialect-Aware Modeling (Hakka)
+- TG-ASR: Translation-Guided Learning
+- AWARRITech/whisper-small-yoruba-v1
 - DewiBrynJones/whisper-large-v2-ft-cy-2601
 - afaqalinagra/whisper-base-ps
 - Cong123779/AI2Text-Bilingual-ASR
@@ -72,6 +86,8 @@
 - Audio-Visual ASR
 - Speech Translation
 - CLAP-Based Recognition
+- Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
+- Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
 
 ### Specialized
 - Medical Transcription
@@ -83,6 +99,7 @@
 - Phonetic Transcription (IPA)
 - neurlang/ipa-whisper-medium
 - Religious/Liturgical Speech
+- 9DTechnologies/QuartzNet_quran_v1
 - wasimlhr/whisper-large-v3-Tarteel-even-g2
 - CLAP-Based Automatic Word Naming Recognition in Post-Stroke Aphasia
 
@@ -112,6 +129,7 @@
 - SpecAugment
 - Speed Perturbation
 - Noise Injection
+- Extreme Augmentation for Long-Form Audio
 
 ### Decoding
 - Beam Search
@@ -123,12 +141,18 @@
 - Distillation
 - Pruning
 - RayOrz/whisperkit-coreml
+- smkrv/whisper-podlodka-turbo-coreml
 - kzmaker/faster-whisper-tilsync-34000
 
 ### Adaptation
 - Depth-Aware Adaptation
 - Low-Rank Adaptation (LoRA)
 - Fine-tuning
+- maryamas222/whisper-large-v3-egyptian-lora-v4
+
+### Post-processing
+- Punctuation Restoration
+- Structural Noise Mitigation in S2TT
 
 
 ## Evaluation
@@ -253,6 +277,7 @@
 - Speech-text alignment
 - Interleaved speech-text training
 - Cross-lingual Matryoshka Representation Learning
+- TADA: Text-Acoustic Dual Alignment
 
 ### Reinforcement Learning
 - RLHF for speech
