@@ -72,5 +72,11 @@
     "tcg crest system description for the displace-m challenge",
     "2603.01894v1",
     "vietsuperspeech: a large-scale vietnamese conversational speech dataset for asr fine-tuning in chatbot, customer support, and call center applications"
+  ],
+  "2026-03-05": [
+    "2603.04293v1",
+    "labelbuddy: an open source music and audio language annotation tagging tool using ai assistance",
+    "2603.03811v1",
+    "robust llm-based audio-visual speech recognition with sparse modality alignment and visual unit-guided refinement"
   ]
 }

@@ -1,0 +1,470 @@
+{
+  "date": "2026-03-05",
+  "summary": "Today's research highlights a push toward multimodal integration with a new LLM-based Audio-Visual Speech Recognition (AVSR) framework that utilizes sparse modality alignment and visual unit-guided refinement to significantly improve robustness in noisy environments. Complementing this architectural advancement is the release of LabelBuddy, an open-source AI-assisted annotation tool designed to facilitate the high-quality, human-aligned data labeling required for next-generation Large Audio Language Models (LALMs). Notable model releases continue to focus on specialized fine-tuning, including new Parakeet-TDT 0.6b iterations and Whisper-large-v3 variants targeting low-resource languages like Lao and Fongbe. Together, these developments reflect a maturing ecosystem where practitioners are simultaneously scaling multimodal LLM capabilities and refining the specialized infrastructure needed for granular audio representation learning.",
+  "ideas": [
+    "LabelBuddy introduces an open-source infrastructure designed to transition audio annotation from static tagging to the rich, human-aligned descriptions required for training Large Audio Language Models.",
+    "AI-assisted labeling tools are becoming critical for scaling the creation of high-quality datasets that bridge the gap between raw audio signals and complex language representations.",
+    "Sparse Modality Alignment enhances LLM-based audio-visual speech recognition by selectively synchronizing acoustic and visual features to improve robustness in noisy environments.",
+    "Visual Unit-Guided Refinement uses discrete visual representations to refine acoustic hypotheses, effectively mitigating the impact of adverse audio conditions on transcription accuracy.",
+    "The integration of multi-modal inputs into LLMs through specialized refinement layers allows for more resilient speech recognition systems that outperform traditional single-modality models."
+  ],
+  "papers": [
+    {
+      "id": "2603.04293v1",
+      "title": "LabelBuddy: An Open Source Music and Audio Language Annotation Tagging Tool Using AI Assistance",
+      "authors": [
+        "Ioannis Prokopiou",
+        "Ioannis Sina",
+        "Agisilaos Kounelis",
+        "Pantelis Vikatos",
+        "Themos Stafylakis"
+      ],
+      "abstract": "The advancement of Machine learning (ML), Large Audio Language Models (LALMs), and autonomous AI agents in Music Information Retrieval (MIR) necessitates a shift from static tagging to rich, human-aligned representation learning. However, the scarcity of open-source infrastructure capable of capturing the subjective nuances of audio annotation remains a critical bottleneck. This paper introduces \\textbf{LabelBuddy}, an open-source collaborative auto-tagging audio annotation tool designed to bridge the gap between human intent and machine understanding. Unlike static tools, it decouples the interface from inference via containerized backends, allowing users to plug in custom models for AI-assisted pre-annotation. We describe the system architecture, which supports multi-user consensus, containerized model isolation, and a roadmap for extending agents and LALMs. Code available at https://github.com/GiannisProkopiou/gsoc2022-Label-buddy.",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-03-04",
+      "url": "https://arxiv.org/abs/2603.04293v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.04293v1"
+    },
+    {
+      "id": "2603.03811v1",
+      "title": "Robust LLM-based Audio-Visual Speech Recognition with Sparse Modality Alignment and Visual Unit-Guided Refinement",
+      "authors": [
+        "Fei Su",
+        "Cancan Li",
+        "Juan Liu",
+        "Wei Ju",
+        "Hongbin Suo",
+        "Ming Li"
+      ],
+      "abstract": "Audio-Visual Speech Recognition (AVSR) integrates acoustic and visual information to enhance robustness in adverse acoustic conditions. Recent advances in Large Language Models (LLMs) have yielded competitive automatic speech recognition performance and shown effectiveness for AVSR. However, prior approaches project audio and visual features independently or apply shallow fusion, limiting cross-modal alignment and complementary exchange while increasing the LLM's computational load. To address this, we propose AVUR-LLM, an LLM-based Audio-Visual Speech Recognition via Sparse Modality Alignment and Visual Unit-Guided Refinement. Experiments on LRS3 demonstrate state-of-the-art results for AVSR. Under additive-noise conditions at 0 dB SNR, it achieves 37% relative improvement over the baseline system.",
+      "categories": [
+        "cs.SD",
+        "cs.MM",
+        "eess.AS"
+      ],
+      "published": "2026-03-04",
+      "url": "https://arxiv.org/abs/2603.03811v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.03811v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "vitthalbhandari/whisper-large-v3-aft-all-top",
+      "author": "vitthalbhandari",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/whisper-large-v3-aft-all-top",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shagufta/facebook-wav2vec2-xls-r-1b-5hours-continued",
+      "author": "Shagufta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Shagufta/facebook-wav2vec2-xls-r-1b-5hours-continued",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vitthalbhandari/whisper-large-v3-aft-all-mmc",
+      "author": "vitthalbhandari",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vitthalbhandari/whisper-large-v3-aft-all-mmc",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AIDC-LAOS/whisper-3-large-turbo-lao-finetuned",
+      "author": "AIDC-LAOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AIDC-LAOS/whisper-3-large-turbo-lao-finetuned",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aidctech/whisper-3-large-turbo-lao-finetuned-v10",
+      "author": "aidctech",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aidctech/whisper-3-large-turbo-lao-finetuned-v10",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Cactus-Compute/parakeet-tdt-0.6b-v3",
+      "author": "Cactus-Compute",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Cactus-Compute/parakeet-tdt-0.6b-v3",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "asrDIL/fongbe-asr-v1.1.0",
+      "author": "asrDIL",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/asrDIL/fongbe-asr-v1.1.0",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Cactus-Compute/whisper-base",
+      "author": "Cactus-Compute",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Cactus-Compute/whisper-base",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Cactus-Compute/whisper-tiny",
+      "author": "Cactus-Compute",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Cactus-Compute/whisper-tiny",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shagufta/facebook-wav2vec2-xls-r-1b-5hours",
+      "author": "Shagufta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Shagufta/facebook-wav2vec2-xls-r-1b-5hours",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zafarrr/uzbek-stt-fastconformer-v1.5",
+      "author": "zafarrr",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zafarrr/uzbek-stt-fastconformer-v1.5",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "HitmanReborn/whisper-tiny-pan-mix_int_speed-1",
+      "author": "HitmanReborn",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/HitmanReborn/whisper-tiny-pan-mix_int_speed-1",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "DanaRL/whisper-large-v3-zw-ar-180226-specaug-dropout-lowerWdecay-HLR-HWarmup",
+      "author": "DanaRL",
+      "downloads": 203,
+      "likes": 0,
+      "url": "https://huggingface.co/DanaRL/whisper-large-v3-zw-ar-180226-specaug-dropout-lowerWdecay-HLR-HWarmup",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Danieljava/whisper-small-finetuned-asr-igbo-yoruba-data-20260304_200112",
+      "author": "Danieljava",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/Danieljava/whisper-small-finetuned-asr-igbo-yoruba-data-20260304_200112",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "trysem/indicconformer-120m-onnx",
+      "author": "trysem",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/trysem/indicconformer-120m-onnx",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "joshuavinith/whisper-small-hindi",
+      "author": "joshuavinith",
+      "downloads": 67,
+      "likes": 0,
+      "url": "https://huggingface.co/joshuavinith/whisper-small-hindi",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Danieljava/whisper-small-finetuned-asr-random-data-20260304_183211",
+      "author": "Danieljava",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/Danieljava/whisper-small-finetuned-asr-random-data-20260304_183211",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nenad1002/Nemotron-Streaming-ES-ES",
+      "author": "nenad1002",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/nenad1002/Nemotron-Streaming-ES-ES",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sudoping01/karato-wav2vec2-nko",
+      "author": "sudoping01",
+      "downloads": 305,
+      "likes": 0,
+      "url": "https://huggingface.co/sudoping01/karato-wav2vec2-nko",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FarmerlineML/w2v-bert-2.0_2026_krio_cleaner",
+      "author": "FarmerlineML",
+      "downloads": 149,
+      "likes": 0,
+      "url": "https://huggingface.co/FarmerlineML/w2v-bert-2.0_2026_krio_cleaner",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amnbk/whisper-medical-fr",
+      "author": "amnbk",
+      "downloads": 49,
+      "likes": 0,
+      "url": "https://huggingface.co/amnbk/whisper-medical-fr",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "exala-e/small_en_dg_9_seg_40_atc",
+      "author": "exala-e",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/exala-e/small_en_dg_9_seg_40_atc",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FarmerlineML/w2v-bert-2.0_2026_telephony_krio",
+      "author": "FarmerlineML",
+      "downloads": 362,
+      "likes": 0,
+      "url": "https://huggingface.co/FarmerlineML/w2v-bert-2.0_2026_telephony_krio",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/irish-whisper-MCV_wiht_augmentation",
+      "author": "Eimhin03",
+      "downloads": 71,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/irish-whisper-MCV_wiht_augmentation",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "wangminrui2022/faster-whisper-base-ct2",
+      "author": "wangminrui2022",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/wangminrui2022/faster-whisper-base-ct2",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sudoping01/karato-wav2vec2-latin",
+      "author": "sudoping01",
+      "downloads": 342,
+      "likes": 0,
+      "url": "https://huggingface.co/sudoping01/karato-wav2vec2-latin",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "7ocho/WMACv2",
+      "author": "7ocho",
+      "downloads": 104,
+      "likes": 0,
+      "url": "https://huggingface.co/7ocho/WMACv2",
+      "created_at": "2026-03-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Kiadee/VibeVoice-7B",
+      "author": "Kiadee",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Kiadee/VibeVoice-7B",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Kapmuan/TTS_ZOMI",
+      "author": "Kapmuan",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Kapmuan/TTS_ZOMI",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "samudr-ai/svara-tts-v1-hindi-ft",
+      "author": "samudr-ai",
+      "downloads": 15,
+      "likes": 0,
+      "url": "https://huggingface.co/samudr-ai/svara-tts-v1-hindi-ft",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "hans00/kani-tts-2-GGUF",
+      "author": "hans00",
+      "downloads": 71,
+      "likes": 0,
+      "url": "https://huggingface.co/hans00/kani-tts-2-GGUF",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "lllllzh123/feng_voice",
+      "author": "lllllzh123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lllllzh123/feng_voice",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "hans00/Soprano-1.1-80M-GGUF",
+      "author": "hans00",
+      "downloads": 164,
+      "likes": 0,
+      "url": "https://huggingface.co/hans00/Soprano-1.1-80M-GGUF",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "OpenMOSS-Team/MOSS-TTS-GGUF",
+      "author": "OpenMOSS-Team",
+      "downloads": 16,
+      "likes": 5,
+      "url": "https://huggingface.co/OpenMOSS-Team/MOSS-TTS-GGUF",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "chinedudave06/musicgen-medium-stereo-pte",
+      "author": "chinedudave06",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chinedudave06/musicgen-medium-stereo-pte",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "chinedudave06/musicgen-small-stereo-pte",
+      "author": "chinedudave06",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chinedudave06/musicgen-small-stereo-pte",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "chinedudave06/musicgen-medium-pte",
+      "author": "chinedudave06",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chinedudave06/musicgen-medium-pte",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "chinedudave06/musicgen-small-pte",
+      "author": "chinedudave06",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chinedudave06/musicgen-small-pte",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "sil-ai/bcc-arbnaskh-audio-aligned-speecht5",
+      "author": "sil-ai",
+      "downloads": 77,
+      "likes": 0,
+      "url": "https://huggingface.co/sil-ai/bcc-arbnaskh-audio-aligned-speecht5",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "felipeinfantino/voice-remover",
+      "author": "felipeinfantino",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/felipeinfantino/voice-remover",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "ShandaAI/AudioSep-hive",
+      "author": "ShandaAI",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/ShandaAI/AudioSep-hive",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "Aratako/Semantic-DACVAE-Japanese",
+      "author": "Aratako",
+      "downloads": 0,
+      "likes": 2,
+      "url": "https://huggingface.co/Aratako/Semantic-DACVAE-Japanese",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "chinedudave06/demucs",
+      "author": "chinedudave06",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chinedudave06/demucs",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "eugenehp/neucodec",
+      "author": "eugenehp",
+      "downloads": 3,
+      "likes": 1,
+      "url": "https://huggingface.co/eugenehp/neucodec",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "takuma104/Qwen3-TTS-Tokenizer-12Hz-48kHz",
+      "author": "takuma104",
+      "downloads": 88,
+      "likes": 0,
+      "url": "https://huggingface.co/takuma104/Qwen3-TTS-Tokenizer-12Hz-48kHz",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 2,
+    "model_count": 45,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
