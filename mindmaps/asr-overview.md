@@ -19,6 +19,10 @@
 - lewiswoncy/m_test_8
 - 7ocho/WMAC1
 - 7ocho/WMAC
+- vitthalbhandari/whisper-large-v3-aft-all-top
+- vitthalbhandari/whisper-large-v3-aft-all-mmc
+- vitthalbhandari/whisper-large-v3-aft-all-meh
+- Shagufta/whisper_medium_km_indomain
 
 ### Transducer
 - RNN-T
@@ -35,6 +39,7 @@
 - vitthalbhandari/mms-1b-all-aft-all-meh
 - vitthalbhandari/mms-1b-all-aft-all-lke
 - Professor/mms-300m-fongbe
+- Shagufta/facebook-wav2vec2-xls-r-1b-5hours-continued
 
 ### LLM-based ASR
 - Jonxxxxxx/Qwen3-ASR-0.6B
@@ -61,6 +66,7 @@
 - Real-time
 - Offline
 - Long-form
+- An Investigation Into Various Approaches For Bengali Long-Form Speech Transcription
 
 ### Speaker Diarization
 - Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization
@@ -81,6 +87,7 @@
 - kesavamas/whisper-small-fleurs-id
 - korir8/sauti-whisper-small-swh
 - amanuelbyte/whisper-amharic-asr-finetuned
+- Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539
 
 ### Multimodal
 - Audio-Visual ASR
@@ -88,6 +95,7 @@
 - CLAP-Based Recognition
 - Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
 - Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
+- Robust LLM-based Audio-Visual Speech Recognition with Sparse Modality Alignment and Visual Unit-Guided Refinement
 
 ### Specialized
 - Medical Transcription
@@ -102,6 +110,10 @@
 - 9DTechnologies/QuartzNet_quran_v1
 - wasimlhr/whisper-large-v3-Tarteel-even-g2
 - CLAP-Based Automatic Word Naming Recognition in Post-Stroke Aphasia
+- Benchmarking Speech Systems for Frontline Health Conversations: The DISPLACE-M Challenge
+
+### Security & Anti-spoofing
+- Does Fine-tuning by Reinforcement Learning Improve Generalization in Binary Speech Deepfake Detection?
 
 
 ## Datasets
@@ -118,10 +130,12 @@
 - VoxPopuli
 - Pashto Common Voice (Scale Analysis)
 - Akan Impaired Speech Dataset
+- Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language
 
 ### Benchmarks
 - ESB
 - Open ASR Leaderboard
+- RO-N3WS: Enhancing Generalization in Low-Resource ASR with Diverse Romanian Speech Benchmarks
 
 
 ## Techniques
@@ -149,6 +163,8 @@
 - Low-Rank Adaptation (LoRA)
 - Fine-tuning
 - maryamas222/whisper-large-v3-egyptian-lora-v4
+- GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
+- Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition
 
 ### Post-processing
 - Punctuation Restoration
@@ -187,6 +203,9 @@
 ### Edge & Robotics
 - UAV-Assisted Emergency Networks
 - Voice-Driven Semantic Perception
+
+### Annotation & Tooling
+- LabelBuddy: An Open Source Music and Audio Language Annotation Tagging Tool
 
 
 
