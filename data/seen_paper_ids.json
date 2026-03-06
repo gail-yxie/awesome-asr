@@ -78,5 +78,33 @@
     "labelbuddy: an open source music and audio language annotation tagging tool using ai assistance",
     "2603.03811v1",
     "robust llm-based audio-visual speech recognition with sparse modality alignment and visual unit-guided refinement"
+  ],
+  "2026-03-06": [
+    "2603.05459v1",
+    "debiss: a corpus of individual, semi-structured and spoken debates",
+    "2603.05354v1",
+    "exploring the potential and limitations of model merging for multi-domain adaptation in asr",
+    "2603.05314v1",
+    "persianpunc: a large-scale dataset and bert-based approach for persian punctuation restoration",
+    "2603.05299v1",
+    "wavslm: single-stream speech language modeling via wavlm distillation",
+    "2603.05270v1",
+    "visual-informed speech enhancement using attention-based beamforming",
+    "2603.05231v1",
+    "boosting asr robustness via test-time reinforcement learning with audio-text semantic rewards",
+    "2603.05128v1",
+    "polybench: a benchmark for compositional reasoning in polyphonic audio",
+    "2603.05094v1",
+    "tw-sound580k: a regional audio-text dataset with verification-guided curation for localized audio-language modeling",
+    "2603.04945v1",
+    "federated heterogeneous language model optimization for hybrid automatic speech recognition",
+    "2603.04862v1",
+    "focus then listen: exploring plug-and-play audio enhancer for noise-robust large audio language models",
+    "2603.04809v1",
+    "whisperalign: word-boundary-aware asr and whisperx-anchored pyannote diarization for long-form bengali speech",
+    "2603.04710v1",
+    "when denoising hinders: revisiting zero-shot asr with sam-audio and whisper",
+    "2603.04657v1",
+    "stan: an llm-based thermodynamics course assistant"
   ]
 }

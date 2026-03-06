@@ -1,0 +1,598 @@
+{
+  "date": "2026-03-06",
+  "summary": "Today's developments are headlined by **WavSLM**, which simplifies speech language modeling by distilling WavLM features into a single-stream autoregressive framework, successfully removing the need for text supervision or complex hierarchical architectures. Research into Large Audio Language Models (LALMs) is increasingly focused on real-world robustness, exemplified by the introduction of **PolyBench** for evaluating compositional reasoning in polyphonic audio and the **Focus Then Listen** plug-and-play enhancer designed to mitigate noise interference. Emerging trends suggest a shift toward modular model composition, with new studies exploring **model merging** as a scalable alternative to multi-task training for adapting speech foundation models and federated optimization for hybrid ASR. Critically, the paper \"**When Denoising Hinders**\" challenges industry conventions by demonstrating that perceptual audio enhancement can paradoxically degrade zero-shot ASR performance, while model releases prioritize deployment efficiency with several new **Whisper-large-v3-turbo** exports in ONNX and Faster-Whisper formats.",
+  "ideas": [
+    "WavSLM enables single-stream speech language modeling by distilling semantic and acoustic information from WavLM, eliminating the need for text supervision or complex multi-stage hierarchical pipelines.",
+    "Empirical studies suggest that speech enhancement pre-processing can counterintuitively degrade the performance of zero-shot ASR models like Whisper, highlighting their inherent robustness to raw, noisy acoustic environments.",
+    "A novel test-time adaptation framework utilizes reinforcement learning with semantic audio-text rewards to improve ASR accuracy on unseen accents and noise levels without requiring ground-truth transcriptions at inference time.",
+    "Model merging techniques provide a training-free and scalable solution for multi-domain ASR adaptation, allowing multiple specialized models to be integrated into a single speech foundation model without catastrophic forgetting.",
+    "PolyBench establishes a new benchmark for evaluating the compositional reasoning of Large Audio Language Models in polyphonic settings where multiple overlapping sounds require sophisticated structural understanding.",
+    "The \"Focus Then Listen\" paradigm demonstrates that using a modular, plug-and-play audio enhancer can significantly boost the noise robustness of Large Audio Language Models without requiring expensive, task-specific fine-tuning.",
+    "The TW-Sound580K dataset introduces a \"Verify-Generate-Critique\" protocol using dual-ASR validation to successfully capture regional dialectal prosody, addressing a critical data gap for localized audio-language modeling."
+  ],
+  "papers": [
+    {
+      "id": "2603.05459v1",
+      "title": "DEBISS: a Corpus of Individual, Semi-structured and Spoken Debates",
+      "authors": [
+        "Klaywert Danillo Ferreira de Souza",
+        "David Eduardo Pereira",
+        "Cláudio E. C. Campelo",
+        "Larissa Lucena Vasconcelos"
+      ],
+      "abstract": "The process of debating is essential in our daily lives, whether in studying, work activities, simple everyday discussions, political debates on TV, or online discussions on social networks. The range of uses for debates is broad. Due to the diverse applications, structures, and formats of debates, developing corpora that account for these variations can be challenging, and the scarcity of debate corpora in the state of the art is notable. For this reason, the current research proposes the DEBISS corpus: a collection of spoken and individual debates with semi-structured features. With a broad range of NLP task annotations, such as speech-to-text, speaker diarization, argument mining, and debater quality assessment.",
+      "categories": [
+        "cs.CL",
+        "cs.DB"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.05459v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05459v1"
+    },
+    {
+      "id": "2603.05354v1",
+      "title": "Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR",
+      "authors": [
+        "Carlos Carvalho",
+        "Francisco Teixeira",
+        "Thomas Rolland",
+        "Alberto Abad"
+      ],
+      "abstract": "Model merging is a scalable alternative to multi-task training that combines the capabilities of multiple specialised models into a single model. This is particularly attractive for large speech foundation models, which are typically adapted through domain-specific fine-tuning, resulting in multiple customised checkpoints, for which repeating full fine-tuning when new data becomes available is computationally prohibitive. In this work, we study model merging for multi-domain ASR and benchmark 11 merging algorithms for 10 European Portuguese domains, evaluating in-domain accuracy, robustness under distribution shift, as well as English and multilingual performance. We further propose BoostedTSV-M, a new merging algorithm based on TSV-M that mitigates rank collapse via singular-value boosting and improves numerical stability. Overall, our approach outperforms full fine-tuning on European Portuguese while preserving out-of-distribution generalisation in a single model.",
+      "categories": [
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.05354v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05354v1"
+    },
+    {
+      "id": "2603.05314v1",
+      "title": "PersianPunc: A Large-Scale Dataset and BERT-Based Approach for Persian Punctuation Restoration",
+      "authors": [
+        "Mohammad Javad Ranjbar Kalahroodi",
+        "Heshaam Faili",
+        "Azadeh Shakery"
+      ],
+      "abstract": "Punctuation restoration is essential for improving the readability and downstream utility of automatic speech recognition (ASR) outputs, yet remains underexplored for Persian despite its importance. We introduce PersianPunc, a large-scale, high-quality dataset of 17 million samples for Persian punctuation restoration, constructed through systematic aggregation and filtering of existing textual resources. We formulate punctuation restoration as a token-level sequence labeling task and fine-tune ParsBERT to achieve strong performance. Through comparative evaluation, we demonstrate that while large language models can perform punctuation restoration, they suffer from critical limitations: over-correction tendencies that introduce undesired edits beyond punctuation insertion (particularly problematic for speech-to-text pipelines) and substantially higher computational requirements. Our lightweight BERT-based approach achieves a macro-averaged F1 score of 91.33% on our test set while maintaining efficiency suitable for real-time applications. We make our dataset (https://huggingface.co/datasets/MohammadJRanjbar/persian-punctuation-restoration) and model (https://huggingface.co/MohammadJRanjbar/parsbert-persian-punctuation) publicly available to facilitate future research in Persian NLP and provide a scalable framework applicable to other morphologically rich, low-resource languages.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.05314v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05314v1"
+    },
+    {
+      "id": "2603.05299v1",
+      "title": "WavSLM: Single-Stream Speech Language Modeling via WavLM Distillation",
+      "authors": [
+        "Luca Della Libera",
+        "Cem Subakan",
+        "Mirco Ravanelli"
+      ],
+      "abstract": "Large language models show that simple autoregressive training can yield scalable and coherent generation, but extending this paradigm to speech remains challenging due to the entanglement of semantic and acoustic information. Most existing speech language models rely on text supervision, hierarchical token streams, or complex hybrid architectures, departing from the single-stream generative pretraining paradigm that has proven effective in text. In this work, we introduce WavSLM, a speech language model trained by quantizing and distilling self-supervised WavLM representations into a single codebook and optimizing an autoregressive next-chunk prediction objective. WavSLM jointly models semantic and acoustic information within a single token stream without text supervision or text pretraining. Despite its simplicity, it achieves competitive performance on consistency benchmarks and speech generation while using fewer parameters, less training data, and supporting streaming inference. Demo samples are available at https://lucadellalib.github.io/wavslm-web/.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.SD"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.05299v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05299v1"
+    },
+    {
+      "id": "2603.05270v1",
+      "title": "Visual-Informed Speech Enhancement Using Attention-Based Beamforming",
+      "authors": [
+        "Chihyun Liu",
+        "Jiaxuan Fan",
+        "Mingtung Sun",
+        "Michael Anthony",
+        "Mingsian R. Bai",
+        "Yu Tsao"
+      ],
+      "abstract": "Recent studies have demonstrated that incorporating auxiliary information, such as speaker voiceprint or visual cues, can substantially improve Speech Enhancement (SE) performance. However, single-channel methods often yield suboptimal results in low signal-to-noise ratio (SNR) conditions, when there is high reverberation, or in complex scenarios involving dynamic speakers, overlapping speech, or non-stationary noise. To address these issues, we propose a novel Visual-Informed Neural Beamforming Network (VI-NBFNet), which integrates microphone array signal processing and deep neural networks (DNNs) using multimodal input features. The proposed network leverages a pretrained visual speech recognition model to extract lip movements as input features, which serve for voice activity detection (VAD) and target speaker identification. The system is intended to handle both static and moving speakers by introducing a supervised end-to-end beamforming framework equipped with an attention mechanism. The experimental results demonstrated that the proposed audiovisual system has achieved better SE performance and robustness for both stationary and dynamic speaker scenarios, compared to several baseline methods.",
+      "categories": [
+        "eess.AS",
+        "cs.AI"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.05270v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05270v1"
+    },
+    {
+      "id": "2603.05231v1",
+      "title": "Boosting ASR Robustness via Test-Time Reinforcement Learning with Audio-Text Semantic Rewards",
+      "authors": [
+        "Linghan Fang",
+        "Tianxin Xie",
+        "Li Liu"
+      ],
+      "abstract": "Recently, Automatic Speech Recognition (ASR) systems (e.g., Whisper) have achieved remarkable accuracy improvements but remain highly sensitive to real-world unseen data (data with large distribution shifts), including noisy environments and diverse accents. To address this issue, test-time adaptation (TTA) has shown great potential in improving the model adaptability at inference time without ground-truth labels, and existing TTA methods often rely on pseudo-labeling or entropy minimization. However, by treating model confidence as a learning signal, these methods may reinforce high-confidence errors, leading to confirmation bias that undermines adaptation. To overcome these limitations, we present ASR-TRA, a novel Test-time Reinforcement Adaptation framework inspired by causal intervention. More precisely, our method introduces a learnable decoder prompt and utilizes temperature-controlled stochastic decoding to generate diverse transcription candidates. These are scored by a reward model that measures audio-text semantic alignment, and the resulting feedback is used to update both model and prompt parameters via reinforcement learning. Comprehensive experiments on LibriSpeech with synthetic noise and L2 Arctic accented English datasets demonstrate that our method achieves higher accuracy while maintaining lower latency than existing TTA baselines. Ablation studies further confirm the effectiveness of combining audio and language-based rewards, highlighting our method's enhanced stability and interpretability. Overall, our approach provides a practical and robust solution for deploying ASR systems in challenging real-world conditions.",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.05231v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05231v1"
+    },
+    {
+      "id": "2603.05128v1",
+      "title": "PolyBench: A Benchmark for Compositional Reasoning in Polyphonic Audio",
+      "authors": [
+        "Yuanjian Chen",
+        "Yang Xiao",
+        "Han Yin",
+        "Xubo Liu",
+        "Jinjie Huang",
+        "Ting Dang"
+      ],
+      "abstract": "Large Audio Language Models (LALMs) are increasingly capable of reasoning over audio. However, existing benchmarks provide limited coverage of reasoning in polyphonic audio, where multiple sound events co-occur and induce compositional structure. In this work, we introduce PolyBench, a benchmark designed to evaluate compositional reasoning in polyphonic audio. PolyBench comprises five evaluation subsets covering counting, classification, detection, concurrency, and duration estimation, requiring reasoning over multiple concurrent events and their relations. Evaluation of state-of-the-art LALMs reveals consistent performance degradation in polyphonic audio, indicating a fundamental bottleneck in current LALMs.",
+      "categories": [
+        "eess.AS",
+        "cs.SD"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.05128v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05128v1"
+    },
+    {
+      "id": "2603.05094v1",
+      "title": "TW-Sound580K: A Regional Audio-Text Dataset with Verification-Guided Curation for Localized Audio-Language Modeling",
+      "authors": [
+        "Hao-Hui Xie",
+        "Ho-Lam Chung",
+        "Yi-Cheng Lin",
+        "Ke-Han Lu",
+        "Wenze Ren",
+        "Xie Chen",
+        "Hung-yi Lee"
+      ],
+      "abstract": "Large Audio-Language Models (LALMs) typically struggle with localized dialectal prosody due to the scarcity of specialized corpora. We present TW-Sound580K, a Taiwanese audio-text instruction dataset developed through a Verify-Generate-Critique (VGC) protocol. This pipeline leverages Dual-ASR validation to filter 522K raw clips, subsequently expanding them into 580,000 high-fidelity instruction pairs using a teacher model. The dataset's utility is demonstrated through Tai-LALM, which fine-tunes a DeSTA 2.5-Audio-initialized backbone and incorporates a dynamic Dual-ASR Arbitration strategy to optimize transcription selection during inference. On the TAU Benchmark, Tai-LALM reaches 49.1% accuracy, marking a 6.5% absolute improvement over the zero-shot baseline (42.6% with ASR text conditioning). This confirms that integrating regional corpora with rigorous curation and dynamic arbitration significantly enhances LALM performance on localized speech.",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.05094v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05094v1"
+    },
+    {
+      "id": "2603.04945v1",
+      "title": "Federated Heterogeneous Language Model Optimization for Hybrid Automatic Speech Recognition",
+      "authors": [
+        "Mengze Hong",
+        "Yi Gu",
+        "Di Jiang",
+        "Hanlin Gu",
+        "Chen Jason Zhang",
+        "Lu Wang",
+        "Zhiyang Su"
+      ],
+      "abstract": "Training automatic speech recognition (ASR) models increasingly relies on decentralized federated learning to ensure data privacy and accessibility, producing multiple local models that require effective merging. In hybrid ASR systems, while acoustic models can be merged using established methods, the language model (LM) for rescoring the N-best speech recognition list faces challenges due to the heterogeneity of non-neural n-gram models and neural network models. This paper proposes a heterogeneous LM optimization task and introduces a match-and-merge paradigm with two algorithms: the Genetic Match-and-Merge Algorithm (GMMA), using genetic operations to evolve and pair LMs, and the Reinforced Match-and-Merge Algorithm (RMMA), leveraging reinforcement learning for efficient convergence. Experiments on seven OpenSLR datasets show RMMA achieves the lowest average Character Error Rate and better generalization than baselines, converging up to seven times faster than GMMA, highlighting the paradigm's potential for scalable, privacy-preserving ASR systems.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.04945v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.04945v1"
+    },
+    {
+      "id": "2603.04862v1",
+      "title": "Focus Then Listen: Exploring Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models",
+      "authors": [
+        "Han Yin",
+        "Yang Xiao",
+        "Younghoo Kwon",
+        "Ting Dang",
+        "Jung-Woo Choi"
+      ],
+      "abstract": "Large audio language models (LALMs) are a class of foundation models for audio understanding. Existing LALMs tend to degrade significantly in real-world noisy acoustic conditions where speech and non-speech sounds interfere. While noise-aware fine-tuning can improve robustness, it requires task-specific noisy data and expensive retraining, limiting scalability. To address this issue, we propose Focus-Then-Listen (FTL), a plug-and-play audio enhancer that improves LALMs' noise robustness. Specifically, FTL first separates the input waveform into speech and non-speech, and a modality router is applied to predict the target audio modality (e.g., speech) based on the user's instruction. Finally, a modality-aware fusion block generates a task-adaptive enhanced signal for improved downstream perception and reasoning. Experiments across multiple LALMs and tasks show that FTL improves performance across different noise levels without fine-tuning on LALMs.",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.04862v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.04862v1"
+    },
+    {
+      "id": "2603.04809v1",
+      "title": "WhisperAlign: Word-Boundary-Aware ASR and WhisperX-Anchored Pyannote Diarization for Long-Form Bengali Speech",
+      "authors": [
+        "Aurchi Chowdhury",
+        "Rubaiyat -E-Zaman",
+        "Sk. Ashrafuzzaman Nafees"
+      ],
+      "abstract": "This paper presents our solution for the DL Sprint 4.0, addressing the dual challenges of Bengali Long-Form Speech Recognition (Task 1) and Speaker Diarization (Task 2). Processing long-form, multi-speaker Bengali audio introduces significant hurdles in voice activity detection, overlapping speech, and context preservation. To solve the long-form transcription challenge, we implemented a robust audio chunking strategy utilizing whisper-timestamped, allowing us to feed precise, context-aware segments into our fine-tuned acoustic model for high-accuracy transcription. For the diarization task, we developed an integrated pipeline leveraging pyannote.audio and WhisperX. A key contribution of our approach is the domain-specific fine-tuning of the Pyannote segmentation model on the competition dataset. This adaptation allowed the model to better capture the nuances of Bengali conversational dynamics and accurately resolve complex, overlapping speaker boundaries. Our methodology demonstrates that applying intelligent timestamped chunking to ASR and targeted segmentation fine-tuning to diarization significantly drives down Word Error Rate (WER) and Diarization Error Rate (DER), in low-resource settings.",
+      "categories": [
+        "cs.SD",
+        "cs.LG"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.04809v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.04809v1"
+    },
+    {
+      "id": "2603.04710v1",
+      "title": "When Denoising Hinders: Revisiting Zero-Shot ASR with SAM-Audio and Whisper",
+      "authors": [
+        "Akif Islam",
+        "Raufun Nahar",
+        "Md. Ekramul Hamid"
+      ],
+      "abstract": "Recent advances in automatic speech recognition (ASR) and speech enhancement have led to a widespread assumption that improving perceptual audio quality should directly benefit recognition accuracy. In this work, we rigorously examine whether this assumption holds for modern zero-shot ASR systems. We present a systematic empirical study on the impact of Segment Anything Model Audio by Meta AI, a recent foundation-scale speech enhancement model proposed by Meta, when used as a preprocessing step for zero-shot transcription with Whisper. Experiments are conducted across multiple Whisper model variants and two linguistically distinct noisy speech datasets: a real-world Bengali YouTube corpus and a publicly available English noisy dataset. Contrary to common intuition, our results show that SAM-Audio preprocessing consistently degrades ASR performance, increasing both Word Error Rate (WER) and Character Error Rate (CER) compared to raw noisy speech, despite substantial improvements in signal-level quality. Objective Peak Signal-to-Noise Ratio analysis on the English dataset confirms that SAM-Audio produces acoustically cleaner signals, yet this improvement fails to translate into recognition gains. Therefore, we conducted a detailed utterance-level analysis to understand this counterintuitive result. We found that the recognition degradation is a systematic issue affecting the majority of the audio, not just isolated outliers, and that the errors worsen as the Whisper model size increases. These findings expose a fundamental mismatch: audio that is perceptually cleaner to human listeners is not necessarily robust for machine recognition. This highlights the risk of blindly applying state-of-the-art denoising as a preprocessing step in zero-shot ASR pipelines.",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-03-05",
+      "url": "https://arxiv.org/abs/2603.04710v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.04710v1"
+    },
+    {
+      "id": "2603.04657v1",
+      "title": "Stan: An LLM-based thermodynamics course assistant",
+      "authors": [
+        "Eric M. Furst",
+        "Vasudevan Venkateshwaran"
+      ],
+      "abstract": "Discussions of AI in education focus predominantly on student-facing tools -- chatbots, tutors, and problem generators -- while the potential for the same infrastructure to support instructors remains largely unexplored. We describe Stan, a suite of tools for an undergraduate chemical engineering thermodynamics course built on a data pipeline that we develop and deploy in dual roles: serving students and supporting instructors from a shared foundation of lecture transcripts and a structured textbook index. On the student side, a retrieval-augmented generation (RAG) pipeline answers natural-language queries by extracting technical terms, matching them against the textbook index, and synthesizing grounded responses with specific chapter and page references. On the instructor side, the same transcript corpus is processed through structured analysis pipelines that produce per-lecture summaries, identify student questions and moments of confusion, and catalog the anecdotes and analogies used to motivate difficult material -- providing a searchable, semester-scale record of teaching that supports course reflection, reminders, and improvement. All components, including speech-to-text transcription, structured content extraction, and interactive query answering, run entirely on locally controlled hardware using open-weight models (Whisper large-v3, Llama~3.1 8B) with no dependence on cloud APIs, ensuring predictable costs, full data privacy, and reproducibility independent of third-party services. We describe the design, implementation, and practical failure modes encountered when deploying 7--8 billion parameter models for structured extraction over long lecture transcripts, including context truncation, bimodal output distributions, and schema drift, along with the mitigations that resolved them.",
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "physics.ed-ph"
+      ],
+      "published": "2026-03-04",
+      "url": "https://arxiv.org/abs/2603.04657v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.04657v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "omullaboyev/OmoN-STT",
+      "author": "omullaboyev",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/omullaboyev/OmoN-STT",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LemonJiaFace/faster-whisper-large-v2",
+      "author": "LemonJiaFace",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/LemonJiaFace/faster-whisper-large-v2",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "7ocho/WMACv2.2",
+      "author": "7ocho",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/7ocho/WMACv2.2",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "JaeyeongYang/whisper-large-v3-turbo-korean-onnx",
+      "author": "JaeyeongYang",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/JaeyeongYang/whisper-large-v3-turbo-korean-onnx",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "JaeyeongYang/whisper-base-komixv2-onnx",
+      "author": "JaeyeongYang",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/JaeyeongYang/whisper-base-komixv2-onnx",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "JaeyeongYang/whisper-small-komixv2-onnx",
+      "author": "JaeyeongYang",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/JaeyeongYang/whisper-small-komixv2-onnx",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-DisorderedSpeech-f9",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-DisorderedSpeech-f9",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "GJATT/mms-pa_3_5_26_test2",
+      "author": "GJATT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/GJATT/mms-pa_3_5_26_test2",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "CC-555/faster-whisper-large-v3",
+      "author": "CC-555",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/CC-555/faster-whisper-large-v3",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "np-deploys/whisper-large-v3-turbo",
+      "author": "np-deploys",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/np-deploys/whisper-large-v3-turbo",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "GJATT/mms-pa_3_5_26",
+      "author": "GJATT",
+      "downloads": 472,
+      "likes": 0,
+      "url": "https://huggingface.co/GJATT/mms-pa_3_5_26",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "anchor-flux/pyannote-speaker-diarization-community-1",
+      "author": "anchor-flux",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/anchor-flux/pyannote-speaker-diarization-community-1",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "exala-e/v3_turbo_finetune_16bit",
+      "author": "exala-e",
+      "downloads": 19,
+      "likes": 0,
+      "url": "https://huggingface.co/exala-e/v3_turbo_finetune_16bit",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-DisorderedSpeech-f8",
+      "author": "zacdan4801",
+      "downloads": 318,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-DisorderedSpeech-f8",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MarvinLvn/BabAR",
+      "author": "MarvinLvn",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MarvinLvn/BabAR",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "StealthRakib/whisper_finetune_16bit",
+      "author": "StealthRakib",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/StealthRakib/whisper_finetune_16bit",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-DisorderedSpeech-f7",
+      "author": "zacdan4801",
+      "downloads": 175,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-DisorderedSpeech-f7",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "TylorShine/wavlm-base-plus-hiragana-ctc",
+      "author": "TylorShine",
+      "downloads": 23,
+      "likes": 0,
+      "url": "https://huggingface.co/TylorShine/wavlm-base-plus-hiragana-ctc",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "7ocho/WMACv2.1",
+      "author": "7ocho",
+      "downloads": 66,
+      "likes": 0,
+      "url": "https://huggingface.co/7ocho/WMACv2.1",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "moeru-ai/sherpa-onnx-streaming-zipformer-ar_en_id_ja_ru_th_vi_zh-2025-02-10",
+      "author": "moeru-ai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/moeru-ai/sherpa-onnx-streaming-zipformer-ar_en_id_ja_ru_th_vi_zh-2025-02-10",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-DisorderedSpeech-f6",
+      "author": "zacdan4801",
+      "downloads": 365,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-DisorderedSpeech-f6",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hungnguyen190204/VieNeu-TTS-0.3B-LoRA-add-lm_head",
+      "author": "hungnguyen190204",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hungnguyen190204/VieNeu-TTS-0.3B-LoRA-add-lm_head",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "eduardem/f5-tts-romanian",
+      "author": "eduardem",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/eduardem/f5-tts-romanian",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "AnhTuan89/viterbox",
+      "author": "AnhTuan89",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AnhTuan89/viterbox",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "hungnguyen190204/VieNeu-TTS-0.3B-new-dataset-main",
+      "author": "hungnguyen190204",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/hungnguyen190204/VieNeu-TTS-0.3B-new-dataset-main",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "hungnguyen190204/VieNeu-TTS-0.3B-LoRA-new-dataset",
+      "author": "hungnguyen190204",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hungnguyen190204/VieNeu-TTS-0.3B-LoRA-new-dataset",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "np-deploys/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "author": "np-deploys",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/np-deploys/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "np-deploys/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "author": "np-deploys",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/np-deploys/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "np-deploys/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "author": "np-deploys",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/np-deploys/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "SalihHub/karagoz-hacivat-xtts",
+      "author": "SalihHub",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/SalihHub/karagoz-hacivat-xtts",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "happyrobot-ai/HappyTTS-Qwen3-1.7B-Base-v0.1",
+      "author": "happyrobot-ai",
+      "downloads": 46,
+      "likes": 0,
+      "url": "https://huggingface.co/happyrobot-ai/HappyTTS-Qwen3-1.7B-Base-v0.1",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ergjajejnger293933/MOSS-TTSD-v1.0",
+      "author": "ergjajejnger293933",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/ergjajejnger293933/MOSS-TTSD-v1.0",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "bezzam/VibeVoice-1.5B-hf",
+      "author": "bezzam",
+      "downloads": 112,
+      "likes": 0,
+      "url": "https://huggingface.co/bezzam/VibeVoice-1.5B-hf",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "nur-dev/ait-syn-4L",
+      "author": "nur-dev",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/nur-dev/ait-syn-4L",
+      "created_at": "2026-03-04",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "xycld/BS-RoFormer-ONNX",
+      "author": "xycld",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/xycld/BS-RoFormer-ONNX",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "young-flame-boi/SDRC-Mamba2",
+      "author": "young-flame-boi",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/young-flame-boi/SDRC-Mamba2",
+      "created_at": "2026-03-06",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "chinedudave06/demucs-pte",
+      "author": "chinedudave06",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chinedudave06/demucs-pte",
+      "created_at": "2026-03-05",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 13,
+    "model_count": 37,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
