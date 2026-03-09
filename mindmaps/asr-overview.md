@@ -19,6 +19,7 @@
 - lewiswoncy/m_test_8
 - 7ocho/WMAC1
 - 7ocho/WMAC
+- 7ocho/WMACv2.2
 - vitthalbhandari/whisper-large-v3-aft-all-top
 - vitthalbhandari/whisper-large-v3-aft-all-mmc
 - vitthalbhandari/whisper-large-v3-aft-all-meh
@@ -44,6 +45,8 @@
 ### LLM-based ASR
 - Jonxxxxxx/Qwen3-ASR-0.6B
 - Kushtrim/Qwen3-ASR-0.6B-Albanian-728h
+- aoiandroid/granite-4.0-1b-speech
+- aoiandroid/Qwen3-ASR-0.6B
 
 
 ## Self-Supervised Learning
@@ -66,6 +69,7 @@
 - Real-time
 - Offline
 - Long-form
+- omullaboyev/OmoN-STT
 - An Investigation Into Various Approaches For Bengali Long-Form Speech Transcription
 
 ### Speaker Diarization
@@ -131,6 +135,7 @@
 - Pashto Common Voice (Scale Analysis)
 - Akan Impaired Speech Dataset
 - Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language
+- DEBISS: a Corpus of Individual, Semi-structured and Spoken Debates
 
 ### Benchmarks
 - ESB
@@ -157,6 +162,8 @@
 - RayOrz/whisperkit-coreml
 - smkrv/whisper-podlodka-turbo-coreml
 - kzmaker/faster-whisper-tilsync-34000
+- aoiandroid/qwen3-asr-0.6b-coreml
+- LemonJiaFace/faster-whisper-large-v2
 
 ### Adaptation
 - Depth-Aware Adaptation
@@ -166,9 +173,16 @@
 - GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
 - Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition
 
+### Model Merging
+- Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR
+
+### Speech Enhancement
+- Visual-Informed Speech Enhancement Using Attention-Based Beamforming
+
 ### Post-processing
 - Punctuation Restoration
 - Structural Noise Mitigation in S2TT
+- PersianPunc: A Large-Scale Dataset and BERT-Based Approach for Persian Punctuation Restoration
 
 
 ## Evaluation
@@ -203,9 +217,10 @@
 ### Edge & Robotics
 - UAV-Assisted Emergency Networks
 - Voice-Driven Semantic Perception
+- Voice-Driven Semantic Perception for UAV-Assisted Emergency Networks
 
 ### Annotation & Tooling
-- LabelBuddy: An Open Source Music and Audio Language Annotation Tagging Tool
+- LabelBuddy: An Open Source Music and Audio Language Annotation Tagging Tool Using AI Assistance
 
 
 
@@ -221,6 +236,7 @@
 - Spirit-LM
 - Moshi
 - VoxtLM
+- WavSLM: Single-Stream Speech Language Modeling via WavLM Distillation
 
 ### Codec-based
 - VALL-E
@@ -264,6 +280,7 @@
 
 ### LLM-based TTS
 - CTC-TTS: Dual-streaming text-to-speech
+- CTC-TTS: LLM-based dual-streaming text-to-speech with CTC alignment
 
 
 ## Speech Generation Tasks
