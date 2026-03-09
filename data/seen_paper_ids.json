@@ -1,16 +1,4 @@
 {
-  "2026-02-16": [
-    "2602.14062",
-    "from scarcity to scale: a release-level analysis of the pashto common voice dataset",
-    "2602.05406",
-    "enabling automatic disordered speech recognition: an impaired speech dataset in the akan language",
-    "2602.01008",
-    "adapting where it matters: depth-aware adaptation for efficient multilingual speech recognition in low-resource languages"
-  ],
-  "2026-02-17": [
-    "2602.14584v1",
-    "clap-based automatic word naming recognition in post-stroke aphasia"
-  ],
   "2026-02-18": [
     "2602.15537v1",
     "zerosyl: simple zero-resource syllable tokenization for spoken language modeling"
@@ -107,5 +95,7 @@
     "2603.04657v1",
     "stan: an llm-based thermodynamics course assistant"
   ],
-  "2026-03-07": []
+  "2026-03-07": [],
+  "2026-03-08": [],
+  "2026-03-09": []
 }
