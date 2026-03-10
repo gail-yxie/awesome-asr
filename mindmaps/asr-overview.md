@@ -24,6 +24,11 @@
 - vitthalbhandari/whisper-large-v3-aft-all-mmc
 - vitthalbhandari/whisper-large-v3-aft-all-meh
 - Shagufta/whisper_medium_km_indomain
+- offiongbassey/efik-whisper
+- mehedihasanbijoy/whisper-small-aesrc
+- amitkot/whisper-small-he-acft
+- StealthRakib/whisper_finetune_16bit3
+- robello2/whisper-medium-afrispeech-general-v3
 
 ### Transducer
 - RNN-T
@@ -118,6 +123,7 @@
 
 ### Security & Anti-spoofing
 - Does Fine-tuning by Reinforcement Learning Improve Generalization in Binary Speech Deepfake Detection?
+- VoiceSHIELD-Small: Real-Time Malicious Speech Detection and Transcription
 
 
 ## Datasets
@@ -136,6 +142,7 @@
 - Akan Impaired Speech Dataset
 - Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language
 - DEBISS: a Corpus of Individual, Semi-structured and Spoken Debates
+- Ramsa: A Large Sociolinguistically Rich Emirati Arabic Speech Corpus
 
 ### Benchmarks
 - ESB
@@ -164,6 +171,7 @@
 - kzmaker/faster-whisper-tilsync-34000
 - aoiandroid/qwen3-asr-0.6b-coreml
 - LemonJiaFace/faster-whisper-large-v2
+- clawhub/faster-whisper-tiny
 
 ### Adaptation
 - Depth-Aware Adaptation
@@ -301,6 +309,7 @@
 - Emotion control
 - Prosody transfer
 - Style transfer
+- Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction
 
 
 ## Training Approaches
@@ -308,6 +317,7 @@
 - Speech-text joint pre-training
 - Next-token prediction on speech
 - Masked speech modeling
+- Learning Multiple Utterance-Level Attribute Representations with a Unified Speech Encoder
 
 ### Alignment
 - Speech-text alignment
