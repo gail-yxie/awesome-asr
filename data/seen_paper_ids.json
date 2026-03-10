@@ -1,8 +1,4 @@
 {
-  "2026-02-18": [
-    "2602.15537v1",
-    "zerosyl: simple zero-resource syllable tokenization for spoken language modeling"
-  ],
   "2026-02-19": [
     "2602.15537v1",
     "zerosyl: simple zero-resource syllable tokenization for spoken language modeling"
@@ -97,5 +93,15 @@
   ],
   "2026-03-07": [],
   "2026-03-08": [],
-  "2026-03-09": []
+  "2026-03-09": [],
+  "2026-03-10": [
+    "2603.08312v1",
+    "learning multiple utterance-level attribute representations with a unified speech encoder",
+    "2603.08230v1",
+    "disentangling reasoning in large audio-language models for ambiguous emotion prediction",
+    "2603.08125v1",
+    "ramsa: a large sociolinguistically rich emirati arabic speech corpus for asr and tts",
+    "2603.07708v1",
+    "voiceshield-small: real-time malicious speech detection and transcription"
+  ]
 }
