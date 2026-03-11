@@ -1,0 +1,504 @@
+{
+  "date": "2026-03-11",
+  "summary": "Today’s research highlights a shift toward complex audio understanding beyond ASR, with benchmarks like **SCENEBench** and **MUGEN** targeting multi-audio scenarios and industrial use cases, while **ALARM** introduces alignment strategies for integrating audio with reasoning language models (RLMs). Efficiency and portability are central themes, as seen in **Speech-Omni-Lite’s** cost-efficient vision-language extensions and **SPAR-K**, a modality-aware early-exit framework that significantly accelerates inference for interleaved spoken language models. Notable model releases include **Qwen3-ASR-1.7B**, a compact architecture for portable interfaces, alongside specialized Whisper fine-tunes for low-resource languages like Uyghur and Wolof. These developments collectively advance \"Omni-Speech\" systems by bridging the gap between auditory perception, chain-of-thought reasoning, and high-speed cross-modal inference.",
+  "ideas": [
+    "New benchmarks such as SCENEBench and MUGEN reveal that while large audio language models excel at transcription, they still struggle with complex multi-audio reasoning and grounding in practical industrial or assistive contexts.",
+    "Speech-Omni-Lite demonstrates that speech capabilities can be efficiently integrated into vision-language models without the need for massive multimodal training data or high computational costs.",
+    "The ALARM framework addresses a critical flaw in reasoning-based audio models by ensuring chain-of-thought processes are grounded in true audio-language alignment rather than exposing unnatural textual surrogate inputs.",
+    "SPAR-K introduces a modality-aware early exit strategy that significantly accelerates interleaved spoken language models by reducing transformer depth specifically during the generation of long speech token sequences.",
+    "Systematic research into contrastive decoding reveals it is a highly effective tool for enhancing the performance of large audio language models, though the optimal strategy depends heavily on the model's specific architecture.",
+    "Neural audio codecs can be leveraged as an adversarial defense for speech recognition systems, as their discrete bottlenecks naturally suppress malicious noise while retaining essential linguistic features.",
+    "The DRES dataset provides a necessary resource for evaluating ASR and speech enhancement in Dutch by capturing the difficult intersection of semi-spontaneous speech and noisy indoor environments."
+  ],
+  "papers": [
+    {
+      "id": "2603.09853v1",
+      "title": "SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases",
+      "authors": [
+        "Laya Iyer",
+        "Angelina Wang",
+        "Sanmi Koyejo"
+      ],
+      "abstract": "Advances in large language models (LLMs) have enabled significant capabilities in audio processing, resulting in state-of-the-art models now known as Large Audio Language Models (LALMs). However, minimal work has been done to measure audio understanding beyond automatic speech recognition (ASR). This paper closes that gap by proposing a benchmark suite, SCENEBench (Spatial, Cross-lingual, Environmental, Non-speech Evaluation), that targets a broad form of audio comprehension across four real-world categories: background sound understanding, noise localization, cross-linguistic speech understanding, and vocal characterizer recognition. These four categories are selected based on understudied needs from accessibility technology and industrial noise monitoring. In addition to performance, we also measure model latency. The purpose of this benchmark suite is to assess audio beyond just what words are said - rather, how they are said and the non-speech components of the audio. Because our audio samples are synthetically constructed (e.g., by overlaying two natural audio samples), we further validate our benchmark against 20 natural audio items per task, sub-sampled from existing datasets to match our task criteria, to assess ecological validity. We assess five state-of-the-art LALMs and find critical gaps: performance varies across tasks, with some tasks performing below random chance and others achieving high accuracy. These results provide direction for targeted improvements in model capabilities.",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "published": "2026-03-10",
+      "url": "https://arxiv.org/abs/2603.09853v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.09853v1"
+    },
+    {
+      "id": "2603.09725v1",
+      "title": "A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition",
+      "authors": [
+        "Dimme de Groot",
+        "Yuanyuan Zhang",
+        "Jorge Martinez",
+        "Odette Scharenborg"
+      ],
+      "abstract": "We present DRES: a 1.5-hour Dutch realistic elicited (semi-spontaneous) speech dataset from 80 speakers recorded in noisy, public indoor environments. DRES was designed as a test set for the evaluation of state-of-the-art (SOTA) automatic speech recognition (ASR) and speech enhancement (SE) models in a real-world scenario: a person speaking in a public indoor space with background talkers and noise. The speech was recorded with a four-channel linear microphone array. In this work we evaluate the speech quality of five well-known single-channel SE algorithms and the recognition performance of eight SOTA off-the-shelf ASR models before and after applying SE on the speech of DRES. We found that five out of the eight ASR models have WERs lower than 22% on DRES, despite the challenging conditions. In contrast to recent work, we did not find a positive effect of modern single-channel SE on ASR performance, emphasizing the importance of evaluating in realistic conditions.",
+      "categories": [
+        "eess.AS"
+      ],
+      "published": "2026-03-10",
+      "url": "https://arxiv.org/abs/2603.09725v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.09725v1"
+    },
+    {
+      "id": "2603.09714v1",
+      "title": "MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models",
+      "authors": [
+        "Chih-Kai Yang",
+        "Yun-Shao Tsai",
+        "Yu-Kai Guo",
+        "Ping-Le Tsai",
+        "Yen-Ting Piao",
+        "Hung-Wei Chen",
+        "Ting-Lin Hsiao",
+        "Yun-Man Hsu",
+        "Ke-Han Lu",
+        "Hung-yi Lee"
+      ],
+      "abstract": "While multi-audio understanding is critical for large audio-language models (LALMs), it remains underexplored. We introduce MUGEN, a comprehensive benchmark evaluating this capability across speech, general audio, and music. Our experiments reveal consistent weaknesses in multi-audio settings, and performance degrades sharply as the number of concurrent audio inputs increases, identifying input scaling as a fundamental bottleneck. We further investigate training-free strategies and observe that Audio-Permutational Self-Consistency, which diversifies the order of audio candidates, helps models form more robust aggregated predictions, yielding up to 6.28% accuracy gains. Combining this permutation strategy with Chain-of-Thought further improves performance to 6.74%. These results expose blind spots in current LALMs and provide a foundation for evaluating complex auditory comprehension.",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-03-10",
+      "url": "https://arxiv.org/abs/2603.09714v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.09714v1"
+    },
+    {
+      "id": "2603.09627v1",
+      "title": "Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models",
+      "authors": [
+        "Dehua Tao",
+        "Xuan Luo",
+        "Daxin Tan",
+        "Kai Chen",
+        "Lanqing Hong",
+        "Jing Li",
+        "Ruifeng Xu",
+        "Xiao Chen"
+      ],
+      "abstract": "While large-scale omni-models have demonstrated impressive capabilities across various modalities, their strong performance heavily relies on massive multimodal data and incurs substantial computational costs. This work introduces Speech-Omni-Lite, a cost-efficient framework for extending pre-trained Visual-Language (VL) backbones with speech understanding and generation capabilities, while fully preserving the backbones' vision-language performance. Specifically, the VL backbone is equipped with two lightweight, trainable plug-and-play modules, a speech projector and a speech token generator, while keeping the VL backbone fully frozen. To mitigate the scarcity of spoken QA corpora, a low-cost data construction strategy is proposed to generate Question-Text Answer-Text-Speech (QTATS) data from existing ASR speech-text pairs, facilitating effective speech generation training. Experimental results show that, even with only thousands of hours of speech training data, Speech-Omni-Lite achieves excellent spoken QA performance, which is comparable to omni-models trained on millions of hours of speech data. Furthermore, the learned speech modules exhibit strong transferability across VL backbones.",
+      "categories": [
+        "eess.AS"
+      ],
+      "published": "2026-03-10",
+      "url": "https://arxiv.org/abs/2603.09627v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.09627v1"
+    },
+    {
+      "id": "2603.09556v1",
+      "title": "ALARM: Audio-Language Alignment for Reasoning Models",
+      "authors": [
+        "Petr Grinberg",
+        "Hassan Shahmohammadi"
+      ],
+      "abstract": "Large audio language models (ALMs) extend LLMs with auditory understanding. A common approach freezes the LLM and trains only an adapter on self-generated targets. However, this fails for reasoning LLMs (RLMs) whose built-in chain-of-thought traces expose the textual surrogate input, yielding unnatural responses. We propose self-rephrasing, converting self-generated responses into audio-understanding variants compatible with RLMs while preserving distributional alignment. We further fuse and compress multiple audio encoders for stronger representations. For training, we construct a 6M-instance multi-task corpus (2.5M unique prompts) spanning 19K hours of speech, music, and sound. Our 4B-parameter ALM outperforms similarly sized models and surpasses most larger ALMs on related audio-reasoning benchmarks, while preserving textual capabilities with a low training cost. Notably, we achieve the best open-source result on the MMAU-speech and MMSU benchmarks and rank third among all the models.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-10",
+      "url": "https://arxiv.org/abs/2603.09556v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.09556v1"
+    },
+    {
+      "id": "2603.09232v1",
+      "title": "How Contrastive Decoding Enhances Large Audio Language Models?",
+      "authors": [
+        "Tzu-Quan Lin",
+        "Wei-Ping Huang",
+        "Yi-Cheng Lin",
+        "Hung-yi Lee"
+      ],
+      "abstract": "While Contrastive Decoding (CD) has proven effective at enhancing Large Audio Language Models (LALMs), the underlying mechanisms driving its success and the comparative efficacy of different strategies remain unclear. This study systematically evaluates four distinct CD strategies across diverse LALM architectures. We identify Audio-Aware Decoding and Audio Contrastive Decoding as the most effective methods. However, their impact varies significantly by model. To explain this variability, we introduce a Transition Matrix framework to map error pattern shifts during inference. Our analysis demonstrates that CD reliably rectifies errors in which models falsely claim an absence of audio or resort to uncertainty-driven guessing. Conversely, it fails to correct flawed reasoning or confident misassertions. Ultimately, these findings provide a clear guideline for determining which LALM architectures are most suitable for CD enhancement based on their baseline error profiles.",
+      "categories": [
+        "cs.SD",
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-03-10",
+      "url": "https://arxiv.org/abs/2603.09232v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.09232v1"
+    },
+    {
+      "id": "2603.09215v1",
+      "title": "SPAR-K: Scheduled Periodic Alternating Early Exit for Spoken Language Models",
+      "authors": [
+        "Hsiao-Ying Huang",
+        "Cheng-Han Chiang",
+        "Hung-yi Lee"
+      ],
+      "abstract": "Interleaved spoken language models (SLMs) alternately generate text and speech tokens, but decoding at full transformer depth for every step becomes costly, especially due to long speech sequences. We propose SPAR-K, a modality-aware early exit framework designed to accelerate interleaved SLM inference while preserving perceptual quality. SPAR-K introduces a speech alternating-depth schedule: most speech positions exit at a fixed intermediate layer, while periodic full-depth \"refresh\" steps mitigate distribution shift due to early exit. We evaluate our framework using Step-Audio-2-mini and GLM-4-Voice across four datasets spanning reasoning, factual QA, and dialogue tasks, measuring performance in terms of ASR transcription accuracy and perceptual quality. Experimental results demonstrate that SPAR-K largely preserves question-answering accuracy with a maximum accuracy drop of 0.82\\% while reducing average speech decoding depth by up to 11\\% on Step-Audio-2-mini and 5\\% on GLM-4-Voice, both with negligible changes in MOS and WER and no auxiliary computation overhead. We further demonstrate that confidence-based early exit strategies, widely used in text LLMs, are suboptimal for SLMs, highlighting that the unique statistical nature of speech tokens necessitates a specialized early exit design.",
+      "categories": [
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-03-10",
+      "url": "https://arxiv.org/abs/2603.09215v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.09215v1"
+    },
+    {
+      "id": "2603.09034v1",
+      "title": "Trade-offs Between Capacity and Robustness in Neural Audio Codecs for Adversarially Robust Speech Recognition",
+      "authors": [
+        "Jordan Prescott",
+        "Thanathai Lertpetchpun",
+        "Shrikanth Narayanan"
+      ],
+      "abstract": "Adversarial perturbations exploit vulnerabilities in automatic speech recognition (ASR) systems while preserving human perceived linguistic content. Neural audio codecs impose a discrete bottleneck that can suppress fine-grained signal variations associated with adversarial noise. We examine how the granularity of this bottleneck, controlled by residual vector quantization (RVQ) depth, shapes adversarial robustness. We observe a non-monotonic trade-off under gradient-based attacks: shallow quantization suppresses adversarial perturbations but degrades speech content, while deeper quantization preserves both content and perturbations. Intermediate depths balance these effects and minimize transcription error. We further show that adversarially induced changes in discrete codebook tokens strongly correlate with transcription error. These gains persist under adaptive attacks, where neural codec configurations outperform traditional compression defenses.",
+      "categories": [
+        "eess.AS",
+        "cs.SD"
+      ],
+      "published": "2026-03-10",
+      "url": "https://arxiv.org/abs/2603.09034v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.09034v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "sulaimank/w2v-bert-2.0-lg-CV-Fleurs-300",
+      "author": "sulaimank",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sulaimank/w2v-bert-2.0-lg-CV-Fleurs-300",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "anke01/whisper-small-uyghur",
+      "author": "anke01",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/anke01/whisper-small-uyghur",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "qqceqqq/whisper-large-v3",
+      "author": "qqceqqq",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/qqceqqq/whisper-large-v3",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "gouri100/whisper-tiny-finetuned-minds14",
+      "author": "gouri100",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/gouri100/whisper-tiny-finetuned-minds14",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "gouri100/whisper-tiny-minds14",
+      "author": "gouri100",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/gouri100/whisper-tiny-minds14",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aoiandroid/Qwen3-ASR-1.7B",
+      "author": "aoiandroid",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aoiandroid/Qwen3-ASR-1.7B",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alpcansoydas/whisper-medium-tr-ft-11-03-26-encoder-only",
+      "author": "alpcansoydas",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/alpcansoydas/whisper-medium-tr-ft-11-03-26-encoder-only",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Or4kool/wolof_asr",
+      "author": "Or4kool",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Or4kool/wolof_asr",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "JeanKouss/whisper-small-fr",
+      "author": "JeanKouss",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/JeanKouss/whisper-small-fr",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ha0yuan/Qwen3-ASR-LoRa-ChineseAviation-Tiny",
+      "author": "ha0yuan",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/ha0yuan/Qwen3-ASR-LoRa-ChineseAviation-Tiny",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "NUTN-KWS/Whisper-Taiwanese-Hakka-model-v0.2.6",
+      "author": "NUTN-KWS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/NUTN-KWS/Whisper-Taiwanese-Hakka-model-v0.2.6",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MahmoodAnaam/MSP-LRS2",
+      "author": "MahmoodAnaam",
+      "downloads": 125,
+      "likes": 0,
+      "url": "https://huggingface.co/MahmoodAnaam/MSP-LRS2",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aadel4/omniASR-CTC-1B-v2",
+      "author": "aadel4",
+      "downloads": 38,
+      "likes": 0,
+      "url": "https://huggingface.co/aadel4/omniASR-CTC-1B-v2",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aadel4/omniASR-CTC-1B",
+      "author": "aadel4",
+      "downloads": 61,
+      "likes": 0,
+      "url": "https://huggingface.co/aadel4/omniASR-CTC-1B",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aadel4/omniASR-CTC-300M",
+      "author": "aadel4",
+      "downloads": 67,
+      "likes": 0,
+      "url": "https://huggingface.co/aadel4/omniASR-CTC-300M",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aadel4/omniASR-CTC-300M-v2",
+      "author": "aadel4",
+      "downloads": 57,
+      "likes": 0,
+      "url": "https://huggingface.co/aadel4/omniASR-CTC-300M-v2",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "DanaRL/whisper-large-v3-zw-ar-V9",
+      "author": "DanaRL",
+      "downloads": 92,
+      "likes": 0,
+      "url": "https://huggingface.co/DanaRL/whisper-large-v3-zw-ar-V9",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alpcansoydas/whisper-small-tr-ft-10-03-26-encoder-only",
+      "author": "alpcansoydas",
+      "downloads": 67,
+      "likes": 0,
+      "url": "https://huggingface.co/alpcansoydas/whisper-small-tr-ft-10-03-26-encoder-only",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "onnx-internal-testing/tiny-random-GraniteSpeechForConditionalGeneration",
+      "author": "onnx-internal-testing",
+      "downloads": 264,
+      "likes": 0,
+      "url": "https://huggingface.co/onnx-internal-testing/tiny-random-GraniteSpeechForConditionalGeneration",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "DewiBrynJones/whisper-large-v2-ft-cy-2603",
+      "author": "DewiBrynJones",
+      "downloads": 210,
+      "likes": 0,
+      "url": "https://huggingface.co/DewiBrynJones/whisper-large-v2-ft-cy-2603",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Jpisnice/whisper-small-konkani",
+      "author": "Jpisnice",
+      "downloads": 72,
+      "likes": 0,
+      "url": "https://huggingface.co/Jpisnice/whisper-small-konkani",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "robello2/whisper-medium-afrispeech-clinical",
+      "author": "robello2",
+      "downloads": 147,
+      "likes": 0,
+      "url": "https://huggingface.co/robello2/whisper-medium-afrispeech-clinical",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "shrimalmadhur/whisperkit-hinglish",
+      "author": "shrimalmadhur",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/shrimalmadhur/whisperkit-hinglish",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "XDXD12354/bangla-vits-finetuned",
+      "author": "XDXD12354",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/XDXD12354/bangla-vits-finetuned",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "FPHam/kitten_tts_mcp",
+      "author": "FPHam",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/FPHam/kitten_tts_mcp",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "baicai1145/s2-pro-w4a16",
+      "author": "baicai1145",
+      "downloads": 18,
+      "likes": 2,
+      "url": "https://huggingface.co/baicai1145/s2-pro-w4a16",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "vedanshu93/s2-pro",
+      "author": "vedanshu93",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/vedanshu93/s2-pro",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "SykoSLM/OmniVoice-1",
+      "author": "SykoSLM",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/SykoSLM/OmniVoice-1",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "MadGodZ/ChatTTS",
+      "author": "MadGodZ",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MadGodZ/ChatTTS",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "sil-ai/ntk-Ikoma-audio-aligned-speecht5",
+      "author": "sil-ai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sil-ai/ntk-Ikoma-audio-aligned-speecht5",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "sil-ai/ssc-ssc-audio-aligned-speecht5",
+      "author": "sil-ai",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/sil-ai/ssc-ssc-audio-aligned-speecht5",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "gc-ai/csm-finetuned-maya",
+      "author": "gc-ai",
+      "downloads": 98,
+      "likes": 0,
+      "url": "https://huggingface.co/gc-ai/csm-finetuned-maya",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "chinedudave06/musicgen-medium-stereo-qnn-pte",
+      "author": "chinedudave06",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chinedudave06/musicgen-medium-stereo-qnn-pte",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "jasonvassallo/demucs-htdemucs-mlx",
+      "author": "jasonvassallo",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/jasonvassallo/demucs-htdemucs-mlx",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "mlx-community/DeepFilterNet-mlx",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/mlx-community/DeepFilterNet-mlx",
+      "created_at": "2026-03-10",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "anke01/thuyg20-uyghur",
+      "author": "anke01",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/anke01/thuyg20-uyghur",
+      "created_at": "2026-03-11"
+    },
+    {
+      "dataset_id": "Cnam-LMSSC/multilingual_librispeech_spanish_phoneme",
+      "author": "Cnam-LMSSC",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Cnam-LMSSC/multilingual_librispeech_spanish_phoneme",
+      "created_at": "2026-03-11"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 8,
+    "model_count": 35,
+    "dataset_count": 2,
+    "tweet_count": 0
+  }
+}

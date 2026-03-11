@@ -1,8 +1,4 @@
 {
-  "2026-02-19": [
-    "2602.15537v1",
-    "zerosyl: simple zero-resource syllable tokenization for spoken language modeling"
-  ],
   "2026-02-20": [
     "2602.17394v1",
     "voice-driven semantic perception for uav-assisted emergency networks"
@@ -103,5 +99,23 @@
     "ramsa: a large sociolinguistically rich emirati arabic speech corpus for asr and tts",
     "2603.07708v1",
     "voiceshield-small: real-time malicious speech detection and transcription"
+  ],
+  "2026-03-11": [
+    "2603.09853v1",
+    "scenebench: an audio understanding benchmark grounded in assistive and industrial use cases",
+    "2603.09725v1",
+    "a semi-spontaneous dutch speech dataset for speech enhancement and speech recognition",
+    "2603.09714v1",
+    "mugen: evaluating and improving multi-audio understanding of large audio-language models",
+    "2603.09627v1",
+    "speech-omni-lite: portable speech interfaces for vision-language models",
+    "2603.09556v1",
+    "alarm: audio-language alignment for reasoning models",
+    "2603.09232v1",
+    "how contrastive decoding enhances large audio language models?",
+    "2603.09215v1",
+    "spar-k: scheduled periodic alternating early exit for spoken language models",
+    "2603.09034v1",
+    "trade-offs between capacity and robustness in neural audio codecs for adversarially robust speech recognition"
   ]
 }
