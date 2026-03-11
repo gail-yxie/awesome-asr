@@ -11,6 +11,7 @@
 - LAS
 - Speech-Transformer
 - fiendshadow/whisper-large-v3
+- qqceqqq/whisper-large-v3
 - Kush0610/whisper-medium-hi-uncurated-reverse-mft-1
 - MinaNasser/whisper-base-arabic
 - dmartu/VibeVoice-ASR-HFI
@@ -29,6 +30,8 @@
 - amitkot/whisper-small-he-acft
 - StealthRakib/whisper_finetune_16bit3
 - robello2/whisper-medium-afrispeech-general-v3
+- anke01/whisper-small-uyghur
+- afaqalinagra/whisper-base-ps
 
 ### Transducer
 - RNN-T
@@ -46,12 +49,14 @@
 - vitthalbhandari/mms-1b-all-aft-all-lke
 - Professor/mms-300m-fongbe
 - Shagufta/facebook-wav2vec2-xls-r-1b-5hours-continued
+- sulaimank/w2v-bert-2.0-lg-CV-Fleurs-300
 
 ### LLM-based ASR
 - Jonxxxxxx/Qwen3-ASR-0.6B
 - Kushtrim/Qwen3-ASR-0.6B-Albanian-728h
 - aoiandroid/granite-4.0-1b-speech
 - aoiandroid/Qwen3-ASR-0.6B
+- Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 
 
 ## Self-Supervised Learning
@@ -105,6 +110,7 @@
 - Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
 - Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
 - Robust LLM-based Audio-Visual Speech Recognition with Sparse Modality Alignment and Visual Unit-Guided Refinement
+- MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
 
 ### Specialized
 - Medical Transcription
@@ -143,11 +149,13 @@
 - Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language
 - DEBISS: a Corpus of Individual, Semi-structured and Spoken Debates
 - Ramsa: A Large Sociolinguistically Rich Emirati Arabic Speech Corpus
+- A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition
 
 ### Benchmarks
 - ESB
 - Open ASR Leaderboard
 - RO-N3WS: Enhancing Generalization in Low-Resource ASR with Diverse Romanian Speech Benchmarks
+- SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases
 
 
 ## Techniques
@@ -191,6 +199,7 @@
 - Punctuation Restoration
 - Structural Noise Mitigation in S2TT
 - PersianPunc: A Large-Scale Dataset and BERT-Based Approach for Persian Punctuation Restoration
+- Mitigating Structural Noise in Low-Resource S2TT: An Optimized Cascaded Nepali-English Pipeline with Punctuation Restoration
 
 
 ## Evaluation
@@ -324,6 +333,7 @@
 - Interleaved speech-text training
 - Cross-lingual Matryoshka Representation Learning
 - TADA: Text-Acoustic Dual Alignment
+- ALARM: Audio-Language Alignment for Reasoning Models
 
 ### Reinforcement Learning
 - RLHF for speech
