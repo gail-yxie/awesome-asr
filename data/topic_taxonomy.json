@@ -32,7 +32,8 @@
         "StealthRakib/whisper_finetune_16bit3",
         "robello2/whisper-medium-afrispeech-general-v3",
         "anke01/whisper-small-uyghur",
-        "afaqalinagra/whisper-base-ps"
+        "afaqalinagra/whisper-base-ps",
+        "e-horizon/whisper-small-ne-en"
       ],
       "Transducer": [
         "RNN-T",
@@ -50,13 +51,15 @@
         "vitthalbhandari/mms-1b-all-aft-all-lke",
         "Professor/mms-300m-fongbe",
         "Shagufta/facebook-wav2vec2-xls-r-1b-5hours-continued",
-        "sulaimank/w2v-bert-2.0-lg-CV-Fleurs-300"
+        "sulaimank/w2v-bert-2.0-lg-CV-Fleurs-300",
+        "Shagufta/facebook-mms-1b-all-KM-outdomain-indomain-5hours"
       ],
       "LLM-based ASR": [
         "Jonxxxxxx/Qwen3-ASR-0.6B",
         "Kushtrim/Qwen3-ASR-0.6B-Albanian-728h",
         "aoiandroid/granite-4.0-1b-speech",
         "aoiandroid/Qwen3-ASR-0.6B",
+        "aoiandroid/Qwen3-ASR-1.7B-CoreML",
         "Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models"
       ]
     },
@@ -126,11 +129,14 @@
         "9DTechnologies/QuartzNet_quran_v1",
         "wasimlhr/whisper-large-v3-Tarteel-even-g2",
         "CLAP-Based Automatic Word Naming Recognition in Post-Stroke Aphasia",
-        "Benchmarking Speech Systems for Frontline Health Conversations: The DISPLACE-M Challenge"
+        "Benchmarking Speech Systems for Frontline Health Conversations: The DISPLACE-M Challenge",
+        "VoxCare: Studying Natural Communication Behaviors of Hospital Caregivers"
       ],
       "Security & Anti-spoofing": [
         "Does Fine-tuning by Reinforcement Learning Improve Generalization in Binary Speech Deepfake Detection?",
-        "VoiceSHIELD-Small: Real-Time Malicious Speech Detection and Transcription"
+        "VoiceSHIELD-Small: Real-Time Malicious Speech Detection and Transcription",
+        "Towards Robust Speech Deepfake Detection via Human-Inspired Reasoning",
+        "Probabilistic Verification of Voice Anti-Spoofing Models"
       ]
     },
     "Datasets": {
@@ -194,11 +200,12 @@
         "Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR"
       ],
       "Speech Enhancement": [
-        "Visual-Informed Speech Enhancement Using Attention-Based Beamforming"
+        "Visual-Informed Speech Enhancement Using Attention-Based Beamforming",
+        "AlphaFlowTSE: One-Step Generative Target Speaker Extraction"
       ],
       "Post-processing": [
         "Punctuation Restoration",
-        "Structural Noise Mitigation in S2TT",
+        "Structural Noise Mitigation",
         "PersianPunc: A Large-Scale Dataset and BERT-Based Approach for Persian Punctuation Restoration",
         "Mitigating Structural Noise in Low-Resource S2TT: An Optimized Cascaded Nepali-English Pipeline with Punctuation Restoration"
       ]
@@ -297,7 +304,8 @@
       ],
       "LLM-based TTS": [
         "CTC-TTS: Dual-streaming text-to-speech",
-        "CTC-TTS: LLM-based dual-streaming text-to-speech with CTC alignment"
+        "CTC-TTS: LLM-based dual-streaming text-to-speech with CTC alignment",
+        "When Fine-Tuning Fails and when it Generalises: Role of Data Diversity in LLM-based TTS"
       ]
     },
     "Speech Generation Tasks": {

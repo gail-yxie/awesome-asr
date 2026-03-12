@@ -19,18 +19,20 @@
 - [Voice-Driven Semantic Perception for UAV-Assisted Emergency Networks](https://arxiv.org/abs/2602.17394v1)
 
 ## cs.SD
+- [When Fine-Tuning Fails and when it Generalises: Role of Data Diversity and Mixed Training in LLM-based TTS](https://arxiv.org/abs/2603.10904v1)
+- [VoxCare: Studying Natural Communication Behaviors of Hospital Caregivers through Wearable Sensing of Egocentric Audio](https://arxiv.org/abs/2603.10888v1)
+- [Towards Robust Speech Deepfake Detection via Human-Inspired Reasoning](https://arxiv.org/abs/2603.10725v1)
+- [Probabilistic Verification of Voice Anti-Spoofing Models](https://arxiv.org/abs/2603.10713v1)
+- [AlphaFlowTSE: One-Step Generative Target Speaker Extraction via Conditional AlphaFlow](https://arxiv.org/abs/2603.10701v1)
+- [Distilling LLM Semantic Priors into Encoder-Only Multi-Talker ASR with Talker-Count Routing](https://arxiv.org/abs/2603.10587v1)
+- [ID-LoRA: Identity-Driven Audio-Video Personalization with In-Context LoRA](https://arxiv.org/abs/2603.10256v1)
 - [SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases](https://arxiv.org/abs/2603.09853v1)
 - [MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models](https://arxiv.org/abs/2603.09714v1)
 - [How Contrastive Decoding Enhances Large Audio Language Models?](https://arxiv.org/abs/2603.09232v1)
-- [Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction](https://arxiv.org/abs/2603.08230v1)
-- [VoiceSHIELD-Small: Real-Time Malicious Speech Detection and Transcription](https://arxiv.org/abs/2603.07708v1)
-- [Boosting ASR Robustness via Test-Time Reinforcement Learning with Audio-Text Semantic Rewards](https://arxiv.org/abs/2603.05231v1)
-- [TW-Sound580K: A Regional Audio-Text Dataset with Verification-Guided Curation for Localized Audio-Language Modeling](https://arxiv.org/abs/2603.05094v1)
-- [Focus Then Listen: Exploring Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models](https://arxiv.org/abs/2603.04862v1)
-- [WhisperAlign: Word-Boundary-Aware ASR and WhisperX-Anchored Pyannote Diarization for Long-Form Bengali Speech](https://arxiv.org/abs/2603.04809v1)
-- [When Denoising Hinders: Revisiting Zero-Shot ASR with SAM-Audio and Whisper](https://arxiv.org/abs/2603.04710v1)
 
 ## eess.AS
+- [FireRedASR2S: A State-of-the-Art Industrial-Grade All-in-One Automatic Speech Recognition System](https://arxiv.org/abs/2603.10420v1)
+- [Speech Codec Probing from Semantic and Phonetic Perspectives](https://arxiv.org/abs/2603.10371v1)
 - [A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition](https://arxiv.org/abs/2603.09725v1)
 - [Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models](https://arxiv.org/abs/2603.09627v1)
 - [Trade-offs Between Capacity and Robustness in Neural Audio Codecs for Adversarially Robust Speech Recognition](https://arxiv.org/abs/2603.09034v1)
@@ -39,5 +41,3 @@
 - [Does Fine-tuning by Reinforcement Learning Improve Generalization in Binary Speech Deepfake Detection?](https://arxiv.org/abs/2603.02914v1)
 - [Benchmarking Speech Systems for Frontline Health Conversations: The DISPLACE-M Challenge](https://arxiv.org/abs/2603.02813v1)
 - [TCG CREST System Description for the DISPLACE-M Challenge](https://arxiv.org/abs/2603.02030v2)
-- [TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition](https://arxiv.org/abs/2602.22039v1)
-- [Training-Free Intelligibility-Guided Observation Addition for Noisy ASR](https://arxiv.org/abs/2602.20967v1)
