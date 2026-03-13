@@ -105,7 +105,8 @@
         "kesavamas/whisper-small-fleurs-id",
         "korir8/sauti-whisper-small-swh",
         "amanuelbyte/whisper-amharic-asr-finetuned",
-        "Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539"
+        "Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539",
+        "Efficient Dialect-Aware Modeling and Conditioning for Low-Resource Taiwanese Hakka Speech Processing"
       ],
       "Multimodal": [
         "Audio-Visual ASR",
@@ -156,7 +157,8 @@
         "Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language",
         "DEBISS: a Corpus of Individual, Semi-structured and Spoken Debates",
         "Ramsa: A Large Sociolinguistically Rich Emirati Arabic Speech Corpus",
-        "A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition"
+        "A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition",
+        "From Scarcity to Scale: A Release-Level Analysis of the Pashto Common Voice Dataset"
       ],
       "Benchmarks": [
         "ESB",
