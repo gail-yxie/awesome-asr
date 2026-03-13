@@ -1,0 +1,393 @@
+{
+  "date": "2026-03-13",
+  "summary": "Recent developments highlight a push toward real-time, deployment-ready Large Audio Language Models (LALMs), with **Uni-ASR** and **Hikari** introducing unified streaming architectures and policy-free causal alignment to mitigate the latency inherent in auto-regressive decoding. There is a growing research focus on multi-dimensional speech understanding, evidenced by techniques to resurface latent paralinguistic cues and the **Resonate** framework, which applies online RL feedback to improve text-to-audio generation quality. Specialized ASR is also advancing through biomarker-supervised models for pathological speech and state-of-the-art results for low-resource languages like Swahili via pseudo-labeled continued pretraining. Notable model releases include **GigaAM-v3** optimized for MLX and several niche **Whisper** variants, signaling a trend toward localizing and optimizing foundational models for specific linguistic contexts and edge hardware.",
+  "ideas": [
+    "Large Audio Language Models are evolving to incorporate paralinguistic awareness, moving beyond text-centric paradigms to capture subtle emotional and contextual cues in speech.",
+    "Online feedback from Large Audio Language Models provides a more effective reinforcement learning signal for text-to-audio generation than traditional offline preference optimization.",
+    "Causal alignment allows for the development of policy-free, end-to-end models capable of simultaneous speech-to-text translation and streaming transcription without complex heuristics.",
+    "Speculative decoding facilitates the deployment of complex speech emotion captioning on resource-constrained edge devices by optimizing the collaboration between edge and cloud architectures.",
+    "Pseudo-labeled continued pretraining effectively bridges the gap for low-resource languages, reaching state-of-the-art ASR performance with minimal human-labeled data.",
+    "Incorporating clinical biomarkers as a supervision signal directly improves ASR performance on pathological speech by accounting for irregular timing and articulatory distortion.",
+    "Unified architectures now allow Large Language Models to perform both high-accuracy non-streaming and low-latency streaming speech recognition within a single framework."
+  ],
+  "papers": [
+    {
+      "id": "2603.11947v1",
+      "title": "Resurfacing Paralinguistic Awareness in Large Audio Language Models",
+      "authors": [
+        "Hao Yang",
+        "Minghan Wang",
+        "Tongtong Wu",
+        "Lizhen Qu",
+        "Ehsan Shareghi",
+        "Gholamreza Haffari"
+      ],
+      "abstract": "Large Audio Language Models (LALMs) have expanded the interaction with human to speech modality, which introduces great interactive potential, due to the paralinguistic cues implicitly indicating the user context. However, building on the current content-centred paradigm, LALMs usually neglect such paralinguistic cues and respond solely based on query content. In this work, to resurface the paralinguistic awareness in LALMs, we introduce five diverse layer-wise analyses to jointly identify paralinguistic layers and semantic understanding layers. Based on these insights, we propose a paralinguistic-enhanced fine-tuning (PE-FT) protocol accordingly to equip LALMs with paralinguistic-aware capabilities, including (1) selective-layer fine-tuning, and (2) an auxiliary dual-level classification head. Our experiments demonstrate that PE-FT protocol efficiently and effectively resurfaces the paralinguistic awareness, even surpassing the performance of the all-layer fine-tuning strategy.",
+      "categories": [
+        "cs.SD",
+        "cs.CL",
+        "cs.MM",
+        "eess.AS"
+      ],
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.11947v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.11947v1"
+    },
+    {
+      "id": "2603.11661v1",
+      "title": "Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models",
+      "authors": [
+        "Xiquan Li",
+        "Junxi Liu",
+        "Wenxi Chen",
+        "Haina Zhu",
+        "Ziyang Ma",
+        "Xie Chen"
+      ],
+      "abstract": "Reinforcement Learning (RL) has become an effective paradigm for enhancing Large Language Models (LLMs) and visual generative models. However, its application in text-to-audio (TTA) generation remains largely under-explored. Prior work typically employs offline methods like Direct Preference Optimization (DPO) and leverages Contrastive Language-Audio Pretraining (CLAP) models as reward functions. In this study, we investigate the integration of online Group Relative Policy Optimization (GRPO) into TTA generation. We adapt the algorithm for Flow Matching-based audio models and demonstrate that online RL significantly outperforms its offline counterparts. Furthermore, we incorporate rewards derived from Large Audio Language Models (LALMs), which can provide fine-grained scoring signals that are better aligned with human perception. With only 470M parameters, our final model, \\textbf{Resonate}, establishes a new SOTA on TTA-Bench in terms of both audio quality and semantic alignment.",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.11661v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.11661v1"
+    },
+    {
+      "id": "2603.11578v1",
+      "title": "Streaming Translation and Transcription Through Speech-to-Text Causal Alignment",
+      "authors": [
+        "Roman Koshkin",
+        "Jeon Haesung",
+        "Lianbo Liu",
+        "Hao Shi",
+        "Mengjie Zhao",
+        "Yusuke Fujita",
+        "Yui Sudo"
+      ],
+      "abstract": "Simultaneous machine translation (SiMT) has traditionally relied on offline machine translation models coupled with human-engineered heuristics or learned policies. We propose Hikari, a policy-free, fully end-to-end model that performs simultaneous speech-to-text translation and streaming transcription by encoding READ/WRITE decisions into a probabilistic WAIT token mechanism. We also introduce Decoder Time Dilation, a mechanism that reduces autoregressive overhead and ensures a balanced training distribution. Additionally, we present a supervised fine-tuning strategy that trains the model to recover from delays, significantly improving the quality-latency trade-off. Evaluated on English-to-Japanese, German, and Russian, Hikari achieves new state-of-the-art BLEU scores in both low- and high-latency regimes, outperforming recent baselines.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.11578v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.11578v1"
+    },
+    {
+      "id": "2603.11397v1",
+      "title": "Edge-Cloud Collaborative Speech Emotion Captioning via Token-Level Speculative Decoding in Audio-Language Models",
+      "authors": [
+        "Xiangyuan Xue",
+        "Jiajun Lu",
+        "Yan Gao",
+        "Gongping Huang",
+        "Ting Dang",
+        "Hong Jia"
+      ],
+      "abstract": "Speech Emotion Captioning (SEC) leverages large audio-language models to generate rich, context-aware affective descriptions from speech. However, real-world deployment remains challenging due to the substantial computational demands on resource-constrained edge devices and the privacy risks of transmitting biometric audio. While smaller audio-language models enable efficient on-device SEC, their limited capacity often weakens subtle paralinguistic modeling and fine-grained affective grounding. We propose an edge-cloud collaborative framework based on Uncertainty-Guided Speculative Decoding (UGSD). A lightweight edge model drafts captions locally, and only high-uncertainty token blocks are selectively escalated to a stronger cloud verifier for validation. Experiments on the MER2024 benchmark demonstrate substantial BLEU improvements up to 62.7%. UGSD further achieves 1.4x lower latency and 8.5x higher token throughput compared to an edge-only model. These results empirically characterize the quality-efficiency-privacy trade-off in deployable SEC systems.",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.11397v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.11397v1"
+    },
+    {
+      "id": "2603.11378v1",
+      "title": "Continued Pretraining for Low-Resource Swahili ASR: Achieving State-of-the-Art Performance with Minimal Labeled Data",
+      "authors": [
+        "Hillary Mutisya",
+        "John Mugane"
+      ],
+      "abstract": "We investigate continued pretraining (CPT) for adapting wav2vec2-bert-2.0 to Swahili automatic speech recognition (ASR). Our approach combines unlabeled audio with limited labeled data through pseudo-labeled CPT followed by supervised finetuning. With 20,000 labeled samples, we achieve 3.24% WER on Common Voice Swahili-an 82% relative improvement over the baseline. This result surpasses the best previously reported academic system (8.3% WER from XLS-R) by 61% relative improvement. We provide concrete data requirements and a replicable methodology applicable to other low-resource languages.",
+      "categories": [
+        "cs.SD",
+        "cs.LG",
+        "eess.AS"
+      ],
+      "published": "2026-03-11",
+      "url": "https://arxiv.org/abs/2603.11378v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.11378v1"
+    },
+    {
+      "id": "2603.11168v1",
+      "title": "Huntington Disease Automatic Speech Recognition with Biomarker Supervision",
+      "authors": [
+        "Charles L. Wang",
+        "Cady Chen",
+        "Ziwei Gong",
+        "Julia Hirschberg"
+      ],
+      "abstract": "Automatic speech recognition (ASR) for pathological speech remains underexplored, especially for Huntington's disease (HD), where irregular timing, unstable phonation, and articulatory distortion challenge current models. We present a systematic HD-ASR study using a high-fidelity clinical speech corpus not previously used for end-to-end ASR training. We compare multiple ASR families under a unified evaluation, analyzing WER as well as substitution, deletion, and insertion patterns. HD speech induces architecture-specific error regimes, with Parakeet-TDT outperforming encoder-decoder and CTC baselines. HD-specific adaptation reduces WER from 6.99% to 4.95% and we also propose a method for using biomarker-based auxiliary supervision and analyze how error behavior is reshaped in severity-dependent ways rather than uniformly improving WER. We open-source all code and models.",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.SD"
+      ],
+      "published": "2026-03-11",
+      "url": "https://arxiv.org/abs/2603.11168v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.11168v1"
+    },
+    {
+      "id": "2603.11123v1",
+      "title": "Uni-ASR: Unified LLM-Based Architecture for Non-Streaming and Streaming Automatic Speech Recognition",
+      "authors": [
+        "Yinfeng Xia",
+        "Jian Tang",
+        "Junfeng Hou",
+        "Gaopeng Xu",
+        "Haitao Yao"
+      ],
+      "abstract": "Although the deep integration of the Automatic Speech Recognition (ASR) system with Large Language Models (LLMs) has significantly improved accuracy, the deployment of such systems in low-latency streaming scenarios remains challenging. In this paper, we propose Uni-ASR, a unified framework based on LLMs that integrates both non-streaming and streaming speech recognition capabilities. We propose a joint training paradigm that enables the system to seamlessly transition between two recognition modes without any architectural modifications. Furthermore, we introduce a context-aware training paradigm and a co-designed fallback decoding strategy, which can enhance streaming recognition accuracy without introducing additional latency. The experimental results demonstrate that Uni-ASR not only achieves competitive performance within non-streaming mode, but also demonstrates strong effectiveness in streaming scenarios under diverse latency constraints.",
+      "categories": [
+        "cs.SD",
+        "cs.CL"
+      ],
+      "published": "2026-03-11",
+      "url": "https://arxiv.org/abs/2603.11123v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.11123v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "mabahboh/whisper-shami",
+      "author": "mabahboh",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mabahboh/whisper-shami",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Abdoul27/babyhubert-phoneme-base",
+      "author": "Abdoul27",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Abdoul27/babyhubert-phoneme-base",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Badri0510/thedal-whisper-master",
+      "author": "Badri0510",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Badri0510/thedal-whisper-master",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "al-bo/gigaam-v3-rnnt-mlx",
+      "author": "al-bo",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/al-bo/gigaam-v3-rnnt-mlx",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Miamoto/whisper-largev3-CAMOES_PC_F1",
+      "author": "Miamoto",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Miamoto/whisper-largev3-CAMOES_PC_F1",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Badri0510/thedal-whisper-refined",
+      "author": "Badri0510",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Badri0510/thedal-whisper-refined",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "al-bo/gigaam-v3-ctc-mlx",
+      "author": "al-bo",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/al-bo/gigaam-v3-ctc-mlx",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "reyam123/mon-whisper-voxpopuli-fr",
+      "author": "reyam123",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/reyam123/mon-whisper-voxpopuli-fr",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MaddoggProduction/whisper-small-quran-lora-dataset-mix",
+      "author": "MaddoggProduction",
+      "downloads": 69,
+      "likes": 1,
+      "url": "https://huggingface.co/MaddoggProduction/whisper-small-quran-lora-dataset-mix",
+      "created_at": "2026-03-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Sadhurshan02/tamil-whisper-asr-01",
+      "author": "Sadhurshan02",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/Sadhurshan02/tamil-whisper-asr-01",
+      "created_at": "2026-03-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hosszu/whisper-small-hu-SzL",
+      "author": "hosszu",
+      "downloads": 36,
+      "likes": 0,
+      "url": "https://huggingface.co/hosszu/whisper-small-hu-SzL",
+      "created_at": "2026-03-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "NbAiLab/nb-asr-beta1-Qwen06B-reading-optimised",
+      "author": "NbAiLab",
+      "downloads": 53,
+      "likes": 1,
+      "url": "https://huggingface.co/NbAiLab/nb-asr-beta1-Qwen06B-reading-optimised",
+      "created_at": "2026-03-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dvm14/whisper-small-nosindhi",
+      "author": "dvm14",
+      "downloads": 366,
+      "likes": 0,
+      "url": "https://huggingface.co/dvm14/whisper-small-nosindhi",
+      "created_at": "2026-03-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "argmaxinc/speakerkit-coreml",
+      "author": "argmaxinc",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/argmaxinc/speakerkit-coreml",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FaisaI/tadabur-Whisper-Small",
+      "author": "FaisaI",
+      "downloads": 19,
+      "likes": 1,
+      "url": "https://huggingface.co/FaisaI/tadabur-Whisper-Small",
+      "created_at": "2026-03-11",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mon3stera/Qwen3-tts-Mon3tr",
+      "author": "mon3stera",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mon3stera/Qwen3-tts-Mon3tr",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "sharvesh007/tamil-tts-cosyvoice3-grapheme-checkpoint-3500-pruned",
+      "author": "sharvesh007",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sharvesh007/tamil-tts-cosyvoice3-grapheme-checkpoint-3500-pruned",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mradermacher/orpheus-3b-0.1-hindi-male-lora-GGUF",
+      "author": "mradermacher",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mradermacher/orpheus-3b-0.1-hindi-male-lora-GGUF",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Serialtechlab/xtts-v2-dhivehi",
+      "author": "Serialtechlab",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Serialtechlab/xtts-v2-dhivehi",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Salama1429/s2-pro",
+      "author": "Salama1429",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/Salama1429/s2-pro",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "edzsaji26/orpheus-3b-0.1-hindi-male-lora",
+      "author": "edzsaji26",
+      "downloads": 55,
+      "likes": 1,
+      "url": "https://huggingface.co/edzsaji26/orpheus-3b-0.1-hindi-male-lora",
+      "created_at": "2026-03-12",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "AEmotionStudio/audiox-models",
+      "author": "AEmotionStudio",
+      "downloads": 41,
+      "likes": 0,
+      "url": "https://huggingface.co/AEmotionStudio/audiox-models",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "Cal3bd3v/mms-tts-lug-waxal-v2",
+      "author": "Cal3bd3v",
+      "downloads": 40,
+      "likes": 0,
+      "url": "https://huggingface.co/Cal3bd3v/mms-tts-lug-waxal-v2",
+      "created_at": "2026-03-12",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "AEmotionStudio/sam-audio-models",
+      "author": "AEmotionStudio",
+      "downloads": 15,
+      "likes": 0,
+      "url": "https://huggingface.co/AEmotionStudio/sam-audio-models",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "philgzl/addse",
+      "author": "philgzl",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/philgzl/addse",
+      "created_at": "2026-03-12",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "TTS-AGI/emotion-conditioning-test-dacvae",
+      "author": "TTS-AGI",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/TTS-AGI/emotion-conditioning-test-dacvae",
+      "created_at": "2026-03-13"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 7,
+    "model_count": 25,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}
