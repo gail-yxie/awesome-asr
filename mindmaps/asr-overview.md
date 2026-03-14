@@ -5,11 +5,17 @@
 - Conformer-CTC
 - Deep Speech
 - saidaAo/wav2vec2-base-librispeech-demo
+- Abdoul27/babyhubert-phoneme-base
 
 ### Attention-based
 - Whisper
 - LAS
 - Speech-Transformer
+- psilab/whisper-large-v3
+- Dorjzodovsuren/MongolianWhisper_large
+- Badri0510/thedal-tamil-full-v3
+- mabahboh/whisper-shami
+- Badri0510/thedal-whisper-master
 - fiendshadow/whisper-large-v3
 - qqceqqq/whisper-large-v3
 - Kush0610/whisper-medium-hi-uncurated-reverse-mft-1
@@ -59,6 +65,7 @@
 - aoiandroid/granite-4.0-1b-speech
 - aoiandroid/Qwen3-ASR-0.6B
 - aoiandroid/Qwen3-ASR-1.7B-CoreML
+- aoiandroid/qwen3-asr-0.6b-coreml
 - Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 
 
@@ -84,6 +91,7 @@
 - Long-form
 - omullaboyev/OmoN-STT
 - An Investigation Into Various Approaches For Bengali Long-Form Speech Transcription
+- Streaming Translation and Transcription Through Speech-to-Text Causal Alignment
 
 ### Speaker Diarization
 - Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization
@@ -106,6 +114,7 @@
 - amanuelbyte/whisper-amharic-asr-finetuned
 - Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539
 - Efficient Dialect-Aware Modeling and Conditioning for Low-Resource Taiwanese Hakka Speech Processing
+- Continued Pretraining for Low-Resource Swahili ASR: Achieving State-of-the-Art Performance with Minimal Labeled Data
 
 ### Multimodal
 - Audio-Visual ASR
@@ -115,6 +124,7 @@
 - Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
 - Robust LLM-based Audio-Visual Speech Recognition with Sparse Modality Alignment and Visual Unit-Guided Refinement
 - MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
+- Edge-Cloud Collaborative Speech Emotion Captioning via Token-Level Speculative Decoding in Audio-Language Models
 
 ### Specialized
 - Medical Transcription
@@ -177,6 +187,7 @@
 - Beam Search
 - CTC Decoding
 - Language Model Fusion
+- Token-Level Speculative Decoding
 
 ### Compression
 - Quantization
@@ -210,6 +221,10 @@
 - PersianPunc: A Large-Scale Dataset and BERT-Based Approach for Persian Punctuation Restoration
 - Mitigating Structural Noise in Low-Resource S2TT: An Optimized Cascaded Nepali-English Pipeline with Punctuation Restoration
 
+### Alignment
+- Causal Alignment
+- Perfect Alignment for Long-Form
+
 
 ## Evaluation
 ### Metrics
@@ -222,6 +237,7 @@
 - Open ASR Leaderboard
 - ESB
 - SUPERB
+- SCENEBench
 
 
 ## Applications
@@ -276,6 +292,7 @@
 - SpeechTokenizer
 - WavTokenizer
 - Mimi1782/KMEANS
+- ZeroSyl: Simple Zero-Resource Syllable Tokenization
 
 ### Acoustic Tokens
 - EnCodec
@@ -329,6 +346,10 @@
 - Prosody transfer
 - Style transfer
 - Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction
+- Resurfacing Paralinguistic Awareness in Large Audio Language Models
+
+### Text-to-Audio
+- Resonate: Reinforcing Text-to-Audio Generation via Online Feedback
 
 
 ## Training Approaches
@@ -348,6 +369,7 @@
 ### Reinforcement Learning
 - RLHF for speech
 - DPO for speech quality
+- Resonate: Online Feedback for Reinforcing Audio Generation
 
 
 ## Evaluation
@@ -362,5 +384,6 @@
 - SUPERB
 - Dynamic-SUPERB
 - AudioBench
+- MUGEN
 
 
