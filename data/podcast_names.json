@@ -1,93 +1,93 @@
 {
   "2026-02-20": {
-    "name": "Advancing Emergency Response Networks through Voice Driven Semantic Perception",
+    "name": "Deploying Specialized Speech Models for High Stakes Edge Environments",
     "auto_generated": true,
-    "description": "This episode explores a shift toward specialized speech technology, focusing on the paper Voice-Driven Semantic Perception for UAV-Assisted Emergency Networks. We discuss how semantic communication prioritizes intent over raw audio bits in disaster zones. Additionally, we examine the democratization of edge computing through optimized releases like Moonshine-base and WhisperKit, alongside new fine-tuned models for Swahili and Amharic.",
-    "updated_at": "2026-03-13T12:04:38.357334"
+    "description": "This episode explores the shift toward specialized ASR, highlighting the paper Voice-Driven Semantic Perception for UAV-Assisted Emergency Networks which uses intent-based communication for drone control. We also discuss the democratization of the edge through new model releases like sauti-whisper for Swahili and Moonshine-base for ONNX. Discover how practitioners are moving beyond Word Error Rate to prioritize mission success and linguistic sovereignty in underserved regions.",
+    "updated_at": "2026-03-14T12:03:12.580852"
   },
   "2026-02-19": {
-    "name": "Community Driven Adaptation of Foundation Models for Global ASR",
+    "name": "Democratizing Speech Technology Through Targeted Foundation Model Fine Tuning",
     "auto_generated": true,
-    "description": "This episode explores how community contributors are democratizing speech technology by adapting massive foundation models for underrepresented languages. We discuss Vitthal Bhandari’s MMS-1b fine-tunes for African languages and the iterative improvements made to Whisper-large-v2 for Welsh speakers. The discussion also highlights specialized tools like faster-whisper-tilsync, which optimizes audio-text alignment for media accessibility and timing-critical workflows in the evolving open-source ec",
-    "updated_at": "2026-03-13T12:04:44.941987"
+    "description": "This episode explores how the community is adapting massive foundation models like Meta’s MMS and OpenAI’s Whisper to bridge the gap for low-resource languages. We highlight Vitthal Bhandari’s recent MMS-1b fine-tunes for African languages and DewiBrynJones’s iterative improvements for Welsh ASR. Additionally, we dive into the technical benefits of specialized tools like the faster-whisper-tilsync model for precise audio-text alignment and synchronization.",
+    "updated_at": "2026-03-14T12:03:19.735635"
   },
   "2026-02-18": {
-    "name": "Advancing Spoken Language Modeling with Zero Resource Syllable Tokenization",
+    "name": "Advancing Spoken Language Modeling With Zero-Resource Syllable Tokenization",
     "auto_generated": true,
-    "description": "This episode explores the breakthrough of ZeroSyl, a method for zero-resource syllable tokenization that significantly reduces sequence lengths in Spoken Language Modeling. We also discuss the practical impact of quantized Nemotron-Speech models running on Apple Silicon via the MLX framework for high-speed edge AI. Finally, we highlight community-driven innovations like the MMS adaptation for Fongbe and IPA-specialized XLS-R models that are expanding ASR accessibility globally.",
-    "updated_at": "2026-03-13T12:04:52.502483"
+    "description": "Explore the breakthrough of ZeroSyl, a zero-resource syllable tokenization method by Nicol Visser and Simon Malan that significantly reduces sequence lengths in spoken language modeling. This deep dive covers the practical impact of quantized Nemotron-Speech 0.6B models running locally on Apple Silicon via the MLX framework. Learn how these advancements in acoustic unit representation and edge computing are making high-performance ASR more accessible for languages like Fongbe.",
+    "updated_at": "2026-03-14T12:03:34.514827"
   },
   "2026-02-17": {
-    "name": "Native Multimodal Models Revolutionize Real Time Speech Understanding",
+    "name": "Revolutionizing Speech Technology Through Integrated Multimodal Reasoning Architectures",
     "auto_generated": true,
-    "description": "This episode explores the shift from traditional ASR pipelines to native multimodal architectures following the release of Mistral’s Voxtral-Mini-4B-Realtime. We analyze groundbreaking research by Yacouba Kaloga and Marina Laganaro that utilizes CLAP-based contrastive learning to improve recognition for patients with aphasia. We also highlight the growing ecosystem of fine-tuned models for the Urdu and Arabic languages that are filling critical gaps in the global market.",
-    "updated_at": "2026-03-13T12:05:14.011140"
+    "description": "This episode explores the launch of Mistral AI’s Voxtral-Mini-4B-Realtime, a unified model that eliminates latency by processing audio and language tokens simultaneously. We also analyze groundbreaking research by Yacouba Kaloga and Marina Laganaro using CLAP-based embeddings to improve word recognition for patients with post-stroke aphasia. Finally, we discuss why localized fine-tuning on models like Whisper and XLSR-53 remains essential for capturing regional dialects and specialized clinical",
+    "updated_at": "2026-03-14T12:04:10.590410"
   },
   "2026-02-16": {
-    "name": "Scaling Inclusive Speech Recognition Through Targeted Model Adaptation",
+    "name": "Building More Inclusive Speech Systems Through Efficient Model Adaptation",
     "auto_generated": true,
-    "description": "This episode explores the shift from general-purpose ASR to specialized systems that prioritize inclusion and technical efficiency. We examine the dramatic growth of the Pashto Common Voice dataset alongside a new corpus for disordered speech in the Akan language. Finally, we discuss the DAMA adaptation framework and NVIDIA’s Parakeet-TDT model, highlighting how modular architectures are making speech technology more accessible for everyone.",
-    "updated_at": "2026-03-13T12:05:23.737189"
+    "description": "This episode explores the evolution of speech technology from general-purpose tools toward inclusive systems that serve diverse global communities. We examine the growth of the Pashto Common Voice dataset and the critical need for speaker diversity to prevent contributor bias. The discussion also highlights the new Akan corpus for disordered speech and the DAMA framework, which enables efficient model adaptation by targeting specific neural layers using 80% fewer parameters.",
+    "updated_at": "2026-03-14T12:04:19.856714"
   },
   "2026-02-22": {
-    "name": "Unified Speech-Language Models Replace Traditional Cascading Pipelines",
+    "name": "Unified Speech Language Models Move Beyond Traditional Cascading Pipelines",
     "auto_generated": true,
-    "description": "This episode explores the industry-wide shift from cascading ASR-LLM-TTS pipelines toward unified, speech-native architectures like Sonic-7B and Whisper-v5. We examine how discrete neural audio codecs and semantic-acoustic decoupling allow models to capture paralinguistic nuances like emotion and hesitation. Additionally, the discussion covers hardware-software co-design using Mamba-based state space models to achieve sub-200 millisecond latency for truly conversational AI.",
-    "updated_at": "2026-03-13T12:04:11.946466"
+    "description": "This episode explores the 2026 shift toward unified Speech-Language Models and the decline of the traditional cascading pipeline approach. We discuss the importance of discrete neural audio codecs for capturing paralinguistics and the emergence of models like Sonic-7B and Whisper-v5. The discussion also covers technical optimizations for edge inference, including Mamba-based architectures and sliding window attention to achieve sub-200ms latency for natural human-AI interactions.",
+    "updated_at": "2026-03-14T12:02:50.249758"
   },
   "2026-02-21": {
-    "name": "Localized Precision Speech Recognition Models for Specialized Edge Deployment",
+    "name": "Precision Speech Recognition Through Highly Specialized Localized Architectures",
     "auto_generated": true,
-    "description": "This episode explores the transition toward precision ASR through specialized tools like the Qwen3-ASR-0.6B-Albanian model and the whisper-large-v3-Tarteel fine-tune. We discuss how ONNX optimization in projects like medasr-onnx enables private, edge-based medical transcription while classic K-means clustering revitalizes modern discrete audio tokenization. Learn why the industry is moving away from massive general-purpose models in favor of hyper-localized, efficient architectures designed for",
-    "updated_at": "2026-03-13T12:04:26.800309"
+    "description": "This episode explores the transition from general-purpose models to precision ASR tailored for specific languages and industries. We discuss the release of the Qwen3-ASR-0.6B-Albanian model for low-resource efficiency and the Whisper-large-v3-Tarteel-even-g2 for specialized religious recitation. Additionally, we examine how ONNX optimization in the medasr-onnx framework is bringing secure medical transcription to edge devices while maintaining low latency.",
+    "updated_at": "2026-03-14T12:03:05.888250"
   },
   "2026-W08": {
-    "name": "Realtime Multimodal Foundation Models for Specialized Speech Understanding",
+    "name": "Transitioning to Native Audio Processing with Multimodal Foundation Models",
     "auto_generated": true,
-    "description": "Explore the shift toward native audio processing with the recent release of Mistral AI’s Voxtral-Mini-4B-Realtime-2602 multimodal model. We analyze how the CLAP framework improves recognition for post-stroke aphasia and how Depth-Aware Model Adaptation enables efficient fine-tuning for low-resource languages like Pashto. Discover why the industry is moving from simple transcription toward deep, real-time semantic understanding.",
-    "updated_at": "2026-03-13T12:05:01.704299"
+    "description": "Discover the future of speech technology as we explore Mistral AI’s Voxtral-Mini-4B-Realtime model and its move toward native audio understanding. We analyze the CLAP framework’s breakthrough in assisting post-stroke aphasia and discuss the rapid scaling of the Pashto Common Voice dataset. This episode also highlights the DAMA method, which enables efficient low-resource language adaptation using significantly fewer parameters.",
+    "updated_at": "2026-03-14T12:04:03.195070"
   },
   "qwen3-asr-technical-report-deep-dive": {
-    "name": "Scaling Multilingual Speech Recognition with Qwen3-ASR Foundation Models",
+    "name": "Scaling Multilingual Speech Intelligence with the Qwen3-ASR Model Family",
     "auto_generated": true,
-    "description": "We explore the Qwen3-ASR technical report, a groundbreaking release from Alibaba that introduces a versatile family of Large Audio-Language Models. The discussion covers the technical architecture of the Qwen3-ASR-1.7B model and its innovative AuT encoder designed for both streaming and offline transcription. We also highlight the Qwen3-ForcedAligner-0.6B, a non-autoregressive tool that achieves state-of-the-art performance in singing voice recognition and complex environments using Group Sequen",
-    "updated_at": "2026-03-13T12:06:41.982534"
+    "description": "We dive into the Qwen3-ASR technical report to explore how Alibaba’s latest model family is redefining multilingual speech recognition and forced alignment. This episode breaks down the architecture of the AuT encoder and the four-stage training pipeline, including the Group Sequence Policy Optimization reinforcement learning phase. We also examine the performance of the Qwen3-ASR-1.7B model across diverse benchmarks, including its unique ability to transcribe singing voices and its highly effic",
+    "updated_at": "2026-03-14T12:05:11.516974"
   },
   "qwen3-omni-technical-report-deep-dive": {
-    "name": "Qwen3-Omni Sets New Standards for Real Time Multimodal ASR",
+    "name": "Qwen3-Omni Sets New Standards for Real-Time Multimodal ASR",
     "auto_generated": true,
-    "description": "Explore the groundbreaking Qwen3-Omni technical report, a landmark release from Alibaba that addresses the modality tax in large-scale multimodal models. We break down the innovative Thinker-Talker MoE architecture and the Audio Transformer encoder trained on twenty million hours of data to achieve superior WER. Discover how the Code2Wav causal ConvNet enables ultra-low latency for conversational AI while outperforming models like Gemini-2.5-Pro on complex audio reasoning benchmarks.",
-    "updated_at": "2026-03-13T12:05:40.688346"
+    "description": "This episode explores the groundbreaking Qwen3-Omni model, a multimodal powerhouse that eliminates performance trade-offs commonly known as the modality tax. We analyze the technical report’s Thinker-Talker architecture and the replacement of traditional Whisper encoders with the AuT Audio Transformer trained on 20 million hours of data. Discover how innovations like the Code2Wav ConvNet and TM-RoPE embeddings enable ultra-low latency for state-of-the-art audio reasoning and speech generation.",
+    "updated_at": "2026-03-14T12:04:41.302243"
   },
   "robust-speech-recognition-via-large-scale-weak-supervision-deep-dive": {
-    "name": "Scaling Robust Speech Recognition Using Large Scale Weak Supervision",
+    "name": "Scaling Robust Speech Recognition with Large Scale Weak Supervision",
     "auto_generated": true,
-    "description": "We explore the landmark paper Robust Speech Recognition via Large-Scale Weak Supervision to understand how OpenAI’s Whisper model transformed the speech recognition landscape. By leveraging 680,000 hours of diverse internet data, Whisper overcomes the inherent fragility of traditional models trained on clean datasets like LibriSpeech. This deep dive covers the shift toward zero-shot generalization, the mechanics of multitask learning using special tokens, and the technical trade-offs involved in",
-    "updated_at": "2026-03-13T12:05:56.456857"
+    "description": "This episode explores the OpenAI paper \"Robust Speech Recognition via Large-Scale Weak Supervision,\" which introduced the world to the Whisper model. We discuss how training on 680,000 hours of diverse internet audio shifted the focus from narrow benchmarks like LibriSpeech to real-world zero-shot robustness. The conversation covers the model's multitask transformer architecture, its ability to handle translation, and why scale often beats data quality in modern ASR.",
+    "updated_at": "2026-03-14T12:04:53.996244"
   },
   "hubert-self-supervised-speech-representation-learning-by-mas-deep-dive": {
-    "name": "Mastering Self-Supervised Speech Representation Through Iterative Hidden Units",
+    "name": "Mastering Speech Representations with Masked Prediction and Hidden Units",
     "auto_generated": true,
-    "description": "This episode explores the HuBERT paper from Meta, which introduced a novel self-supervised learning approach for audio by using K-means clustering to create discrete hidden units. We discuss how this masked prediction framework outperforms wav2vec 2.0 on the Librispeech benchmark and enables models to learn acoustic structure iteratively. Our guest explains the impact of these representations on downstream tasks and later models like WavLM and VALL-E.",
-    "updated_at": "2026-03-13T12:06:16.812876"
+    "description": "This episode explores the landmark Meta paper HuBERT and its shift from contrastive learning to masked prediction of discrete hidden units. We discuss how the researchers utilized iterative K-means clustering to create a speech alphabet, enabling BERT-style training on raw audio. Discover how this architecture outperformed wav2vec 2.0 on benchmarks like Librispeech and paved the way for modern generative models like AudioLM.",
+    "updated_at": "2026-03-14T12:05:00.173158"
   },
   "tac-timestamped-audio-captioning-deep-dive": {
-    "name": "Precise Scene Understanding through Timestamped Audio Captioning",
+    "name": "Advancing Dense Audio Captioning through Timestamped Scene Grounding",
     "auto_generated": true,
-    "description": "This episode explores the TAC model from Adobe Research, a breakthrough in timestamped audio captioning designed to disentangle overlapping sounds in complex acoustic environments. We examine how the Dynamic Acoustic Mixer generates synthetic training data to reduce hallucinations in large audio language models like Qwen2-Audio. The discussion covers the describe-then-reason paradigm and the TAC-V variant, which sets new benchmarks for multimodal reasoning and audiovisual hallucination detection",
-    "updated_at": "2026-03-13T12:06:24.295996"
+    "description": "This episode explores Adobe Research's TAC model, a breakthrough in timestamped audio captioning that significantly reduces hallucination rates in large audio language models. We discuss how the Dynamic Acoustic Mixer generates synthetic training data to improve temporal grounding and event detection on benchmarks like TACOS. Finally, we examine the describe-then-reason paradigm which allows models like GPT-4o to interpret complex acoustic scenes through dense, timestamped text descriptions.",
+    "updated_at": "2026-03-14T12:05:05.498627"
   },
   "2026-02-23": {
-    "name": "Advancing On Device Transcription with High Efficiency Parakeet Transducers",
-    "description": "This episode explores the shift toward local speech technology, highlighted by the CoreML adaptation of the NVIDIA Parakeet-TDT architecture for high-efficiency on-device transcription. We dive into the unique capabilities of ipa-whisper-medium for phonetic accuracy and examine how the Voxtral-Mini-4B multimodal model integrates audio tokens directly for deeper contextual understanding. From cultural rhythm LoRAs to low-resource language fine-tuning, discover how the industry is moving toward mo",
+    "name": "Bringing High Performance Parakeet TDT Transducers to Mobile Hardware",
+    "description": "Explore the transition to edge-based speech technology through the CoreML adaptation of NVIDIA’s Parakeet-TDT architecture for high-efficiency on-device transcription. This deep dive covers the unique capabilities of ipa-whisper-medium for phonetic accuracy and examines how the 4-billion parameter Voxtral-Mini model integrates audio tokens directly for multimodal understanding. Discover how specialized fine-tuning and cultural LoRAs like Naija Legacy Rhythms are bringing expressive, low-latency",
     "auto_generated": true,
-    "updated_at": "2026-03-13T12:04:03.881741"
+    "updated_at": "2026-03-14T12:02:42.536396"
   },
   "csm-crossing-the-uncanny-valley-of-conversational-voice-deep-dive": {
-    "name": "Bridging the Uncanny Valley with the Conversational Speech Model",
+    "name": "Crossing the Uncanny Valley with the Conversational Speech Model",
     "auto_generated": true,
-    "description": "This episode explores Sesame Research's groundbreaking paper on the Conversational Speech Model, an integrated transformer architecture designed to overcome the limitations of cascaded text-to-speech systems. We examine the technical implementation of the Mimi codec and compute amortization techniques that allow the model to scale efficiently across one million hours of training data. Learn how the team utilizes a dual-Whisper strategy and the Expresso dataset to evaluate voice presence and ling",
-    "updated_at": "2026-03-13T12:06:49.322977"
+    "description": "In this deep dive, we explore Sesame Research’s groundbreaking paper on the Conversational Speech Model and its mission to bridge the uncanny valley of AI voice. The discussion covers the technical architecture of the Llama-based backbone, the use of the Mimi codec for efficient audio tokenization, and the innovative compute amortization strategy used during training. We also examine how a dual-Whisper data pipeline and massive scaling help these models achieve human-like prosody and contextual",
+    "updated_at": "2026-03-14T12:05:17.752330"
   },
   "benchmark-datasets-deep-dive": {
     "name": "ASR Benchmark Deep Dive: Choosing Models by Dataset, Not Averages",
@@ -96,33 +96,39 @@
     "updated_at": "2026-02-24T16:12:00Z"
   },
   "2026-02-24": {
-    "name": "Eliminating Generative Speech Latency using Dual Streaming CTC Alignment",
-    "description": "Explore the transition toward local-first speech AI, highlighting the new CTC-TTS dual-streaming framework designed to eliminate latency in generative text-to-speech. This discussion analyzes how Matryoshka Representation Learning enables efficient cross-lingual retrieval for languages like Wolof while reviewing edge-optimized releases including Qwen3-ASR-0.6B and the MLX-based Kitten-TTS family. Discover how these architectural breakthroughs are moving the industry away from brute-force compute",
+    "name": "Accelerating Generative Speech Synthesis for Real Time Edge Applications",
+    "description": "This episode explores how dual-streaming CTC-TTS and Matryoshka Representation Learning are slashing latency while improving accessibility for low-resource languages like Wolof. We analyze the massive surge of edge-optimized releases on Hugging Face, including the Qwen3-ASR-0.6B model and quantized Kitten-TTS variants for local deployment on Apple Silicon. Learn how these sophisticated architectural shortcuts are transforming generative AI into a faster, more inclusive verbal web for global user",
     "auto_generated": true,
-    "updated_at": "2026-03-13T12:03:44.336487"
+    "updated_at": "2026-03-14T12:02:21.947288"
   },
   "2026-02-25": {
-    "name": "Revolutionizing Speech Recognition Through Cross-Modal Signals and Translation Guidance",
-    "description": "This episode explores the frontier of speech technology, focusing on how researchers are bridging the gap for low-resource languages using innovative cross-modal signals. We dive into the TG-ASR framework for Taiwanese Hokkien and discuss how adding a Punctuation Restoration Module significantly improves Nepali-English translation pipelines. From Whisper-large-v3 fine-tunes to multimodal LLMs using speech-text fusion, discover how new architectures are making unsolved languages accessible to glo",
+    "name": "Scaling Global Speech Technology through Innovative Cross-Modal Signals",
+    "description": "This episode explores the frontier of low-resource speech technology, focusing on how researchers use translation-guided learning and multimodal fusion to bridge the gap for languages like Taiwanese Hokkien and Nepali. We discuss the TG-ASR framework's use of Parallel Gated Cross Attention to leverage Mandarin subtitles and examine how punctuation restoration modules significantly improve translation scores in cascaded pipelines. Finally, the discussion covers the impact of speech-text fusion in",
     "auto_generated": true,
-    "updated_at": "2026-03-13T12:03:26.379946"
+    "updated_at": "2026-03-14T12:02:13.390865"
   },
   "2026-03-09": {
-    "name": "Optimizing Multimodal Speech Systems for Diverse Global Languages",
-    "description": "This episode explores the transition from general-purpose AI to specialized speech tools like the MSP-Visual-AV-HuBERT model for noise-robust audio-visual processing. We discuss the rise of regional datasets such as AfriSpeech for localized ASR and the technical shift toward edge deployment using 4-bit quantization and ONNX exports. Learn how these breakthroughs in efficiency and dialect-specific training are closing the deployment gap for developers worldwide.",
+    "name": "Scaling Multimodal Speech Recognition through Specialized Regional Optimization",
+    "description": "Explore the shift from generic speech models to specialized architectures like the MSP-Visual-AV-HuBERT for robust audio-visual recognition in noisy environments. This episode highlights the rise of regional datasets such as AfriSpeech and Egyptian Arabic diarization alongside high-performance local inference using 4-bit quantization and MLX. Discover how these advancements in ONNX-exported models and neural codecs are closing the deployment gap for global accessibility.",
     "auto_generated": true,
-    "updated_at": "2026-03-13T12:03:19.971255"
+    "updated_at": "2026-03-14T12:02:07.688067"
   },
   "2026-03-11": {
-    "name": "Advancing Context Aware Audio Intelligence for Next Generation Reasoning Models",
-    "description": "This episode explores the shift from simple transcription to Omni-Speech systems that can hear and reason within their environments. We dive into SCENEBench for audio understanding and the ALARM framework for training reasoning models with massive multi-task corpora. Plus, learn how SPAR-K optimizes latency for real-time voice-to-voice systems through clever early-exit strategies on edge hardware.",
+    "name": "Moving Beyond Transcription to Reasoning with Omni-Speech Models",
+    "description": "This episode explores the transition from simple transcription to Omni-Speech systems that can reason and understand complex environmental contexts. We dive into new benchmarks like SCENEBench for grounding audio models and examine efficiency breakthroughs such as SPAR-K for low-latency edge deployment. Our experts also discuss the ALARM framework for better reasoning traces and how neural audio codecs provide a surprising defense against adversarial attacks.",
     "auto_generated": true,
-    "updated_at": "2026-03-13T12:03:13.311218"
+    "updated_at": "2026-03-14T12:01:56.575661"
   },
   "2026-03-13": {
-    "name": "Advancing Real Time Speech Intelligence Through Unified Architectures",
-    "description": "This episode explores the transition of Large Audio Language Models from research to deployment, highlighting unified frameworks like Uni-ASR for seamless streaming and offline recognition. We discuss the Hikari model’s policy-free approach to simultaneous translation and how the Resonate framework uses online feedback to significantly improve audio generation quality. From clinical breakthroughs in pathological speech recognition for Huntington’s Disease to edge-cloud collaborative decoding, we",
+    "name": "Bridging Latency and Quality with Unified Streaming Audio Models",
+    "description": "Explore the latest breakthroughs in audio intelligence as we move toward real-time, deployment-ready systems that capture human nuance. This episode dives into the Uni-ASR unified framework for streaming accuracy and the Hikari model's policy-free approach to simultaneous speech translation. We also examine specialized advancements in pathological speech recognition for Huntington’s disease and the Resonate framework’s use of online feedback to significantly enhance text-to-audio generation qual",
     "auto_generated": true,
-    "updated_at": "2026-03-13T12:02:52.923859"
+    "updated_at": "2026-03-14T12:01:40.396420"
+  },
+  "2026-03-14": {
+    "name": "Surgicalizing Speech Models for Localized Dialects and Edge Efficiency",
+    "description": "This episode explores the shift from massive foundational models toward surgicalized speech technology tailored for specific cultural and technical needs. We examine how architectures like FastConformer are being adapted for Quranic recitation and how Whisper Turbo variants are optimizing inference for edge hardware. From Tamil-specific refinements in the thedal-tamil series to the rapid quantization of Qwen3-TTS, discover how practitioners are navigating the last mile of speech AI to create hig",
+    "auto_generated": true,
+    "updated_at": "2026-03-14T12:01:33.716685"
   }
 }
