@@ -1,10 +1,4 @@
 {
-  "2026-02-24": [
-    "2602.19991v1",
-    "cross-lingual matryoshka representation learning across speech and text",
-    "2602.19574v1",
-    "ctc-tts: llm-based dual-streaming text-to-speech with ctc alignment"
-  ],
   "2026-02-26": [
     "2602.22039v1",
     "tg-asr: translation-guided learning with parallel gated cross attention for low-resource automatic speech recognition",
@@ -148,5 +142,6 @@
     "huntington disease automatic speech recognition with biomarker supervision",
     "2603.11123v1",
     "uni-asr: unified llm-based architecture for non-streaming and streaming automatic speech recognition"
-  ]
+  ],
+  "2026-03-14": []
 }
