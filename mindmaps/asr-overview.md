@@ -92,6 +92,7 @@
 - omullaboyev/OmoN-STT
 - An Investigation Into Various Approaches For Bengali Long-Form Speech Transcription
 - Streaming Translation and Transcription Through Speech-to-Text Causal Alignment
+- 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio
 
 ### Speaker Diarization
 - Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization
@@ -100,11 +101,22 @@
 - 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing and Fine-Tuned Diarization
 
 ### Multilingual
-- Code-switching
-- Low-resource
-- Cross-lingual
-- Dialect-Aware Modeling (Hakka)
-- TG-ASR: Translation-Guided Learning
+#### Code-switching
+
+#### Low-resource
+- Continued Pretraining for Low-Resource Swahili ASR
+- RO-N3WS: Enhancing Generalization in Low-Resource ASR with Diverse Romanian Speech Benchmarks
+- Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition in Low-Resource Languages
+
+#### Dialect-Aware
+- Efficient Dialect-Aware Modeling and Conditioning for Low-Resource Taiwanese Hakka Speech Processing
+- GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
+
+#### Translation-Guided
+- TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition
+- Mitigating Structural Noise in Low-Resource S2TT: An Optimized Cascaded Nepali-English Pipeline with Punctuation Restoration
+
+#### General Models
 - AWARRITech/whisper-small-yoruba-v1
 - DewiBrynJones/whisper-large-v2-ft-cy-2601
 - afaqalinagra/whisper-base-ps
@@ -113,34 +125,51 @@
 - korir8/sauti-whisper-small-swh
 - amanuelbyte/whisper-amharic-asr-finetuned
 - Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539
-- Efficient Dialect-Aware Modeling and Conditioning for Low-Resource Taiwanese Hakka Speech Processing
-- Continued Pretraining for Low-Resource Swahili ASR: Achieving State-of-the-Art Performance with Minimal Labeled Data
+
 
 ### Multimodal
+#### Audio-Visual ASR
 - Audio-Visual ASR
-- Speech Translation
-- CLAP-Based Recognition
-- Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
-- Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
 - Robust LLM-based Audio-Visual Speech Recognition with Sparse Modality Alignment and Visual Unit-Guided Refinement
+
+#### Speech Translation
+- Speech Translation
+- Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
+
+#### Audio-Language Models
+- CLAP-Based Recognition
 - MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
 - Edge-Cloud Collaborative Speech Emotion Captioning via Token-Level Speculative Decoding in Audio-Language Models
+- ALARM: Audio-Language Alignment for Reasoning Models
+
+#### Emotion Recognition
+- Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
+- A Mixture-of-Experts Model for Multimodal Emotion Recognition in Conversations
+
 
 ### Specialized
-- Medical Transcription
-- Meeting Transcription
-- Call Center
-- Disordered Speech Recognition (Aphasia, Impaired Speech)
-- Word Naming Recognition
+#### Medical Transcription
 - gabrielbuzzi/medasr-public
-- Phonetic Transcription (IPA)
-- neurlang/ipa-whisper-medium
-- Religious/Liturgical Speech
-- 9DTechnologies/QuartzNet_quran_v1
-- wasimlhr/whisper-large-v3-Tarteel-even-g2
-- CLAP-Based Automatic Word Naming Recognition in Post-Stroke Aphasia
 - Benchmarking Speech Systems for Frontline Health Conversations: The DISPLACE-M Challenge
 - VoxCare: Studying Natural Communication Behaviors of Hospital Caregivers
+
+#### Disordered Speech
+- Disordered Speech Recognition (Aphasia, Impaired Speech)
+- CLAP-Based Automatic Word Naming Recognition in Post-Stroke Aphasia
+- Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language
+
+#### Religious/Liturgical
+- 9DTechnologies/QuartzNet_quran_v1
+- wasimlhr/whisper-large-v3-Tarteel-even-g2
+
+#### Phonetic Transcription
+- Phonetic Transcription (IPA)
+- neurlang/ipa-whisper-medium
+
+#### Meeting/Call Center
+- Meeting Transcription
+- Call Center
+
 
 ### Security & Anti-spoofing
 - Does Fine-tuning by Reinforcement Learning Improve Generalization in Binary Speech Deepfake Detection?
@@ -163,7 +192,6 @@
 - VoxPopuli
 - Pashto Common Voice (Scale Analysis)
 - Akan Impaired Speech Dataset
-- Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language
 - DEBISS: a Corpus of Individual, Semi-structured and Spoken Debates
 - Ramsa: A Large Sociolinguistically Rich Emirati Arabic Speech Corpus
 - A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition
@@ -184,21 +212,30 @@
 - Extreme Augmentation for Long-Form Audio
 
 ### Decoding
+#### Standard
 - Beam Search
 - CTC Decoding
 - Language Model Fusion
+
+#### Speculative Decoding
 - Token-Level Speculative Decoding
+- Edge-Cloud Collaborative Speech Emotion Captioning via Token-Level Speculative Decoding in Audio-Language Models
+
 
 ### Compression
+#### Frameworks
+- RayOrz/whisperkit-coreml
+- smkrv/whisper-podlodka-turbo-coreml
+- aoiandroid/qwen3-asr-0.6b-coreml
+- kzmaker/faster-whisper-tilsync-34000
+- LemonJiaFace/faster-whisper-large-v2
+- clawhub/faster-whisper-tiny
+
+#### Methods
 - Quantization
 - Distillation
 - Pruning
-- RayOrz/whisperkit-coreml
-- smkrv/whisper-podlodka-turbo-coreml
-- kzmaker/faster-whisper-tilsync-34000
-- aoiandroid/qwen3-asr-0.6b-coreml
-- LemonJiaFace/faster-whisper-large-v2
-- clawhub/faster-whisper-tiny
+
 
 ### Adaptation
 - Depth-Aware Adaptation
@@ -212,14 +249,24 @@
 - Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR
 
 ### Speech Enhancement
-- Visual-Informed Speech Enhancement Using Attention-Based Beamforming
+#### Target Speaker Extraction
 - AlphaFlowTSE: One-Step Generative Target Speaker Extraction
 
+#### Visual-Informed
+- Visual-Informed Speech Enhancement Using Attention-Based Beamforming
+
+#### General Enhancement
+- A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition
+
+
 ### Post-processing
-- Punctuation Restoration
-- Structural Noise Mitigation
+#### Punctuation Restoration
 - PersianPunc: A Large-Scale Dataset and BERT-Based Approach for Persian Punctuation Restoration
 - Mitigating Structural Noise in Low-Resource S2TT: An Optimized Cascaded Nepali-English Pipeline with Punctuation Restoration
+
+#### Refinement
+- Structural Noise Mitigation
+
 
 ### Alignment
 - Causal Alignment
@@ -292,7 +339,6 @@
 - SpeechTokenizer
 - WavTokenizer
 - Mimi1782/KMEANS
-- ZeroSyl: Simple Zero-Resource Syllable Tokenization
 
 ### Acoustic Tokens
 - EnCodec
@@ -300,9 +346,8 @@
 - DAC
 - Vocos
 
-### Hybrid Approaches
-- Multi-codebook tokenization
-- Semantic-acoustic fusion
+### Structural Tokens
+- ZeroSyl: Simple Zero-Resource Syllable Tokenization
 - ZeroSyl: Zero-Resource Syllable Tokenization
 
 
@@ -370,6 +415,7 @@
 - RLHF for speech
 - DPO for speech quality
 - Resonate: Online Feedback for Reinforcing Audio Generation
+- Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
 
 
 ## Evaluation
