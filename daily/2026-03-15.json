@@ -1,0 +1,384 @@
+{
+  "date": "2026-03-15",
+  "summary": "Today's model releases reflect a strong community-driven focus on tailoring the Whisper architecture for low-resource languages and real-time inference requirements. Notably, new fine-tuned checkpoints for Malayalam and Khmer, such as `thennal-whisper-medium-ml-acft`, demonstrate the ongoing effort to bridge performance gaps in underrepresented Dravidian and Southeast Asian languages. The release of `whisper-distil-stem-streaming` is particularly significant for practitioners, as it targets the critical intersection of model distillation and low-latency streaming ASR. Additionally, domain-specific efforts like `whisper-small-quran-tashkeel` highlight a trend toward handling complex orthography and phonetic markings in specialized datasets. Collectively, these updates underscore a shift from general-purpose foundation model research toward localized and operationally optimized speech implementations.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "Athulkrishna/BettySara-whisper-large-v3-malayalam-merged-afct",
+      "author": "Athulkrishna",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Athulkrishna/BettySara-whisper-large-v3-malayalam-merged-afct",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "beargreen/speaker-diarization-community-1",
+      "author": "beargreen",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/beargreen/speaker-diarization-community-1",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shagufta/whisper-medium-km-multicondition-29-5",
+      "author": "Shagufta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Shagufta/whisper-medium-km-multicondition-29-5",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Athulkrishna/thennal-whisper-medium-ml-acft",
+      "author": "Athulkrishna",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Athulkrishna/thennal-whisper-medium-ml-acft",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Athulkrishna/Jithjacob123-whisper-small-Malayalam-acft",
+      "author": "Athulkrishna",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Athulkrishna/Jithjacob123-whisper-small-Malayalam-acft",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "TMICCProj/whisper-distil-stem-streaming",
+      "author": "TMICCProj",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/TMICCProj/whisper-distil-stem-streaming",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aisha-org/stt-v2-wer16",
+      "author": "aisha-org",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aisha-org/stt-v2-wer16",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "NightPrince/whisper-small-quran-tashkeel",
+      "author": "NightPrince",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/NightPrince/whisper-small-quran-tashkeel",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AshwiniS/whisper_finetune_16bit",
+      "author": "AshwiniS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AshwiniS/whisper_finetune_16bit",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rjagadeba/whisper_finetune_16bit",
+      "author": "rjagadeba",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/rjagadeba/whisper_finetune_16bit",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shagufta/facebook-mms-1b-all-KM-sequential-29-5",
+      "author": "Shagufta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Shagufta/facebook-mms-1b-all-KM-sequential-29-5",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "muzongcun/Belle-whisper-large-v3-zh-punct",
+      "author": "muzongcun",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/muzongcun/Belle-whisper-large-v3-zh-punct",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Badri0510/thedal-tamil-full-v6",
+      "author": "Badri0510",
+      "downloads": 26,
+      "likes": 0,
+      "url": "https://huggingface.co/Badri0510/thedal-tamil-full-v6",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rafsanteto/whisper-small-bn",
+      "author": "rafsanteto",
+      "downloads": 30,
+      "likes": 0,
+      "url": "https://huggingface.co/rafsanteto/whisper-small-bn",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "romara-labs/mms-300m-1130-forced-aligner-ONNX",
+      "author": "romara-labs",
+      "downloads": 33,
+      "likes": 0,
+      "url": "https://huggingface.co/romara-labs/mms-300m-1130-forced-aligner-ONNX",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ruska1117/SenseVoiceSmall-onnx-fp16",
+      "author": "ruska1117",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/ruska1117/SenseVoiceSmall-onnx-fp16",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sar-aaldamry/natiq-wav2vec-jonatas",
+      "author": "sar-aaldamry",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/sar-aaldamry/natiq-wav2vec-jonatas",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Lawrenceeee/whisper-tiny_to_russian_accent",
+      "author": "Lawrenceeee",
+      "downloads": 30,
+      "likes": 0,
+      "url": "https://huggingface.co/Lawrenceeee/whisper-tiny_to_russian_accent",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "neurlang/en-whipstr-base-48khz-libritts-r",
+      "author": "neurlang",
+      "downloads": 0,
+      "likes": 2,
+      "url": "https://huggingface.co/neurlang/en-whipstr-base-48khz-libritts-r",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nsomazr/whisper-small-sukuma",
+      "author": "nsomazr",
+      "downloads": 90,
+      "likes": 0,
+      "url": "https://huggingface.co/nsomazr/whisper-small-sukuma",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shittuf123/whisper-tiny_to_british_accent",
+      "author": "Shittuf123",
+      "downloads": 36,
+      "likes": 0,
+      "url": "https://huggingface.co/Shittuf123/whisper-tiny_to_british_accent",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Badri0510/thedal-tamil-full-v5",
+      "author": "Badri0510",
+      "downloads": 119,
+      "likes": 0,
+      "url": "https://huggingface.co/Badri0510/thedal-tamil-full-v5",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shittuf123/whisper-tiny_to_spanish_accent",
+      "author": "Shittuf123",
+      "downloads": 36,
+      "likes": 0,
+      "url": "https://huggingface.co/Shittuf123/whisper-tiny_to_spanish_accent",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Nandhakumar370/whisper-small-hindi-finetuned",
+      "author": "Nandhakumar370",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/Nandhakumar370/whisper-small-hindi-finetuned",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rockerritesh/whisper-tiny-maithili",
+      "author": "rockerritesh",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/rockerritesh/whisper-tiny-maithili",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Lawrenceeee/whisper-tiny_to_spanish_accent",
+      "author": "Lawrenceeee",
+      "downloads": 50,
+      "likes": 0,
+      "url": "https://huggingface.co/Lawrenceeee/whisper-tiny_to_spanish_accent",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ruska1117/SenseVoiceSmall-onnx",
+      "author": "ruska1117",
+      "downloads": 5,
+      "likes": 0,
+      "url": "https://huggingface.co/ruska1117/SenseVoiceSmall-onnx",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Badri0510/thedal-tamil-full-v4",
+      "author": "Badri0510",
+      "downloads": 97,
+      "likes": 0,
+      "url": "https://huggingface.co/Badri0510/thedal-tamil-full-v4",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "adaarsh28/Nihongo-L1-TTS-2026",
+      "author": "adaarsh28",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/adaarsh28/Nihongo-L1-TTS-2026",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "nexyllofficial/s2-pro-backup",
+      "author": "nexyllofficial",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nexyllofficial/s2-pro-backup",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Codobo/Kokoro-82M",
+      "author": "Codobo",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/Codobo/Kokoro-82M",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "vadimbelsky/qwen3.5-TTS-Emirati",
+      "author": "vadimbelsky",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/vadimbelsky/qwen3.5-TTS-Emirati",
+      "created_at": "2026-03-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "vijayavedartham/veda-tts-ljspeech",
+      "author": "vijayavedartham",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/vijayavedartham/veda-tts-ljspeech",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "saumilyajj/Qwen3-TTS-12Hz-1.7B-Base-hindi-ft",
+      "author": "saumilyajj",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/saumilyajj/Qwen3-TTS-12Hz-1.7B-Base-hindi-ft",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ghananlpcommunity/YarnGPT-local",
+      "author": "ghananlpcommunity",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/ghananlpcommunity/YarnGPT-local",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ghananlpcommunity/YarnGPT2",
+      "author": "ghananlpcommunity",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/ghananlpcommunity/YarnGPT2",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "eduardem/xtts-v2-romanian-v2",
+      "author": "eduardem",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/eduardem/xtts-v2-romanian-v2",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "silma-ai/silma-tts",
+      "author": "silma-ai",
+      "downloads": 3,
+      "likes": 1,
+      "url": "https://huggingface.co/silma-ai/silma-tts",
+      "created_at": "2026-03-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Aratako/Semantic-DACVAE-Japanese-32dim",
+      "author": "Aratako",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/Aratako/Semantic-DACVAE-Japanese-32dim",
+      "created_at": "2026-03-14",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "hamedfrogh/StethoBench",
+      "author": "hamedfrogh",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/hamedfrogh/StethoBench",
+      "created_at": "2026-03-15"
+    },
+    {
+      "dataset_id": "rAVEUK/Creative-Professionals-Agentic-Tasks-1M",
+      "author": "rAVEUK",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/rAVEUK/Creative-Professionals-Agentic-Tasks-1M",
+      "created_at": "2026-03-15"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 39,
+    "dataset_count": 2,
+    "tweet_count": 0
+  }
+}

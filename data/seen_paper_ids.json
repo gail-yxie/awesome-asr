@@ -1,18 +1,4 @@
 {
-  "2026-02-26": [
-    "2602.22039v1",
-    "tg-asr: translation-guided learning with parallel gated cross attention for low-resource automatic speech recognition",
-    "2602.21741v1",
-    "robust long-form bangla speech processing: automatic speech recognition and speaker diarization",
-    "2602.21647v1",
-    "mitigating structural noise in low-resource s2tt: an optimized cascaded nepali-english pipeline with punctuation restoration",
-    "2602.21646v1",
-    "scalable multilingual multimodal machine translation with speech-text fusion",
-    "2602.21183v1",
-    "823-olt @ buet dl sprint 4.0: context-aware windowing for asr and fine-tuned speaker diarization in bengali long form audio",
-    "2602.20967v1",
-    "training-free intelligibility-guided observation addition for noisy asr"
-  ],
   "2026-02-27": [
     "2602.23300v1",
     "a mixture-of-experts model for multimodal emotion recognition in conversations",
@@ -143,5 +129,6 @@
     "2603.11123v1",
     "uni-asr: unified llm-based architecture for non-streaming and streaming automatic speech recognition"
   ],
-  "2026-03-14": []
+  "2026-03-14": [],
+  "2026-03-15": []
 }
