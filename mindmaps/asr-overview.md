@@ -39,6 +39,7 @@
 - anke01/whisper-small-uyghur
 - afaqalinagra/whisper-base-ps
 - e-horizon/whisper-small-ne-en
+- Shagufta/whisper-medium-km-multicondition-29-5
 
 ### Transducer
 - RNN-T
@@ -93,8 +94,11 @@
 - An Investigation Into Various Approaches For Bengali Long-Form Speech Transcription
 - Streaming Translation and Transcription Through Speech-to-Text Causal Alignment
 - 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio
+- Robust Long-Form Bangla Speech Processing: Automatic Speech Recognition and Speaker Diarization
+- Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization via Extreme Augmentation and Perfect Alignment
 
 ### Speaker Diarization
+- beargreen/speaker-diarization-community-1
 - Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization
 - A Holistic Framework for Robust Bangla ASR and Speaker Diarization
 - Robust Long-Form Bangla Speech Processing
@@ -227,6 +231,7 @@
 - RayOrz/whisperkit-coreml
 - smkrv/whisper-podlodka-turbo-coreml
 - aoiandroid/qwen3-asr-0.6b-coreml
+- aoiandroid/Qwen3-ASR-1.7B-CoreML
 - kzmaker/faster-whisper-tilsync-34000
 - LemonJiaFace/faster-whisper-large-v2
 - clawhub/faster-whisper-tiny
@@ -247,6 +252,7 @@
 
 ### Model Merging
 - Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR
+- Athulkrishna/BettySara-whisper-large-v3-malayalam-merged-afct
 
 ### Speech Enhancement
 #### Target Speaker Extraction
@@ -271,6 +277,7 @@
 ### Alignment
 - Causal Alignment
 - Perfect Alignment for Long-Form
+- A Holistic Framework for Robust Bangla ASR and Speaker Diarization with Optimized VAD and CTC Alignment
 
 
 ## Evaluation
