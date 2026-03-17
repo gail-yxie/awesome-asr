@@ -46,6 +46,7 @@
 - Conformer-Transducer
 - Parakeet-TDT (Token-and-Duration Transducer)
 - nvidia/parakeet-tdt-0.6b-v2
+- cnonim/gigaam-v3-e2e-rnnt-onnx
 
 ### Foundation Models
 - USM
@@ -115,6 +116,8 @@
 #### Dialect-Aware
 - Efficient Dialect-Aware Modeling and Conditioning for Low-Resource Taiwanese Hakka Speech Processing
 - GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
+- itsarunendra/whisper-medium-tunisian-full-v2.1
+- transitionGap/ASR_haryanvi_small_finetuned
 
 #### Translation-Guided
 - TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition
@@ -256,7 +259,7 @@
 
 ### Speech Enhancement
 #### Target Speaker Extraction
-- AlphaFlowTSE: One-Step Generative Target Speaker Extraction
+- AlphaFlowTSE: One-Step Generative Target Speaker Extraction via Conditional AlphaFlow
 
 #### Visual-Informed
 - Visual-Informed Speech Enhancement Using Attention-Based Beamforming
@@ -354,7 +357,7 @@
 - Vocos
 
 ### Structural Tokens
-- ZeroSyl: Simple Zero-Resource Syllable Tokenization
+- ZeroSyl: Simple Zero-Resource Syllable Tokenization for Spoken Language Modeling
 - ZeroSyl: Zero-Resource Syllable Tokenization
 
 
@@ -376,7 +379,7 @@
 ### LLM-based TTS
 - CTC-TTS: Dual-streaming text-to-speech
 - CTC-TTS: LLM-based dual-streaming text-to-speech with CTC alignment
-- When Fine-Tuning Fails and when it Generalises: Role of Data Diversity in LLM-based TTS
+- When Fine-Tuning Fails and when it Generalises: Role of Data Diversity and Mixed Training in LLM-based TTS
 
 
 ## Speech Generation Tasks
@@ -401,7 +404,7 @@
 - Resurfacing Paralinguistic Awareness in Large Audio Language Models
 
 ### Text-to-Audio
-- Resonate: Reinforcing Text-to-Audio Generation via Online Feedback
+- Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
 
 
 ## Training Approaches
@@ -414,14 +417,13 @@
 ### Alignment
 - Speech-text alignment
 - Interleaved speech-text training
-- Cross-lingual Matryoshka Representation Learning
-- TADA: Text-Acoustic Dual Alignment
+- Cross-lingual Matryoshka Representation Learning across Speech and Text
+- TADA: A Generative Framework for Speech Modeling via Text-Acoustic Dual Alignment
 - ALARM: Audio-Language Alignment for Reasoning Models
 
 ### Reinforcement Learning
 - RLHF for speech
 - DPO for speech quality
-- Resonate: Online Feedback for Reinforcing Audio Generation
 - Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
 
 
