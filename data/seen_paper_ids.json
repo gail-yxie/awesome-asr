@@ -1,5 +1,4 @@
 {
-  "2026-02-28": [],
   "2026-03-04": [
     "2603.03158v1",
     "an investigation into various approaches for bengali long-form speech transcription and bengali speaker diarization",
@@ -119,5 +118,19 @@
   ],
   "2026-03-14": [],
   "2026-03-15": [],
-  "2026-03-16": []
+  "2026-03-16": [],
+  "2026-03-17": [
+    "2603.15326v1",
+    "tagarela - a portuguese speech dataset from podcasts",
+    "2603.15261v1",
+    "two-stage adaptation for non-normative speech recognition: revisiting speaker-independent initialization for personalization",
+    "2603.15045v1",
+    "llms and speech: integration vs. combination",
+    "2603.14779v1",
+    "vietnamese automatic speech recognition: a revisit",
+    "2603.14636v1",
+    "nudging hidden states: training-free model steering for chain-of-thought reasoning in large audio-language models",
+    "2603.14456v1",
+    "parsa-bench: a comprehensive persian audio-language model benchmark"
+  ]
 }
