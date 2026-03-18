@@ -6,6 +6,7 @@
 - Deep Speech
 - saidaAo/wav2vec2-base-librispeech-demo
 - Abdoul27/babyhubert-phoneme-base
+- Alvenir/wav2vec2-da-2026-02-v2
 
 ### Attention-based
 - Whisper
@@ -40,6 +41,11 @@
 - afaqalinagra/whisper-base-ps
 - e-horizon/whisper-small-ne-en
 - Shagufta/whisper-medium-km-multicondition-29-5
+- Kanompung/whisper-th-lotusdis-lora
+- Dovud-Asadov/whisper-large-v3-turbo-uzbek
+- PThi35/whisper_large_v3_phase1
+- EvgenyShivchenkoUIT/bw-voice_recog_de_turbo
+- Leebin/FireRedASR-AED-L
 
 ### Transducer
 - RNN-T
@@ -69,6 +75,7 @@
 - aoiandroid/Qwen3-ASR-1.7B-CoreML
 - aoiandroid/qwen3-asr-0.6b-coreml
 - Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
+- Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR
 
 
 ## Self-Supervised Learning
@@ -132,6 +139,7 @@
 - korir8/sauti-whisper-small-swh
 - amanuelbyte/whisper-amharic-asr-finetuned
 - Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539
+- Vietnamese Automatic Speech Recognition: A Revisit
 
 
 ### Multimodal
@@ -148,6 +156,9 @@
 - MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
 - Edge-Cloud Collaborative Speech Emotion Captioning via Token-Level Speculative Decoding in Audio-Language Models
 - ALARM: Audio-Language Alignment for Reasoning Models
+- Resurfacing Paralinguistic Awareness in Large Audio Language Models
+- Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models
+- Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction
 
 #### Emotion Recognition
 - Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
@@ -164,6 +175,7 @@
 - Disordered Speech Recognition (Aphasia, Impaired Speech)
 - CLAP-Based Automatic Word Naming Recognition in Post-Stroke Aphasia
 - Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language
+- Two-Stage Adaptation for Non-Normative Speech Recognition: Revisiting Speaker-Independent Initialization for Personalization
 
 #### Religious/Liturgical
 - 9DTechnologies/QuartzNet_quran_v1
@@ -203,6 +215,7 @@
 - Ramsa: A Large Sociolinguistically Rich Emirati Arabic Speech Corpus
 - A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition
 - From Scarcity to Scale: A Release-Level Analysis of the Pashto Common Voice Dataset
+- Tagarela - A Portuguese speech dataset from podcasts
 
 ### Benchmarks
 - ESB
@@ -276,6 +289,9 @@
 #### Refinement
 - Structural Noise Mitigation
 
+#### Entity Correction
+- RECOVER: Robust Entity Correction via agentic Orchestration of hypothesis Variants for Evidence-based Recovery
+
 
 ### Alignment
 - Causal Alignment
@@ -295,6 +311,7 @@
 - ESB
 - SUPERB
 - SCENEBench
+- MUGEN: Evaluating and Improving Multi-audio Understanding
 
 
 ## Applications
@@ -320,6 +337,7 @@
 
 ### Annotation & Tooling
 - LabelBuddy: An Open Source Music and Audio Language Annotation Tagging Tool Using AI Assistance
+- Is Semi-Automatic Transcription Useful in Corpus Creation? Preliminary Considerations on the KIParla Corpus
 
 
 
@@ -341,6 +359,9 @@
 - VALL-E
 - SoundStorm
 - MusicGen
+
+### Position Papers
+- LLMs and Speech: Integration vs. Combination
 
 
 ## Speech Tokenization
@@ -402,6 +423,7 @@
 - Style transfer
 - Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction
 - Resurfacing Paralinguistic Awareness in Large Audio Language Models
+- On the Emotion Understanding of Synthesized Speech
 
 ### Text-to-Audio
 - Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
@@ -420,6 +442,7 @@
 - Cross-lingual Matryoshka Representation Learning across Speech and Text
 - TADA: A Generative Framework for Speech Modeling via Text-Acoustic Dual Alignment
 - ALARM: Audio-Language Alignment for Reasoning Models
+- Omnilingual SONAR: Cross-Lingual and Cross-Modal Sentence Embeddings Bridging Massively Multilingual Text and Speech
 
 ### Reinforcement Learning
 - RLHF for speech
