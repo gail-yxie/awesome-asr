@@ -1,0 +1,633 @@
+{
+  "date": "2026-03-18",
+  "summary": "The release of **Omnilingual SONAR** marks a significant advancement in cross-modal representation learning, providing a unified embedding space that natively bridges text and speech across hundreds of languages without sacrificing downstream performance. We are seeing immediate practical adoption of the **Qwen3-ASR** architecture, with the release of **Polyglot-Lion** for localized Singaporean multilingualism and new ONNX-optimized weights for the 0.6B and 1.7B variants to facilitate efficient deployment. Research is simultaneously shifting toward improving ASR reliability through \"agentic orchestration\" in the **RECOVER** framework for entity correction and investigating the transferability of emotion-recognition metrics to synthesized speech. Together, these developments highlight a trend of scaling massive multilingual coverage while refining the precision and evaluative frameworks of speech-centric language models.",
+  "ideas": [
+    "OmniSONAR establishes a unified, cross-modal embedding space that scales to massively multilingual text and speech while overcoming the historical trade-off between alignment strength and downstream task quality.",
+    "Research into emotion understanding reveals that models trained on natural speech do not transfer reliably to synthesized speech, challenging the validity of using these models as reward functions for expressive speech synthesis.",
+    "The RECOVER framework utilizes agentic orchestration and multi-hypothesis evidence to correct rare or domain-specific entity errors that are often entirely absent from initial ASR outputs.",
+    "Integrating ASR into manual transcription workflows for corpus creation provides measurable efficiency gains for both expert and novice transcribers while maintaining high linguistic integrity.",
+    "Fine-tuning compact, large-scale speech models like Qwen3-ASR with balanced regional datasets enables high-performance, resource-efficient multilingual ASR tailored to specific linguistic landscapes."
+  ],
+  "papers": [
+    {
+      "id": "2603.16606v1",
+      "title": "Omnilingual SONAR: Cross-Lingual and Cross-Modal Sentence Embeddings Bridging Massively Multilingual Text and Speech",
+      "authors": [
+        "Omnilingual SONAR Team",
+        "João Maria Janeiro",
+        "Pere-Lluís Huguet Cabot",
+        "Ioannis Tsiamas",
+        "Yen Meng",
+        "Vivek Iyer",
+        "Guillem Ramírez",
+        "Loic Barrault",
+        "Belen Alastruey",
+        "Yu-An Chung",
+        "Marta R. Costa-Jussa",
+        "David Dale",
+        "Kevin Heffernan",
+        "Jaehyeong Jo",
+        "Artyom Kozhevnikov",
+        "Alexandre Mourachko",
+        "Christophe Ropers",
+        "Holger Schwenk",
+        "Paul-Ambroise Duquenne"
+      ],
+      "abstract": "Cross-lingual sentence encoders typically cover only a few hundred languages and often trade downstream quality for stronger alignment, limiting their adoption. We introduce OmniSONAR, a new family of omnilingual, cross-lingual and cross-modal sentence embedding models that natively embed text, speech, code, and mathematical expressions in a single semantic space, while delivering state-of-the-art downstream performance at the scale of thousands of languages, from high-resource to extremely low-resource varieties. To reach this scale without representation collapse, we use progressive training. We first learn a strong foundational space for 200 languages with an LLM-initialized encoder-decoder, combining token-level decoding with a novel split-softmax contrastive loss and synthetic hard negatives. Building on this foundation, we expand to several thousands language varieties via a two-stage teacher-student encoder distillation framework. Finally, we demonstrate the cross-modal extensibility of this space by seamlessly mapping 177 spoken languages into it. OmniSONAR halves cross-lingual similarity search error on the 200-language FLORES dataset and reduces error by a factor of 15 on the 1,560-language BIBLE benchmark. It also enables strong translation, outperforming NLLB-3B on multilingual benchmarks and exceeding prior models (including much larger LLMs) by 15 chrF++ points on 1,560 languages into English BIBLE translation. OmniSONAR also performs strongly on MTEB and XLCoST. For speech, OmniSONAR achieves a 43% lower similarity-search error and reaches 97% of SeamlessM4T speech-to-text quality, despite being zero-shot for translation (trained only on ASR data). Finally, by training an encoder-decoder LM, Spectrum, exclusively on English text processing OmniSONAR embedding sequences, we unlock high-performance transfer to thousands of languages and speech for complex downstream tasks.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-17",
+      "url": "https://arxiv.org/abs/2603.16606v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.16606v1"
+    },
+    {
+      "id": "2603.16483v1",
+      "title": "On the Emotion Understanding of Synthesized Speech",
+      "authors": [
+        "Yuan Ge",
+        "Haishu Zhao",
+        "Aokai Hao",
+        "Junxiang Zhang",
+        "Bei Li",
+        "Xiaoqian Liu",
+        "Chenglong Wang",
+        "Jianjin Wang",
+        "Bingsen Zhou",
+        "Bingyu Liu",
+        "Jingbo Zhu",
+        "Zhengtao Yu",
+        "Tong Xiao"
+      ],
+      "abstract": "Emotion is a core paralinguistic feature in voice interaction. It is widely believed that emotion understanding models learn fundamental representations that transfer to synthesized speech, making emotion understanding results a plausible reward or evaluation metric for assessing emotional expressiveness in speech synthesis. In this work, we critically examine this assumption by systematically evaluating Speech Emotion Recognition (SER) on synthesized speech across datasets, discriminative and generative SER models, and diverse synthesis models. We find that current SER models can not generalize to synthesized speech, largely because speech token prediction during synthesis induces a representation mismatch between synthesized and human speech. Moreover, generative Speech Language Models (SLMs) tend to infer emotion from textual semantics while ignoring paralinguistic cues. Overall, our findings suggest that existing SER models often exploit non-robust shortcuts rather than capturing fundamental features, and paralinguistic understanding in SLMs remains challenging.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-17",
+      "url": "https://arxiv.org/abs/2603.16483v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.16483v1"
+    },
+    {
+      "id": "2603.16411v1",
+      "title": "RECOVER: Robust Entity Correction via agentic Orchestration of hypothesis Variants for Evidence-based Recovery",
+      "authors": [
+        "Abhishek Kumar",
+        "Aashraya Sachdeva"
+      ],
+      "abstract": "Entity recognition in Automatic Speech Recognition (ASR) is challenging for rare and domain-specific terms. In domains such as finance, medicine, and air traffic control, these errors are costly. If the entities are entirely absent from the ASR output, post-ASR correction becomes difficult. To address this, we introduce RECOVER, an agentic correction framework that serves as a tool-using agent. It leverages multiple hypotheses as evidence from ASR, retrieves relevant entities, and applies Large Language Model (LLM) correction under constraints. The hypotheses are used using different strategies, namely, 1-Best, Entity-Aware Select, Recognizer Output Voting Error Reduction (ROVER) Ensemble, and LLM-Select. Evaluated across five diverse datasets, it achieves 8-46% relative reductions in entity-phrase word error rate (E-WER) and increases recall by up to 22 percentage points. The LLM-Select achieves the best overall performance in entity correction while maintaining overall WER.",
+      "categories": [
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-03-17",
+      "url": "https://arxiv.org/abs/2603.16411v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.16411v1"
+    },
+    {
+      "id": "2603.16258v1",
+      "title": "Is Semi-Automatic Transcription Useful in Corpus Creation? Preliminary Considerations on the KIParla Corpus",
+      "authors": [
+        "Martina Simonotti",
+        "Ludovica Pannitto",
+        "Eleonora Zucchini",
+        "Silvia Ballarè",
+        "Caterina Mauri"
+      ],
+      "abstract": "This paper analyses the implementation of Automatic Speech Recognition (ASR) into the transcription workflow of the KIParla corpus, a resource of spoken Italian. Through a two-phase experiment, 11 expert and novice transcribers produced both manual and ASR-assisted transcriptions of identical audio segments across three different types of conversation, which were subsequently analyzed through a combination of statistical modeling, word-level alignment and a series of annotation-based metrics. Results show that ASR-assisted workflows can increase transcription speed but do not consistently improve overall accuracy, with effects depending on multiple factors such as workflow configuration, conversation type and annotator experience. Analyses combining alignment-based metrics, descriptive statistics and statistical modeling provide a systematic framework to monitor transcription behavior across annotators and workflows. Despite limitations, ASR-assisted transcription, potentially supported by task-specific fine-tuning, could be integrated into the KIParla transcription workflow to accelerate corpus creation without compromising transcription quality.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-17",
+      "url": "https://arxiv.org/abs/2603.16258v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.16258v1"
+    },
+    {
+      "id": "2603.16184v1",
+      "title": "Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR",
+      "authors": [
+        "Quy-Anh Dang",
+        "Chris Ngo"
+      ],
+      "abstract": "We present Polyglot-Lion, a family of compact multilingual automatic speech recognition (ASR) models tailored for the linguistic landscape of Singapore, covering English, Mandarin, Tamil, and Malay. Our models are obtained by fine-tuning Qwen3-ASR-0.6B and Qwen3-ASR-1.7B exclusively on publicly available speech corpora, using a balanced sampling strategy that equalizes the number of training utterances per language and deliberately omits language-tag conditioning so that the model learns to identify languages implicitly from audio. On 12 benchmarks spanning the four target languages, Polyglot-Lion-1.7B achieves an average error rate of 14.85, competitive with MERaLiON-2-10B-ASR (14.32) - a model 6x larger - while incurring a training cost of \\$81 on a single RTX PRO 6000 GPU compared to \\$18,862 for the 128-GPU baseline. Inference throughput is approximately 20x faster than MERaLiON at 0.10 s/sample versus 2.02 s/sample. These results demonstrate that linguistically balanced fine-tuning of moderate-scale pretrained models can yield deployment-ready multilingual ASR at a fraction of the cost of larger specialist systems.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-17",
+      "url": "https://arxiv.org/abs/2603.16184v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.16184v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "Kanompung/whisper-th-lotusdis-lora",
+      "author": "Kanompung",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Kanompung/whisper-th-lotusdis-lora",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Dovud-Asadov/whisper-large-v3-turbo-uzbek",
+      "author": "Dovud-Asadov",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Dovud-Asadov/whisper-large-v3-turbo-uzbek",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PThi35/whisper_large_v3_phase1",
+      "author": "PThi35",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/PThi35/whisper_large_v3_phase1",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shagufta/whisper_medium_km_indomain_5hours_withac",
+      "author": "Shagufta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Shagufta/whisper_medium_km_indomain_5hours_withac",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Diomande/nko-asr-v1",
+      "author": "Diomande",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Diomande/nko-asr-v1",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "uzair0/GhagAI",
+      "author": "uzair0",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/uzair0/GhagAI",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Tamynator/whisper-medium-en-pcm",
+      "author": "Tamynator",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Tamynator/whisper-medium-en-pcm",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "GetMeElon/Belle-whisper-large-v3-turbo-zh",
+      "author": "GetMeElon",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/GetMeElon/Belle-whisper-large-v3-turbo-zh",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "baicai1145/Qwen3-ASR-0.6B-ONNX",
+      "author": "baicai1145",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/baicai1145/Qwen3-ASR-0.6B-ONNX",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "baicai1145/Qwen3-ASR-1.7B-ONNX",
+      "author": "baicai1145",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/baicai1145/Qwen3-ASR-1.7B-ONNX",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-ach-victor",
+      "author": "waxal-benchmarking",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-ach-victor",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "NightPrince/stt-arabic-whisper-finetuned-diactires",
+      "author": "NightPrince",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/NightPrince/stt-arabic-whisper-finetuned-diactires",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "BettySara/whisper-large-v3-malayalam-FT",
+      "author": "BettySara",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/BettySara/whisper-large-v3-malayalam-FT",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "berijoyis/faster-whisper-large-v2",
+      "author": "berijoyis",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/berijoyis/faster-whisper-large-v2",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Yosriii/whisper-small-french",
+      "author": "Yosriii",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Yosriii/whisper-small-french",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kaylazima/quranic-model",
+      "author": "kaylazima",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kaylazima/quranic-model",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mohdasif81/whisper-tiny.en",
+      "author": "mohdasif81",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mohdasif81/whisper-tiny.en",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FusionRAG/MSP-Multimodal-LRS2",
+      "author": "FusionRAG",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/FusionRAG/MSP-Multimodal-LRS2",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "happyme531/Qwen3-ASR-1.7B-RKLLM",
+      "author": "happyme531",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/happyme531/Qwen3-ASR-1.7B-RKLLM",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "stukenov/issai-faster-whisper-tilsync-beta-30sept2025-fp16",
+      "author": "stukenov",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/stukenov/issai-faster-whisper-tilsync-beta-30sept2025-fp16",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "f0ghedgeh0g/whisper-tiny-banking-en",
+      "author": "f0ghedgeh0g",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/f0ghedgeh0g/whisper-tiny-banking-en",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sunbv56/Qwen3-ASR-Lyrics-Viet-GGUF",
+      "author": "sunbv56",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sunbv56/Qwen3-ASR-Lyrics-Viet-GGUF",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hiyanachnani/wav2vec2-base-960h",
+      "author": "hiyanachnani",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hiyanachnani/wav2vec2-base-960h",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ysdede/nemo-canary-1b-v2-onnx-timestamped",
+      "author": "ysdede",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ysdede/nemo-canary-1b-v2-onnx-timestamped",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mmarron14/whisper-medium-cv17-es-5-steps_proc3-def3",
+      "author": "mmarron14",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mmarron14/whisper-medium-cv17-es-5-steps_proc3-def3",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aoiandroid/whisperkit-coreml",
+      "author": "aoiandroid",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aoiandroid/whisperkit-coreml",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PThi35/whisper_large_v3",
+      "author": "PThi35",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/PThi35/whisper_large_v3",
+      "created_at": "2026-03-16",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-ewe-victor",
+      "author": "waxal-benchmarking",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-ewe-victor",
+      "created_at": "2026-03-16",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OK923/ultimate_wav2vec2_march",
+      "author": "OK923",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/OK923/ultimate_wav2vec2_march",
+      "created_at": "2026-03-16",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zcc97/fish-audio-s2-pro-bf16",
+      "author": "zcc97",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zcc97/fish-audio-s2-pro-bf16",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "MohammedEhab20/vibe-voice-egyptian-cfg50",
+      "author": "MohammedEhab20",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MohammedEhab20/vibe-voice-egyptian-cfg50",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "MohammedEhab20/vibe-voice-egyptian-cfg40",
+      "author": "MohammedEhab20",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MohammedEhab20/vibe-voice-egyptian-cfg40",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "MohammedEhab20/vibe-voice-egyptian-cfg35",
+      "author": "MohammedEhab20",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MohammedEhab20/vibe-voice-egyptian-cfg35",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "evilsocket/VibeVoice-1.5B",
+      "author": "evilsocket",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/evilsocket/VibeVoice-1.5B",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "VoidShine/atri-sovits",
+      "author": "VoidShine",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/VoidShine/atri-sovits",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "evilsocket/luxtts",
+      "author": "evilsocket",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/evilsocket/luxtts",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "cs2764/fish-audio-s2-pro-8bit",
+      "author": "cs2764",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/cs2764/fish-audio-s2-pro-8bit",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "thangquang09/capspeech-nar-vietnamese",
+      "author": "thangquang09",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/thangquang09/capspeech-nar-vietnamese",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "IhorShevchuk/piper-voice-ur-fasih",
+      "author": "IhorShevchuk",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/IhorShevchuk/piper-voice-ur-fasih",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "bluryar/VoxCPM-GGUF",
+      "author": "bluryar",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/bluryar/VoxCPM-GGUF",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "aaaaaa12121212/XTTS-v2-Urdu-FT",
+      "author": "aaaaaa12121212",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aaaaaa12121212/XTTS-v2-Urdu-FT",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Bgeorge/kugelaudio-0-open",
+      "author": "Bgeorge",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Bgeorge/kugelaudio-0-open",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Bomjardim/s2-pro",
+      "author": "Bomjardim",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Bomjardim/s2-pro",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ebrinz/chatterbox-turbo-coreml",
+      "author": "ebrinz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ebrinz/chatterbox-turbo-coreml",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Sonu0777/XTTS-v2",
+      "author": "Sonu0777",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Sonu0777/XTTS-v2",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "BartNID/s2-pro",
+      "author": "BartNID",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/BartNID/s2-pro",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "xenoASHO/s2-pro",
+      "author": "xenoASHO",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/xenoASHO/s2-pro",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "herimor/voxtream2",
+      "author": "herimor",
+      "downloads": 0,
+      "likes": 4,
+      "url": "https://huggingface.co/herimor/voxtream2",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "oddadmix/lahgtna-chatterbox-v1",
+      "author": "oddadmix",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/oddadmix/lahgtna-chatterbox-v1",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "VibeVoice-CheckPoints/vibe-voice-egyptian-V1",
+      "author": "VibeVoice-CheckPoints",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/VibeVoice-CheckPoints/vibe-voice-egyptian-V1",
+      "created_at": "2026-03-16",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "qqceqqq/Ace-Step1.5",
+      "author": "qqceqqq",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/qqceqqq/Ace-Step1.5",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "aaaaaa12121212/mms-tts-urdu-finetuned",
+      "author": "aaaaaa12121212",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aaaaaa12121212/mms-tts-urdu-finetuned",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "idle-intelligence/personaplex-7b-v1-q4_k-webgpu",
+      "author": "idle-intelligence",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/idle-intelligence/personaplex-7b-v1-q4_k-webgpu",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "idle-intelligence/personaplex-24L-q4_k-webgpu",
+      "author": "idle-intelligence",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/idle-intelligence/personaplex-24L-q4_k-webgpu",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "aaaaaaaaaff/free-svc",
+      "author": "aaaaaaaaaff",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aaaaaaaaaff/free-svc",
+      "created_at": "2026-03-17",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "egirma/afrivoice-swahili-agriculture-subset",
+      "author": "egirma",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/egirma/afrivoice-swahili-agriculture-subset",
+      "created_at": "2026-03-18"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 5,
+    "model_count": 55,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}

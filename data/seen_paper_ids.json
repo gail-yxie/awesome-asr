@@ -1,20 +1,4 @@
 {
-  "2026-03-04": [
-    "2603.03158v1",
-    "an investigation into various approaches for bengali long-form speech transcription and bengali speaker diarization",
-    "2603.02914v1",
-    "does fine-tuning by reinforcement learning improve generalization in binary speech deepfake detection?",
-    "2603.02813v1",
-    "benchmarking speech systems for frontline health conversations: the displace-m challenge",
-    "2603.02464v1",
-    "gloria: gated low-rank interpretable adaptation for dialectal asr",
-    "2603.02368v1",
-    "ro-n3ws: enhancing generalization in low-resource asr with diverse romanian speech benchmarks",
-    "2603.02030v2",
-    "tcg crest system description for the displace-m challenge",
-    "2603.01894v1",
-    "vietsuperspeech: a large-scale vietnamese conversational speech dataset for asr fine-tuning in chatbot, customer support, and call center applications"
-  ],
   "2026-03-05": [
     "2603.04293v1",
     "labelbuddy: an open source music and audio language annotation tagging tool using ai assistance",
@@ -132,5 +116,17 @@
     "nudging hidden states: training-free model steering for chain-of-thought reasoning in large audio-language models",
     "2603.14456v1",
     "parsa-bench: a comprehensive persian audio-language model benchmark"
+  ],
+  "2026-03-18": [
+    "2603.16606v1",
+    "omnilingual sonar: cross-lingual and cross-modal sentence embeddings bridging massively multilingual text and speech",
+    "2603.16483v1",
+    "on the emotion understanding of synthesized speech",
+    "2603.16411v1",
+    "recover: robust entity correction via agentic orchestration of hypothesis variants for evidence-based recovery",
+    "2603.16258v1",
+    "is semi-automatic transcription useful in corpus creation? preliminary considerations on the kiparla corpus",
+    "2603.16184v1",
+    "polyglot-lion: efficient multilingual asr for singapore via balanced fine-tuning of qwen3-asr"
   ]
 }
