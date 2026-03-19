@@ -1,0 +1,329 @@
+{
+  "date": "2026-03-19",
+  "summary": "Today’s research marks a shift toward fine-grained control and transparency in Large Audio Language Models (LALMs), featuring the first neuron-level study for precise emotion control and multi-source evidence fusion to improve interpretability in audio question answering. To overcome data imbalance in multilingual ASR, the introduction of Zipper-LoRA offers a dynamic parameter decoupling strategy for more effective alignment between speech encoders and LLMs. Key model releases include a Qwen3-based 1.7B ASR model and specialized fine-tuned Whisper variants for Egyptian and Tulpar, underscoring the trend of tailoring foundation models for specific dialects and complex reasoning tasks. Collectively, these developments highlight an industry-wide push to move beyond simple transcription toward robust, interpretable, and stylistically controllable speech-centric multimodal systems.",
+  "ideas": [
+    "Multi-source evidence fusion improves the interpretability and validation of reasoning in Large Audio Language Models for complex audio question answering tasks.",
+    "Zipper-LoRA utilizes dynamic parameter decoupling to bridge the performance gap caused by imbalanced data distributions in multilingual speech recognition.",
+    "Decoupling specific parameters for different languages allows speech-centric language models to scale more effectively across diverse linguistic distributions without sacrificing accuracy.",
+    "Neuron-level analysis and intervention in generative audio models provide a mechanism for fine-grained emotion control while maintaining linguistic fidelity.",
+    "Targeting specific neurons for affective expression mitigates common failure modes in speech generation such as hallucinations, paraphrasing, or system refusals."
+  ],
+  "papers": [
+    {
+      "id": "2603.17822v1",
+      "title": "Multi-Source Evidence Fusion for Audio Question Answering",
+      "authors": [
+        "Aivo Olev",
+        "Tanel Alumäe"
+      ],
+      "abstract": "Large audio language models (LALMs) can answer questions about speech, music, and environmental sounds, yet their internal reasoning is largely opaque and difficult to validate. We describe TalTech's solution to the Agent Track of the Interspeech 2026 Audio Reasoning Challenge, in which systems are evaluated on reasoning process quality, specifically the factual accuracy, logical soundness, and completeness of their reasoning chains. Our multi-source ensemble pipeline uses two LALMs that generate independent observations, while a separate text-only reasoning model cross-checks these against outputs from 25 acoustic tools organized into reliability tiers. By grounding every inference step in explicit, reliability-tagged evidence, the system produces dense, verifiable reasoning chains. Our system ranked first in the challenge, outperforming all competing systems by a wide margin in challenge's reasoning quality metric.",
+      "categories": [
+        "eess.AS",
+        "cs.CL"
+      ],
+      "published": "2026-03-18",
+      "url": "https://arxiv.org/abs/2603.17822v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.17822v1"
+    },
+    {
+      "id": "2603.17558v1",
+      "title": "Zipper-LoRA: Dynamic Parameter Decoupling for Speech-LLM based Multilingual Speech Recognition",
+      "authors": [
+        "Yuxiang Mei",
+        "Delai Qiu",
+        "Shengping Liu",
+        "Jiaen Liang",
+        "Yanhua Long"
+      ],
+      "abstract": "Speech Large Language Models (Speech-LLMs) have emerged as a powerful approach for automatic speech recognition (ASR) by aligning speech encoders with large language models. However, adapting these systems to multilingual settings with imbalanced data distributions remains challenging. In such scenarios, a stability-plasticity dilemma often arises: fully shared Parameter-Efficient Fine-Tuning (PEFT) can cause negative inter-lingual interference for under-represented languages, while fully language-specific tuning limits the cross-lingual beneficial knowledge transfer needed for low-resource tasks. To address this, we propose Zipper-LoRA, a novel rank-level decoupling framework with three variants (Static, Hard, and Soft) that dynamically synthesizes LoRA updates from shared and language-specific subspaces. By using a lightweight language-conditioned router, Zipper-LoRA dynamically controls the contribution of each subspace at the LoRA rank level, enabling fine-grained sharing where languages are compatible and strict decoupling when conflicts occur. To further stabilize optimization under imbalanced data, we propose a two-stage training strategy with an Initial-B warm start that significantly accelerates convergence. Experiments on a 12-language mixed-resource setting show that Zipper-LoRA consistently outperforms both fully shared and independent baselines, particularly in extremely low-resource scenarios. Moreover, we demonstrate that these gains are robust across both chunked and non-chunked encoder configurations, confirming the framework's reliability for practical, large-scale multilingual ASR. Our code and data will be available at https://github.com/YuCeong-May/Zipper-LoRA for reproducibility.",
+      "categories": [
+        "cs.CL",
+        "cs.SD"
+      ],
+      "published": "2026-03-18",
+      "url": "https://arxiv.org/abs/2603.17558v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.17558v1"
+    },
+    {
+      "id": "2603.17231v1",
+      "title": "Neuron-Level Emotion Control in Speech-Generative Large Audio-Language Models",
+      "authors": [
+        "Xiutian Zhao",
+        "Ismail Rasim Ulgen",
+        "Philipp Koehn",
+        "Björn Schuller",
+        "Berrak Sisman"
+      ],
+      "abstract": "Large audio-language models (LALMs) can produce expressive speech, yet reliable emotion control remains elusive: conversions often miss the target affect and may degrade linguistic fidelity through refusals, hallucinations, or paraphrase. We present, to our knowledge, the first neuron-level study of emotion control in speech-generative LALMs and demonstrate that compact emotion-sensitive neurons (ESNs) are causally actionable, enabling training-free emotion steering at inference time. ESNs are identified via success-filtered activation aggregation enforcing both emotion realization and content preservation. Across three LALMs (Qwen2.5-Omni-7B, MiniCPM-o 4.5, Kimi-Audio), ESN interventions yield emotion-specific gains that generalize to unseen speakers and are supported by automatic and human evaluation. Controllability depends on selector design, mask sparsity, filtering, and intervention strength. Our results establish a mechanistic framework for training-free emotion control in speech generation.",
+      "categories": [
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-03-18",
+      "url": "https://arxiv.org/abs/2603.17231v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.17231v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "pavanmantha/whisper-medium-sa",
+      "author": "pavanmantha",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/pavanmantha/whisper-medium-sa",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hdnminh/qwen3-asr-1.7b",
+      "author": "hdnminh",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hdnminh/qwen3-asr-1.7b",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "olzhasAl/whisper-large-v3-tulpar",
+      "author": "olzhasAl",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/olzhasAl/whisper-large-v3-tulpar",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/lug-asr-sunflower14b-projector-best",
+      "author": "KasuleTrevor",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/lug-asr-sunflower14b-projector-best",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Zhaaa01/whisper-small",
+      "author": "Zhaaa01",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Zhaaa01/whisper-small",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aufklarer/Parakeet-TDT-0.6B-ONNX",
+      "author": "aufklarer",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aufklarer/Parakeet-TDT-0.6B-ONNX",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "DavidSameh/whisper-large-v3-turbo-Egy-v1",
+      "author": "DavidSameh",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/DavidSameh/whisper-large-v3-turbo-Egy-v1",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kangkyu/icefall-asr-korean-multidomain-zipformer-2026-03-19",
+      "author": "kangkyu",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kangkyu/icefall-asr-korean-multidomain-zipformer-2026-03-19",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "yusufarcher/parakeet-tdt-1.1b-fp16",
+      "author": "yusufarcher",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/yusufarcher/parakeet-tdt-1.1b-fp16",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-ewe-cmu",
+      "author": "waxal-benchmarking",
+      "downloads": 62,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-ewe-cmu",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-ach-cmu",
+      "author": "waxal-benchmarking",
+      "downloads": 240,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-ach-cmu",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypa-intelligence/whisper-small-finetuned-asr-real-data-20260318_193155",
+      "author": "hypa-intelligence",
+      "downloads": 31,
+      "likes": 0,
+      "url": "https://huggingface.co/hypa-intelligence/whisper-small-finetuned-asr-real-data-20260318_193155",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ChipCracker/omni-asr-coreml",
+      "author": "ChipCracker",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ChipCracker/omni-asr-coreml",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "HariDangi/parakeet-tdt-0.6b-v3-onnx-int8",
+      "author": "HariDangi",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/HariDangi/parakeet-tdt-0.6b-v3-onnx-int8",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LLYYJJ/powsm",
+      "author": "LLYYJJ",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/LLYYJJ/powsm",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "onemouth/MediaTek-Research_Breeze-ASR-25_coreml",
+      "author": "onemouth",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/onemouth/MediaTek-Research_Breeze-ASR-25_coreml",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "idrock/piyola-v1",
+      "author": "idrock",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/idrock/piyola-v1",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "laxylj/s2-pro",
+      "author": "laxylj",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/laxylj/s2-pro",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "aisyahsyihab/voxcpm-lora-indonesian-female-v2",
+      "author": "aisyahsyihab",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aisyahsyihab/voxcpm-lora-indonesian-female-v2",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "acul3/Qwen3-TTS-1.7B-Base-ExecuTorch",
+      "author": "acul3",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/acul3/Qwen3-TTS-1.7B-Base-ExecuTorch",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ketav/chatterbox-turbo-hinglish",
+      "author": "ketav",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ketav/chatterbox-turbo-hinglish",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "7c8/s2-pro",
+      "author": "7c8",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/7c8/s2-pro",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "vimdhayak/s2-pro",
+      "author": "vimdhayak",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vimdhayak/s2-pro",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ayousanz/piper-plus-css10-ja-6lang",
+      "author": "ayousanz",
+      "downloads": 25,
+      "likes": 1,
+      "url": "https://huggingface.co/ayousanz/piper-plus-css10-ja-6lang",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "aufklarer/Kokoro-82M-ONNX",
+      "author": "aufklarer",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aufklarer/Kokoro-82M-ONNX",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "petrusilius/modus-tts",
+      "author": "petrusilius",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/petrusilius/modus-tts",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "cs2764/fish-audio-s2-pro-8bit-mlx",
+      "author": "cs2764",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/cs2764/fish-audio-s2-pro-8bit-mlx",
+      "created_at": "2026-03-18",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "weya-ai/hush",
+      "author": "weya-ai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/weya-ai/hush",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 3,
+    "model_count": 28,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}

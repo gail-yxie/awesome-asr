@@ -1,10 +1,4 @@
 {
-  "2026-03-05": [
-    "2603.04293v1",
-    "labelbuddy: an open source music and audio language annotation tagging tool using ai assistance",
-    "2603.03811v1",
-    "robust llm-based audio-visual speech recognition with sparse modality alignment and visual unit-guided refinement"
-  ],
   "2026-03-06": [
     "2603.05459v1",
     "debiss: a corpus of individual, semi-structured and spoken debates",
@@ -128,5 +122,13 @@
     "is semi-automatic transcription useful in corpus creation? preliminary considerations on the kiparla corpus",
     "2603.16184v1",
     "polyglot-lion: efficient multilingual asr for singapore via balanced fine-tuning of qwen3-asr"
+  ],
+  "2026-03-19": [
+    "2603.17822v1",
+    "multi-source evidence fusion for audio question answering",
+    "2603.17558v1",
+    "zipper-lora: dynamic parameter decoupling for speech-llm based multilingual speech recognition",
+    "2603.17231v1",
+    "neuron-level emotion control in speech-generative large audio-language models"
   ]
 }
