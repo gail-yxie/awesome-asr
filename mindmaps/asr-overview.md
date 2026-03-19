@@ -99,7 +99,7 @@
 - Offline
 - Long-form
 - omullaboyev/OmoN-STT
-- An Investigation Into Various Approaches For Bengali Long-Form Speech Transcription
+- An Investigation Into Various Approaches For Bengali Long-Form Speech Transcription and Bengali Speaker Diarization
 - Streaming Translation and Transcription Through Speech-to-Text Causal Alignment
 - 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio
 - Robust Long-Form Bangla Speech Processing: Automatic Speech Recognition and Speaker Diarization
@@ -116,7 +116,7 @@
 #### Code-switching
 
 #### Low-resource
-- Continued Pretraining for Low-Resource Swahili ASR
+- Continued Pretraining for Low-Resource Swahili ASR: Achieving State-of-the-Art Performance with Minimal Labeled Data
 - RO-N3WS: Enhancing Generalization in Low-Resource ASR with Diverse Romanian Speech Benchmarks
 - Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition in Low-Resource Languages
 
@@ -159,6 +159,7 @@
 - Resurfacing Paralinguistic Awareness in Large Audio Language Models
 - Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models
 - Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction
+- Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 
 #### Emotion Recognition
 - Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
@@ -169,7 +170,7 @@
 #### Medical Transcription
 - gabrielbuzzi/medasr-public
 - Benchmarking Speech Systems for Frontline Health Conversations: The DISPLACE-M Challenge
-- VoxCare: Studying Natural Communication Behaviors of Hospital Caregivers
+- VoxCare: Studying Natural Communication Behaviors of Hospital Caregivers through Wearable Sensing of Egocentric Audio
 
 #### Disordered Speech
 - Disordered Speech Recognition (Aphasia, Impaired Speech)
@@ -212,7 +213,7 @@
 - Pashto Common Voice (Scale Analysis)
 - Akan Impaired Speech Dataset
 - DEBISS: a Corpus of Individual, Semi-structured and Spoken Debates
-- Ramsa: A Large Sociolinguistically Rich Emirati Arabic Speech Corpus
+- Ramsa: A Large Sociolinguistically Rich Emirati Arabic Speech Corpus for ASR and TTS
 - A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition
 - From Scarcity to Scale: A Release-Level Analysis of the Pashto Common Voice Dataset
 - Tagarela - A Portuguese speech dataset from podcasts
@@ -288,9 +289,10 @@
 
 #### Refinement
 - Structural Noise Mitigation
+- RECOVER: Robust Entity Correction via agentic Orchestration of hypothesis Variants for Evidence-based Recovery
 
 #### Entity Correction
-- RECOVER: Robust Entity Correction via agentic Orchestration of hypothesis Variants for Evidence-based Recovery
+- RECOVER: Robust Entity Correction
 
 
 ### Alignment
@@ -310,8 +312,8 @@
 - Open ASR Leaderboard
 - ESB
 - SUPERB
-- SCENEBench
-- MUGEN: Evaluating and Improving Multi-audio Understanding
+- SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases
+- MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
 
 
 ## Applications
@@ -462,6 +464,6 @@
 - SUPERB
 - Dynamic-SUPERB
 - AudioBench
-- MUGEN
+- MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
 
 
