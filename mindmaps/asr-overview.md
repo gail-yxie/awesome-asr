@@ -46,6 +46,8 @@
 - PThi35/whisper_large_v3_phase1
 - EvgenyShivchenkoUIT/bw-voice_recog_de_turbo
 - Leebin/FireRedASR-AED-L
+- pavanmantha/whisper-medium-sa
+- olzhasAl/whisper-large-v3-tulpar
 
 ### Transducer
 - RNN-T
@@ -74,6 +76,7 @@
 - aoiandroid/Qwen3-ASR-0.6B
 - aoiandroid/Qwen3-ASR-1.7B-CoreML
 - aoiandroid/qwen3-asr-0.6b-coreml
+- hdnminh/qwen3-asr-1.7b
 - Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 - Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR
 
@@ -164,6 +167,9 @@
 #### Emotion Recognition
 - Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
 - A Mixture-of-Experts Model for Multimodal Emotion Recognition in Conversations
+
+#### Audio Question Answering
+- Multi-Source Evidence Fusion for Audio Question Answering
 
 
 ### Specialized
@@ -266,6 +272,7 @@
 - maryamas222/whisper-large-v3-egyptian-lora-v4
 - GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
 - Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition
+- Zipper-LoRA: Dynamic Parameter Decoupling for Speech-LLM based Multilingual Speech Recognition
 
 ### Model Merging
 - Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR
@@ -426,6 +433,7 @@
 - Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction
 - Resurfacing Paralinguistic Awareness in Large Audio Language Models
 - On the Emotion Understanding of Synthesized Speech
+- Neuron-Level Emotion Control in Speech-Generative Large Audio-Language Models
 
 ### Text-to-Audio
 - Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
