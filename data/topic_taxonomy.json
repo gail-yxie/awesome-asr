@@ -7,7 +7,8 @@
         "Deep Speech",
         "saidaAo/wav2vec2-base-librispeech-demo",
         "Abdoul27/babyhubert-phoneme-base",
-        "Alvenir/wav2vec2-da-2026-02-v2"
+        "Alvenir/wav2vec2-da-2026-02-v2",
+        "moisf56/medasr-conformer-ctc-int8-onnx"
       ],
       "Attention-based": [
         "Whisper",
@@ -48,7 +49,8 @@
         "EvgenyShivchenkoUIT/bw-voice_recog_de_turbo",
         "Leebin/FireRedASR-AED-L",
         "pavanmantha/whisper-medium-sa",
-        "olzhasAl/whisper-large-v3-tulpar"
+        "olzhasAl/whisper-large-v3-tulpar",
+        "Eimhin03/irish-whisper-pseudo-iter4"
       ],
       "Transducer": [
         "RNN-T",
@@ -162,7 +164,8 @@
           "Resurfacing Paralinguistic Awareness in Large Audio Language Models",
           "Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models",
           "Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction",
-          "Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models"
+          "Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models",
+          "Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models"
         ],
         "Emotion Recognition": [
           "Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)",
@@ -173,10 +176,11 @@
         ]
       },
       "Specialized": {
-        "Medical Transcription": [
+        "Medical & Healthcare": [
           "gabrielbuzzi/medasr-public",
           "Benchmarking Speech Systems for Frontline Health Conversations: The DISPLACE-M Challenge",
-          "VoxCare: Studying Natural Communication Behaviors of Hospital Caregivers through Wearable Sensing of Egocentric Audio"
+          "VoxCare: Studying Natural Communication Behaviors of Hospital Caregivers through Wearable Sensing of Egocentric Audio",
+          "Impact of automatic speech recognition quality on Alzheimer's disease detection from spontaneous speech: a reproducible benchmark study"
         ],
         "Disordered Speech": [
           "Disordered Speech Recognition (Aphasia, Impaired Speech)",
@@ -257,7 +261,8 @@
           "aoiandroid/Qwen3-ASR-1.7B-CoreML",
           "kzmaker/faster-whisper-tilsync-34000",
           "LemonJiaFace/faster-whisper-large-v2",
-          "clawhub/faster-whisper-tiny"
+          "clawhub/faster-whisper-tiny",
+          "skyjin013/faster-whisper-medium"
         ],
         "Methods": [
           "Quantization",
@@ -472,6 +477,10 @@
         "Dynamic-SUPERB",
         "AudioBench",
         "MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models"
+      ],
+      "Analysis & Interpretability": [
+        "How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation",
+        "Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models"
       ]
     }
   }
