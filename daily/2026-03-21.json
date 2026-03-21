@@ -1,0 +1,494 @@
+{
+  "date": "2026-03-21",
+  "summary": "Today’s releases emphasize the continued push for inference optimization and specialized adaptation of the Whisper architecture, notably with new CTranslate2 conversions of distilled Whisper Large v3 to support high-throughput deployment in fp16 and bf16 precisions. Research in clinical ASR is highlighted by a LoRA-based fine-tune for dysarthric speech using the TORGO dataset, demonstrating a trend toward parameter-efficient adaptation for non-standard acoustic profiles. Additionally, the ecosystem saw a diversification of language support with new fine-tunes for Quechua, Luganda, and Mongolian, alongside a \"small\" Zipformer variant from the Icefall framework optimized for low-latency streaming applications. Collectively, these developments reflect a community focus on \"deployment-readiness,\" bridging the gap between large foundational models and hardware-specific or niche-language requirements.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "ctranslate2-4you/whisper-distil-large-v3.5-ct2-float16",
+      "author": "ctranslate2-4you",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ctranslate2-4you/whisper-distil-large-v3.5-ct2-float16",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ctranslate2-4you/whisper-distil-large-v3.5-ct2-bfloat16",
+      "author": "ctranslate2-4you",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ctranslate2-4you/whisper-distil-large-v3.5-ct2-bfloat16",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ctranslate2-4you/whisper-distil-large-v3.5-ct2-float32",
+      "author": "ctranslate2-4you",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ctranslate2-4you/whisper-distil-large-v3.5-ct2-float32",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ppyecom/whisper-small-quechua-yachay",
+      "author": "ppyecom",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ppyecom/whisper-small-quechua-yachay",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "TerminatorPower/whisperkit-coreml",
+      "author": "TerminatorPower",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/TerminatorPower/whisperkit-coreml",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Faith-Chiru/whisper-luganda-medium",
+      "author": "Faith-Chiru",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Faith-Chiru/whisper-luganda-medium",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "my-ai-app-2026/MyUnityAI",
+      "author": "my-ai-app-2026",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/my-ai-app-2026/MyUnityAI",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "XHxiehuan/icefall-asr-aishell-streaming-zipformer-small",
+      "author": "XHxiehuan",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/XHxiehuan/icefall-asr-aishell-streaming-zipformer-small",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "tugu234/whisper-medium-mongolian",
+      "author": "tugu234",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/tugu234/whisper-medium-mongolian",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dbarbera/whisper-small-torgo-dysarthria-lora",
+      "author": "dbarbera",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/dbarbera/whisper-small-torgo-dysarthria-lora",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Pomni/whisper-omg-2.5.4-ggml-allquants",
+      "author": "Pomni",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Pomni/whisper-omg-2.5.4-ggml-allquants",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "thoratsr7/multitalker-parakeet-streaming-0.6b-v1",
+      "author": "thoratsr7",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/thoratsr7/multitalker-parakeet-streaming-0.6b-v1",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "thoratsr7/whisper-base-onnx",
+      "author": "thoratsr7",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/thoratsr7/whisper-base-onnx",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "thoratsr7/parakeet-tdt-0.6b-v3-onnx",
+      "author": "thoratsr7",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/thoratsr7/parakeet-tdt-0.6b-v3-onnx",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kizuna-intelligence/zipformer-rnnt-japanese-hiragana",
+      "author": "kizuna-intelligence",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kizuna-intelligence/zipformer-rnnt-japanese-hiragana",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hgsilver911/parakeet-tdt-0.6b-v3-coreml",
+      "author": "hgsilver911",
+      "downloads": 171,
+      "likes": 0,
+      "url": "https://huggingface.co/hgsilver911/parakeet-tdt-0.6b-v3-coreml",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AbijahKaj/fastconformer-tdt-large-web",
+      "author": "AbijahKaj",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AbijahKaj/fastconformer-tdt-large-web",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AbijahKaj/parakeet-rnnt-120m-web",
+      "author": "AbijahKaj",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AbijahKaj/parakeet-rnnt-120m-web",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AbijahKaj/parakeet-tdt-110m-web",
+      "author": "AbijahKaj",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AbijahKaj/parakeet-tdt-110m-web",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Faith-Chiru/whisper-luganda-small",
+      "author": "Faith-Chiru",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/Faith-Chiru/whisper-luganda-small",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Unravler/parakeet-tdt-0.6b-v2-onnx",
+      "author": "Unravler",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/Unravler/parakeet-tdt-0.6b-v2-onnx",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sulaimank/whisper-small-lug-4src",
+      "author": "sulaimank",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sulaimank/whisper-small-lug-4src",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "offiongbassey/efik-xlsr-300m",
+      "author": "offiongbassey",
+      "downloads": 59,
+      "likes": 0,
+      "url": "https://huggingface.co/offiongbassey/efik-xlsr-300m",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "wangawngagn/faster-whisper-small",
+      "author": "wangawngagn",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/wangawngagn/faster-whisper-small",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MosesJoshuaCoker/best_for_now",
+      "author": "MosesJoshuaCoker",
+      "downloads": 81,
+      "likes": 0,
+      "url": "https://huggingface.co/MosesJoshuaCoker/best_for_now",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amelov/whisper_large_v3_turbo_finetuned_for_mk",
+      "author": "amelov",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/amelov/whisper_large_v3_turbo_finetuned_for_mk",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "abdullah90ir/wav2vec2-large-xlsr-53-arabic",
+      "author": "abdullah90ir",
+      "downloads": 22,
+      "likes": 1,
+      "url": "https://huggingface.co/abdullah90ir/wav2vec2-large-xlsr-53-arabic",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vecxoz/mozilla-shared-task-1st-place-mms-inference",
+      "author": "vecxoz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vecxoz/mozilla-shared-task-1st-place-mms-inference",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vecxoz/mozilla-shared-task-1st-place-mms-training",
+      "author": "vecxoz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vecxoz/mozilla-shared-task-1st-place-mms-training",
+      "created_at": "2026-03-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "acul3/chatterbox-executorch",
+      "author": "acul3",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/acul3/chatterbox-executorch",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "alexwengg/kittentts-nano-coreml",
+      "author": "alexwengg",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/alexwengg/kittentts-nano-coreml",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Vishalshendge3198/orpheus-3b-tts-german-emotional-merged",
+      "author": "Vishalshendge3198",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Vishalshendge3198/orpheus-3b-tts-german-emotional-merged",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Vishalshendge3198/orpheus-3b-tts-german-emotional",
+      "author": "Vishalshendge3198",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Vishalshendge3198/orpheus-3b-tts-german-emotional",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Eromanga00/GPT-SoVITS",
+      "author": "Eromanga00",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Eromanga00/GPT-SoVITS",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ravikarmata24/chatterbox",
+      "author": "ravikarmata24",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ravikarmata24/chatterbox",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "onnx-community/KittenTTS-Mini-v0.8-ONNX",
+      "author": "onnx-community",
+      "downloads": 5,
+      "likes": 1,
+      "url": "https://huggingface.co/onnx-community/KittenTTS-Mini-v0.8-ONNX",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "onnx-community/KittenTTS-Micro-v0.8-ONNX",
+      "author": "onnx-community",
+      "downloads": 5,
+      "likes": 1,
+      "url": "https://huggingface.co/onnx-community/KittenTTS-Micro-v0.8-ONNX",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "onnx-community/KittenTTS-Nano-v0.8-ONNX",
+      "author": "onnx-community",
+      "downloads": 1,
+      "likes": 1,
+      "url": "https://huggingface.co/onnx-community/KittenTTS-Nano-v0.8-ONNX",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "chan4lk/piper-tts-sinhala",
+      "author": "chan4lk",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chan4lk/piper-tts-sinhala",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "CodeBySonu95/VoxSherpa-TTS",
+      "author": "CodeBySonu95",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/CodeBySonu95/VoxSherpa-TTS",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/fish-audio-s2-pro-8bit",
+      "author": "mlx-community",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/fish-audio-s2-pro-8bit",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "tsukemono/lam-tts-jp-80m",
+      "author": "tsukemono",
+      "downloads": 83,
+      "likes": 2,
+      "url": "https://huggingface.co/tsukemono/lam-tts-jp-80m",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "xelsoftai/AfriVox_ST5_20260320_231015",
+      "author": "xelsoftai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/xelsoftai/AfriVox_ST5_20260320_231015",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "xelsoftai/AfriVox_ST5_20260320_131108",
+      "author": "xelsoftai",
+      "downloads": 19,
+      "likes": 0,
+      "url": "https://huggingface.co/xelsoftai/AfriVox_ST5_20260320_131108",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "tharushaudana/mms-tts-sinhala-custom-vocab",
+      "author": "tharushaudana",
+      "downloads": 118,
+      "likes": 0,
+      "url": "https://huggingface.co/tharushaudana/mms-tts-sinhala-custom-vocab",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "artificialguybr/AceStep_Refine_Redmond",
+      "author": "artificialguybr",
+      "downloads": 0,
+      "likes": 2,
+      "url": "https://huggingface.co/artificialguybr/AceStep_Refine_Redmond",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "eric1411/Cortis_James",
+      "author": "eric1411",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/eric1411/Cortis_James",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "SuperPauly/AudioSR",
+      "author": "SuperPauly",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/SuperPauly/AudioSR",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "SuperPauly/FlashSR",
+      "author": "SuperPauly",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/SuperPauly/FlashSR",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "richiejp/deepvqe-aec-gguf",
+      "author": "richiejp",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/richiejp/deepvqe-aec-gguf",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "oulianov/slp-rl-aero",
+      "author": "oulianov",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/oulianov/slp-rl-aero",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "ooshyun/fine_grained_soundscape_control",
+      "author": "ooshyun",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ooshyun/fine_grained_soundscape_control",
+      "created_at": "2026-03-20",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "richiejp/dns5-16k",
+      "author": "richiejp",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/richiejp/dns5-16k",
+      "created_at": "2026-03-21"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 52,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}
