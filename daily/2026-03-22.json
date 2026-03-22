@@ -1,0 +1,288 @@
+{
+  "date": "2026-03-22",
+  "summary": "The day's activity is dominated by a strong trend toward edge-optimization and deployment-ready formats, with several ONNX and GGML conversions released for high-performance architectures like NVIDIA’s Parakeet-TDT, IBM’s Granite-1B-speech, and Qwen3-ASR. Community efforts continue to push the boundaries of low-resource and code-switched ASR, evidenced by new Whisper fine-tunes for Malayalam, Irish (pseudo-labeled), and Hinglish. Additionally, the release of multimodal instruct models like the abliterated Phi-4 suggests a continued research interest in streamlining speech-text integration within small, locally runnable language models. This collective focus on efficiency indicates an industry-wide prioritization of moving sophisticated ASR and SLM capabilities from large-scale GPU clusters to more accessible CPU and on-device environments.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "siyah1/whisper-malayalam",
+      "author": "siyah1",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/siyah1/whisper-malayalam",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ae9is/parakeet-tdt-0.6b-v3-onnx",
+      "author": "ae9is",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ae9is/parakeet-tdt-0.6b-v3-onnx",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU",
+      "author": "wolfofbackstreet",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "danielkao0421/Breeze-ASR-25-ggml",
+      "author": "danielkao0421",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/danielkao0421/Breeze-ASR-25-ggml",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/irish-whisper-pseudo-iter5",
+      "author": "Eimhin03",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/irish-whisper-pseudo-iter5",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "huggingworld/granite-4.0-1b-speech-ONNX",
+      "author": "huggingworld",
+      "downloads": 17,
+      "likes": 0,
+      "url": "https://huggingface.co/huggingworld/granite-4.0-1b-speech-ONNX",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Echaps12/whisper-tiny-minds14-en",
+      "author": "Echaps12",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/Echaps12/whisper-tiny-minds14-en",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Hhsjsnns/whisper-small-hinglish",
+      "author": "Hhsjsnns",
+      "downloads": 28,
+      "likes": 0,
+      "url": "https://huggingface.co/Hhsjsnns/whisper-small-hinglish",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "james-417/tcm-whisper-LoRA-v0",
+      "author": "james-417",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/james-417/tcm-whisper-LoRA-v0",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Jibbalit/phi-4-multimodal-instruct-abliterated",
+      "author": "Jibbalit",
+      "downloads": 23,
+      "likes": 0,
+      "url": "https://huggingface.co/Jibbalit/phi-4-multimodal-instruct-abliterated",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sulaimank/whisper-small-lug-grain",
+      "author": "sulaimank",
+      "downloads": 156,
+      "likes": 0,
+      "url": "https://huggingface.co/sulaimank/whisper-small-lug-grain",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "danielbodart/nemotron-speech-600m-onnx",
+      "author": "danielbodart",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/danielbodart/nemotron-speech-600m-onnx",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sanskriitii/nepali-asr-wav2vec2-v2",
+      "author": "sanskriitii",
+      "downloads": 35,
+      "likes": 0,
+      "url": "https://huggingface.co/sanskriitii/nepali-asr-wav2vec2-v2",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "huwenjie333/whisper-large-v3-salt-8k-steps",
+      "author": "huwenjie333",
+      "downloads": 82,
+      "likes": 0,
+      "url": "https://huggingface.co/huwenjie333/whisper-large-v3-salt-8k-steps",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "georgecpwa/Kokoro-82M-v1.1-zh",
+      "author": "georgecpwa",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/georgecpwa/Kokoro-82M-v1.1-zh",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/Irodori-TTS-500M-4bit",
+      "author": "mlx-community",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/Irodori-TTS-500M-4bit",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/Irodori-TTS-500M-8bit",
+      "author": "mlx-community",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/Irodori-TTS-500M-8bit",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/Irodori-TTS-500M-fp16",
+      "author": "mlx-community",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/Irodori-TTS-500M-fp16",
+      "created_at": "2026-03-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-tts-0.6b-q4-k-m",
+      "author": "OpenVoiceOS",
+      "downloads": 100,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-tts-0.6b-q4-k-m",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-tts-0.6b-q5-k-m",
+      "author": "OpenVoiceOS",
+      "downloads": 106,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-tts-0.6b-q5-k-m",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-tts-0.6b-q8-0",
+      "author": "OpenVoiceOS",
+      "downloads": 101,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-tts-0.6b-q8-0",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "OpenVoiceOS/qwen3-tts-0.6b-f16",
+      "author": "OpenVoiceOS",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/qwen3-tts-0.6b-f16",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "evilsocket/VibeVoice-Realtime-0.5B",
+      "author": "evilsocket",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/evilsocket/VibeVoice-Realtime-0.5B",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Vishalshendge3198/spark_tts_finetune",
+      "author": "Vishalshendge3198",
+      "downloads": 82,
+      "likes": 0,
+      "url": "https://huggingface.co/Vishalshendge3198/spark_tts_finetune",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "nguyen-brat/VieNeu-TTS-Vietnamese-Finetuned",
+      "author": "nguyen-brat",
+      "downloads": 35,
+      "likes": 0,
+      "url": "https://huggingface.co/nguyen-brat/VieNeu-TTS-Vietnamese-Finetuned",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Vishalshendge3198/spark_tts_finetune_4bit",
+      "author": "Vishalshendge3198",
+      "downloads": 59,
+      "likes": 0,
+      "url": "https://huggingface.co/Vishalshendge3198/spark_tts_finetune_4bit",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "piotr-piotrovich/zipvoice-sr-finetuned",
+      "author": "piotr-piotrovich",
+      "downloads": 40,
+      "likes": 0,
+      "url": "https://huggingface.co/piotr-piotrovich/zipvoice-sr-finetuned",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "alexwengg/kittentts-coreml",
+      "author": "alexwengg",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/alexwengg/kittentts-coreml",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "AEmotionStudio/fish-speech-s2-pro-fp8",
+      "author": "AEmotionStudio",
+      "downloads": 66,
+      "likes": 0,
+      "url": "https://huggingface.co/AEmotionStudio/fish-speech-s2-pro-fp8",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "AEmotionStudio/fish-speech-s2-pro",
+      "author": "AEmotionStudio",
+      "downloads": 53,
+      "likes": 0,
+      "url": "https://huggingface.co/AEmotionStudio/fish-speech-s2-pro",
+      "created_at": "2026-03-21",
+      "pipeline_tag": "text-to-speech"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 30,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
