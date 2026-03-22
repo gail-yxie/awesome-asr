@@ -262,7 +262,10 @@
           "kzmaker/faster-whisper-tilsync-34000",
           "LemonJiaFace/faster-whisper-large-v2",
           "clawhub/faster-whisper-tiny",
-          "skyjin013/faster-whisper-medium"
+          "skyjin013/faster-whisper-medium",
+          "ctranslate2-4you/whisper-distil-large-v3.5-ct2-float16",
+          "ctranslate2-4you/whisper-distil-large-v3.5-ct2-bfloat16",
+          "ctranslate2-4you/whisper-distil-large-v3.5-ct2-float32"
         ],
         "Methods": [
           "Quantization",
