@@ -50,6 +50,7 @@
 - pavanmantha/whisper-medium-sa
 - olzhasAl/whisper-large-v3-tulpar
 - Eimhin03/irish-whisper-pseudo-iter4
+- siyah1/whisper-malayalam
 
 ### Transducer
 - RNN-T
@@ -57,6 +58,7 @@
 - Parakeet-TDT (Token-and-Duration Transducer)
 - nvidia/parakeet-tdt-0.6b-v2
 - cnonim/gigaam-v3-e2e-rnnt-onnx
+- molind/conformer-transducer-be-mlx
 
 ### Foundation Models
 - USM
@@ -70,6 +72,7 @@
 - Shagufta/facebook-wav2vec2-xls-r-1b-5hours-continued
 - sulaimank/w2v-bert-2.0-lg-CV-Fleurs-300
 - Shagufta/facebook-mms-1b-all-KM-outdomain-indomain-5hours
+- glossKit-ASR/wav2vec2-large-xlsr-53-hac
 
 ### LLM-based ASR
 - Jonxxxxxx/Qwen3-ASR-0.6B
@@ -145,6 +148,7 @@
 - amanuelbyte/whisper-amharic-asr-finetuned
 - Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539
 - Vietnamese Automatic Speech Recognition: A Revisit
+- uzair0/ghag-ai-katib-finetune
 
 
 ### Multimodal
@@ -155,6 +159,7 @@
 #### Speech Translation
 - Speech Translation
 - Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
+- Streaming Translation and Transcription Through Speech-to-Text Causal Alignment
 
 #### Audio-Language Models
 - CLAP-Based Recognition
@@ -266,6 +271,8 @@
 - ctranslate2-4you/whisper-distil-large-v3.5-ct2-float16
 - ctranslate2-4you/whisper-distil-large-v3.5-ct2-bfloat16
 - ctranslate2-4you/whisper-distil-large-v3.5-ct2-float32
+- ae9is/parakeet-tdt-0.6b-v3-onnx
+- wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU
 
 #### Methods
 - Quantization
@@ -396,7 +403,6 @@
 
 ### Structural Tokens
 - ZeroSyl: Simple Zero-Resource Syllable Tokenization for Spoken Language Modeling
-- ZeroSyl: Zero-Resource Syllable Tokenization
 
 
 ## Text-to-Speech
