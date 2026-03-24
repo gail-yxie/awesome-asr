@@ -51,6 +51,8 @@
 - olzhasAl/whisper-large-v3-tulpar
 - Eimhin03/irish-whisper-pseudo-iter4
 - siyah1/whisper-malayalam
+- james-417/tcm-whisper-LoRA-v1
+- techiaith/whisper-large-ft-cy-en-ct2
 
 ### Transducer
 - RNN-T
@@ -59,6 +61,7 @@
 - nvidia/parakeet-tdt-0.6b-v2
 - cnonim/gigaam-v3-e2e-rnnt-onnx
 - molind/conformer-transducer-be-mlx
+- ae9is/parakeet-tdt-0.6b-v3-onnx
 
 ### Foundation Models
 - USM
@@ -84,6 +87,7 @@
 - hdnminh/qwen3-asr-1.7b
 - Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 - Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR
+- LLMs and Speech: Integration vs. Combination
 
 
 ## Self-Supervised Learning
@@ -94,6 +98,7 @@
 ### Masked Prediction
 - HuBERT
 - data2vec
+- Ara-Best-RQ: Multi Dialectal Arabic SSL
 
 ### Multi-task
 - W2v-BERT
@@ -112,6 +117,7 @@
 - 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio
 - Robust Long-Form Bangla Speech Processing: Automatic Speech Recognition and Speaker Diarization
 - Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization via Extreme Augmentation and Perfect Alignment
+- Vietnamese Automatic Speech Recognition: A Revisit
 
 ### Speaker Diarization
 - beargreen/speaker-diarization-community-1
@@ -119,6 +125,12 @@
 - A Holistic Framework for Robust Bangla ASR and Speaker Diarization
 - Robust Long-Form Bangla Speech Processing
 - 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing and Fine-Tuned Diarization
+
+### Language Identification
+- PatchyTisa/FireRedLID-vllm
+
+### Spoken Language Understanding
+- SLURP-TN : Resource for Tunisian Dialect Spoken Language Understanding
 
 ### Multilingual
 #### Code-switching
@@ -133,6 +145,7 @@
 - GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
 - itsarunendra/whisper-medium-tunisian-full-v2.1
 - transitionGap/ASR_haryanvi_small_finetuned
+- Ara-Best-RQ: Multi Dialectal Arabic SSL
 
 #### Translation-Guided
 - TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition
@@ -147,7 +160,6 @@
 - korir8/sauti-whisper-small-swh
 - amanuelbyte/whisper-amharic-asr-finetuned
 - Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539
-- Vietnamese Automatic Speech Recognition: A Revisit
 - uzair0/ghag-ai-katib-finetune
 
 
@@ -171,6 +183,7 @@
 - Disentangling Reasoning in Large Audio-Language Models for Ambiguous Emotion Prediction
 - Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 - Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models
+- How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation
 
 #### Emotion Recognition
 - Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
@@ -204,6 +217,7 @@
 #### Meeting/Call Center
 - Meeting Transcription
 - Call Center
+- Enterprise Sales Copilot: Enabling Real-Time AI Support with Automatic Information Retrieval in Live Sales Calls
 
 
 ### Security & Anti-spoofing
@@ -353,6 +367,7 @@
 ### Enterprise
 - Call Analytics
 - Meeting Notes
+- Enterprise Sales Copilot
 
 ### Edge & Robotics
 - UAV-Assisted Emergency Networks
