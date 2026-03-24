@@ -1,0 +1,400 @@
+{
+  "date": "2026-03-24",
+  "summary": "Today’s highlights are led by the release of **Ara-BEST-RQ**, a new family of Conformer-based self-supervised models trained on 5,640 hours of multi-dialectal Arabic, alongside **SLURP-TN**, which provides a crucial resource for Spoken Language Understanding in the low-resource Tunisian dialect. Notable model releases like **moonshine-tiny** and a **CoreML-optimized 1.1B Parakeet-TDT** underscore a strong industry trend toward high-efficiency, on-device ASR and real-time speech processing. Together with research into **Enterprise Sales Copilots**, these developments demonstrate a strategic shift toward bridging the gap between large-scale foundational SSL training and specialized, low-latency applications for diverse linguistic and business domains.",
+  "ideas": [
+    "The development of Ara-BEST-RQ demonstrates that pre-training Conformer models using random quantization on over 5,000 hours of diverse, crawled data significantly enhances performance across multiple Arabic dialects.",
+    "The introduction of the SLURP-TN resource provides a critical specialized dataset for advancing Spoken Language Understanding in the low-resource context of the Tunisian dialect.",
+    "Integrating real-time automatic information retrieval into live speech workflows can eliminate the 25–65 second latency typically required for human operators to manually query internal databases during calls.",
+    "Utilizing random quantization as a self-supervised learning objective offers a scalable and effective method for building high-performing foundational speech models for linguistically complex languages.",
+    "The shift toward real-time Enterprise Sales Copilots highlights a practical transition in ASR research from simple transcription to active, low-latency semantic support in task-oriented environments.",
+    "The combination of large-scale crawled speech data and multi-dialectal pre-training targets helps bridge the performance gap for regional language variations that are often underserved by general-purpose models."
+  ],
+  "papers": [
+    {
+      "id": "2603.21940v1",
+      "title": "SLURP-TN : Resource for Tunisian Dialect Spoken Language Understanding",
+      "authors": [
+        "Haroun Elleuch",
+        "Salima Mdhaffar",
+        "Yannick Estève",
+        "Fethi Bougares"
+      ],
+      "abstract": "Spoken Language Understanding (SLU) aims to extract the semantic information from the speech utterance of user queries. It is a core component in a task-oriented dialogue system. With the spectacular progress of deep neural network models and the evolution of pre-trained language models, SLU has obtained significant breakthroughs. However, only a few high-resource languages have taken advantage of this progress due to the absence of SLU resources. In this paper, we seek to mitigate this obstacle by introducing SLURP-TN. This dataset was created by recording 55 native speakers uttering sentences in Tunisian dialect, manually translated from six SLURP domains. The result is an SLU Tunisian dialect dataset that comprises 4165 sentences recorded into around 5 hours of acoustic material. We also develop a number of Automatic Speech Recognition and SLU models exploiting SLUTP-TN. The Dataset and baseline models are available at: https://huggingface.co/datasets/Elyadata/SLURP-TN.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-23",
+      "url": "https://arxiv.org/abs/2603.21940v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.21940v1"
+    },
+    {
+      "id": "2603.21900v1",
+      "title": "Ara-Best-RQ: Multi Dialectal Arabic SSL",
+      "authors": [
+        "Haroun Elleuch",
+        "Ryan Whetten",
+        "Salima Mdhaffar",
+        "Yannick Estève",
+        "Fethi Bougares"
+      ],
+      "abstract": "We present Ara-BEST-RQ, a family of self-supervised learning (SSL) models specifically designed for multi-dialectal Arabic speech processing. Leveraging 5,640 hours of crawled Creative Commons speech and combining it with publicly available datasets, we pre-train conformer-based BEST-RQ models up to 600M parameters. Our models are evaluated on dialect identification (DID) and automatic speech recognition (ASR) tasks, achieving state-of-the-art performance on the former while using fewer parameters than competing models. We demonstrate that family-targeted pre-training on Arabic dialects significantly improves downstream performance compared to multilingual or monolingual models trained on non-Arabic data. All models, code, and pre-processed datasets will be publicly released to support reproducibility and further research in Arabic speech technologies.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-23",
+      "url": "https://arxiv.org/abs/2603.21900v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.21900v1"
+    },
+    {
+      "id": "2603.21416v1",
+      "title": "Enterprise Sales Copilot: Enabling Real-Time AI Support with Automatic Information Retrieval in Live Sales Calls",
+      "authors": [
+        "Jielin Qiu",
+        "Liangwei Yang",
+        "Ming Zhu",
+        "Wenting Zhao",
+        "Zhiwei Liu",
+        "Juntao Tan",
+        "Zixiang Chen",
+        "Roshan Ram",
+        "Akshara Prabhakar",
+        "Rithesh Murthy",
+        "Shelby Heinecke",
+        "Caiming Xiong",
+        "Silvio Savarese",
+        "Huan Wang"
+      ],
+      "abstract": "During live sales calls, customers frequently ask detailed product questions that require representatives to manually search internal databases and CRM systems. This process typically takes 25-65 seconds per query, creating awkward pauses that hurt customer experience and reduce sales efficiency. We present SalesCopilot, a real-time AI-powered assistant that eliminates this bottleneck by automatically detecting customer questions, retrieving relevant information from the product database, and displaying concise answers on the representative's dashboard in seconds. The system integrates streaming speech-to-text transcription, large language model (LLM)-based question detection, and retrieval-augmented generation (RAG) over a structured product database into a unified real-time pipeline. We demonstrate SalesCopilot on an insurance sales scenario with 50 products spanning 10 categories (2,490 FAQs, 290 coverage details, and 162 pricing tiers). In our benchmark evaluation, SalesCopilot achieves a measured mean response time of 2.8 seconds with 100% question detection rate, representing a 14xspeedup compared to manual CRM search in an internal study. The system is domain-agnostic and can be adapted to any enterprise sales domain by replacing the product database.",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-03-22",
+      "url": "https://arxiv.org/abs/2603.21416v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.21416v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "james-417/tcm-whisper-LoRA-v1",
+      "author": "james-417",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/james-417/tcm-whisper-LoRA-v1",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PatchyTisa/FireRedLID-vllm",
+      "author": "PatchyTisa",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/PatchyTisa/FireRedLID-vllm",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "techiaith/whisper-large-ft-cy-en-ct2",
+      "author": "techiaith",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/techiaith/whisper-large-ft-cy-en-ct2",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Vonernue/WhisperLiveKit-Breeze-ASR-25",
+      "author": "Vonernue",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Vonernue/WhisperLiveKit-Breeze-ASR-25",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f0",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f0",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "evcong/moonshine-tiny",
+      "author": "evcong",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/evcong/moonshine-tiny",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "jenerallee78/parakeet-tdt-1.1b-coreml",
+      "author": "jenerallee78",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/jenerallee78/parakeet-tdt-1.1b-coreml",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/NM-irish-whisper-pseudo-iter3",
+      "author": "Eimhin03",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/NM-irish-whisper-pseudo-iter3",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "jkornoff/whisper-base-en-atc",
+      "author": "jkornoff",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/jkornoff/whisper-base-en-atc",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "quantumpuls3/algerian-whisper-v1",
+      "author": "quantumpuls3",
+      "downloads": 35,
+      "likes": 0,
+      "url": "https://huggingface.co/quantumpuls3/algerian-whisper-v1",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Lawrenceeee/whisper-tiny_to_british_accent",
+      "author": "Lawrenceeee",
+      "downloads": 28,
+      "likes": 0,
+      "url": "https://huggingface.co/Lawrenceeee/whisper-tiny_to_british_accent",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Farazzzzzzz/whisper-tiny_to_korean_accent1",
+      "author": "Farazzzzzzz",
+      "downloads": 30,
+      "likes": 0,
+      "url": "https://huggingface.co/Farazzzzzzz/whisper-tiny_to_korean_accent1",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/NM-irish-whisper-pseudo-iter2",
+      "author": "Eimhin03",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/NM-irish-whisper-pseudo-iter2",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "levanell/whisper-small-hi-ft",
+      "author": "levanell",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/levanell/whisper-small-hi-ft",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "phequals/canary-qwen-2.5b-coreml-int8",
+      "author": "phequals",
+      "downloads": 21,
+      "likes": 1,
+      "url": "https://huggingface.co/phequals/canary-qwen-2.5b-coreml-int8",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "arielcerdap/whisper-small-fluencybank",
+      "author": "arielcerdap",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/arielcerdap/whisper-small-fluencybank",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "phequals/canary-qwen-2.5b-coreml-fp16",
+      "author": "phequals",
+      "downloads": 27,
+      "likes": 2,
+      "url": "https://huggingface.co/phequals/canary-qwen-2.5b-coreml-fp16",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MaddoggProduction/whisper-small-quran-lora-everyayah",
+      "author": "MaddoggProduction",
+      "downloads": 29,
+      "likes": 1,
+      "url": "https://huggingface.co/MaddoggProduction/whisper-small-quran-lora-everyayah",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/NM-irish-whisper-pseudo-iter1",
+      "author": "Eimhin03",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/NM-irish-whisper-pseudo-iter1",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "buumba641/tonga-asr-mms-300m",
+      "author": "buumba641",
+      "downloads": 52,
+      "likes": 0,
+      "url": "https://huggingface.co/buumba641/tonga-asr-mms-300m",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "James3214153/test_zipformer",
+      "author": "James3214153",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/James3214153/test_zipformer",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "shooding/faster-whisper-large-v3-zh-TW",
+      "author": "shooding",
+      "downloads": 36,
+      "likes": 0,
+      "url": "https://huggingface.co/shooding/faster-whisper-large-v3-zh-TW",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "asrDIL/mms-fongbe-finetuned-v4",
+      "author": "asrDIL",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/asrDIL/mms-fongbe-finetuned-v4",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Hend123/ipa-final",
+      "author": "Hend123",
+      "downloads": 141,
+      "likes": 0,
+      "url": "https://huggingface.co/Hend123/ipa-final",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PThi35/whisper_large_v3_phase4",
+      "author": "PThi35",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/PThi35/whisper_large_v3_phase4",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "saoyuanyuan/Step-Audio-TTS-3B",
+      "author": "saoyuanyuan",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/saoyuanyuan/Step-Audio-TTS-3B",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Aratako/Irodori-TTS-500M-v2",
+      "author": "Aratako",
+      "downloads": 0,
+      "likes": 10,
+      "url": "https://huggingface.co/Aratako/Irodori-TTS-500M-v2",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/MOSS-TTS-8B-8bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/MOSS-TTS-8B-8bit",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "jFettnpn/speecht5_finetuned_tts_rioplatense",
+      "author": "jFettnpn",
+      "downloads": 58,
+      "likes": 0,
+      "url": "https://huggingface.co/jFettnpn/speecht5_finetuned_tts_rioplatense",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "wide-video/musicgen-small-v1.0.0",
+      "author": "wide-video",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/wide-video/musicgen-small-v1.0.0",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "ern3sto/freddie",
+      "author": "ern3sto",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/ern3sto/freddie",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "bdsqlsz/GAME-1.0-small-ONNX",
+      "author": "bdsqlsz",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/bdsqlsz/GAME-1.0-small-ONNX",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "bdsqlsz/GAME-1.0-medium-ONNX",
+      "author": "bdsqlsz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/bdsqlsz/GAME-1.0-medium-ONNX",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "bdsqlsz/GAME-1.0-large-ONNX",
+      "author": "bdsqlsz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/bdsqlsz/GAME-1.0-large-ONNX",
+      "created_at": "2026-03-23",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "priyansh1131/thewilds_bioacousticmonitors",
+      "author": "priyansh1131",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/priyansh1131/thewilds_bioacousticmonitors",
+      "created_at": "2026-03-24"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 3,
+    "model_count": 34,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}

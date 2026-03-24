@@ -1,14 +1,4 @@
 {
-  "2026-03-10": [
-    "2603.08312v1",
-    "learning multiple utterance-level attribute representations with a unified speech encoder",
-    "2603.08230v1",
-    "disentangling reasoning in large audio-language models for ambiguous emotion prediction",
-    "2603.08125v1",
-    "ramsa: a large sociolinguistically rich emirati arabic speech corpus for asr and tts",
-    "2603.07708v1",
-    "voiceshield-small: real-time malicious speech detection and transcription"
-  ],
   "2026-03-11": [
     "2603.09853v1",
     "scenebench: an audio understanding benchmark grounded in assistive and industrial use cases",
@@ -110,5 +100,13 @@
   ],
   "2026-03-21": [],
   "2026-03-22": [],
-  "2026-03-23": []
+  "2026-03-23": [],
+  "2026-03-24": [
+    "2603.21940v1",
+    "slurp-tn : resource for tunisian dialect spoken language understanding",
+    "2603.21900v1",
+    "ara-best-rq: multi dialectal arabic ssl",
+    "2603.21416v1",
+    "enterprise sales copilot: enabling real-time ai support with automatic information retrieval in live sales calls"
+  ]
 }
