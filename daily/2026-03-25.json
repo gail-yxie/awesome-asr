@@ -1,0 +1,584 @@
+{
+  "date": "2026-03-25",
+  "summary": "Today’s model releases center on maximizing inference efficiency and cross-platform compatibility, highlighted by a comprehensive suite of Whisper-tiny exports in ONNX format utilizing various quantization schemes such as bnb4 and int8. Notable domain-specific and low-resource contributions include a Wav2Vec2-based Spanish phonemizer and a specialized checkpoint for Quranic Arabic, alongside a new Whisper-base model tailored for the Kikuyu language. Furthermore, the availability of GigaAM-v3 in an MLX-compatible RNN-T format underscores the accelerating trend of optimizing large-scale speech foundation models for high-performance, localized execution on Apple silicon.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-2",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-2",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-uint8",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-uint8",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-q4",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-q4",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-int8",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-int8",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-bnb4",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-bnb4",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MaryWambo/whisper-base-kikuyu-v1",
+      "author": "MaryWambo",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MaryWambo/whisper-base-kikuyu-v1",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mrmuminov/quran-wav2vec2-xlsr-53",
+      "author": "mrmuminov",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mrmuminov/quran-wav2vec2-xlsr-53",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Cnam-LMSSC/wav2vec2-spanish-phonemizer",
+      "author": "Cnam-LMSSC",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/Cnam-LMSSC/wav2vec2-spanish-phonemizer",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aystream/GigaAM-v3-e2e-rnnt-mlx",
+      "author": "aystream",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aystream/GigaAM-v3-e2e-rnnt-mlx",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypa-intelligence/hypa-whisper-finetuned-translate-streaming-real-data-20260325_073018",
+      "author": "hypa-intelligence",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hypa-intelligence/hypa-whisper-finetuned-translate-streaming-real-data-20260325_073018",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Djikstra/whisper-small-twi-v1",
+      "author": "Djikstra",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Djikstra/whisper-small-twi-v1",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "HakunaMatataInLife/wav2vec2-large-xlsr-persian",
+      "author": "HakunaMatataInLife",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/HakunaMatataInLife/wav2vec2-large-xlsr-persian",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Sa1Krishna/sema-whisper-small-springlab-hindi-finetuned",
+      "author": "Sa1Krishna",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Sa1Krishna/sema-whisper-small-springlab-hindi-finetuned",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "bastami/wav2vec2-xls-r-300m-hassania-tokenizer",
+      "author": "bastami",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/bastami/wav2vec2-xls-r-300m-hassania-tokenizer",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "younghan-meta/Voxtral-Mini-4B-Realtime-2602-ExecuTorch-CUDA",
+      "author": "younghan-meta",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/younghan-meta/Voxtral-Mini-4B-Realtime-2602-ExecuTorch-CUDA",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypa-intelligence/hypa-whisper-asr-finetuned-streaming-real-data-20260324_224312",
+      "author": "hypa-intelligence",
+      "downloads": 129,
+      "likes": 0,
+      "url": "https://huggingface.co/hypa-intelligence/hypa-whisper-asr-finetuned-streaming-real-data-20260324_224312",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "bastami/wav2vec2-large-xlsr-hassania-demo-colab",
+      "author": "bastami",
+      "downloads": 58,
+      "likes": 0,
+      "url": "https://huggingface.co/bastami/wav2vec2-large-xlsr-hassania-demo-colab",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alpcansoydas/whisper-large-v2-tr-ft-24-03-26-full-ft-25ksamples-original",
+      "author": "alpcansoydas",
+      "downloads": 54,
+      "likes": 0,
+      "url": "https://huggingface.co/alpcansoydas/whisper-large-v2-tr-ft-24-03-26-full-ft-25ksamples-original",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aystream/GigaAM-v3-e2e-ctc-mlx",
+      "author": "aystream",
+      "downloads": 26,
+      "likes": 0,
+      "url": "https://huggingface.co/aystream/GigaAM-v3-e2e-ctc-mlx",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "bastami/my_awesome_asr_mind_model",
+      "author": "bastami",
+      "downloads": 40,
+      "likes": 0,
+      "url": "https://huggingface.co/bastami/my_awesome_asr_mind_model",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Anandnrnnffn/whisper-large-v3-turbo",
+      "author": "Anandnrnnffn",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/Anandnrnnffn/whisper-large-v3-turbo",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ghananlpcommunity/FarmerlineWav2Vec-Twi-Demo",
+      "author": "ghananlpcommunity",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/ghananlpcommunity/FarmerlineWav2Vec-Twi-Demo",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ghananlpcommunity/w2v-bert-2.0_twi_alpha_v1_farmerline-ct2",
+      "author": "ghananlpcommunity",
+      "downloads": 15,
+      "likes": 0,
+      "url": "https://huggingface.co/ghananlpcommunity/w2v-bert-2.0_twi_alpha_v1_farmerline-ct2",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-walaytta",
+      "author": "badrex",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-walaytta",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-tigrinya",
+      "author": "badrex",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-tigrinya",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-sidaama",
+      "author": "badrex",
+      "downloads": 19,
+      "likes": 0,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-sidaama",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-oromo",
+      "author": "badrex",
+      "downloads": 19,
+      "likes": 0,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-oromo",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-amharic",
+      "author": "badrex",
+      "downloads": 19,
+      "likes": 0,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-amharic",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-multilingual-600M",
+      "author": "badrex",
+      "downloads": 55,
+      "likes": 0,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-multilingual-600M",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-multilingual-1B",
+      "author": "badrex",
+      "downloads": 18,
+      "likes": 1,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-multilingual-1B",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-multilingual-300M",
+      "author": "badrex",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-multilingual-300M",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "badrex/Ethio-ASR-multilingual-94M",
+      "author": "badrex",
+      "downloads": 17,
+      "likes": 0,
+      "url": "https://huggingface.co/badrex/Ethio-ASR-multilingual-94M",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "somyalab/Vyasa_mini_rnnt_onnx_v2",
+      "author": "somyalab",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/somyalab/Vyasa_mini_rnnt_onnx_v2",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RafatK/Whisper_decode_plus_adapt_adapter",
+      "author": "RafatK",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/RafatK/Whisper_decode_plus_adapt_adapter",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RafatK/Whisper_decode_plus_adapt",
+      "author": "RafatK",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/RafatK/Whisper_decode_plus_adapt",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Farazzzzzzz/whisper-tiny_to_american_accent1",
+      "author": "Farazzzzzzz",
+      "downloads": 38,
+      "likes": 0,
+      "url": "https://huggingface.co/Farazzzzzzz/whisper-tiny_to_american_accent1",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypa-intelligence/hypa-whisper-asr-finetuned-streaming-real-data-20260324_113403",
+      "author": "hypa-intelligence",
+      "downloads": 298,
+      "likes": 0,
+      "url": "https://huggingface.co/hypa-intelligence/hypa-whisper-asr-finetuned-streaming-real-data-20260324_113403",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "arielcerdap/whisper-medium-fluencybank",
+      "author": "arielcerdap",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/arielcerdap/whisper-medium-fluencybank",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "arielcerdap/whisper-largev3turbo-fluencybank",
+      "author": "arielcerdap",
+      "downloads": 39,
+      "likes": 0,
+      "url": "https://huggingface.co/arielcerdap/whisper-largev3turbo-fluencybank",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alpcansoydas/whisper-large-v2-tr-ft-24-03-26-encoder-only-25ksamples-simulated",
+      "author": "alpcansoydas",
+      "downloads": 51,
+      "likes": 0,
+      "url": "https://huggingface.co/alpcansoydas/whisper-large-v2-tr-ft-24-03-26-encoder-only-25ksamples-simulated",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PThi35/whisper_large_v3_phase4_2",
+      "author": "PThi35",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/PThi35/whisper_large_v3_phase4_2",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "8qii/LaoASR-Small-Full",
+      "author": "8qii",
+      "downloads": 47,
+      "likes": 0,
+      "url": "https://huggingface.co/8qii/LaoASR-Small-Full",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "DeKUT-DSAIL/Tunu-whisper-base-Kikuyu-v1",
+      "author": "DeKUT-DSAIL",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/DeKUT-DSAIL/Tunu-whisper-base-Kikuyu-v1",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "oeigoer2/IndexTTS-2",
+      "author": "oeigoer2",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/oeigoer2/IndexTTS-2",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Miakclllaweq/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "author": "Miakclllaweq",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Miakclllaweq/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ssonpull519/neutts-air-dllm-bd8",
+      "author": "ssonpull519",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ssonpull519/neutts-air-dllm-bd8",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "4RWER/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "author": "4RWER",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/4RWER/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "groxaxo/s2-pro-BnB-4Bits",
+      "author": "groxaxo",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/groxaxo/s2-pro-BnB-4Bits",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Anandnrnnffn/fish-speech-1.5",
+      "author": "Anandnrnnffn",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/Anandnrnnffn/fish-speech-1.5",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ashutosh6392/Story-verse-tts",
+      "author": "ashutosh6392",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/ashutosh6392/Story-verse-tts",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "HumeAI/mlx-tada-3b",
+      "author": "HumeAI",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/HumeAI/mlx-tada-3b",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "HumeAI/mlx-tada-1b",
+      "author": "HumeAI",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/HumeAI/mlx-tada-1b",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mm125/s2-pro",
+      "author": "mm125",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/mm125/s2-pro",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "shaans/mimi-voice-ft-adapter",
+      "author": "shaans",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/shaans/mimi-voice-ft-adapter",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "walydevelopers/voice-clone-pro-onnx",
+      "author": "walydevelopers",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/walydevelopers/voice-clone-pro-onnx",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "lainlives/acestep-v15-turbo-continuous",
+      "author": "lainlives",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lainlives/acestep-v15-turbo-continuous",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "lainlives/acestep-5Hz-lm-4B-bnb-4bit",
+      "author": "lainlives",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lainlives/acestep-5Hz-lm-4B-bnb-4bit",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "dangerusslee/farnsworth-csm-1b",
+      "author": "dangerusslee",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/dangerusslee/farnsworth-csm-1b",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "dangerusslee/sesame_csm_finetune_16bit",
+      "author": "dangerusslee",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/dangerusslee/sesame_csm_finetune_16bit",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "Dewang-Ji/speecht5_finetuned_hindi_devanagari_01",
+      "author": "Dewang-Ji",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/Dewang-Ji/speecht5_finetuned_hindi_devanagari_01",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "Colorking/bigvgan_v2_44khz_128band_512x",
+      "author": "Colorking",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/Colorking/bigvgan_v2_44khz_128band_512x",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "iarhamanwaar/quran-reciter-audio",
+      "author": "iarhamanwaar",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/iarhamanwaar/quran-reciter-audio",
+      "created_at": "2026-03-25"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 62,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}
