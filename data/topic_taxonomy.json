@@ -286,7 +286,10 @@
           "ctranslate2-4you/whisper-distil-large-v3.5-ct2-bfloat16",
           "ctranslate2-4you/whisper-distil-large-v3.5-ct2-float32",
           "ae9is/parakeet-tdt-0.6b-v3-onnx",
-          "wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU"
+          "wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU",
+          "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-2",
+          "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-uint8",
+          "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-q4"
         ],
         "Methods": [
           "Quantization",
