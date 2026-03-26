@@ -1,24 +1,4 @@
 {
-  "2026-03-12": [
-    "2603.10904v1",
-    "when fine-tuning fails and when it generalises: role of data diversity and mixed training in llm-based tts",
-    "2603.10888v1",
-    "voxcare: studying natural communication behaviors of hospital caregivers through wearable sensing of egocentric audio",
-    "2603.10725v1",
-    "towards robust speech deepfake detection via human-inspired reasoning",
-    "2603.10713v1",
-    "probabilistic verification of voice anti-spoofing models",
-    "2603.10701v1",
-    "alphaflowtse: one-step generative target speaker extraction via conditional alphaflow",
-    "2603.10587v1",
-    "distilling llm semantic priors into encoder-only multi-talker asr with talker-count routing",
-    "2603.10420v1",
-    "fireredasr2s: a state-of-the-art industrial-grade all-in-one automatic speech recognition system",
-    "2603.10371v1",
-    "speech codec probing from semantic and phonetic perspectives",
-    "2603.10256v1",
-    "id-lora: identity-driven audio-video personalization with in-context lora"
-  ],
   "2026-03-13": [
     "2603.11947v1",
     "resurfacing paralinguistic awareness in large audio language models",
@@ -91,5 +71,17 @@
     "2603.21416v1",
     "enterprise sales copilot: enabling real-time ai support with automatic information retrieval in live sales calls"
   ],
-  "2026-03-25": []
+  "2026-03-25": [],
+  "2026-03-26": [
+    "2603.24549v1",
+    "a sociolinguistic analysis of automatic speech recognition bias in newcastle english",
+    "2603.24038v1",
+    "acavcaps: enabling large-scale training for fine-grained and diverse audio understanding",
+    "2603.24034v1",
+    "from oracle to noisy context: mitigating contextual exposure bias in speech-llms",
+    "2603.23673v1",
+    "crab: multi layer contrastive supervision to improve speech emotion recognition under both acted and natural speech condition",
+    "2603.23654v1",
+    "ethio-asr: joint multilingual speech recognition and language identification for ethiopian languages"
+  ]
 }

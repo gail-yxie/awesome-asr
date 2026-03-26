@@ -1,0 +1,546 @@
+{
+  "date": "2026-03-26",
+  "summary": "Today's research highlights a significant focus on mitigating \"contextual exposure bias\" in Speech-LLMs by addressing the train-test mismatch between oracle training history and noisy inference context, a crucial step for robust conversational agents. Efforts to scale general audio understanding are also accelerating with the release of ACAVCaps, which provides the granular descriptions necessary for fine-grained audio-language modeling. The introduction of the Ethio-ASR suite and sociolinguistic analyses of Newcastle English further signal a growing industry-wide commitment to improving performance in low-resource languages and diverse dialectal variations. On the model front, activity is centered on fine-tuning Whisper-large-v3-turbo and Wav2Vec2 for regional applications, including Bengali and Vietnamese telephony, demonstrating a trend toward specialized, context-aware speech intelligence.",
+  "ideas": [
+    "Current ASR systems remain significantly biased against speakers with dialectal variations, such as Newcastle English, highlighting a critical gap in linguistic inclusivity within mainstream training datasets.",
+    "The ACAVCaps dataset enables more robust audio-language models by providing the descriptive scale and granularity necessary for complex, diverse audio understanding tasks.",
+    "Addressing contextual exposure bias through a unified training framework allows Speech-LLMs to maintain performance during inference despite the presence of noisy or error-prone conversational histories.",
+    "Multi-layer contrastive supervision improves the reliability of Speech Emotion Recognition systems in real-world scenarios by better aligning representations between acted training data and spontaneous natural speech.",
+    "Jointly training ASR and Language Identification for Afroasiatic languages demonstrates that cross-lingual knowledge sharing can significantly boost recognition accuracy for low-resource Ethiopian dialects."
+  ],
+  "papers": [
+    {
+      "id": "2603.24549v1",
+      "title": "A Sociolinguistic Analysis of Automatic Speech Recognition Bias in Newcastle English",
+      "authors": [
+        "Dana Serditova",
+        "Kevin Tang"
+      ],
+      "abstract": "Automatic Speech Recognition (ASR) systems are widely used in everyday communication, education, healthcare, and industry, yet their performance remains uneven across speakers, particularly when dialectal variation diverges from the mainstream accents represented in training data. This study investigates ASR bias through a sociolinguistic analysis of Newcastle English, a regional variety of North-East England that has been shown to challenge current speech recognition technologies. Using spontaneous speech from the Diachronic Electronic Corpus of Tyneside English (DECTE), we evaluate the output of a state-of-the-art commercial ASR system and conduct a fine-grained analysis of more than 3,000 transcription errors. Errors are classified by linguistic domain and examined in relation to social variables including gender, age, and socioeconomic status. In addition, an acoustic case study of selected vowel features demonstrates how gradient phonetic variation contributes directly to misrecognition.   The results show that phonological variation accounts for the majority of errors, with recurrent failures linked to dialect-specific features like vowel quality and glottalisation, as well as local vocabulary and non-standard grammatical forms. Error rates also vary across social groups, with higher error frequencies observed for men and for speakers at the extremes of the age spectrum. These findings indicate that ASR errors are not random but socially patterned and can be explained from a sociolinguistic perspective. Thus, the study demonstrates the importance of incorporating sociolinguistic expertise into the evaluation and development of speech technologies and argues that more equitable ASR systems require explicit attention to dialectal variation and community-based speech data.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV",
+        "cs.SD"
+      ],
+      "published": "2026-03-25",
+      "url": "https://arxiv.org/abs/2603.24549v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.24549v1"
+    },
+    {
+      "id": "2603.24038v1",
+      "title": "ACAVCaps: Enabling large-scale training for fine-grained and diverse audio understanding",
+      "authors": [
+        "Yadong Niu",
+        "Tianzi Wang",
+        "Heinrich Dinkel",
+        "Xingwei Sun",
+        "Jiahao Zhou",
+        "Gang Li",
+        "Jizhong Liu",
+        "Junbo Zhang",
+        "Jian Luan"
+      ],
+      "abstract": "General audio understanding is a fundamental goal for large audio-language models, with audio captioning serving as a cornerstone task for their development. However, progress in this domain is hindered by existing datasets, which lack the scale and descriptive granularity required to train truly versatile models. To address this gap, we introduce ACAVCaps, a new large-scale, fine-grained, and multi-faceted audio captioning dataset. Derived from the ACAV100M collection, ACAVCaps is constructed using a multi-expert pipeline that analyzes audio from diverse perspectives-including speech, music, and acoustic properties-which are then synthesized into rich, detailed descriptions by a large language model. Experimental results demonstrate that models pre-trained on ACAVCaps exhibit substantially stronger generalization capabilities on various downstream tasks compared to those trained on other leading captioning datasets. The dataset is available at https://github.com/xiaomi-research/acavcaps.",
+      "categories": [
+        "eess.AS",
+        "cs.SD"
+      ],
+      "published": "2026-03-25",
+      "url": "https://arxiv.org/abs/2603.24038v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.24038v1"
+    },
+    {
+      "id": "2603.24034v1",
+      "title": "From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs",
+      "authors": [
+        "Xiaoyong Guo",
+        "Nanjie Li",
+        "Zijie Zeng",
+        "Kai Wang",
+        "Hao Huang",
+        "Haihua Xu",
+        "Wei Shi"
+      ],
+      "abstract": "Contextual automatic speech recognition (ASR) with Speech-LLMs is typically trained with oracle conversation history, but relies on error-prone history at inference, causing a train-test mismatch in the context channel that we term contextual exposure bias. We propose a unified training framework to improve robustness under realistic histories: (i) Teacher Error Knowledge by using Whisper large-v3 hypotheses as training-time history, (ii) Context Dropout to regularize over-reliance on history, and (iii) Direct Preference Optimization (DPO) on curated failure cases. Experiments on TED-LIUM 3 (in-domain) and zero-shot LibriSpeech (out-of-domain) show consistent gains under predicted-history decoding. With a two-utterance history as context, SFT with Whisper hypotheses reduce WER from 5.59% (oracle-history training) to 5.47%, and DPO further improves to 5.17%. Under irrelevant-context attacks, DPO yields the smallest degradation (5.17% -> 5.63%), indicating improved robustness to misleading context. Our code and models are published on https://github.com/XYGuo1996/Contextual_Speech_LLMs.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-03-25",
+      "url": "https://arxiv.org/abs/2603.24034v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.24034v1"
+    },
+    {
+      "id": "2603.23673v1",
+      "title": "Crab: Multi Layer Contrastive Supervision to Improve Speech Emotion Recognition Under Both Acted and Natural Speech Condition",
+      "authors": [
+        "Lucas H. Ueda",
+        "João G. T. Lima",
+        "Paula D. P. Costa"
+      ],
+      "abstract": "Speech Emotion Recognition (SER) in real-world scenarios remains challenging due to severe class imbalance and the prevalence of spontaneous, natural speech. While recent approaches leverage self-supervised learning (SSL) representations and multimodal fusion of speech and text, most existing methods apply supervision only at the final classification layer, limiting the discriminative power of intermediate representations. In this work, we propose Crab (Contrastive Representation and Multimodal Aligned Bottleneck), a bimodal Cross-Modal Transformer architecture that integrates speech representations from WavLM and textual representations from RoBERTa, together with a novel \\textit{Multi Layer Contrastive Supervision} (MLCS) strategy. MLCS injects multi-positive contrastive learning signals at multiple layers of the network, encouraging emotionally discriminative representations throughout the model without introducing additional parameters at inference time. To further address data imbalance, we adopt weighted cross-entropy during training. We evaluate the proposed approach on three benchmark datasets covering different degrees of emotional naturalness: IEMOCAP, MELD, and MSP-Podcast 2.0. Experimental results demonstrate that Crab consistently outperforms strong unimodal and multimodal baselines across all datasets, with particularly large gains under naturalistic and highly imbalanced conditions. These findings highlight the effectiveness of \\textit{Multi Layer Contrastive Supervision} as a general and robust strategy for SER. Official implementation can be found in https://github.com/AI-Unicamp/Crab.",
+      "categories": [
+        "eess.AS",
+        "cs.SD"
+      ],
+      "published": "2026-03-24",
+      "url": "https://arxiv.org/abs/2603.23673v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.23673v1"
+    },
+    {
+      "id": "2603.23654v1",
+      "title": "Ethio-ASR: Joint Multilingual Speech Recognition and Language Identification for Ethiopian Languages",
+      "authors": [
+        "Badr M. Abdullah",
+        "Israel Abebe Azime",
+        "Atnafu Lambebo Tonja",
+        "Jesujoba O. Alabi",
+        "Abel Mulat Alemu",
+        "Eyob G. Hagos",
+        "Bontu Fufa Balcha",
+        "Mulubrhan A. Nerea",
+        "Debela Desalegn Yadeta",
+        "Dagnachew Mekonnen Marilign",
+        "Amanuel Temesgen Fentahun",
+        "Tadesse Kebede",
+        "Israel D. Gebru",
+        "Michael Melese Woldeyohannis",
+        "Walelign Tewabe Sewunetie",
+        "Bernd Möbius",
+        "Dietrich Klakow"
+      ],
+      "abstract": "We present Ethio-ASR, a suite of multilingual CTC-based automatic speech recognition (ASR) models jointly trained on five Ethiopian languages: Amharic, Tigrinya, Oromo, Sidaama, and Wolaytta. These languages belong to the Semitic, Cushitic, and Omotic branches of the Afroasiatic family, and remain severely underrepresented in speech technology despite being spoken by the vast majority of Ethiopia's population. We train our models on the recently released WAXAL corpus using several pre-trained speech encoders and evaluate against strong multilingual baselines, including OmniASR. Our best model achieves an average WER of 30.48% on the WAXAL test set, outperforming the best OmniASR model with substantially fewer parameters. We further provide a comprehensive analysis of gender bias, the contribution of vowel length and consonant gemination to ASR errors, and the training dynamics of multilingual CTC models. Our models and codebase are publicly available to the research community.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-24",
+      "url": "https://arxiv.org/abs/2603.23654v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.23654v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "vyluong/w2vbert_final",
+      "author": "vyluong",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vyluong/w2vbert_final",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AymanKing/Qwen3-ASR-Bengali-FT",
+      "author": "AymanKing",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AymanKing/Qwen3-ASR-Bengali-FT",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "CelesteImperia/Whisper-Large-v3-Turbo-OpenVINO-INT8",
+      "author": "CelesteImperia",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/CelesteImperia/Whisper-Large-v3-Turbo-OpenVINO-INT8",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f9",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f9",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "jackzczhou/whisper-tiny",
+      "author": "jackzczhou",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/jackzczhou/whisper-tiny",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f8",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f8",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "jasong03/whisper-large-v3-turbo-vietnamese-telephony",
+      "author": "jasong03",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/jasong03/whisper-large-v3-turbo-vietnamese-telephony",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f7",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f7",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f6",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f6",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f5",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f5",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f4",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f4",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sutv/whisper.cpp",
+      "author": "sutv",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sutv/whisper.cpp",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f3",
+      "author": "zacdan4801",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f3",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "basaltedr/wav2vec2-soninke",
+      "author": "basaltedr",
+      "downloads": 61,
+      "likes": 0,
+      "url": "https://huggingface.co/basaltedr/wav2vec2-soninke",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alpcansoydas/whisper-large-v2-tr-ft-26-03-26-encoder-only-25ksamples-simulated-data",
+      "author": "alpcansoydas",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/alpcansoydas/whisper-large-v2-tr-ft-26-03-26-encoder-only-25ksamples-simulated-data",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Laith05/whisper-levantine",
+      "author": "Laith05",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Laith05/whisper-levantine",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f2",
+      "author": "zacdan4801",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f2",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypaai/whisper_finetune_16bit_Translate",
+      "author": "hypaai",
+      "downloads": 38,
+      "likes": 0,
+      "url": "https://huggingface.co/hypaai/whisper_finetune_16bit_Translate",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Umerpy/whisper-small-finetuned",
+      "author": "Umerpy",
+      "downloads": 38,
+      "likes": 0,
+      "url": "https://huggingface.co/Umerpy/whisper-small-finetuned",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sulde/torgo-wav2vec2-dysarthric",
+      "author": "sulde",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/sulde/torgo-wav2vec2-dysarthric",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f1",
+      "author": "zacdan4801",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-ds-f1",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/NM2-irish-whisper-pseudo-iter1",
+      "author": "Eimhin03",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/NM2-irish-whisper-pseudo-iter1",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "baibhavbaidyabb/whisper-small-hindi-joshtalks",
+      "author": "baibhavbaidyabb",
+      "downloads": 17,
+      "likes": 0,
+      "url": "https://huggingface.co/baibhavbaidyabb/whisper-small-hindi-joshtalks",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypaai/Hypa-Whisper-small-multitask-2026-03-25-merged-16bit",
+      "author": "hypaai",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/hypaai/Hypa-Whisper-small-multitask-2026-03-25-merged-16bit",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PlotweaverAI/whisper-small-de-en",
+      "author": "PlotweaverAI",
+      "downloads": 28,
+      "likes": 0,
+      "url": "https://huggingface.co/PlotweaverAI/whisper-small-de-en",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Aki0099/diar-streaming-sortformer-coreml",
+      "author": "Aki0099",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/Aki0099/diar-streaming-sortformer-coreml",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "HorizonTechAI1/Lora_whisper_large_v3_medical_egyptian_arabic_merged",
+      "author": "HorizonTechAI1",
+      "downloads": 27,
+      "likes": 0,
+      "url": "https://huggingface.co/HorizonTechAI1/Lora_whisper_large_v3_medical_egyptian_arabic_merged",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PolauOA/whisper-tiny_to_spanish_accent",
+      "author": "PolauOA",
+      "downloads": 26,
+      "likes": 0,
+      "url": "https://huggingface.co/PolauOA/whisper-tiny_to_spanish_accent",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PThi35/imTak_whisper_large_v3_turbo_Korean2",
+      "author": "PThi35",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/PThi35/imTak_whisper_large_v3_turbo_Korean2",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alpcansoydas/whisper-large-v2-tr-ft-25-03-26-encoder-only-25ksamples-original-data",
+      "author": "alpcansoydas",
+      "downloads": 55,
+      "likes": 0,
+      "url": "https://huggingface.co/alpcansoydas/whisper-large-v2-tr-ft-25-03-26-encoder-only-25ksamples-original-data",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypa-intelligence/hypa-whisper-asr-finetuned-streaming-real-data-20260325_075311",
+      "author": "hypa-intelligence",
+      "downloads": 194,
+      "likes": 0,
+      "url": "https://huggingface.co/hypa-intelligence/hypa-whisper-asr-finetuned-streaming-real-data-20260325_075311",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "srikantp/svara-tts-v1-fp8",
+      "author": "srikantp",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/srikantp/svara-tts-v1-fp8",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "MrBro123/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "author": "MrBro123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MrBro123/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "wixdivin/kinya-flex-tts",
+      "author": "wixdivin",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/wixdivin/kinya-flex-tts",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ruslanmv/hp-piper-voices",
+      "author": "ruslanmv",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ruslanmv/hp-piper-voices",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "NewGame/Emilia-vits-espnet2",
+      "author": "NewGame",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/NewGame/Emilia-vits-espnet2",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Imagilux/fishaudio-s2-pro",
+      "author": "Imagilux",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/Imagilux/fishaudio-s2-pro",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "eduardem/piper-tts-romanian",
+      "author": "eduardem",
+      "downloads": 0,
+      "likes": 2,
+      "url": "https://huggingface.co/eduardem/piper-tts-romanian",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "thangquang09/capspeech-nar-vietnamese-stage2-v3",
+      "author": "thangquang09",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/thangquang09/capspeech-nar-vietnamese-stage2-v3",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ba0zi/Kokoro-82M-v1.1-zh-ONNX",
+      "author": "ba0zi",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/ba0zi/Kokoro-82M-v1.1-zh-ONNX",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "smaill-one/IndexTTS-2",
+      "author": "smaill-one",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/smaill-one/IndexTTS-2",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "sathyavgc/saraga-dreambooth-musicgen",
+      "author": "sathyavgc",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sathyavgc/saraga-dreambooth-musicgen",
+      "created_at": "2026-03-26",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "sil-ai/swh-waxal-audio-speecht5",
+      "author": "sil-ai",
+      "downloads": 85,
+      "likes": 0,
+      "url": "https://huggingface.co/sil-ai/swh-waxal-audio-speecht5",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "nassimaODL/wavlm-vocoder",
+      "author": "nassimaODL",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nassimaODL/wavlm-vocoder",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "aufklarer/OpenUnmix-L-MLX",
+      "author": "aufklarer",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/aufklarer/OpenUnmix-L-MLX",
+      "created_at": "2026-03-25",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "aufklarer/OpenUnmix-HQ-MLX",
+      "author": "aufklarer",
+      "downloads": 323,
+      "likes": 0,
+      "url": "https://huggingface.co/aufklarer/OpenUnmix-HQ-MLX",
+      "created_at": "2026-03-24",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 5,
+    "model_count": 46,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
