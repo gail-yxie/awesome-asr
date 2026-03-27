@@ -1,20 +1,4 @@
 {
-  "2026-03-13": [
-    "2603.11947v1",
-    "resurfacing paralinguistic awareness in large audio language models",
-    "2603.11661v1",
-    "resonate: reinforcing text-to-audio generation via online feedback from large audio language models",
-    "2603.11578v1",
-    "streaming translation and transcription through speech-to-text causal alignment",
-    "2603.11397v1",
-    "edge-cloud collaborative speech emotion captioning via token-level speculative decoding in audio-language models",
-    "2603.11378v1",
-    "continued pretraining for low-resource swahili asr: achieving state-of-the-art performance with minimal labeled data",
-    "2603.11168v1",
-    "huntington disease automatic speech recognition with biomarker supervision",
-    "2603.11123v1",
-    "uni-asr: unified llm-based architecture for non-streaming and streaming automatic speech recognition"
-  ],
   "2026-03-14": [],
   "2026-03-15": [],
   "2026-03-16": [],
@@ -83,5 +67,6 @@
     "crab: multi layer contrastive supervision to improve speech emotion recognition under both acted and natural speech condition",
     "2603.23654v1",
     "ethio-asr: joint multilingual speech recognition and language identification for ethiopian languages"
-  ]
+  ],
+  "2026-03-27": []
 }
