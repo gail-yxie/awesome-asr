@@ -53,7 +53,10 @@
         "Eimhin03/irish-whisper-pseudo-iter4",
         "siyah1/whisper-malayalam",
         "james-417/tcm-whisper-LoRA-v1",
-        "techiaith/whisper-large-ft-cy-en-ct2"
+        "techiaith/whisper-large-ft-cy-en-ct2",
+        "vivekkairi/whisper_finetune_16bit",
+        "LocalDoc/azerbaijani-whisper-turbo",
+        "exala-e/v3_turbo_may20_fe2_42570_no_te_pui_stratified_atc"
       ],
       "Transducer": [
         "RNN-T",
@@ -70,6 +73,7 @@
         "MMS",
         "W2v-BERT 2.0",
         "XLS-R",
+        "vyluong/w2vbert_final",
         "vitthalbhandari/mms-1b-all-aft-all-meh",
         "vitthalbhandari/mms-1b-all-aft-all-lke",
         "Professor/mms-300m-fongbe",
@@ -81,6 +85,7 @@
       "LLM-based ASR": [
         "Jonxxxxxx/Qwen3-ASR-0.6B",
         "Kushtrim/Qwen3-ASR-0.6B-Albanian-728h",
+        "AymanKing/Qwen3-ASR-Bengali-FT",
         "aoiandroid/granite-4.0-1b-speech",
         "aoiandroid/Qwen3-ASR-0.6B",
         "aoiandroid/Qwen3-ASR-1.7B-CoreML",
@@ -88,7 +93,8 @@
         "hdnminh/qwen3-asr-1.7b",
         "Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models",
         "Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR",
-        "LLMs and Speech: Integration vs. Combination"
+        "LLMs and Speech: Integration vs. Combination",
+        "From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs"
       ]
     },
     "Self-Supervised Learning": {
@@ -152,6 +158,7 @@
           "Mitigating Structural Noise in Low-Resource S2TT: An Optimized Cascaded Nepali-English Pipeline with Punctuation Restoration"
         ],
         "General Models": [
+          "Ethio-ASR: Joint Multilingual Speech Recognition and Language Identification for Ethiopian Languages",
           "AWARRITech/whisper-small-yoruba-v1",
           "DewiBrynJones/whisper-large-v2-ft-cy-2601",
           "afaqalinagra/whisper-base-ps",
@@ -175,6 +182,7 @@
         ],
         "Audio-Language Models": [
           "CLAP-Based Recognition",
+          "ACAVCaps: Enabling large-scale training for fine-grained and diverse audio understanding",
           "MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models",
           "Edge-Cloud Collaborative Speech Emotion Captioning via Token-Level Speculative Decoding in Audio-Language Models",
           "ALARM: Audio-Language Alignment for Reasoning Models",
@@ -186,6 +194,7 @@
           "How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation"
         ],
         "Emotion Recognition": [
+          "Crab: Multi Layer Contrastive Supervision to Improve Speech Emotion Recognition Under Both Acted and Natural Speech Condition",
           "Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)",
           "A Mixture-of-Experts Model for Multimodal Emotion Recognition in Conversations"
         ],
@@ -289,7 +298,8 @@
           "wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU",
           "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-2",
           "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-uint8",
-          "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-q4"
+          "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-q4",
+          "CelesteImperia/Whisper-Large-v3-Turbo-OpenVINO-INT8"
         ],
         "Methods": [
           "Quantization",
@@ -338,6 +348,9 @@
         "Causal Alignment",
         "Perfect Alignment for Long-Form",
         "A Holistic Framework for Robust Bangla ASR and Speaker Diarization with Optimized VAD and CTC Alignment"
+      ],
+      "Robustness": [
+        "From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs"
       ]
     },
     "Evaluation": {
@@ -353,6 +366,9 @@
         "SUPERB",
         "SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases",
         "MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models"
+      ],
+      "Bias & Fairness": [
+        "A Sociolinguistic Analysis of Automatic Speech Recognition Bias in Newcastle English"
       ]
     },
     "Applications": {

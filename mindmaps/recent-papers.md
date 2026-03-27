@@ -1,6 +1,9 @@
 # Recent ASR & Speech Language Papers
 
 ## cs.CL
+- [A Sociolinguistic Analysis of Automatic Speech Recognition Bias in Newcastle English](https://arxiv.org/abs/2603.24549v1)
+- [From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs](https://arxiv.org/abs/2603.24034v1)
+- [Ethio-ASR: Joint Multilingual Speech Recognition and Language Identification for Ethiopian Languages](https://arxiv.org/abs/2603.23654v1)
 - [SLURP-TN : Resource for Tunisian Dialect Spoken Language Understanding](https://arxiv.org/abs/2603.21940v1)
 - [Ara-Best-RQ: Multi Dialectal Arabic SSL](https://arxiv.org/abs/2603.21900v1)
 - [Zipper-LoRA: Dynamic Parameter Decoupling for Speech-LLM based Multilingual Speech Recognition](https://arxiv.org/abs/2603.17558v1)
@@ -8,16 +11,10 @@
 - [Omnilingual SONAR: Cross-Lingual and Cross-Modal Sentence Embeddings Bridging Massively Multilingual Text and Speech](https://arxiv.org/abs/2603.16606v1)
 - [On the Emotion Understanding of Synthesized Speech](https://arxiv.org/abs/2603.16483v1)
 - [RECOVER: Robust Entity Correction via agentic Orchestration of hypothesis Variants for Evidence-based Recovery](https://arxiv.org/abs/2603.16411v1)
-- [Is Semi-Automatic Transcription Useful in Corpus Creation? Preliminary Considerations on the KIParla Corpus](https://arxiv.org/abs/2603.16258v1)
-- [Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR](https://arxiv.org/abs/2603.16184v1)
-- [Tagarela - A Portuguese speech dataset from podcasts](https://arxiv.org/abs/2603.15326v1)
 
 ## cs.LG
 - [Huntington Disease Automatic Speech Recognition with Biomarker Supervision](https://arxiv.org/abs/2603.11168v1)
 - [WavSLM: Single-Stream Speech Language Modeling via WavLM Distillation](https://arxiv.org/abs/2603.05299v1)
-
-## cs.NI
-- [Voice-Driven Semantic Perception for UAV-Assisted Emergency Networks](https://arxiv.org/abs/2602.17394v1)
 
 ## cs.SD
 - [Enterprise Sales Copilot: Enabling Real-Time AI Support with Automatic Information Retrieval in Live Sales Calls](https://arxiv.org/abs/2603.21416v1)
@@ -32,6 +29,8 @@
 - [When Fine-Tuning Fails and when it Generalises: Role of Data Diversity and Mixed Training in LLM-based TTS](https://arxiv.org/abs/2603.10904v1)
 
 ## eess.AS
+- [ACAVCaps: Enabling large-scale training for fine-grained and diverse audio understanding](https://arxiv.org/abs/2603.24038v1)
+- [Crab: Multi Layer Contrastive Supervision to Improve Speech Emotion Recognition Under Both Acted and Natural Speech Condition](https://arxiv.org/abs/2603.23673v1)
 - [How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation](https://arxiv.org/abs/2603.19195v1)
 - [Multi-Source Evidence Fusion for Audio Question Answering](https://arxiv.org/abs/2603.17822v1)
 - [LLMs and Speech: Integration vs. Combination](https://arxiv.org/abs/2603.15045v1)
@@ -40,8 +39,6 @@
 - [A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition](https://arxiv.org/abs/2603.09725v1)
 - [Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models](https://arxiv.org/abs/2603.09627v1)
 - [Trade-offs Between Capacity and Robustness in Neural Audio Codecs for Adversarially Robust Speech Recognition](https://arxiv.org/abs/2603.09034v1)
-- [Visual-Informed Speech Enhancement Using Attention-Based Beamforming](https://arxiv.org/abs/2603.05270v1)
-- [PolyBench: A Benchmark for Compositional Reasoning in Polyphonic Audio](https://arxiv.org/abs/2603.05128v1)
 
 ## q-bio.QM
 - [Impact of automatic speech recognition quality on Alzheimer's disease detection from spontaneous speech: a reproducible benchmark study with lexical modeling and statistical validation](https://arxiv.org/abs/2603.18239v1)
