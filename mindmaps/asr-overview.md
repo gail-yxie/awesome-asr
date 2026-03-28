@@ -14,6 +14,8 @@
 - LAS
 - Speech-Transformer
 - psilab/whisper-large-v3
+- Bercraft/whisper-large
+- amitkot/whisper-yoad-tiny-he-acft
 - Dorjzodovsuren/MongolianWhisper_large
 - Badri0510/thedal-tamil-full-v3
 - mabahboh/whisper-shami
@@ -90,6 +92,7 @@
 - aoiandroid/Qwen3-ASR-1.7B-CoreML
 - aoiandroid/qwen3-asr-0.6b-coreml
 - hdnminh/qwen3-asr-1.7b
+- Bercraft/Voxtral-Mini-4B-Realtime-2602
 - Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 - Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR
 - LLMs and Speech: Integration vs. Combination
@@ -134,6 +137,7 @@
 
 ### Language Identification
 - PatchyTisa/FireRedLID-vllm
+- Ethio-ASR: Joint Multilingual Speech Recognition and Language Identification
 
 ### Spoken Language Understanding
 - SLURP-TN : Resource for Tunisian Dialect Spoken Language Understanding
@@ -151,6 +155,7 @@
 - GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
 - itsarunendra/whisper-medium-tunisian-full-v2.1
 - transitionGap/ASR_haryanvi_small_finetuned
+- maryamas222/whisper-large-v3-egyptian-lora-v4
 - Ara-Best-RQ: Multi Dialectal Arabic SSL
 
 #### Translation-Guided
@@ -311,10 +316,10 @@
 - Depth-Aware Adaptation
 - Low-Rank Adaptation (LoRA)
 - Fine-tuning
+- Zipper-LoRA: Dynamic Parameter Decoupling for Speech-LLM based Multilingual Speech Recognition
 - maryamas222/whisper-large-v3-egyptian-lora-v4
 - GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
 - Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition
-- Zipper-LoRA: Dynamic Parameter Decoupling for Speech-LLM based Multilingual Speech Recognition
 
 ### Model Merging
 - Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR
@@ -521,6 +526,7 @@
 - Dynamic-SUPERB
 - AudioBench
 - MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
+- Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models
 
 ### Analysis & Interpretability
 - How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation
