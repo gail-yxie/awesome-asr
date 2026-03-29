@@ -58,6 +58,7 @@
 - vivekkairi/whisper_finetune_16bit
 - LocalDoc/azerbaijani-whisper-turbo
 - exala-e/v3_turbo_may20_fe2_42570_no_te_pui_stratified_atc
+- AkshitSaxena1/whisper-tiny_to_chinese_accent
 
 ### Transducer
 - RNN-T
@@ -67,6 +68,7 @@
 - cnonim/gigaam-v3-e2e-rnnt-onnx
 - molind/conformer-transducer-be-mlx
 - ae9is/parakeet-tdt-0.6b-v3-onnx
+- ilprl-docse/NwachaMuna-NepConformer-FT
 
 ### Foundation Models
 - USM
@@ -157,6 +159,7 @@
 - transitionGap/ASR_haryanvi_small_finetuned
 - maryamas222/whisper-large-v3-egyptian-lora-v4
 - Ara-Best-RQ: Multi Dialectal Arabic SSL
+- mabahboh/whisper-shami
 
 #### Translation-Guided
 - TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition
@@ -304,6 +307,7 @@
 - EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-2
 - EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-uint8
 - EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-q4
+- EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-without_decoder
 - CelesteImperia/Whisper-Large-v3-Turbo-OpenVINO-INT8
 
 #### Methods
@@ -320,6 +324,8 @@
 - maryamas222/whisper-large-v3-egyptian-lora-v4
 - GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR
 - Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition
+- james-417/tcm-whisper-LoRA-v1
+- Kanompung/whisper-th-lotusdis-lora
 
 ### Model Merging
 - Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR
