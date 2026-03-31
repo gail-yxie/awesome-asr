@@ -1,0 +1,754 @@
+{
+  "date": "2026-03-31",
+  "summary": "Today’s releases highlight a growing trend in utilizing small LLM backbones for specialized ASR, notably with NbAiLab’s Qwen 0.6B-based models that distinguish between verbatim and \"reading-style\" (normalized) transcription outputs. The democratization of high-performance speech processing continues through fine-tunes of the Whisper-large-v3-turbo architecture and new low-resource support for Mongolian and specific regional accents. Additionally, the shift toward optimized edge deployment is evident in the release of a Qwen3-based forced aligner in ONNX format and new GGUF-compatible transcription models. Together, these developments suggest a transition where speech processing tasks, including alignment and style-controlled transcription, are increasingly integrated into unified, lightweight language model frameworks for efficient local inference.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "bubiche/whisper.cpp",
+      "author": "bubiche",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/bubiche/whisper.cpp",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vivekkairi/whisper-large-v3-turbo-finetuned",
+      "author": "vivekkairi",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/vivekkairi/whisper-large-v3-turbo-finetuned",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "NbAiLab/nb-asr-beta-qwen06b-lunde03-verbatim",
+      "author": "NbAiLab",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/NbAiLab/nb-asr-beta-qwen06b-lunde03-verbatim",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PolauOA/whisper-tiny_to_chinese3_accent",
+      "author": "PolauOA",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/PolauOA/whisper-tiny_to_chinese3_accent",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "NbAiLab/nb-asr-beta-qwen06b-lunde03-reading",
+      "author": "NbAiLab",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/NbAiLab/nb-asr-beta-qwen06b-lunde03-reading",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PolauOA/whisper-tiny_to_british3_accent",
+      "author": "PolauOA",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/PolauOA/whisper-tiny_to_british3_accent",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "valoomba/Qwen3-ForcedAligner-0.6B-ONNX",
+      "author": "valoomba",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/valoomba/Qwen3-ForcedAligner-0.6B-ONNX",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "cstr/cohere-transcribe-03-2026-GGUF",
+      "author": "cstr",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/cstr/cohere-transcribe-03-2026-GGUF",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Danieljava/Hypa-Whisper-small-2026-03-31-translate-check",
+      "author": "Danieljava",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Danieljava/Hypa-Whisper-small-2026-03-31-translate-check",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Ganaa0614/whisper-tiny-mongolian-ver_0.3",
+      "author": "Ganaa0614",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Ganaa0614/whisper-tiny-mongolian-ver_0.3",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "beaupi/cohere-transcribe-03-2026-oQ8",
+      "author": "beaupi",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/beaupi/cohere-transcribe-03-2026-oQ8",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "HashNuke/wav2vec2-large-960h-lv60-self-mlx",
+      "author": "HashNuke",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/HashNuke/wav2vec2-large-960h-lv60-self-mlx",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "beaupi/Voxtral-Mini-4B-Realtime-2602-oQ8",
+      "author": "beaupi",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/beaupi/Voxtral-Mini-4B-Realtime-2602-oQ8",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "luckyhjj/faster-whisper-medium",
+      "author": "luckyhjj",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/luckyhjj/faster-whisper-medium",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper_russian_e-5",
+      "author": "boisz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper_russian_e-5",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Ganaa0614/whisper-tiny-mongolian-ver_0.2",
+      "author": "Ganaa0614",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Ganaa0614/whisper-tiny-mongolian-ver_0.2",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper_russian_2e-5",
+      "author": "boisz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper_russian_2e-5",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "gn64/cohere-transcribe-onnx-int8",
+      "author": "gn64",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/gn64/cohere-transcribe-onnx-int8",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "capacit-ai/saga",
+      "author": "capacit-ai",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/capacit-ai/saga",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PolauOA/whisper-tiny_to_british2_accent",
+      "author": "PolauOA",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/PolauOA/whisper-tiny_to_british2_accent",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PolauOA/whisper-tiny_to_chinese2_accent",
+      "author": "PolauOA",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/PolauOA/whisper-tiny_to_chinese2_accent",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper_american_LR_2e-5_1900",
+      "author": "boisz",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper_american_LR_2e-5_1900",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper_american_LR_2e-5",
+      "author": "boisz",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper_american_LR_2e-5",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper-russian_1.5e-5",
+      "author": "boisz",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper-russian_1.5e-5",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_finetune_16bit-v2",
+      "author": "nureddin123",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_finetune_16bit-v2",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/cdli-slam-asr-luganda-atypical-encoder-lora-alllinear-step5000",
+      "author": "KasuleTrevor",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/cdli-slam-asr-luganda-atypical-encoder-lora-alllinear-step5000",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/cdli-slam-asr-luganda-atypical-encoder-lora-step5000",
+      "author": "KasuleTrevor",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/cdli-slam-asr-luganda-atypical-encoder-lora-step5000",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/whisper-tiny_to_american_accent2",
+      "author": "Eimhin03",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/whisper-tiny_to_american_accent2",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_finetune_16bit-s60",
+      "author": "nureddin123",
+      "downloads": 31,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_finetune_16bit-s60",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lishantKarki/wav2vec2-large-xls-r-300m-nepali-openslr3",
+      "author": "lishantKarki",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/lishantKarki/wav2vec2-large-xls-r-300m-nepali-openslr3",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/whisper-tiny_to_spanish_accent2",
+      "author": "Eimhin03",
+      "downloads": 39,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/whisper-tiny_to_spanish_accent2",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_finetune_16bit",
+      "author": "nureddin123",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_finetune_16bit",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Farazzzzzzz/whisper-tiny_to_korean_accent2",
+      "author": "Farazzzzzzz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Farazzzzzzz/whisper-tiny_to_korean_accent2",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "bosonai/higgs-audio-v3-8b-stt",
+      "author": "bosonai",
+      "downloads": 23,
+      "likes": 4,
+      "url": "https://huggingface.co/bosonai/higgs-audio-v3-8b-stt",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nenad1002/nemotron-speech-streaming-es-0.6b-onnx-int4",
+      "author": "nenad1002",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nenad1002/nemotron-speech-streaming-es-0.6b-onnx-int4",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "charlykso/whisper-nigerian-asr",
+      "author": "charlykso",
+      "downloads": 19,
+      "likes": 1,
+      "url": "https://huggingface.co/charlykso/whisper-nigerian-asr",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MinseokBlog/whisper-large-v3-turbo-goryeo",
+      "author": "MinseokBlog",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/MinseokBlog/whisper-large-v3-turbo-goryeo",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Letzup/whisper-medium-v",
+      "author": "Letzup",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/Letzup/whisper-medium-v",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Ganaa0614/whisper-tiny-mongolian-ver_0.1",
+      "author": "Ganaa0614",
+      "downloads": 67,
+      "likes": 0,
+      "url": "https://huggingface.co/Ganaa0614/whisper-tiny-mongolian-ver_0.1",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Gearnode/qwen3-asr-uzbek-v2",
+      "author": "Gearnode",
+      "downloads": 61,
+      "likes": 0,
+      "url": "https://huggingface.co/Gearnode/qwen3-asr-uzbek-v2",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Gearnode/qwen3-asr-uzbek",
+      "author": "Gearnode",
+      "downloads": 59,
+      "likes": 0,
+      "url": "https://huggingface.co/Gearnode/qwen3-asr-uzbek",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "equal-ai/whisper-transliterate",
+      "author": "equal-ai",
+      "downloads": 74,
+      "likes": 0,
+      "url": "https://huggingface.co/equal-ai/whisper-transliterate",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper-russian_5e-6",
+      "author": "boisz",
+      "downloads": 57,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper-russian_5e-6",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper-american_5e-6",
+      "author": "boisz",
+      "downloads": 26,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper-american_5e-6",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper-american",
+      "author": "boisz",
+      "downloads": 34,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper-american",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "BarathwajAnandan/cohere-transcribe-fp8",
+      "author": "BarathwajAnandan",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/BarathwajAnandan/cohere-transcribe-fp8",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aabdullahi/whisper-ar-hadith-finetuned",
+      "author": "aabdullahi",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/aabdullahi/whisper-ar-hadith-finetuned",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Dadara84/Sonja",
+      "author": "Dadara84",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Dadara84/Sonja",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "xDre4m524/VieNeu-TTS-0.3B-lora-ngoc-huyen",
+      "author": "xDre4m524",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/xDre4m524/VieNeu-TTS-0.3B-lora-ngoc-huyen",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "pnnbao-ump/VieNeu-TTS-v2-Turbo-GGUF",
+      "author": "pnnbao-ump",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/pnnbao-ump/VieNeu-TTS-v2-Turbo-GGUF",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "saadxsalman/emily-debt-0.6B",
+      "author": "saadxsalman",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/saadxsalman/emily-debt-0.6B",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "beaupi/Qwen3-TTS-12Hz-1.7B-CustomVoice-oQ8",
+      "author": "beaupi",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/beaupi/Qwen3-TTS-12Hz-1.7B-CustomVoice-oQ8",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-3.5B-nvfp4",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-3.5B-nvfp4",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-3.5B-mxfp8",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-3.5B-mxfp8",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-3.5B-mxfp4",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-3.5B-mxfp4",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-3.5B-8bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-3.5B-8bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-3.5B-6bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-3.5B-6bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-3.5B-5bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-3.5B-5bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-3.5B-4bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-3.5B-4bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-3.5B-bf16",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-3.5B-bf16",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-1B-nvfp4",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-1B-nvfp4",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-1B-mxfp8",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-1B-mxfp8",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-1B-mxfp4",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-1B-mxfp4",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-1B-8bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-1B-8bit",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-1B-6bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-1B-6bit",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-1B-5bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-1B-5bit",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-1B-4bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-1B-4bit",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/LongCat-AudioDiT-1B-bf16",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/LongCat-AudioDiT-1B-bf16",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "drbaph/LongCat-AudioDiT-3.5B-fp8",
+      "author": "drbaph",
+      "downloads": 1,
+      "likes": 3,
+      "url": "https://huggingface.co/drbaph/LongCat-AudioDiT-3.5B-fp8",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "drbaph/LongCat-AudioDiT-3.5B-bf16",
+      "author": "drbaph",
+      "downloads": 3,
+      "likes": 2,
+      "url": "https://huggingface.co/drbaph/LongCat-AudioDiT-3.5B-bf16",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Fabisch/Dia2-2B",
+      "author": "Fabisch",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/Fabisch/Dia2-2B",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Aratako/Irodori-TTS-500M-v2-VoiceDesign",
+      "author": "Aratako",
+      "downloads": 0,
+      "likes": 2,
+      "url": "https://huggingface.co/Aratako/Irodori-TTS-500M-v2-VoiceDesign",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "zhchhe/Fun-CosyVoice3-0.5B-2512",
+      "author": "zhchhe",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/zhchhe/Fun-CosyVoice3-0.5B-2512",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "he-shuwei/M2SE-VTTS",
+      "author": "he-shuwei",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/he-shuwei/M2SE-VTTS",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "fahrahmn/saraga-dreambooth-musicgen",
+      "author": "fahrahmn",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/fahrahmn/saraga-dreambooth-musicgen",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "beaupi/Covo-Audio-Chat-oQ8",
+      "author": "beaupi",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/beaupi/Covo-Audio-Chat-oQ8",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "audio-to-audio"
+    },
+    {
+      "model_id": "jamberjuice/KanyeWest530byynk",
+      "author": "jamberjuice",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/jamberjuice/KanyeWest530byynk",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "Trelis/tricky-tts-public",
+      "author": "Trelis",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Trelis/tricky-tts-public",
+      "created_at": "2026-03-31"
+    },
+    {
+      "dataset_id": "Speech-data/Hungarian-Speech-Dataset",
+      "author": "Speech-data",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Speech-data/Hungarian-Speech-Dataset",
+      "created_at": "2026-03-31"
+    },
+    {
+      "dataset_id": "Speech-data/Hindi-Speech-Dataset",
+      "author": "Speech-data",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Speech-data/Hindi-Speech-Dataset",
+      "created_at": "2026-03-31"
+    },
+    {
+      "dataset_id": "Speech-data/Hebrew-Speech-Dataset",
+      "author": "Speech-data",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Speech-data/Hebrew-Speech-Dataset",
+      "created_at": "2026-03-31"
+    },
+    {
+      "dataset_id": "Speech-data/Hausa-Speech-Dataset",
+      "author": "Speech-data",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Speech-data/Hausa-Speech-Dataset",
+      "created_at": "2026-03-31"
+    },
+    {
+      "dataset_id": "Speech-data/Gujarati-Speech-Dataset",
+      "author": "Speech-data",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Speech-data/Gujarati-Speech-Dataset",
+      "created_at": "2026-03-31"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 77,
+    "dataset_count": 6,
+    "tweet_count": 0
+  }
+}

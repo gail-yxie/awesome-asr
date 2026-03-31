@@ -1,18 +1,4 @@
 {
-  "2026-03-17": [
-    "2603.15326v1",
-    "tagarela - a portuguese speech dataset from podcasts",
-    "2603.15261v1",
-    "two-stage adaptation for non-normative speech recognition: revisiting speaker-independent initialization for personalization",
-    "2603.15045v1",
-    "llms and speech: integration vs. combination",
-    "2603.14779v1",
-    "vietnamese automatic speech recognition: a revisit",
-    "2603.14636v1",
-    "nudging hidden states: training-free model steering for chain-of-thought reasoning in large audio-language models",
-    "2603.14456v1",
-    "parsa-bench: a comprehensive persian audio-language model benchmark"
-  ],
   "2026-03-18": [
     "2603.16606v1",
     "omnilingual sonar: cross-lingual and cross-modal sentence embeddings bridging massively multilingual text and speech",
@@ -68,5 +54,6 @@
   "2026-03-27": [],
   "2026-03-28": [],
   "2026-03-29": [],
-  "2026-03-30": []
+  "2026-03-30": [],
+  "2026-03-31": []
 }
