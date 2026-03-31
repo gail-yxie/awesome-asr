@@ -59,7 +59,8 @@
         "vivekkairi/whisper_finetune_16bit",
         "LocalDoc/azerbaijani-whisper-turbo",
         "exala-e/v3_turbo_may20_fe2_42570_no_te_pui_stratified_atc",
-        "AkshitSaxena1/whisper-tiny_to_chinese_accent"
+        "AkshitSaxena1/whisper-tiny_to_chinese_accent",
+        "boisz/whisper-american_LR_e-4"
       ],
       "Transducer": [
         "RNN-T",
@@ -308,6 +309,8 @@
           "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-uint8",
           "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-q4",
           "EvgenyShivchenkoUIT/whisper-tiny-ONNX-multi-without_decoder",
+          "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-merged",
+          "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-full",
           "CelesteImperia/Whisper-Large-v3-Turbo-OpenVINO-INT8"
         ],
         "Methods": [
