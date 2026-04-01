@@ -60,6 +60,7 @@
 - exala-e/v3_turbo_may20_fe2_42570_no_te_pui_stratified_atc
 - AkshitSaxena1/whisper-tiny_to_chinese_accent
 - boisz/whisper-american_LR_e-4
+- vivekkairi/whisper-large-v3-turbo-finetuned
 
 ### Transducer
 - RNN-T
@@ -96,6 +97,7 @@
 - aoiandroid/qwen3-asr-0.6b-coreml
 - hdnminh/qwen3-asr-1.7b
 - Bercraft/Voxtral-Mini-4B-Realtime-2602
+- NbAiLab/nb-asr-beta-qwen06b-lunde03-verbatim
 - Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 - Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR
 - LLMs and Speech: Integration vs. Combination
@@ -134,7 +136,7 @@
 ### Speaker Diarization
 - beargreen/speaker-diarization-community-1
 - Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization
-- A Holistic Framework for Robust Bangla ASR and Speaker Diarization
+- A Holistic Framework for Robust Bangla ASR and Speaker Diarization with Optimized VAD and CTC Alignment
 - Robust Long-Form Bangla Speech Processing
 - 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing and Fine-Tuned Diarization
 
@@ -161,6 +163,7 @@
 - maryamas222/whisper-large-v3-egyptian-lora-v4
 - Ara-Best-RQ: Multi Dialectal Arabic SSL
 - mabahboh/whisper-shami
+- AkshitSaxena1/whisper-tiny_to_chinese_accent
 
 #### Translation-Guided
 - TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition
@@ -177,6 +180,7 @@
 - amanuelbyte/whisper-amharic-asr-finetuned
 - Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539
 - uzair0/ghag-ai-katib-finetune
+- Polyglot-Lion: Efficient Multilingual ASR for Singapore
 
 
 ### Multimodal
@@ -312,6 +316,7 @@
 - EvgenyShivchenkoUIT/whisper-base-ONNX-multi-merged
 - EvgenyShivchenkoUIT/whisper-base-ONNX-multi-full
 - CelesteImperia/Whisper-Large-v3-Turbo-OpenVINO-INT8
+- bubiche/whisper.cpp
 
 #### Methods
 - Quantization
@@ -520,6 +525,7 @@
 - RLHF for speech
 - DPO for speech quality
 - Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
+- Does Fine-tuning by Reinforcement Learning Improve Generalization in Binary Speech Deepfake Detection?
 
 
 ## Evaluation
@@ -536,6 +542,7 @@
 - AudioBench
 - MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
 - Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models
+- SCENEBench: An Audio Understanding Benchmark
 
 ### Analysis & Interpretability
 - How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation
