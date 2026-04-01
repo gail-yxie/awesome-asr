@@ -1,0 +1,679 @@
+{
+  "date": "2026-04-01",
+  "summary": "Today’s activity centers on specialized fine-tuning of foundation models, with OpenAI’s Whisper remaining the primary backbone for diverse linguistic adaptations including Nepali, Turkish, and Irish. Notable releases include the use of SLAM (Speech-Language Adapted Model) for zero-shot adaptation to atypical Luganda speech and the SongPrep-7B model, which signals the ongoing scaling of speech-centric language models for complex audio tasks. Technical experimentation is also evident in the deployment of encoder-only Whisper variants fine-tuned on simulated data and the use of iterative pseudo-labeling to improve performance in low-resource contexts. These developments underscore a persistent research trend toward addressing speaker variability and data scarcity through targeted architectural optimization and synthetic data augmentation.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "kinory24/aero-whisper-small_1e-4",
+      "author": "kinory24",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/kinory24/aero-whisper-small_1e-4",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_turbo_501_val_r512",
+      "author": "nureddin123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_turbo_501_val_r512",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/cdli-slam-asr-luganda-atypical-zero-shot-asr-adapted",
+      "author": "KasuleTrevor",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/cdli-slam-asr-luganda-atypical-zero-shot-asr-adapted",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/NM3-irish-whisper-pseudo-iter4",
+      "author": "Eimhin03",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/NM3-irish-whisper-pseudo-iter4",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypaai/Hypa-Whisper-small-20260401_092341-translate-hypaaiii-LoRAs",
+      "author": "hypaai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hypaai/Hypa-Whisper-small-20260401_092341-translate-hypaaiii-LoRAs",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ljc123gvfjy/SongPrep-7B",
+      "author": "ljc123gvfjy",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ljc123gvfjy/SongPrep-7B",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_turbo_585",
+      "author": "nureddin123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_turbo_585",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "gam30/nepali-automatic-speech-recognition",
+      "author": "gam30",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/gam30/nepali-automatic-speech-recognition",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "laosix/whisper-base",
+      "author": "laosix",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/laosix/whisper-base",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alpcansoydas/whisper-large-v2-tr-ft-01-04-26-encoder-only-50ksamples-simulated-data",
+      "author": "alpcansoydas",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/alpcansoydas/whisper-large-v2-tr-ft-01-04-26-encoder-only-50ksamples-simulated-data",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-q4-full",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-base-ONNX-multi-q4-full",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-uint8-full",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-base-ONNX-multi-uint8-full",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-int8-full",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-base-ONNX-multi-int8-full",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-bnb4-full",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-base-ONNX-multi-bnb4-full",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MahmoodAnaam/MSP-Multimodal-LRS2-Base",
+      "author": "MahmoodAnaam",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MahmoodAnaam/MSP-Multimodal-LRS2-Base",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/cdli-slam-asr-luganda-atypical-projector-only-step5000",
+      "author": "KasuleTrevor",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/cdli-slam-asr-luganda-atypical-projector-only-step5000",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/cdli-slam-asr-luganda-atypical-projector-only-e2s107",
+      "author": "KasuleTrevor",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/cdli-slam-asr-luganda-atypical-projector-only-e2s107",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/NM3-irish-whisper-pseudo-iter3",
+      "author": "Eimhin03",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/NM3-irish-whisper-pseudo-iter3",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MarkChen1214/cohere-transcribe-03-2026-CoreML-INT4",
+      "author": "MarkChen1214",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MarkChen1214/cohere-transcribe-03-2026-CoreML-INT4",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MarkChen1214/cohere-transcribe-03-2026-MLX-Mixed-3bit4bit",
+      "author": "MarkChen1214",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MarkChen1214/cohere-transcribe-03-2026-MLX-Mixed-3bit4bit",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MahmoodAnaam/MSP-Multimodal-LRS2",
+      "author": "MahmoodAnaam",
+      "downloads": 824,
+      "likes": 0,
+      "url": "https://huggingface.co/MahmoodAnaam/MSP-Multimodal-LRS2",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypaai/hypa-whisper-small-20260331_232059-translate-hypaai-confirm-check",
+      "author": "hypaai",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/hypaai/hypa-whisper-small-20260331_232059-translate-hypaai-confirm-check",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/NM3-irish-whisper-pseudo-iter2",
+      "author": "Eimhin03",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/NM3-irish-whisper-pseudo-iter2",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypaai/Hypa-Whisper-small-20260331_232059-translate-hypaai-confirm-check-LoRAs",
+      "author": "hypaai",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/hypaai/Hypa-Whisper-small-20260331_232059-translate-hypaai-confirm-check-LoRAs",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "torahanytimecom/whisper-large-v3-yeshivish",
+      "author": "torahanytimecom",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/torahanytimecom/whisper-large-v3-yeshivish",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypaai/Hypa-Whisper-small-20260331_210424-translate-hypaai-confirm-check-LoRAs",
+      "author": "hypaai",
+      "downloads": 33,
+      "likes": 0,
+      "url": "https://huggingface.co/hypaai/Hypa-Whisper-small-20260331_210424-translate-hypaai-confirm-check-LoRAs",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mlx-community/cohere-transcribe-03-2026-mlx-8bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/mlx-community/cohere-transcribe-03-2026-mlx-8bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-q4-merged",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 35,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-base-ONNX-multi-q4-merged",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/NM3-irish-whisper-pseudo-iter1",
+      "author": "Eimhin03",
+      "downloads": 23,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/NM3-irish-whisper-pseudo-iter1",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amugoodbad229/qwen3-asr-bengali-lora",
+      "author": "amugoodbad229",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/amugoodbad229/qwen3-asr-bengali-lora",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypaai/Hypa-Whisper-small-20260331_171121-translate-hypaai-checkpoint-LoRAs",
+      "author": "hypaai",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/hypaai/Hypa-Whisper-small-20260331_171121-translate-hypaai-checkpoint-LoRAs",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Serialtechlab/mms-trilingual-dv-ar-en-v3-clean",
+      "author": "Serialtechlab",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Serialtechlab/mms-trilingual-dv-ar-en-v3-clean",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Serialtechlab/mms-trilingual-dv-ar-en",
+      "author": "Serialtechlab",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Serialtechlab/mms-trilingual-dv-ar-en",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "awong-dev/wav2vec2-xls-r-1b-cantonese",
+      "author": "awong-dev",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/awong-dev/wav2vec2-xls-r-1b-cantonese",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "alpcansoydas/whisper-large-v2-tr-ft-31-03-26-encoder-only-50ksamples-simulated-data",
+      "author": "alpcansoydas",
+      "downloads": 55,
+      "likes": 0,
+      "url": "https://huggingface.co/alpcansoydas/whisper-large-v2-tr-ft-31-03-26-encoder-only-50ksamples-simulated-data",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "appautomaton/cohere-asr-mlx",
+      "author": "appautomaton",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/appautomaton/cohere-asr-mlx",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "boisz/whisper-russian_original",
+      "author": "boisz",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/boisz/whisper-russian_original",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-int8-merged",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-base-ONNX-multi-int8-merged",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Ganaa0614/whisper-tiny-mongolian-ver_0.4",
+      "author": "Ganaa0614",
+      "downloads": 430,
+      "likes": 0,
+      "url": "https://huggingface.co/Ganaa0614/whisper-tiny-mongolian-ver_0.4",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-uint8-merged",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-base-ONNX-multi-uint8-merged",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hypaai/Hypa-Whisper-small-2026-03-31-translate-hypaai_LoRAs",
+      "author": "hypaai",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/hypaai/Hypa-Whisper-small-2026-03-31-translate-hypaai_LoRAs",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/whisper-base-ONNX-multi-bnb4-merged",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/whisper-base-ONNX-multi-bnb4-merged",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AkshitSaxena1/whisper-tiny_chinese_accent_v4",
+      "author": "AkshitSaxena1",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/AkshitSaxena1/whisper-tiny_chinese_accent_v4",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "exala-e/sm_lora_may20_fe2_20k_16bit",
+      "author": "exala-e",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/exala-e/sm_lora_may20_fe2_20k_16bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Bercraft/Voxtral-Mini-4B-Realtime-2602-GGUF",
+      "author": "Bercraft",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/Bercraft/Voxtral-Mini-4B-Realtime-2602-GGUF",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FarmerlineML/w2v-bert-2.0_2026_dagbani_ASR",
+      "author": "FarmerlineML",
+      "downloads": 59,
+      "likes": 1,
+      "url": "https://huggingface.co/FarmerlineML/w2v-bert-2.0_2026_dagbani_ASR",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "NextFire/Qwen3-ForcedAligner-0.6B-karaoke-ja-Latn",
+      "author": "NextFire",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/NextFire/Qwen3-ForcedAligner-0.6B-karaoke-ja-Latn",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "stilletto/hifi-gan-ruslan-russian",
+      "author": "stilletto",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/stilletto/hifi-gan-ruslan-russian",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/MeloTTS-English-MLX",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/MeloTTS-English-MLX",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "namankhurpia/csm-1b-hindi-lora",
+      "author": "namankhurpia",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/namankhurpia/csm-1b-hindi-lora",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "phucpx247/vieneu-tts-v2-turbo-gguf",
+      "author": "phucpx247",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/phucpx247/vieneu-tts-v2-turbo-gguf",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Alets1987vlz/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "author": "Alets1987vlz",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/Alets1987vlz/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "UserYO/OpenVoiceV2",
+      "author": "UserYO",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/UserYO/OpenVoiceV2",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/MOSS-TTS-Local-Transformer-MLX-8bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/mlx-community/MOSS-TTS-Local-Transformer-MLX-8bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "mlx-community/MOSS-TTSD-v1.0-MLX-8bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/MOSS-TTSD-v1.0-MLX-8bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "GotTravisOnMyBack/Voxtral-4B-TTS",
+      "author": "GotTravisOnMyBack",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/GotTravisOnMyBack/Voxtral-4B-TTS",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "appautomaton/vibevoice-mlx",
+      "author": "appautomaton",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/appautomaton/vibevoice-mlx",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "appautomaton/openmoss-ttsd-mlx",
+      "author": "appautomaton",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/appautomaton/openmoss-ttsd-mlx",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "sajjaddoda15/xtts-v2",
+      "author": "sajjaddoda15",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sajjaddoda15/xtts-v2",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "sajjaddoda15/kokoro82m",
+      "author": "sajjaddoda15",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sajjaddoda15/kokoro82m",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "appautomaton/openmoss-tts-local-mlx",
+      "author": "appautomaton",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/appautomaton/openmoss-tts-local-mlx",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "datalyseai/XTTS-v2",
+      "author": "datalyseai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/datalyseai/XTTS-v2",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "sizexian/XTTS-v2",
+      "author": "sizexian",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sizexian/XTTS-v2",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "VSSA-SDSA/sing-agn.fastspeech2.v01c",
+      "author": "VSSA-SDSA",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/VSSA-SDSA/sing-agn.fastspeech2.v01c",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "VSSA-SDSA/sing-agn.fastspeech2.v01",
+      "author": "VSSA-SDSA",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/VSSA-SDSA/sing-agn.fastspeech2.v01",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "VSSA-SDSA/sing-arn.fastspeech2.v01",
+      "author": "VSSA-SDSA",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/VSSA-SDSA/sing-arn.fastspeech2.v01",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "pnnbao-ump/VieNeu-TTS-v2-Turbo",
+      "author": "pnnbao-ump",
+      "downloads": 99,
+      "likes": 5,
+      "url": "https://huggingface.co/pnnbao-ump/VieNeu-TTS-v2-Turbo",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Pakorn2112/Archa-TTS-0.5B-th",
+      "author": "Pakorn2112",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Pakorn2112/Archa-TTS-0.5B-th",
+      "created_at": "2026-03-30",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "king5699/NSFW_MMaudio",
+      "author": "king5699",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/king5699/NSFW_MMaudio",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "mlx-community/MOSS-SoundEffect-MLX-4bit",
+      "author": "mlx-community",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mlx-community/MOSS-SoundEffect-MLX-4bit",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "appautomaton/openmoss-sound-effect-mlx",
+      "author": "appautomaton",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/appautomaton/openmoss-sound-effect-mlx",
+      "created_at": "2026-03-31",
+      "pipeline_tag": "text-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "Speech-data/Macedonian-Speech-Dataset",
+      "author": "Speech-data",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Speech-data/Macedonian-Speech-Dataset",
+      "created_at": "2026-04-01"
+    },
+    {
+      "dataset_id": "Speech-data/Malay-Speech-Dataset",
+      "author": "Speech-data",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Speech-data/Malay-Speech-Dataset",
+      "created_at": "2026-04-01"
+    },
+    {
+      "dataset_id": "Speech-data/Korean-Speech-Dataset",
+      "author": "Speech-data",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Speech-data/Korean-Speech-Dataset",
+      "created_at": "2026-04-01"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 71,
+    "dataset_count": 3,
+    "tweet_count": 0
+  }
+}
