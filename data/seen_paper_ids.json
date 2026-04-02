@@ -1,12 +1,4 @@
 {
-  "2026-03-19": [
-    "2603.17822v1",
-    "multi-source evidence fusion for audio question answering",
-    "2603.17558v1",
-    "zipper-lora: dynamic parameter decoupling for speech-llm based multilingual speech recognition",
-    "2603.17231v1",
-    "neuron-level emotion control in speech-generative large audio-language models"
-  ],
   "2026-03-20": [
     "2603.19195v1",
     "how auditory knowledge in llm backbones shapes audio language models: a holistic evaluation",
@@ -44,5 +36,6 @@
   "2026-03-29": [],
   "2026-03-30": [],
   "2026-03-31": [],
-  "2026-04-01": []
+  "2026-04-01": [],
+  "2026-04-02": []
 }
