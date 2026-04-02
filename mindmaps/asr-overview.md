@@ -61,6 +61,8 @@
 - AkshitSaxena1/whisper-tiny_to_chinese_accent
 - boisz/whisper-american_LR_e-4
 - vivekkairi/whisper-large-v3-turbo-finetuned
+- kinory24/aero-whisper-small_1e-4
+- nureddin123/whisper_turbo_501_val_r512
 
 ### Transducer
 - RNN-T
@@ -227,6 +229,7 @@
 - CLAP-Based Automatic Word Naming Recognition in Post-Stroke Aphasia
 - Enabling Automatic Disordered Speech Recognition: An Impaired Speech Dataset in the Akan Language
 - Two-Stage Adaptation for Non-Normative Speech Recognition: Revisiting Speaker-Independent Initialization for Personalization
+- KasuleTrevor/cdli-slam-asr-luganda-atypical-zero-shot-asr-adapted
 
 #### Religious/Liturgical
 - 9DTechnologies/QuartzNet_quran_v1
