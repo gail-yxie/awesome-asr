@@ -1,12 +1,4 @@
 {
-  "2026-03-20": [
-    "2603.19195v1",
-    "how auditory knowledge in llm backbones shapes audio language models: a holistic evaluation",
-    "2603.18678v1",
-    "words at play: benchmarking audio pun understanding in large audio-language models",
-    "2603.18239v1",
-    "impact of automatic speech recognition quality on alzheimer's disease detection from spontaneous speech: a reproducible benchmark study with lexical modeling and statistical validation"
-  ],
   "2026-03-21": [],
   "2026-03-22": [],
   "2026-03-23": [],
@@ -37,5 +29,17 @@
   "2026-03-30": [],
   "2026-03-31": [],
   "2026-04-01": [],
-  "2026-04-02": []
+  "2026-04-02": [],
+  "2026-04-03": [
+    "2604.01760v1",
+    "t5gemma-tts technical report",
+    "2604.01705v1",
+    "development and multi-center evaluation of domain-adapted speech recognition for human-ai teaming in real-world gastrointestinal endoscopy",
+    "2604.01562v1",
+    "acoustic and perceptual differences between standard and accented chinese speech and their voice clones",
+    "2604.01155v1",
+    "finelap: taming heterogeneous supervision for fine-grained language-audio pretraining",
+    "2604.01083v1",
+    "trace: training-free partial audio deepfake detection via embedding trajectory analysis of speech foundation models"
+  ]
 }

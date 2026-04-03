@@ -1,0 +1,597 @@
+{
+  "date": "2026-04-03",
+  "summary": "T5Gemma-TTS highlights a strategic shift toward encoder-decoder architectures for autoregressive speech synthesis, successfully mitigating the positional capacity constraints that often degrade text conditioning in long-sequence, decoder-only codec models. In audio-language pretraining, FineLAP introduces a framework for unifying heterogeneous clip- and frame-level supervision to improve fine-grained localization, while the TRACE framework offers a novel, training-free approach to detecting partial deepfakes by analyzing embedding trajectories from speech foundation models. On the model side, community efforts continue to prioritize low-resource and domain-specific utility, evidenced by new Whisper fine-tunes for languages like Irish, Pashto, and Bhojpuri, alongside the development of EndoASR for real-world clinical environments. Collectively, today’s research indicates a maturing field focused on solving long-form synthesis stability, enhancing fine-grained audio-text alignment, and ensuring the fidelity of sociolinguistic markers like accents in zero-shot cloning.",
+  "ideas": [
+    "Using an encoder-decoder architecture for neural codec language models prevents text conditioning from degrading during long-form synthesis by separating text encoding from the growing audio sequence.",
+    "Multi-center evaluations of domain-adapted ASR systems show that specialized terminology training is essential for achieving clinical-grade reliability in high-stakes endoscopy environments.",
+    "Perceptual and embedding-based analyses indicate that current voice cloning technologies have a significant performance gap in accurately replicating accented speech compared to standard dialects.",
+    "The FineLAP framework demonstrates that audio-language models can bridge the gap between clip-level and frame-level understanding by effectively training on heterogeneous supervision.",
+    "Analyzing the embedding trajectories of speech foundation models allows for the zero-shot detection of partial audio deepfakes without the need for supervised frame-level annotations or retraining."
+  ],
+  "papers": [
+    {
+      "id": "2604.01760v1",
+      "title": "T5Gemma-TTS Technical Report",
+      "authors": [
+        "Chihiro Arata",
+        "Kiyoshi Kurihara"
+      ],
+      "abstract": "Autoregressive neural codec language models have shown strong zero-shot voice cloning ability, but decoder-only architectures treat input text as a prefix that competes with the growing audio sequence for positional capacity, weakening text conditioning over long utterances. We present T5Gemma-TTS, an encoder-decoder codec language model that maintains persistent text conditioning by routing bidirectional text representations through cross-attention at every decoder layer. Built on the T5Gemma pretrained encoder-decoder backbone (2B encoder + 2B decoder; 4B parameters), it inherits rich linguistic knowledge without phoneme conversion and processes text directly at the subword level. To improve duration control, we introduce Progress-Monitoring Rotary Position Embedding (PM-RoPE) in all 26 cross-attention layers, injecting normalized progress signals that help the decoder track target speech length. Trained on 170,000 hours of multilingual speech in English, Chinese, and Japanese, T5Gemma-TTS achieves a statistically significant speaker-similarity gain on Japanese over XTTSv2 (0.677 vs. 0.622; non-overlapping 95% confidence intervals) and the highest numerical Korean speaker similarity (0.747) despite Korean not being included in training, although this margin over XTTSv2 (0.741) is not statistically conclusive. It also attains the lowest numerical Japanese character error rate among five baselines (0.126), though this ranking should be interpreted cautiously because of partial confidence-interval overlap with Kokoro. English results on LibriSpeech should be viewed as an upper-bound estimate because LibriHeavy is a superset of LibriSpeech. Using the same checkpoint, disabling PM-RoPE at inference causes near-complete synthesis failure: CER degrades from 0.129 to 0.982 and duration accuracy drops from 79% to 46%. Code and weights are available at https://github.com/Aratako/T5Gemma-TTS.",
+      "categories": [
+        "eess.AS"
+      ],
+      "published": "2026-04-02",
+      "url": "https://arxiv.org/abs/2604.01760v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.01760v1"
+    },
+    {
+      "id": "2604.01705v1",
+      "title": "Development and multi-center evaluation of domain-adapted speech recognition for human-AI teaming in real-world gastrointestinal endoscopy",
+      "authors": [
+        "Ruijie Yang",
+        "Yan Zhu",
+        "Peiyao Fu",
+        "Te Luo",
+        "Zhihua Wang",
+        "Xian Yang",
+        "Quanlin Li",
+        "Pinghong Zhou",
+        "Shuo Wang"
+      ],
+      "abstract": "Automatic speech recognition (ASR) is a critical interface for human-AI interaction in gastrointestinal endoscopy, yet its reliability in real-world clinical settings is limited by domain-specific terminology and complex acoustic conditions. Here, we present EndoASR, a domain-adapted ASR system designed for real-time deployment in endoscopic workflows. We develop a two-stage adaptation strategy based on synthetic endoscopy reports, targeting domain-specific language modeling and noise robustness. In retrospective evaluation across six endoscopists, EndoASR substantially improves both transcription accuracy and clinical usability, reducing character error rate (CER) from 20.52% to 14.14% and increasing medical term accuracy (Med ACC) from 54.30% to 87.59%. In a prospective multi-center study spanning five independent endoscopy centers, EndoASR demonstrates consistent generalization under heterogeneous real-world conditions. Compared with the baseline Paraformer model, CER is reduced from 16.20% to 14.97%, while Med ACC is improved from 61.63% to 84.16%, confirming its robustness in practical deployment scenarios. Notably, EndoASR achieves a real-time factor (RTF) of 0.005, significantly faster than Whisper-large-v3 (RTF 0.055), while maintaining a compact model size of 220M parameters, enabling efficient edge deployment. Furthermore, integration with large language models demonstrates that improved ASR quality directly enhances downstream structured information extraction and clinician-AI interaction. These results demonstrate that domain-adapted ASR can serve as a reliable interface for human-AI teaming in gastrointestinal endoscopy, with consistent performance validated across multi-center real-world clinical settings.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-02",
+      "url": "https://arxiv.org/abs/2604.01705v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.01705v1"
+    },
+    {
+      "id": "2604.01562v1",
+      "title": "Acoustic and perceptual differences between standard and accented Chinese speech and their voice clones",
+      "authors": [
+        "Tianle Yang",
+        "Chengzhe Sun",
+        "Phil Rose",
+        "Siwei Lyu"
+      ],
+      "abstract": "Voice cloning is often evaluated in terms of overall quality, but less is known about accent preservation and its perceptual consequences. We compare standard and heavily accented Mandarin speech and their voice clones using a combined computational and perceptual design. Embedding-based analyses show no reliable accented-standard difference in original-clone distances across systems. In the perception study, clones are rated as more similar to their originals for standard than for accented speakers, and intelligibility increases from original to clone, with a larger gain for accented speech. These results show that accent variation can shape perceived identity match and intelligibility in voice cloning even when it is not reflected in an off-the-shelf speaker-embedding distance, and they motivate evaluating speaker identity preservation and accent preservation as separable dimensions.",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "published": "2026-04-02",
+      "url": "https://arxiv.org/abs/2604.01562v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.01562v1"
+    },
+    {
+      "id": "2604.01155v1",
+      "title": "FineLAP: Taming Heterogeneous Supervision for Fine-grained Language-Audio Pretraining",
+      "authors": [
+        "Xiquan Li",
+        "Xuenan Xu",
+        "Ziyang Ma",
+        "Wenxi Chen",
+        "Haolin He",
+        "Qiuqiang Kong",
+        "Xie Chen"
+      ],
+      "abstract": "Contrastively pretrained audio-language models (e.g., CLAP) excel at clip-level understanding but struggle with frame-level tasks. Existing extensions fail to exploit the varying granularity of real-world audio-text data, where massive clip-level textual descriptions coexist with limited frame-level annotations. This paper proposes Fine-grained Language-Audio Pretraining (FineLAP), a novel training paradigm that advances both clip- and frame-level alignment in CLAP with heterogeneous data. FineLAP introduces a dual-stream sigmoid loss with a cluster-based sampling strategy to jointly learn from clip- and frame-level supervision. To capture both global semantics and local details, FineLAP uses a decoupled audio projector on top of a self-supervised encoder. To alleviate the scarcity of temporally annotated data, we present FineLAP-100k, a large-scale synthetic SED dataset constructed through a scalable curation pipeline. Extensive experiments demonstrate that FineLAP achieves SOTA performance across multiple audio understanding tasks, including retrieval, classification, sound event detection, and text-to-audio grounding. Ablation studies further show that coarse- and fine-grained alignment are mutually beneficial, providing insights for building better audio-language models (ALMs).",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-04-01",
+      "url": "https://arxiv.org/abs/2604.01155v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.01155v1"
+    },
+    {
+      "id": "2604.01083v1",
+      "title": "TRACE: Training-Free Partial Audio Deepfake Detection via Embedding Trajectory Analysis of Speech Foundation Models",
+      "authors": [
+        "Awais Khan",
+        "Muhammad Umar Farooq",
+        "Kutub Uddin",
+        "Khalid Malik"
+      ],
+      "abstract": "Partial audio deepfakes, where synthesized segments are spliced into genuine recordings, are particularly deceptive because most of the audio remains authentic. Existing detectors are supervised: they require frame-level annotations, overfit to specific synthesis pipelines, and must be retrained as new generative models emerge. We argue that this supervision is unnecessary. We hypothesize that speech foundation models implicitly encode a forensic signal: genuine speech forms smooth, slowly varying embedding trajectories, while splice boundaries introduce abrupt disruptions in frame-level transitions. Building on this, we propose TRACE (Training-free Representation-based Audio Countermeasure via Embedding dynamics), a training-free framework that detects partial audio deepfakes by analyzing the first-order dynamics of frozen speech foundation model representations without any training, labeled data, or architectural modification. We evaluate TRACE on four benchmarks that span two languages using six speech foundation models. In PartialSpoof, TRACE achieves 8.08% EER, competitive with fine-tuned supervised baselines. In LlamaPartialSpoof, the most challenging benchmark featuring LLM-driven commercial synthesis, TRACE surpasses a supervised baseline outright (24.12% vs. 24.49% EER) without any target-domain data. These results show that temporal dynamics in speech foundation models provide an effective, generalize signal for training-free audio forensics.",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-04-01",
+      "url": "https://arxiv.org/abs/2604.01083v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.01083v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "Iornspider/stt-1b-en_fr-candle",
+      "author": "Iornspider",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Iornspider/stt-1b-en_fr-candle",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/RNG-irish-whisper-pseudo-iter5",
+      "author": "Eimhin03",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/RNG-irish-whisper-pseudo-iter5",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kinory24/aero-whisper-small_dbC_5e-5",
+      "author": "kinory24",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kinory24/aero-whisper-small_dbC_5e-5",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "awong-dev/whisper-large-v3-cantonese",
+      "author": "awong-dev",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/awong-dev/whisper-large-v3-cantonese",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Zarnabh/whisper-medium-pashto",
+      "author": "Zarnabh",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Zarnabh/whisper-medium-pashto",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/RNG-irish-whisper-pseudo-iter4",
+      "author": "Eimhin03",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/RNG-irish-whisper-pseudo-iter4",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FluidInference/parakeet-ctc-0.6b-ja-coreml",
+      "author": "FluidInference",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/FluidInference/parakeet-ctc-0.6b-ja-coreml",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/RNG-irish-whisper-pseudo-iter3",
+      "author": "Eimhin03",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/RNG-irish-whisper-pseudo-iter3",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rajpriyanshu522/whisper-base-bhojpuri",
+      "author": "rajpriyanshu522",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/rajpriyanshu522/whisper-base-bhojpuri",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "okezieowen/Hypa-Whisper-small-20260401_202709-translate-hypa-save-LoRAs",
+      "author": "okezieowen",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/okezieowen/Hypa-Whisper-small-20260401_202709-translate-hypa-save-LoRAs",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ibleaman/w2v-bert-2.0-yiddish-northeastern",
+      "author": "ibleaman",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/ibleaman/w2v-bert-2.0-yiddish-northeastern",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/RNG-irish-whisper-pseudo-iter2",
+      "author": "Eimhin03",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/RNG-irish-whisper-pseudo-iter2",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "thewh1teagle/whisper-large-v3-turbo-he-ipa",
+      "author": "thewh1teagle",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/thewh1teagle/whisper-large-v3-turbo-he-ipa",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amugoodbad229/README.md",
+      "author": "amugoodbad229",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/amugoodbad229/README.md",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "entropora/parakeet-ctc-110m-int8",
+      "author": "entropora",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/entropora/parakeet-ctc-110m-int8",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/RNG-irish-whisper-pseudo-iter1",
+      "author": "Eimhin03",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/RNG-irish-whisper-pseudo-iter1",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/irish-whisper-combined_matching",
+      "author": "Eimhin03",
+      "downloads": 100,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/irish-whisper-combined_matching",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/whisper-base-whisper-ds-f9",
+      "author": "zacdan4801",
+      "downloads": 94,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/whisper-base-whisper-ds-f9",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "uzair0/quran-asr",
+      "author": "uzair0",
+      "downloads": 41,
+      "likes": 0,
+      "url": "https://huggingface.co/uzair0/quran-asr",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/whisper-base-whisper-ds-f8",
+      "author": "zacdan4801",
+      "downloads": 103,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/whisper-base-whisper-ds-f8",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FluidInference/parakeet-ctc-0.6b-zh-cn-coreml",
+      "author": "FluidInference",
+      "downloads": 15,
+      "likes": 0,
+      "url": "https://huggingface.co/FluidInference/parakeet-ctc-0.6b-zh-cn-coreml",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/whisper-base-whisper-ds-f7",
+      "author": "zacdan4801",
+      "downloads": 103,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/whisper-base-whisper-ds-f7",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rcspam/parakeet-tdt-0.6b-v3-onnx",
+      "author": "rcspam",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/rcspam/parakeet-tdt-0.6b-v3-onnx",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rcspam/canary-1b-v2-onnx",
+      "author": "rcspam",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/rcspam/canary-1b-v2-onnx",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/whisper-base-whisper-ds-f6",
+      "author": "zacdan4801",
+      "downloads": 102,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/whisper-base-whisper-ds-f6",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "pedromendonca2/faster-whisper-large-v3-turbo-ct2",
+      "author": "pedromendonca2",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/pedromendonca2/faster-whisper-large-v3-turbo-ct2",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/whisper-base-whisper-ds-f5",
+      "author": "zacdan4801",
+      "downloads": 99,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/whisper-base-whisper-ds-f5",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Bercraft/medwhisper-large-v3-ita-GGUF",
+      "author": "Bercraft",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Bercraft/medwhisper-large-v3-ita-GGUF",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/whisper-base-whisper-ds-f4",
+      "author": "zacdan4801",
+      "downloads": 95,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/whisper-base-whisper-ds-f4",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AiphoriaTech/aiphoria_english_asr_v2_160ms",
+      "author": "AiphoriaTech",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AiphoriaTech/aiphoria_english_asr_v2_160ms",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MahmoodAnaam/MSP-Fusion-LRS2-01",
+      "author": "MahmoodAnaam",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MahmoodAnaam/MSP-Fusion-LRS2-01",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Ganaa0614/whisper-small-mongolian-ver_0.1",
+      "author": "Ganaa0614",
+      "downloads": 554,
+      "likes": 0,
+      "url": "https://huggingface.co/Ganaa0614/whisper-small-mongolian-ver_0.1",
+      "created_at": "2026-04-01",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Iornspider/tts-1.6b-en_fr",
+      "author": "Iornspider",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Iornspider/tts-1.6b-en_fr",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Manish993135/piper-plus-tsukuyomi-chan",
+      "author": "Manish993135",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Manish993135/piper-plus-tsukuyomi-chan",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Manish993135/OmniVoice",
+      "author": "Manish993135",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Manish993135/OmniVoice",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Manish993135/Voxtral-4B-TTS-2603",
+      "author": "Manish993135",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Manish993135/Voxtral-4B-TTS-2603",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "YadiHuMDev/Voxtral-4B-TTS-2603",
+      "author": "YadiHuMDev",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/YadiHuMDev/Voxtral-4B-TTS-2603",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "e3group-research/enderv1.0",
+      "author": "e3group-research",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/e3group-research/enderv1.0",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "lactroiii/Kokoro-82M",
+      "author": "lactroiii",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lactroiii/Kokoro-82M",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "WANJIAX2197/OmniVoice",
+      "author": "WANJIAX2197",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/WANJIAX2197/OmniVoice",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "PabloHoties/Qwen3-TTS-12Hz-0.6B-Base-GGUF",
+      "author": "PabloHoties",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/PabloHoties/Qwen3-TTS-12Hz-0.6B-Base-GGUF",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "NickMarino/Sofelia-TTS",
+      "author": "NickMarino",
+      "downloads": 15,
+      "likes": 0,
+      "url": "https://huggingface.co/NickMarino/Sofelia-TTS",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Bgeorge/OmniVoice",
+      "author": "Bgeorge",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/Bgeorge/OmniVoice",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "elbruno/Qwen3-TTS-12Hz-1.7B-CustomVoice-ONNX",
+      "author": "elbruno",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/elbruno/Qwen3-TTS-12Hz-1.7B-CustomVoice-ONNX",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "drbaph/OmniVoice-bf16",
+      "author": "drbaph",
+      "downloads": 43,
+      "likes": 1,
+      "url": "https://huggingface.co/drbaph/OmniVoice-bf16",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "arijitx/chatterbox-bangla",
+      "author": "arijitx",
+      "downloads": 122,
+      "likes": 1,
+      "url": "https://huggingface.co/arijitx/chatterbox-bangla",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "edwixx/OmniVoice",
+      "author": "edwixx",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/edwixx/OmniVoice",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Salama1429/s1-mini",
+      "author": "Salama1429",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/Salama1429/s1-mini",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Parambe/Chatterbox-Swedish-Parambe-V1",
+      "author": "Parambe",
+      "downloads": 0,
+      "likes": 2,
+      "url": "https://huggingface.co/Parambe/Chatterbox-Swedish-Parambe-V1",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "g-group-ai-lab/gwen-tts-0.6B",
+      "author": "g-group-ai-lab",
+      "downloads": 0,
+      "likes": 4,
+      "url": "https://huggingface.co/g-group-ai-lab/gwen-tts-0.6B",
+      "created_at": "2026-04-02",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Dewang-Ji/speecht5_finetuned_hindi_devanagari_04_clean_data1",
+      "author": "Dewang-Ji",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Dewang-Ji/speecht5_finetuned_hindi_devanagari_04_clean_data1",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "bipintikader/Bipintikader1",
+      "author": "bipintikader",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/bipintikader/Bipintikader1",
+      "created_at": "2026-04-03",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "ghananlpcommunity/dagbani-bible-audio-text-tts",
+      "author": "ghananlpcommunity",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/ghananlpcommunity/dagbani-bible-audio-text-tts",
+      "created_at": "2026-04-03"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 5,
+    "model_count": 52,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}
