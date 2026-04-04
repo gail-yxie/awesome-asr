@@ -63,6 +63,11 @@
 - vivekkairi/whisper-large-v3-turbo-finetuned
 - kinory24/aero-whisper-small_1e-4
 - nureddin123/whisper_turbo_501_val_r512
+- Eimhin03/RNG-irish-whisper-pseudo-iter5
+- kinory24/aero-whisper-small_dbC_5e-5
+- laion/BUD-E-Whisper_V1.2
+- AiphoriaTech/aiphoria_english_asr2
+- zacdan4801/whisper-base-whisper-ds-f3
 
 ### Transducer
 - RNN-T
@@ -223,6 +228,7 @@
 - Benchmarking Speech Systems for Frontline Health Conversations: The DISPLACE-M Challenge
 - VoxCare: Studying Natural Communication Behaviors of Hospital Caregivers through Wearable Sensing of Egocentric Audio
 - Impact of automatic speech recognition quality on Alzheimer's disease detection from spontaneous speech: a reproducible benchmark study
+- Development and multi-center evaluation of domain-adapted speech recognition for human-AI teaming in real-world gastrointestinal endoscopy
 
 #### Disordered Speech
 - Disordered Speech Recognition (Aphasia, Impaired Speech)
@@ -250,6 +256,7 @@
 - VoiceSHIELD-Small: Real-Time Malicious Speech Detection and Transcription
 - Towards Robust Speech Deepfake Detection via Human-Inspired Reasoning
 - Probabilistic Verification of Voice Anti-Spoofing Models
+- TRACE: Training-Free Partial Audio Deepfake Detection via Embedding Trajectory Analysis of Speech Foundation Models
 
 
 ## Datasets
@@ -320,6 +327,7 @@
 - EvgenyShivchenkoUIT/whisper-base-ONNX-multi-full
 - CelesteImperia/Whisper-Large-v3-Turbo-OpenVINO-INT8
 - bubiche/whisper.cpp
+- Iornspider/stt-1b-en_fr-candle
 
 #### Methods
 - Quantization
@@ -480,12 +488,14 @@
 - CTC-TTS: Dual-streaming text-to-speech
 - CTC-TTS: LLM-based dual-streaming text-to-speech with CTC alignment
 - When Fine-Tuning Fails and when it Generalises: Role of Data Diversity and Mixed Training in LLM-based TTS
+- T5Gemma-TTS Technical Report
 
 
 ## Speech Generation Tasks
 ### Voice Cloning
 - Zero-shot voice cloning
 - Few-shot adaptation
+- Acoustic and perceptual differences between standard and accented Chinese speech and their voice clones
 
 ### Voice Conversion
 - Any-to-any VC
@@ -515,6 +525,7 @@
 - Next-token prediction on speech
 - Masked speech modeling
 - Learning Multiple Utterance-Level Attribute Representations with a Unified Speech Encoder
+- FineLAP: Taming Heterogeneous Supervision for Fine-grained Language-Audio Pretraining
 
 ### Alignment
 - Speech-text alignment
