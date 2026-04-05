@@ -2,6 +2,7 @@
 
 | Episode | Date | Audio |
 |---------|------|-------|
+| 2026-04-05 | 2026-04-05 | [Listen](/podcasts/audio/2026-04-05.mp3) |
 | 2026-04-03 | 2026-04-03 | [Listen](/podcasts/audio/2026-04-03.mp3) |
 | 2026-03-26 | 2026-03-26 | [Listen](/podcasts/audio/2026-03-26.mp3) |
 | 2026-03-20 | 2026-03-20 | [Listen](/podcasts/audio/2026-03-20.mp3) |
