@@ -68,6 +68,8 @@
 - laion/BUD-E-Whisper_V1.2
 - AiphoriaTech/aiphoria_english_asr2
 - zacdan4801/whisper-base-whisper-ds-f3
+- qirol4006/Whisper-3-turbo-uzbek
+- Ikonz-Studios/whisper-large-v3-turbo-ft-v1
 
 ### Transducer
 - RNN-T
@@ -78,6 +80,7 @@
 - molind/conformer-transducer-be-mlx
 - ae9is/parakeet-tdt-0.6b-v3-onnx
 - ilprl-docse/NwachaMuna-NepConformer-FT
+- aufklarer/Parakeet-EOU-120M-CoreML-INT8
 
 ### Foundation Models
 - USM
@@ -109,6 +112,7 @@
 - Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR
 - LLMs and Speech: Integration vs. Combination
 - From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs
+- wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU
 
 
 ## Self-Supervised Learning
@@ -136,7 +140,7 @@
 - An Investigation Into Various Approaches For Bengali Long-Form Speech Transcription and Bengali Speaker Diarization
 - Streaming Translation and Transcription Through Speech-to-Text Causal Alignment
 - 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio
-- Robust Long-Form Bangla Speech Processing: Automatic Speech Recognition and Speaker Diarization
+- Robust Long-Form Bengali Speech Processing: Automatic Speech Recognition and Speaker Diarization
 - Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization via Extreme Augmentation and Perfect Alignment
 - Vietnamese Automatic Speech Recognition: A Revisit
 
