@@ -70,7 +70,9 @@
         "AiphoriaTech/aiphoria_english_asr2",
         "zacdan4801/whisper-base-whisper-ds-f3",
         "qirol4006/Whisper-3-turbo-uzbek",
-        "Ikonz-Studios/whisper-large-v3-turbo-ft-v1"
+        "Ikonz-Studios/whisper-large-v3-turbo-ft-v1",
+        "Dubedo/VibeVoice-ASR-HF-INT8",
+        "caballosanexx/whisper-large-v3-ca-mlx"
       ],
       "Transducer": [
         "RNN-T",
@@ -492,6 +494,9 @@
         "CTC-TTS: LLM-based dual-streaming text-to-speech with CTC alignment",
         "When Fine-Tuning Fails and when it Generalises: Role of Data Diversity and Mixed Training in LLM-based TTS",
         "T5Gemma-TTS Technical Report"
+      ],
+      "Differentiable DSP-based": [
+        "Maicarons/UmaVoice_DDSP_6.3"
       ]
     },
     "Speech Generation Tasks": {
