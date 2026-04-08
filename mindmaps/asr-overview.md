@@ -8,6 +8,7 @@
 - Abdoul27/babyhubert-phoneme-base
 - Alvenir/wav2vec2-da-2026-02-v2
 - moisf56/medasr-conformer-ctc-int8-onnx
+- bearcove/zipa-small-crctc-ns-no-diacritics-700k-mlx-q8
 
 ### Attention-based
 - Whisper
@@ -72,6 +73,7 @@
 - Ikonz-Studios/whisper-large-v3-turbo-ft-v1
 - Dubedo/VibeVoice-ASR-HF-INT8
 - caballosanexx/whisper-large-v3-ca-mlx
+- victorg-kv2/whisper-tiny
 
 ### Transducer
 - RNN-T
@@ -148,6 +150,7 @@
 
 ### Speaker Diarization
 - beargreen/speaker-diarization-community-1
+- Exploring Speech Foundation Models for Speaker Diarization Across Lifespan
 - Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization
 - A Holistic Framework for Robust Bangla ASR and Speaker Diarization with Optimized VAD and CTC Alignment
 - Robust Long-Form Bangla Speech Processing
@@ -177,6 +180,7 @@
 - Ara-Best-RQ: Multi Dialectal Arabic SSL
 - mabahboh/whisper-shami
 - AkshitSaxena1/whisper-tiny_to_chinese_accent
+- A Sociolinguistic Analysis of Automatic Speech Recognition Bias in Newcastle English
 
 #### Translation-Guided
 - TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition
@@ -334,6 +338,7 @@
 - CelesteImperia/Whisper-Large-v3-Turbo-OpenVINO-INT8
 - bubiche/whisper.cpp
 - Iornspider/stt-1b-en_fr-candle
+- cstr/qwen3-asr-0.6b-GGUF
 
 #### Methods
 - Quantization
@@ -414,6 +419,8 @@
 - Captioning
 - Hearing Aid
 - Aphasia Support Tools
+- INTERACT: AI-Driven XR Framework featuring Real-Time Sign Language Interpretation
+- AI-Driven Modular Services for Accessible Multilingual Education with Sign Language Rendering
 
 ### Content Creation
 - Podcasting
@@ -432,6 +439,10 @@
 ### Annotation & Tooling
 - LabelBuddy: An Open Source Music and Audio Language Annotation Tagging Tool Using AI Assistance
 - Is Semi-Automatic Transcription Useful in Corpus Creation? Preliminary Considerations on the KIParla Corpus
+
+### Extended Reality (XR)
+- INTERACT: An AI-Driven Extended Reality Framework for Accessible Communication
+- AI-Driven Modular Services for Accessible Multilingual Education in Immersive Extended Reality Settings
 
 
 
@@ -526,6 +537,7 @@
 
 ### Text-to-Audio
 - Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
+- ACAVCaps: Enabling large-scale training for fine-grained and diverse audio understanding
 
 
 ## Training Approaches

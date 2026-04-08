@@ -1,5 +1,9 @@
 # Recent ASR & Speech Language Papers
 
+## cs.CE
+- [INTERACT: An AI-Driven Extended Reality Framework for Accesible Communication Featuring Real-Time Sign Language Interpretation and Emotion Recognition](https://arxiv.org/abs/2604.05605v1)
+- [AI-Driven Modular Services for Accessible Multilingual Education in Immersive Extended Reality Settings: Integrating Speech Processing, Translation, and Sign Language Rendering](https://arxiv.org/abs/2604.05591v1)
+
 ## cs.CL
 - [Development and multi-center evaluation of domain-adapted speech recognition for human-AI teaming in real-world gastrointestinal endoscopy](https://arxiv.org/abs/2604.01705v1)
 - [A Sociolinguistic Analysis of Automatic Speech Recognition Bias in Newcastle English](https://arxiv.org/abs/2603.24549v1)
@@ -14,7 +18,6 @@
 
 ## cs.LG
 - [Huntington Disease Automatic Speech Recognition with Biomarker Supervision](https://arxiv.org/abs/2603.11168v1)
-- [WavSLM: Single-Stream Speech Language Modeling via WavLM Distillation](https://arxiv.org/abs/2603.05299v1)
 
 ## cs.SD
 - [Acoustic and perceptual differences between standard and accented Chinese speech and their voice clones](https://arxiv.org/abs/2604.01562v1)
@@ -29,6 +32,7 @@
 - [Edge-Cloud Collaborative Speech Emotion Captioning via Token-Level Speculative Decoding in Audio-Language Models](https://arxiv.org/abs/2603.11397v1)
 
 ## eess.AS
+- [Exploring Speech Foundation Models for Speaker Diarization Across Lifespan](https://arxiv.org/abs/2604.05201v1)
 - [T5Gemma-TTS Technical Report](https://arxiv.org/abs/2604.01760v1)
 - [ACAVCaps: Enabling large-scale training for fine-grained and diverse audio understanding](https://arxiv.org/abs/2603.24038v1)
 - [Crab: Multi Layer Contrastive Supervision to Improve Speech Emotion Recognition Under Both Acted and Natural Speech Condition](https://arxiv.org/abs/2603.23673v1)
@@ -38,7 +42,6 @@
 - [FireRedASR2S: A State-of-the-Art Industrial-Grade All-in-One Automatic Speech Recognition System](https://arxiv.org/abs/2603.10420v1)
 - [Speech Codec Probing from Semantic and Phonetic Perspectives](https://arxiv.org/abs/2603.10371v1)
 - [A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition](https://arxiv.org/abs/2603.09725v1)
-- [Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models](https://arxiv.org/abs/2603.09627v1)
 
 ## q-bio.QM
 - [Impact of automatic speech recognition quality on Alzheimer's disease detection from spontaneous speech: a reproducible benchmark study with lexical modeling and statistical validation](https://arxiv.org/abs/2603.18239v1)
