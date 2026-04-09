@@ -1,16 +1,4 @@
 {
-  "2026-03-26": [
-    "2603.24549v1",
-    "a sociolinguistic analysis of automatic speech recognition bias in newcastle english",
-    "2603.24038v1",
-    "acavcaps: enabling large-scale training for fine-grained and diverse audio understanding",
-    "2603.24034v1",
-    "from oracle to noisy context: mitigating contextual exposure bias in speech-llms",
-    "2603.23673v1",
-    "crab: multi layer contrastive supervision to improve speech emotion recognition under both acted and natural speech condition",
-    "2603.23654v1",
-    "ethio-asr: joint multilingual speech recognition and language identification for ethiopian languages"
-  ],
   "2026-03-27": [],
   "2026-03-28": [],
   "2026-03-29": [],
@@ -46,5 +34,15 @@
     "ai-driven modular services for accessible multilingual education in immersive extended reality settings: integrating speech processing, translation, and sign language rendering",
     "2604.05201v1",
     "exploring speech foundation models for speaker diarization across lifespan"
+  ],
+  "2026-04-09": [
+    "2604.06871v1",
+    "do we need distinct representations for every speech token? unveiling and exploiting redundancy in large speech language models",
+    "2604.06694v1",
+    "audiokv: kv cache eviction in efficient large audio language models",
+    "2604.06487v1",
+    "closing the speech-text gap with limited audio for effective domain adaptation in llm-based asr",
+    "2604.06356v1",
+    "in-context learning in speech language models: analyzing the role of acoustic features, linguistic structure, and induction heads"
   ]
 }

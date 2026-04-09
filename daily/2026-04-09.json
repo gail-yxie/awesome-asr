@@ -1,0 +1,665 @@
+{
+  "date": "2026-04-09",
+  "summary": "Today’s research highlights a push toward inference efficiency in Large Speech Language Models (LSLMs), with new studies revealing significant redundancy in speech token sequences and proposing *AudioKV* to optimize KV cache management specifically for the temporal demands of long-context audio. Meanwhile, work on bridging the speech-text gap for LLM-based ASR and analyzing induction heads in In-Context Learning (ICL) provides deeper insights into how these multi-modal architectures internalize linguistic and acoustic features during adaptation. Notable model releases focus on specialized Whisper fine-tunes for regional languages, such as Taiwanese-Hakka and Khmer, alongside high-throughput versions like `Belle-whisper-large-v3-turbo-zh`. This collective shift signals an industry move beyond general scaling toward domain-specific adaptation and the mitigation of the high computational costs inherent in high-fidelity speech tokenization.",
+  "ideas": [
+    "Large Speech Language Models can significantly reduce inference costs by identifying and exploiting the high level of redundancy in acoustic tokens that exceed the requirements for semantic representation.",
+    "Standard KV cache compression methods used for text are less effective in the audio domain, requiring specialized eviction strategies to manage memory during long-context audio processing.",
+    "Bridging the representation gap between speech and text modalities with even limited audio data markedly improves the effectiveness of domain adaptation in LLM-based ASR architectures.",
+    "Speech language models demonstrate in-context learning capabilities driven by both acoustic and linguistic features, with induction heads serving as a key mechanism for pattern replication.",
+    "Reducing the sequence length of speech tokens to more closely match underlying semantic content provides a viable strategy for improving the efficiency of high-fidelity audio generation.",
+    "The emergence of in-context learning in speech models suggests that they develop internal mechanisms for structural and acoustic pattern matching similar to those found in text-based large language models."
+  ],
+  "papers": [
+    {
+      "id": "2604.06871v1",
+      "title": "Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models",
+      "authors": [
+        "Bajian Xiang",
+        "Tingwei Guo",
+        "Xuan Chen",
+        "Yang Han"
+      ],
+      "abstract": "Large Speech Language Models (LSLMs) typically operate at high token rates (tokens/s) to ensure acoustic fidelity, yet this results in sequence lengths that far exceed the underlying semantic content, incurring prohibitive inference costs. In this paper, we empirically revisit the necessity of such granular token-level processing. Through layer-wise oracle interventions, we unveil a structured redundancy hierarchy: while shallow layers encode essential acoustic details, deep layers exhibit extreme redundancy, allowing for aggressive compression. Motivated by these findings, we introduce Affinity Pooling, a training-free, similarity-based token merging mechanism. By strategically applying this method at both input and deep layers, we effectively compress speech representations without compromising semantic information. Extensive evaluations across three tasks demonstrate that our approach reduces prefilling FLOPs by 27.48\\% while maintaining competitive accuracy. Practical deployment further confirms significant efficiency gains, yielding up to $\\sim$1.7$\\times$ memory savings and $\\sim$1.1$\\times$ faster time-to-first-token on long utterances. Our results challenge the necessity of fully distinct token representations, providing new perspectives on LSLM efficiency.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-08",
+      "url": "https://arxiv.org/abs/2604.06871v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.06871v1"
+    },
+    {
+      "id": "2604.06694v1",
+      "title": "AudioKV: KV Cache Eviction in Efficient Large Audio Language Models",
+      "authors": [
+        "Yuxuan Wang",
+        "Peize He",
+        "Xiyan Gui",
+        "Xiaoqian Liu",
+        "Junhao He",
+        "Xuyang Liu",
+        "Zichen Wen",
+        "Xuming Hu",
+        "Linfeng Zhang"
+      ],
+      "abstract": "Large Audio-Language Models (LALMs) have set new benchmarks in speech processing, yet their deployment is hindered by the memory footprint of the Key-Value (KV) cache during long-context inference. While general KV cache compression techniques excel in LLMs, they often fail in the audio domain by overlooking the intrinsic temporal continuity of acoustic signals. To bridge this gap, we propose AudioKV, a novel framework that robustly prioritizes audio-critical attention heads through a hardware-friendly semantic-acoustic alignment mechanism. Specifically, we identify these modality-specialized heads by analyzing attention scores in ASR tasks and dynamically allocate KV cache budgets preferentially to them. Furthermore, we introduce Spectral Score Smoothing (SSS), an FFT-based global filtering strategy designed to suppress high-frequency noise and recover smooth global trends from importance scores, ensuring more balanced token selection with unprecedented precision. Extensive evaluations across multiple LALMs, including Qwen and Gemma series, demonstrate that AudioKV significantly outperforms baselines while enhancing computational efficiency. Notably, at a 40% compression ratio, AudioKV maintains near-full accuracy on Qwen3-Omni-30B with only a 0.45% drop, whereas traditional methods suffer from catastrophic performance degradation and repetition. Our code will be released after acceptance.",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-04-08",
+      "url": "https://arxiv.org/abs/2604.06694v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.06694v1"
+    },
+    {
+      "id": "2604.06487v1",
+      "title": "Closing the Speech-Text Gap with Limited Audio for Effective Domain Adaptation in LLM-Based ASR",
+      "authors": [
+        "Thibault Bañeras-Roux",
+        "Sergio Burdisso",
+        "Esaú Villatoro-Tello",
+        "Dairazalia Sánchez-Cortés",
+        "Shiran Liu",
+        "Severin Baroudi",
+        "Shashi Kumar",
+        "Hasindri Watawana",
+        "Manjunath K E",
+        "Kadri Hacioglu",
+        "Petr Motlicek",
+        "Andreas Stolcke"
+      ],
+      "abstract": "Conventional end-to-end automatic speech recognition (ASR) systems rely on paired speech-text data for domain adaptation. Recent LLM-based ASR architectures connect a speech encoder to a large language model via a projection module, enabling adaptation with text-only data. However, this introduces a modality gap, as the LLM is not exposed to the noisy representations produced by the speech projector. We investigate whether small amounts of speech can mitigate this mismatch. We compare three strategies: text-only adaptation, paired speech-text adaptation, and mixed batching (MB), which combines both. Experiments in in-domain and out-of-domain settings show that even limited speech consistently improves performance. Notably, MB using only 10% of the target-domain (less than 4 hours) speech achieves word error rates comparable to, or better than, conventional ASR fine-tuning with the full dataset, indicating that small amounts of speech provide a strong modality-alignment signal.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-07",
+      "url": "https://arxiv.org/abs/2604.06487v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.06487v1"
+    },
+    {
+      "id": "2604.06356v1",
+      "title": "In-Context Learning in Speech Language Models: Analyzing the Role of Acoustic Features, Linguistic Structure, and Induction Heads",
+      "authors": [
+        "Charlotte Pouw",
+        "Hosein Mohebbi",
+        "Afra Alishahi",
+        "Willem Zuidema"
+      ],
+      "abstract": "In-Context Learning (ICL) has been extensively studied in text-only Language Models, but remains largely unexplored in the speech domain. Here, we investigate how linguistic and acoustic features affect ICL in Speech Language Models. We focus on the Text-to-Speech (TTS) task, which allows us to analyze ICL from two angles: (1) how accurately the model infers the task from the demonstrations (i.e., generating the correct spoken content), and (2) to what extent the model mimics the acoustic characteristics of the demonstration speech in its output. We find that speaking rate strongly affects ICL performance and is also mimicked in the output, whereas pitch range and intensity have little impact on performance and are not consistently reproduced. Finally, we investigate the role of induction heads in speech-based ICL and show that these heads play a causal role: ablating the top-k induction heads completely removes the model's ICL ability, mirroring findings from text-based ICL.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-07",
+      "url": "https://arxiv.org/abs/2604.06356v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.06356v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "waxal-benchmarking/whisper-small-nyn-victor",
+      "author": "waxal-benchmarking",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-small-nyn-victor",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shagufta/whisper-medium-km-sequential-replay-indomain5-outdomain0.1",
+      "author": "Shagufta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Shagufta/whisper-medium-km-sequential-replay-indomain5-outdomain0.1",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-tiny-nyn-victor",
+      "author": "waxal-benchmarking",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-tiny-nyn-victor",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "uvlogdev12345/Belle-whisper-large-v3-turbo-zh",
+      "author": "uvlogdev12345",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/uvlogdev12345/Belle-whisper-large-v3-turbo-zh",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "formospeech/cohere-transcribe-03-2026-taiwanese-hakka",
+      "author": "formospeech",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/formospeech/cohere-transcribe-03-2026-taiwanese-hakka",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shagufta/whisper-medium-km-outdomain-indomain-5hours",
+      "author": "Shagufta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Shagufta/whisper-medium-km-outdomain-indomain-5hours",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-small-ach-kadima",
+      "author": "waxal-benchmarking",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-small-ach-kadima",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Shagufta/whisper-medium-km-outdomain",
+      "author": "Shagufta",
+      "downloads": 29,
+      "likes": 0,
+      "url": "https://huggingface.co/Shagufta/whisper-medium-km-outdomain",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-base-it-ct2-int8",
+      "author": "LocalAI-io",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-base-it-ct2-int8",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-base-it",
+      "author": "LocalAI-io",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-base-it",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "manassehzw/sna-w2v-bert-2.0-asr",
+      "author": "manassehzw",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/manassehzw/sna-w2v-bert-2.0-asr",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-aka-lucia",
+      "author": "waxal-benchmarking",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-aka-lucia",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-tiny-ach-kadima",
+      "author": "waxal-benchmarking",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-tiny-ach-kadima",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "onnx-community/moonshine-tiny-uk-ONNX",
+      "author": "onnx-community",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/onnx-community/moonshine-tiny-uk-ONNX",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "onnx-community/moonshine-tiny-vi-ONNX",
+      "author": "onnx-community",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/onnx-community/moonshine-tiny-vi-ONNX",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-ach-kadima",
+      "author": "waxal-benchmarking",
+      "downloads": 23,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-ach-kadima",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "GwadaDLT/wav2vec2-gcf-r11",
+      "author": "GwadaDLT",
+      "downloads": 59,
+      "likes": 0,
+      "url": "https://huggingface.co/GwadaDLT/wav2vec2-gcf-r11",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-tiny-it-ct2-int8",
+      "author": "LocalAI-io",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-tiny-it-ct2-int8",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-tiny-it",
+      "author": "LocalAI-io",
+      "downloads": 17,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-tiny-it",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "bobNight/parakeet-unified-en-0.6b-onnx",
+      "author": "bobNight",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/bobNight/parakeet-unified-en-0.6b-onnx",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Anshavv/whisper-medium-atc-v2",
+      "author": "Anshavv",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/Anshavv/whisper-medium-atc-v2",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-small-wal-Aki",
+      "author": "waxal-benchmarking",
+      "downloads": 62,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-small-wal-Aki",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-tir-Aki",
+      "author": "waxal-benchmarking",
+      "downloads": 36,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-tir-Aki",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hostmepanda/whisper-large-v3-turbo-uzbek-ct2",
+      "author": "hostmepanda",
+      "downloads": 23,
+      "likes": 1,
+      "url": "https://huggingface.co/hostmepanda/whisper-large-v3-turbo-uzbek-ct2",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Kushtrim/whisper-large-v3-turbo-sq-1000-mgpu",
+      "author": "Kushtrim",
+      "downloads": 5,
+      "likes": 0,
+      "url": "https://huggingface.co/Kushtrim/whisper-large-v3-turbo-sq-1000-mgpu",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/cdli-qwen3-asr-en-finetune-1",
+      "author": "KasuleTrevor",
+      "downloads": 32,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/cdli-qwen3-asr-en-finetune-1",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FusionRAG/MSP-Multimodal",
+      "author": "FusionRAG",
+      "downloads": 19,
+      "likes": 0,
+      "url": "https://huggingface.co/FusionRAG/MSP-Multimodal",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/MCV_Fleurs_Combined_Irish_ASR_with_Aug2",
+      "author": "Eimhin03",
+      "downloads": 61,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_with_Aug2",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-small-tir-Aki",
+      "author": "waxal-benchmarking",
+      "downloads": 128,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-small-tir-Aki",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-tiny-tir-Aki",
+      "author": "waxal-benchmarking",
+      "downloads": 144,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-tiny-tir-Aki",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-tiny-wal-Aki",
+      "author": "waxal-benchmarking",
+      "downloads": 148,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-tiny-wal-Aki",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-wal-aki",
+      "author": "waxal-benchmarking",
+      "downloads": 113,
+      "likes": 1,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-wal-aki",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "destitech/whisper-base-fr-ggml-quants",
+      "author": "destitech",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/destitech/whisper-base-fr-ggml-quants",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug2_No_lrscheduler",
+      "author": "Eimhin03",
+      "downloads": 92,
+      "likes": 1,
+      "url": "https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug2_No_lrscheduler",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "FusionRAG/MSP-Fusion",
+      "author": "FusionRAG",
+      "downloads": 121,
+      "likes": 0,
+      "url": "https://huggingface.co/FusionRAG/MSP-Fusion",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/MCV_Fleurs_Combined_Irish_ASR_with_AUG",
+      "author": "Eimhin03",
+      "downloads": 93,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_with_AUG",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-ewe-innocent",
+      "author": "waxal-benchmarking",
+      "downloads": 113,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-ewe-innocent",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "devku2002/faster-whisper-large-v3",
+      "author": "devku2002",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/devku2002/faster-whisper-large-v3",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "GwadaDLT/wav2vec2-gcf-r10",
+      "author": "GwadaDLT",
+      "downloads": 203,
+      "likes": 0,
+      "url": "https://huggingface.co/GwadaDLT/wav2vec2-gcf-r10",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "buumba641/tonga-whisper-small",
+      "author": "buumba641",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/buumba641/tonga-whisper-small",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug",
+      "author": "Eimhin03",
+      "downloads": 90,
+      "likes": 0,
+      "url": "https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MahmoodAnaam/MSP-Multimodal",
+      "author": "MahmoodAnaam",
+      "downloads": 817,
+      "likes": 0,
+      "url": "https://huggingface.co/MahmoodAnaam/MSP-Multimodal",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "GwadaDLT/wav2vec2-gcf-r8",
+      "author": "GwadaDLT",
+      "downloads": 89,
+      "likes": 0,
+      "url": "https://huggingface.co/GwadaDLT/wav2vec2-gcf-r8",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "akadriu/whisper-turbo-large-shqip-500h",
+      "author": "akadriu",
+      "downloads": 26,
+      "likes": 1,
+      "url": "https://huggingface.co/akadriu/whisper-turbo-large-shqip-500h",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Naho07/ssahubert_yemba",
+      "author": "Naho07",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Naho07/ssahubert_yemba",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "stukenov/sozkz-core-omniaudio-300m-kk-asr-v1",
+      "author": "stukenov",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/stukenov/sozkz-core-omniaudio-300m-kk-asr-v1",
+      "created_at": "2026-04-07",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "stukenov/sozkz-core-omniaudio-150m-kk-asr-v1",
+      "author": "stukenov",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/stukenov/sozkz-core-omniaudio-150m-kk-asr-v1",
+      "created_at": "2026-04-07",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "razi08/OmniVoice",
+      "author": "razi08",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/razi08/OmniVoice",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ai4bharat/bhili-tts",
+      "author": "ai4bharat",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ai4bharat/bhili-tts",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "arohit/orpheus-3b-hindi-male",
+      "author": "arohit",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/arohit/orpheus-3b-hindi-male",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "lopho/OmniVoice",
+      "author": "lopho",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lopho/OmniVoice",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "abhiXai/XTTS-v2",
+      "author": "abhiXai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/abhiXai/XTTS-v2",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Gigsu/vocoloco-onnx",
+      "author": "Gigsu",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Gigsu/vocoloco-onnx",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "gluschenko/omnivoice-onnx",
+      "author": "gluschenko",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/gluschenko/omnivoice-onnx",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "TBOGamer22/PakhtoVoice-Orpheus-60H",
+      "author": "TBOGamer22",
+      "downloads": 4,
+      "likes": 1,
+      "url": "https://huggingface.co/TBOGamer22/PakhtoVoice-Orpheus-60H",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "loubna1101/Qwen3-TTS-Darija-LoRa",
+      "author": "loubna1101",
+      "downloads": 36,
+      "likes": 0,
+      "url": "https://huggingface.co/loubna1101/Qwen3-TTS-Darija-LoRa",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "preference1/OmniVoice",
+      "author": "preference1",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/preference1/OmniVoice",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Charles322/Kokoro-82M-bf16",
+      "author": "Charles322",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/Charles322/Kokoro-82M-bf16",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "marcorez8/acestep-v15-xl-turbo-bf16",
+      "author": "marcorez8",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/marcorez8/acestep-v15-xl-turbo-bf16",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "Dewang-Ji/speecht5-tts-hindi-rnglish-scripts-5-and-10k-steps-I-Dont-Feel-Off-Accent",
+      "author": "Dewang-Ji",
+      "downloads": 27,
+      "likes": 0,
+      "url": "https://huggingface.co/Dewang-Ji/speecht5-tts-hindi-rnglish-scripts-5-and-10k-steps-I-Dont-Feel-Off-Accent",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "mariammohamed00/speecht5_finetuned_arabic_fp16",
+      "author": "mariammohamed00",
+      "downloads": 47,
+      "likes": 0,
+      "url": "https://huggingface.co/mariammohamed00/speecht5_finetuned_arabic_fp16",
+      "created_at": "2026-04-08",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "Xiaobin-Rong/pase",
+      "author": "Xiaobin-Rong",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/Xiaobin-Rong/pase",
+      "created_at": "2026-04-09",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 4,
+    "model_count": 62,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
