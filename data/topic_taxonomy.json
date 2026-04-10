@@ -46,6 +46,7 @@
         "afaqalinagra/whisper-base-ps",
         "e-horizon/whisper-small-ne-en",
         "Shagufta/whisper-medium-km-multicondition-29-5",
+        "Shagufta/whisper-medium-km-sequential-replay-indomain5-outdomain0.1",
         "Kanompung/whisper-th-lotusdis-lora",
         "Dovud-Asadov/whisper-large-v3-turbo-uzbek",
         "PThi35/whisper_large_v3_phase1",
@@ -74,7 +75,9 @@
         "Ikonz-Studios/whisper-large-v3-turbo-ft-v1",
         "Dubedo/VibeVoice-ASR-HF-INT8",
         "caballosanexx/whisper-large-v3-ca-mlx",
-        "victorg-kv2/whisper-tiny"
+        "victorg-kv2/whisper-tiny",
+        "waxal-benchmarking/whisper-small-nyn-victor",
+        "waxal-benchmarking/whisper-tiny-nyn-victor"
       ],
       "Transducer": [
         "RNN-T",
@@ -312,6 +315,9 @@
         "Speculative Decoding": [
           "Token-Level Speculative Decoding",
           "Edge-Cloud Collaborative Speech Emotion Captioning via Token-Level Speculative Decoding in Audio-Language Models"
+        ],
+        "Efficiency Optimization": [
+          "AudioKV: KV Cache Eviction in Efficient Large Audio Language Models"
         ]
       },
       "Compression": {
@@ -351,6 +357,7 @@
         "Low-Rank Adaptation (LoRA)",
         "Fine-tuning",
         "Zipper-LoRA: Dynamic Parameter Decoupling for Speech-LLM based Multilingual Speech Recognition",
+        "Closing the Speech-Text Gap with Limited Audio for Effective Domain Adaptation in LLM-Based ASR",
         "maryamas222/whisper-large-v3-egyptian-lora-v4",
         "GLoRIA: Gated Low-Rank Interpretable Adaptation for Dialectal ASR",
         "Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition",
@@ -463,6 +470,9 @@
         "VALL-E",
         "SoundStorm",
         "MusicGen"
+      ],
+      "Efficiency & Optimization": [
+        "AudioKV: KV Cache Eviction in Efficient Large Audio Language Models"
       ],
       "Position Papers": [
         "LLMs and Speech: Integration vs. Combination"
@@ -580,7 +590,9 @@
       ],
       "Analysis & Interpretability": [
         "How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation",
-        "Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models"
+        "Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models",
+        "Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models",
+        "In-Context Learning in Speech Language Models: Analyzing the Role of Acoustic Features, Linguistic Structure, and Induction Heads"
       ]
     }
   }
