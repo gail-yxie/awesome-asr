@@ -1,5 +1,4 @@
 {
-  "2026-03-27": [],
   "2026-03-28": [],
   "2026-03-29": [],
   "2026-03-30": [],
@@ -44,5 +43,6 @@
     "closing the speech-text gap with limited audio for effective domain adaptation in llm-based asr",
     "2604.06356v1",
     "in-context learning in speech language models: analyzing the role of acoustic features, linguistic structure, and induction heads"
-  ]
+  ],
+  "2026-04-10": []
 }
