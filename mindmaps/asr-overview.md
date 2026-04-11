@@ -9,6 +9,7 @@
 - Alvenir/wav2vec2-da-2026-02-v2
 - moisf56/medasr-conformer-ctc-int8-onnx
 - bearcove/zipa-small-crctc-ns-no-diacritics-700k-mlx-q8
+- Z1do/vosk-model-small-ru
 
 ### Attention-based
 - Whisper
@@ -77,6 +78,8 @@
 - victorg-kv2/whisper-tiny
 - waxal-benchmarking/whisper-small-nyn-victor
 - waxal-benchmarking/whisper-tiny-nyn-victor
+- Kiragu/whisper-small-kikuyu-v4
+- nureddin123/whisper_turbo_1200_r128
 
 ### Transducer
 - RNN-T
