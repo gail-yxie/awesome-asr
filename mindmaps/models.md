@@ -20,9 +20,6 @@
 ## 7c8
 - [7c8/s2-pro](https://huggingface.co/7c8/s2-pro)
 
-## 7ocho
-- [7ocho/WMedium](https://huggingface.co/7ocho/WMedium)
-
 ## 8qii
 - [8qii/LaoASR-Small-Full](https://huggingface.co/8qii/LaoASR-Small-Full)
 
@@ -67,9 +64,6 @@
 ## Aki0099
 - [Aki0099/diar-streaming-sortformer-coreml](https://huggingface.co/Aki0099/diar-streaming-sortformer-coreml)
 
-## Akshatkasera007
-- [Akshatkasera007/Svarah-Whisper-v1](https://huggingface.co/Akshatkasera007/Svarah-Whisper-v1)
-
 ## AkshitSaxena1
 - [AkshitSaxena1/whisper-tiny_chinese_accent_v4](https://huggingface.co/AkshitSaxena1/whisper-tiny_chinese_accent_v4)
 - [AkshitSaxena1/whisper-tiny_to_american_accent_v2](https://huggingface.co/AkshitSaxena1/whisper-tiny_to_american_accent_v2)
@@ -82,9 +76,6 @@
 - [Aladien/voicetune-whisper-7ec23800-1775334487](https://huggingface.co/Aladien/voicetune-whisper-7ec23800-1775334487)
 - [Aladien/voicetune-whisper-7ec23800-1775333953](https://huggingface.co/Aladien/voicetune-whisper-7ec23800-1775333953)
 
-## Alessio12345123
-- [Alessio12345123/GPT-SoVITS](https://huggingface.co/Alessio12345123/GPT-SoVITS)
-
 ## Alets1987vlz
 - [Alets1987vlz/Qwen3-TTS-12Hz-1.7B-CustomVoice](https://huggingface.co/Alets1987vlz/Qwen3-TTS-12Hz-1.7B-CustomVoice)
 
@@ -93,6 +84,9 @@
 
 ## Alvenir
 - [Alvenir/wav2vec2-da-2026-02-v2](https://huggingface.co/Alvenir/wav2vec2-da-2026-02-v2)
+
+## AnAnonymousHuggingface
+- [AnAnonymousHuggingface/PTMan-a-pre-trained-model-for-Manchu-speech-recognition](https://huggingface.co/AnAnonymousHuggingface/PTMan-a-pre-trained-model-for-Manchu-speech-recognition)
 
 ## Anandnrnnffn
 - [Anandnrnnffn/whisper-large-v3-turbo](https://huggingface.co/Anandnrnnffn/whisper-large-v3-turbo)
@@ -108,9 +102,6 @@
 
 ## Arjun4707
 - [Arjun4707/chatterbox-gujarati](https://huggingface.co/Arjun4707/chatterbox-gujarati)
-
-## Arxell
-- [Arxell/whisper.cpp](https://huggingface.co/Arxell/whisper.cpp)
 
 ## Ashiedu
 - [Ashiedu/Synesthesia](https://huggingface.co/Ashiedu/Synesthesia)
@@ -174,7 +165,6 @@
 
 ## BettySara
 - [BettySara/whisper-large-v3-malayalam-FT](https://huggingface.co/BettySara/whisper-large-v3-malayalam-FT)
-- [BettySara/whisper-large-v3-malayalam-merged](https://huggingface.co/BettySara/whisper-large-v3-malayalam-merged)
 
 ## Bgeorge
 - [Bgeorge/OmniVoice](https://huggingface.co/Bgeorge/OmniVoice)
@@ -207,7 +197,6 @@
 
 ## Cnam-LMSSC
 - [Cnam-LMSSC/wav2vec2-spanish-phonemizer](https://huggingface.co/Cnam-LMSSC/wav2vec2-spanish-phonemizer)
-- [Cnam-LMSSC/wav2vec2-italian-phonemizer](https://huggingface.co/Cnam-LMSSC/wav2vec2-italian-phonemizer)
 
 ## CodeBySonu95
 - [CodeBySonu95/VoxSherpa-TTS](https://huggingface.co/CodeBySonu95/VoxSherpa-TTS)
@@ -220,9 +209,6 @@
 
 ## CrazyCyberBug2
 - [CrazyCyberBug2/whisper-small-courtroom-en](https://huggingface.co/CrazyCyberBug2/whisper-small-courtroom-en)
-
-## Creador301
-- [Creador301/QwenQwen3-ASR-1.7B](https://huggingface.co/Creador301/QwenQwen3-ASR-1.7B)
 
 ## CreativeHub008
 - [CreativeHub008/F5TTS-onnx](https://huggingface.co/CreativeHub008/F5TTS-onnx)
@@ -242,7 +228,6 @@
 ## DanaRL
 - [DanaRL/whisper-large-v3-zw-ar-FINAL](https://huggingface.co/DanaRL/whisper-large-v3-zw-ar-FINAL)
 - [DanaRL/whisper-large-v3-zw-ar-V9](https://huggingface.co/DanaRL/whisper-large-v3-zw-ar-V9)
-- [DanaRL/whisper-large-v3-zw-ar-V8-Final](https://huggingface.co/DanaRL/whisper-large-v3-zw-ar-V8-Final)
 
 ## Danieljava
 - [Danieljava/Hypa-Whisper-small-2026-03-31-translate-check](https://huggingface.co/Danieljava/Hypa-Whisper-small-2026-03-31-translate-check)
@@ -299,11 +284,6 @@
 ## EMTIAZZ
 - [EMTIAZZ/chatterbox-bangla-tts](https://huggingface.co/EMTIAZZ/chatterbox-bangla-tts)
 
-## EYEDOL
-- [EYEDOL/whisper-small-arbyeg_THREE](https://huggingface.co/EYEDOL/whisper-small-arbyeg_THREE)
-- [EYEDOL/whisper-small-arbyeg_TWO](https://huggingface.co/EYEDOL/whisper-small-arbyeg_TWO)
-- [EYEDOL/whisper-small-arbyeg_ONE](https://huggingface.co/EYEDOL/whisper-small-arbyeg_ONE)
-
 ## Echaps12
 - [Echaps12/whisper-tiny-minds14-en](https://huggingface.co/Echaps12/whisper-tiny-minds14-en)
 
@@ -311,16 +291,19 @@
 - [Edcastro/edcastr_ASR_LatinSpanishAllLocale](https://huggingface.co/Edcastro/edcastr_ASR_LatinSpanishAllLocale)
 
 ## Eimhin03
+- [Eimhin03/final2-irish-whisper-pseudo-iter4](https://huggingface.co/Eimhin03/final2-irish-whisper-pseudo-iter4)
+- [Eimhin03/final2-irish-whisper-pseudo-iter3](https://huggingface.co/Eimhin03/final2-irish-whisper-pseudo-iter3)
+- [Eimhin03/final2-irish-whisper-pseudo-iter2](https://huggingface.co/Eimhin03/final2-irish-whisper-pseudo-iter2)
+- [Eimhin03/final2-irish-whisper-pseudo-iter1](https://huggingface.co/Eimhin03/final2-irish-whisper-pseudo-iter1)
 - [Eimhin03/final-irish-whisper-pseudo-iter2](https://huggingface.co/Eimhin03/final-irish-whisper-pseudo-iter2)
 - [Eimhin03/final-irish-whisper-pseudo-iter1](https://huggingface.co/Eimhin03/final-irish-whisper-pseudo-iter1)
 - [Eimhin03/MCV_Fleurs_Combined_Irish_ASR_pretrained_Synthetic](https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_pretrained_Synthetic)
 - [Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug3](https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug3)
 - [Eimhin03/MCV_Fleurs_Combined_Irish_ASR_with_Aug2](https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_with_Aug2)
 - [Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug2_No_lrscheduler](https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug2_No_lrscheduler)
-- [Eimhin03/MCV_Fleurs_Combined_Irish_ASR_with_AUG](https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_with_AUG)
-- [Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug](https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_No_Aug)
-- [Eimhin03/MCV_Fleurs_Combined_Irish_ASR_normalised5](https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_normalised5)
-- [Eimhin03/MCV_Fleurs_Combined_Irish_ASR_normalised2](https://huggingface.co/Eimhin03/MCV_Fleurs_Combined_Irish_ASR_normalised2)
+
+## Emogi
+- [Emogi/acestep-1.5-xl-turbo-aio](https://huggingface.co/Emogi/acestep-1.5-xl-turbo-aio)
 
 ## Ephraimmm
 - [Ephraimmm/asrfinetuned](https://huggingface.co/Ephraimmm/asrfinetuned)
@@ -413,6 +396,9 @@
 - [Gearnode/qwen3-asr-uzbek-v2](https://huggingface.co/Gearnode/qwen3-asr-uzbek-v2)
 - [Gearnode/qwen3-asr-uzbek](https://huggingface.co/Gearnode/qwen3-asr-uzbek)
 
+## GergelyZsolt
+- [GergelyZsolt/whisper-large-v3-hu-ct2](https://huggingface.co/GergelyZsolt/whisper-large-v3-hu-ct2)
+
 ## GetMeElon
 - [GetMeElon/Belle-whisper-large-v3-turbo-zh](https://huggingface.co/GetMeElon/Belle-whisper-large-v3-turbo-zh)
 
@@ -431,15 +417,15 @@
 ## Greytechai
 - [Greytechai/s2-pro](https://huggingface.co/Greytechai/s2-pro)
 
-## GustavoAraujo
-- [GustavoAraujo/yourtts_cml-cp](https://huggingface.co/GustavoAraujo/yourtts_cml-cp)
-
 ## GwadaDLT
 - [GwadaDLT/wav2vec2-gcf-r11](https://huggingface.co/GwadaDLT/wav2vec2-gcf-r11)
 - [GwadaDLT/wav2vec2-gcf-r10](https://huggingface.co/GwadaDLT/wav2vec2-gcf-r10)
 - [GwadaDLT/wav2vec2-gcf-r8](https://huggingface.co/GwadaDLT/wav2vec2-gcf-r8)
 - [GwadaDLT/wav2vec2-gcf](https://huggingface.co/GwadaDLT/wav2vec2-gcf)
 - [GwadaDLT/whisper-base-gcf](https://huggingface.co/GwadaDLT/whisper-base-gcf)
+
+## HMkumbo
+- [HMkumbo/whisper-small-sukuma](https://huggingface.co/HMkumbo/whisper-small-sukuma)
 
 ## HakunaMatataInLife
 - [HakunaMatataInLife/wav2vec2-large-xlsr-persian](https://huggingface.co/HakunaMatataInLife/wav2vec2-large-xlsr-persian)
@@ -498,6 +484,9 @@
 ## Jacques976
 - [Jacques976/Voxtral-Mini-4B-Realtime-2602](https://huggingface.co/Jacques976/Voxtral-Mini-4B-Realtime-2602)
 
+## Jahaz
+- [Jahaz/Qwen3-tts-0.6b-gguf-for-koboldcpp](https://huggingface.co/Jahaz/Qwen3-tts-0.6b-gguf-for-koboldcpp)
+
 ## James3214153
 - [James3214153/test_zipformer](https://huggingface.co/James3214153/test_zipformer)
 
@@ -513,8 +502,8 @@
 ## Jibbalit
 - [Jibbalit/phi-4-multimodal-instruct-abliterated](https://huggingface.co/Jibbalit/phi-4-multimodal-instruct-abliterated)
 
-## JoshTalksAI
-- [JoshTalksAI/Human-1](https://huggingface.co/JoshTalksAI/Human-1)
+## Joker1718
+- [Joker1718/VoxCPM2](https://huggingface.co/Joker1718/VoxCPM2)
 
 ## Jpisnice
 - [Jpisnice/whisper-small-konkani](https://huggingface.co/Jpisnice/whisper-small-konkani)
@@ -533,6 +522,8 @@
 - [Karthikappi0011/genshin-japanese-paimon-qwen3-tts](https://huggingface.co/Karthikappi0011/genshin-japanese-paimon-qwen3-tts)
 
 ## KasuleTrevor
+- [KasuleTrevor/cdli-qwen3-asr-lg-typical-finetune](https://huggingface.co/KasuleTrevor/cdli-qwen3-asr-lg-typical-finetune)
+- [KasuleTrevor/cdli-qwen3-asr-lg-typical-finetune-yv](https://huggingface.co/KasuleTrevor/cdli-qwen3-asr-lg-typical-finetune-yv)
 - [KasuleTrevor/cdli-qwen3-asr-en-finetune-1](https://huggingface.co/KasuleTrevor/cdli-qwen3-asr-en-finetune-1)
 - [KasuleTrevor/cdli-slam-asr-luganda-atypical-zero-shot-asr-adapted](https://huggingface.co/KasuleTrevor/cdli-slam-asr-luganda-atypical-zero-shot-asr-adapted)
 - [KasuleTrevor/cdli-slam-asr-luganda-atypical-projector-only-step5000](https://huggingface.co/KasuleTrevor/cdli-slam-asr-luganda-atypical-projector-only-step5000)
@@ -607,6 +598,8 @@
 - [Letzup/whisper-medium-v](https://huggingface.co/Letzup/whisper-medium-v)
 
 ## LocalAI-io
+- [LocalAI-io/whisper-base-it-multi-ct2-int8](https://huggingface.co/LocalAI-io/whisper-base-it-multi-ct2-int8)
+- [LocalAI-io/whisper-base-it-multi](https://huggingface.co/LocalAI-io/whisper-base-it-multi)
 - [LocalAI-io/whisper-tiny-it-multi-ct2-int8](https://huggingface.co/LocalAI-io/whisper-tiny-it-multi-ct2-int8)
 - [LocalAI-io/whisper-tiny-it-multi](https://huggingface.co/LocalAI-io/whisper-tiny-it-multi)
 - [LocalAI-io/whisper-base-it-ct2-int8](https://huggingface.co/LocalAI-io/whisper-base-it-ct2-int8)
@@ -624,6 +617,9 @@
 
 ## Lourdle
 - [Lourdle/Fun-CosyVoice3-0.5B-2512-GGUF](https://huggingface.co/Lourdle/Fun-CosyVoice3-0.5B-2512-GGUF)
+
+## Lynkooo
+- [Lynkooo/rvc-models](https://huggingface.co/Lynkooo/rvc-models)
 
 ## Lyria-3
 - [Lyria-3/lyria3-AI-Song-Music-Generator](https://huggingface.co/Lyria-3/lyria3-AI-Song-Music-Generator)
@@ -653,13 +649,14 @@
 ## Maicarons
 - [Maicarons/UmaVoice_DDSP_6.3](https://huggingface.co/Maicarons/UmaVoice_DDSP_6.3)
 
-## Makaveliai
-- [Makaveliai/acestep-v15-sft-turbo_0.5](https://huggingface.co/Makaveliai/acestep-v15-sft-turbo_0.5)
-
 ## Manish993135
 - [Manish993135/piper-plus-tsukuyomi-chan](https://huggingface.co/Manish993135/piper-plus-tsukuyomi-chan)
 - [Manish993135/OmniVoice](https://huggingface.co/Manish993135/OmniVoice)
 - [Manish993135/Voxtral-4B-TTS-2603](https://huggingface.co/Manish993135/Voxtral-4B-TTS-2603)
+
+## Mano200600
+- [Mano200600/faster-whisper-small-egyptian-ar](https://huggingface.co/Mano200600/faster-whisper-small-egyptian-ar)
+- [Mano200600/faster-whisper-large-v2-ar-codeswitching](https://huggingface.co/Mano200600/faster-whisper-large-v2-ar-codeswitching)
 
 ## MarkChen1214
 - [MarkChen1214/cohere-transcribe-03-2026-CoreML-INT4](https://huggingface.co/MarkChen1214/cohere-transcribe-03-2026-CoreML-INT4)
@@ -710,7 +707,6 @@
 ## NMikka
 - [NMikka/F5-TTS-Georgian](https://huggingface.co/NMikka/F5-TTS-Georgian)
 - [NMikka/Magpie-TTS-Geo-357m](https://huggingface.co/NMikka/Magpie-TTS-Geo-357m)
-- [NMikka/CSM-1B-Georgian](https://huggingface.co/NMikka/CSM-1B-Georgian)
 
 ## NUTN-KWS
 - [NUTN-KWS/Whisper-Taiwanese-Hakka-model-v0.2.6](https://huggingface.co/NUTN-KWS/Whisper-Taiwanese-Hakka-model-v0.2.6)
@@ -731,15 +727,11 @@
 - [NbAiLab/nb-asr-north-saami-parakeet-v6-tokenremap-v4](https://huggingface.co/NbAiLab/nb-asr-north-saami-parakeet-v6-tokenremap-v4)
 - [NbAiLab/nb-asr-beta1-Qwen06B-reading-optimised](https://huggingface.co/NbAiLab/nb-asr-beta1-Qwen06B-reading-optimised)
 
-## NeoRoth
-- [NeoRoth/parakeet-tdt-0.6b-v3-coreml](https://huggingface.co/NeoRoth/parakeet-tdt-0.6b-v3-coreml)
-- [NeoRoth/parakeet-tdt-0.6b-v3-mlx](https://huggingface.co/NeoRoth/parakeet-tdt-0.6b-v3-mlx)
-- [NeoRoth/voxtral-4b-realtime-2602-mlx](https://huggingface.co/NeoRoth/voxtral-4b-realtime-2602-mlx)
-
 ## NewGame
 - [NewGame/Emilia-vits-espnet2](https://huggingface.co/NewGame/Emilia-vits-espnet2)
 
 ## NextFire
+- [NextFire/mms-300m-ForcedAligner-karaoke-ja-Latn](https://huggingface.co/NextFire/mms-300m-ForcedAligner-karaoke-ja-Latn)
 - [NextFire/Qwen3-ForcedAligner-0.6B-karaoke-ja-Latn](https://huggingface.co/NextFire/Qwen3-ForcedAligner-0.6B-karaoke-ja-Latn)
 
 ## NickMarino
@@ -820,6 +812,7 @@
 - [PolauOA/whisper-tiny_to_spanish_accent](https://huggingface.co/PolauOA/whisper-tiny_to_spanish_accent)
 
 ## Pomni
+- [Pomni/whisper-large-v3-russian-ggml-allquants](https://huggingface.co/Pomni/whisper-large-v3-russian-ggml-allquants)
 - [Pomni/whisper-omg-2.5.4-ggml-allquants](https://huggingface.co/Pomni/whisper-omg-2.5.4-ggml-allquants)
 
 ## Professor
@@ -847,9 +840,6 @@
 ## Rogendo
 - [Rogendo/asr-whisper-largev2-v7-hqq4bit](https://huggingface.co/Rogendo/asr-whisper-largev2-v7-hqq4bit)
 
-## SECT19N
-- [SECT19N/whisper-small-kmr-merged](https://huggingface.co/SECT19N/whisper-small-kmr-merged)
-
 ## Sa1Krishna
 - [Sa1Krishna/sema-whisper-small-springlab-hindi-finetuned](https://huggingface.co/Sa1Krishna/sema-whisper-small-springlab-hindi-finetuned)
 - [Sa1Krishna/sema-whisper-large-v3-hindi-finetuned](https://huggingface.co/Sa1Krishna/sema-whisper-large-v3-hindi-finetuned)
@@ -865,10 +855,6 @@
 - [Serialtechlab/mms-trilingual-dv-ar-en-v3-clean](https://huggingface.co/Serialtechlab/mms-trilingual-dv-ar-en-v3-clean)
 - [Serialtechlab/mms-trilingual-dv-ar-en](https://huggingface.co/Serialtechlab/mms-trilingual-dv-ar-en)
 - [Serialtechlab/xtts-v2-dhivehi](https://huggingface.co/Serialtechlab/xtts-v2-dhivehi)
-- [Serialtechlab/mms-tts-div-female2-syn](https://huggingface.co/Serialtechlab/mms-tts-div-female2-syn)
-
-## Seriki
-- [Seriki/whisper-handler](https://huggingface.co/Seriki/whisper-handler)
 
 ## Shagufta
 - [Shagufta/whisper-medium-km-multicondition-29-5](https://huggingface.co/Shagufta/whisper-medium-km-multicondition-29-5)
@@ -888,9 +874,6 @@
 
 ## Sibgat-Ul
 - [Sibgat-Ul/meno_tts](https://huggingface.co/Sibgat-Ul/meno_tts)
-
-## SilinMeng0510
-- [SilinMeng0510/higgs-audio-v2-generation-3B-base](https://huggingface.co/SilinMeng0510/higgs-audio-v2-generation-3B-base)
 
 ## Smirnov75
 - [Smirnov75/GigaAM-v3-sherpa-onnx](https://huggingface.co/Smirnov75/GigaAM-v3-sherpa-onnx)
@@ -916,9 +899,6 @@
 
 ## SudiptaRoy
 - [SudiptaRoy/acestep-v15-xl-turbo](https://huggingface.co/SudiptaRoy/acestep-v15-xl-turbo)
-
-## SummerSmile
-- [SummerSmile/s2-pro](https://huggingface.co/SummerSmile/s2-pro)
 
 ## SuperPauly
 - [SuperPauly/AudioSR](https://huggingface.co/SuperPauly/AudioSR)
@@ -959,9 +939,6 @@
 ## TuneLab
 - [TuneLab/SonicMaster](https://huggingface.co/TuneLab/SonicMaster)
 
-## TylorShine
-- [TylorShine/wavlm-base-plus-hiragana-ctc-v2](https://huggingface.co/TylorShine/wavlm-base-plus-hiragana-ctc-v2)
-
 ## UIK21uik
 - [UIK21uik/whisper-2.3](https://huggingface.co/UIK21uik/whisper-2.3)
 - [UIK21uik/whisper-1.3](https://huggingface.co/UIK21uik/whisper-1.3)
@@ -998,6 +975,9 @@
 - [Vishalshendge3198/orpheus-3b-tts-german-emotional-merged](https://huggingface.co/Vishalshendge3198/orpheus-3b-tts-german-emotional-merged)
 - [Vishalshendge3198/orpheus-3b-tts-german-emotional](https://huggingface.co/Vishalshendge3198/orpheus-3b-tts-german-emotional)
 
+## Vocabook
+- [Vocabook/supertonic-2](https://huggingface.co/Vocabook/supertonic-2)
+
 ## VoidShine
 - [VoidShine/atri-sovits](https://huggingface.co/VoidShine/atri-sovits)
 
@@ -1030,9 +1010,6 @@
 
 ## YazoPi
 - [YazoPi/LLama3-1B-I-Bam-ASR-v0](https://huggingface.co/YazoPi/LLama3-1B-I-Bam-ASR-v0)
-
-## Yoshi00XX
-- [Yoshi00XX/rvc-genshin-impact](https://huggingface.co/Yoshi00XX/rvc-genshin-impact)
 
 ## Yosriii
 - [Yosriii/whisper-small-french](https://huggingface.co/Yosriii/whisper-small-french)
@@ -1076,6 +1053,7 @@
 - [abdulmatinomotoso/whisper-small-multilingual-25h](https://huggingface.co/abdulmatinomotoso/whisper-small-multilingual-25h)
 
 ## abhiXai
+- [abhiXai/mms-tts-hin](https://huggingface.co/abhiXai/mms-tts-hin)
 - [abhiXai/XTTS-v2](https://huggingface.co/abhiXai/XTTS-v2)
 - [abhiXai/Qwen3-TTS-12Hz-1.7B-CustomVoice](https://huggingface.co/abhiXai/Qwen3-TTS-12Hz-1.7B-CustomVoice)
 
@@ -1088,18 +1066,6 @@
 
 ## ae9is
 - [ae9is/parakeet-tdt-0.6b-v3-onnx](https://huggingface.co/ae9is/parakeet-tdt-0.6b-v3-onnx)
-
-## affectively-ai
-- [affectively-ai/granite-4.0-1b-speech-onnx](https://huggingface.co/affectively-ai/granite-4.0-1b-speech-onnx)
-- [affectively-ai/whisper-small-gguf](https://huggingface.co/affectively-ai/whisper-small-gguf)
-- [affectively-ai/whisper-large-v3-turbo-gguf](https://huggingface.co/affectively-ai/whisper-large-v3-turbo-gguf)
-- [affectively-ai/whisper-large-v3-gguf](https://huggingface.co/affectively-ai/whisper-large-v3-gguf)
-- [affectively-ai/parakeet-ctc-0.6b-onnx](https://huggingface.co/affectively-ai/parakeet-ctc-0.6b-onnx)
-- [affectively-ai/parakeet-ctc-1.1b-onnx](https://huggingface.co/affectively-ai/parakeet-ctc-1.1b-onnx)
-- [affectively-ai/whisper-large-v3-onnx](https://huggingface.co/affectively-ai/whisper-large-v3-onnx)
-- [affectively-ai/whisper-large-v3-turbo-onnx](https://huggingface.co/affectively-ai/whisper-large-v3-turbo-onnx)
-- [affectively-ai/whisper-small-onnx](https://huggingface.co/affectively-ai/whisper-small-onnx)
-- [affectively-ai/vibevoice-1.5b-gguf](https://huggingface.co/affectively-ai/vibevoice-1.5b-gguf)
 
 ## agustinghent
 - [agustinghent/mms-tts-rap-pakomio](https://huggingface.co/agustinghent/mms-tts-rap-pakomio)
@@ -1169,8 +1135,6 @@
 ## amitkot
 - [amitkot/whisper-yoad-small-he-acft](https://huggingface.co/amitkot/whisper-yoad-small-he-acft)
 - [amitkot/whisper-yoad-tiny-he-acft](https://huggingface.co/amitkot/whisper-yoad-tiny-he-acft)
-- [amitkot/whisper-small-he-acft](https://huggingface.co/amitkot/whisper-small-he-acft)
-- [amitkot/whisper-small-he](https://huggingface.co/amitkot/whisper-small-he)
 
 ## amugoodbad229
 - [amugoodbad229/README.md](https://huggingface.co/amugoodbad229/README.md)
@@ -1197,6 +1161,9 @@
 - [aoiandroid/Qwen3-ASR-1.7B](https://huggingface.co/aoiandroid/Qwen3-ASR-1.7B)
 
 ## appautomaton
+- [appautomaton/step-audio-editx-8bit-mlx](https://huggingface.co/appautomaton/step-audio-editx-8bit-mlx)
+- [appautomaton/longcat-audiodit-3.5b-8bit-mlx](https://huggingface.co/appautomaton/longcat-audiodit-3.5b-8bit-mlx)
+- [appautomaton/fishaudio-s2-pro-8bit-mlx](https://huggingface.co/appautomaton/fishaudio-s2-pro-8bit-mlx)
 - [appautomaton/cohere-asr-mlx](https://huggingface.co/appautomaton/cohere-asr-mlx)
 - [appautomaton/vibevoice-mlx](https://huggingface.co/appautomaton/vibevoice-mlx)
 - [appautomaton/openmoss-ttsd-mlx](https://huggingface.co/appautomaton/openmoss-ttsd-mlx)
@@ -1231,17 +1198,20 @@
 ## asrDIL
 - [asrDIL/mms-fongbe-finetuned-v4](https://huggingface.co/asrDIL/mms-fongbe-finetuned-v4)
 
-## attoucheaziz
-- [attoucheaziz/whisper-algerian-darja-merged](https://huggingface.co/attoucheaziz/whisper-algerian-darja-merged)
-
 ## aufklarer
-- [aufklarer/Parakeet-EOU-120M-CoreML-INT8](https://huggingface.co/aufklarer/Parakeet-EOU-120M-CoreML-INT8)
-- [aufklarer/OpenUnmix-L-MLX](https://huggingface.co/aufklarer/OpenUnmix-L-MLX)
-- [aufklarer/OpenUnmix-HQ-MLX](https://huggingface.co/aufklarer/OpenUnmix-HQ-MLX)
-- [aufklarer/Parakeet-TDT-0.6B-ONNX](https://huggingface.co/aufklarer/Parakeet-TDT-0.6B-ONNX)
-- [aufklarer/Kokoro-82M-ONNX](https://huggingface.co/aufklarer/Kokoro-82M-ONNX)
+- [aufklarer/Omnilingual-ASR-CTC-7B-MLX-8bit](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-7B-MLX-8bit)
+- [aufklarer/Omnilingual-ASR-CTC-7B-MLX-4bit](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-7B-MLX-4bit)
+- [aufklarer/Omnilingual-ASR-CTC-3B-MLX-8bit](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-3B-MLX-8bit)
+- [aufklarer/Omnilingual-ASR-CTC-3B-MLX-4bit](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-3B-MLX-4bit)
+- [aufklarer/Omnilingual-ASR-CTC-1B-MLX-8bit](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-1B-MLX-8bit)
+- [aufklarer/Omnilingual-ASR-CTC-1B-MLX-4bit](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-1B-MLX-4bit)
+- [aufklarer/Omnilingual-ASR-CTC-300M-CoreML-INT8-10s](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-300M-CoreML-INT8-10s)
+- [aufklarer/Omnilingual-ASR-CTC-300M-CoreML-INT8](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-300M-CoreML-INT8)
+- [aufklarer/Omnilingual-ASR-CTC-300M-MLX-8bit](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-300M-MLX-8bit)
+- [aufklarer/Omnilingual-ASR-CTC-300M-MLX-4bit](https://huggingface.co/aufklarer/Omnilingual-ASR-CTC-300M-MLX-4bit)
 
 ## awong-dev
+- [awong-dev/whisper-large-v3-cantonese-tristage](https://huggingface.co/awong-dev/whisper-large-v3-cantonese-tristage)
 - [awong-dev/whisper-large-v3-cantonese-yue-conservative](https://huggingface.co/awong-dev/whisper-large-v3-cantonese-yue-conservative)
 - [awong-dev/whisper-large-v3-cantonese](https://huggingface.co/awong-dev/whisper-large-v3-cantonese)
 - [awong-dev/wav2vec2-xls-r-1b-cantonese](https://huggingface.co/awong-dev/wav2vec2-xls-r-1b-cantonese)
@@ -1319,7 +1289,6 @@
 
 ## beleata74
 - [beleata74/BgTTS-38M-V2](https://huggingface.co/beleata74/BgTTS-38M-V2)
-- [beleata74/kani-tts-400m-bg-voice-clone-ref5s](https://huggingface.co/beleata74/kani-tts-400m-bg-voice-clone-ref5s)
 
 ## berijoyis
 - [berijoyis/faster-whisper-large-v2](https://huggingface.co/berijoyis/faster-whisper-large-v2)
@@ -1371,6 +1340,7 @@
 - [bubiche/whisper.cpp](https://huggingface.co/bubiche/whisper.cpp)
 
 ## buumba641
+- [buumba641/nyanja-whisper-small](https://huggingface.co/buumba641/nyanja-whisper-small)
 - [buumba641/tonga-whisper-small](https://huggingface.co/buumba641/tonga-whisper-small)
 - [buumba641/bemba-asr-xlsr-300m](https://huggingface.co/buumba641/bemba-asr-xlsr-300m)
 - [buumba641/tonga-asr-whisper-tiny](https://huggingface.co/buumba641/tonga-asr-whisper-tiny)
@@ -1415,9 +1385,6 @@
 ## christopherthompson81
 - [christopherthompson81/cohere-transcribe-03-2026-onnx](https://huggingface.co/christopherthompson81/cohere-transcribe-03-2026-onnx)
 
-## cmp-nct
-- [cmp-nct/Qwen3-TTS-12Hz-1.7B-VoiceDesign](https://huggingface.co/cmp-nct/Qwen3-TTS-12Hz-1.7B-VoiceDesign)
-
 ## cnonim
 - [cnonim/gigaam-v3-e2e-rnnt-onnx](https://huggingface.co/cnonim/gigaam-v3-e2e-rnnt-onnx)
 
@@ -1432,6 +1399,7 @@
 - [csikasote/mms-1b-all-bemgen-m50f50-ft-sd-dat-gdro-fusion-42](https://huggingface.co/csikasote/mms-1b-all-bemgen-m50f50-ft-sd-dat-gdro-fusion-42)
 
 ## cstr
+- [cstr/granite-speech-4.0-1b-GGUF](https://huggingface.co/cstr/granite-speech-4.0-1b-GGUF)
 - [cstr/voxtral-mini-4b-realtime-GGUF](https://huggingface.co/cstr/voxtral-mini-4b-realtime-GGUF)
 - [cstr/voxtral-mini-3b-2507-GGUF](https://huggingface.co/cstr/voxtral-mini-3b-2507-GGUF)
 - [cstr/qwen3-asr-0.6b-GGUF](https://huggingface.co/cstr/qwen3-asr-0.6b-GGUF)
@@ -1441,7 +1409,6 @@
 - [cstr/parakeet-tdt-0.6b-v3-GGUF](https://huggingface.co/cstr/parakeet-tdt-0.6b-v3-GGUF)
 - [cstr/cohere-transcribe-onnx-int8](https://huggingface.co/cstr/cohere-transcribe-onnx-int8)
 - [cstr/cohere-transcribe-03-2026-GGUF](https://huggingface.co/cstr/cohere-transcribe-03-2026-GGUF)
-- [cstr/cohere-transcribe-onnx-int4](https://huggingface.co/cstr/cohere-transcribe-onnx-int4)
 
 ## ctranslate2-4you
 - [ctranslate2-4you/whisper-distil-large-v3.5-ct2-float16](https://huggingface.co/ctranslate2-4you/whisper-distil-large-v3.5-ct2-float16)
@@ -1493,6 +1460,9 @@
 ## devku2002
 - [devku2002/faster-whisper-large-v3](https://huggingface.co/devku2002/faster-whisper-large-v3)
 
+## devrahulbanjara
+- [devrahulbanjara/whisper-small-nepali](https://huggingface.co/devrahulbanjara/whisper-small-nepali)
+
 ## dianavdavidson
 - [dianavdavidson/wh_l_v3_mucs_no_lg_id_mucs_52041_trial](https://huggingface.co/dianavdavidson/wh_l_v3_mucs_no_lg_id_mucs_52041_trial)
 - [dianavdavidson/wh_l_v3_t_mucs_no_lg_id_mucs_52041_trial](https://huggingface.co/dianavdavidson/wh_l_v3_t_mucs_no_lg_id_mucs_52041_trial)
@@ -1504,6 +1474,9 @@
 - [dianavdavidson/wh_small_iv_no_lg_id_indic_voices_52031_trial](https://huggingface.co/dianavdavidson/wh_small_iv_no_lg_id_indic_voices_52031_trial)
 - [dianavdavidson/wh_l_v3_iv_fleurs_fleurs_52027_trial](https://huggingface.co/dianavdavidson/wh_l_v3_iv_fleurs_fleurs_52027_trial)
 - [dianavdavidson/wh_l_v3_t_fleurs_fleurs_52027_trial](https://huggingface.co/dianavdavidson/wh_l_v3_t_fleurs_fleurs_52027_trial)
+
+## dida-80b
+- [dida-80b/kokoro-deutsch-eva-k](https://huggingface.co/dida-80b/kokoro-deutsch-eva-k)
 
 ## diyengineering
 - [diyengineering/HAL-9000-Piper-TTS](https://huggingface.co/diyengineering/HAL-9000-Piper-TTS)
@@ -1615,14 +1588,8 @@
 ## farhan96401
 - [farhan96401/Qwen3-TTS-12Hz-1.7B-CustomVoice](https://huggingface.co/farhan96401/Qwen3-TTS-12Hz-1.7B-CustomVoice)
 
-## fishaudio
-- [fishaudio/s2-pro](https://huggingface.co/fishaudio/s2-pro)
-
 ## flackzz
 - [flackzz/distil-whisper-large-v3-german_timestamped-ONNX](https://huggingface.co/flackzz/distil-whisper-large-v3-german_timestamped-ONNX)
-
-## flyingfishinwater
-- [flyingfishinwater/kokoro-82m-mlx-int4](https://huggingface.co/flyingfishinwater/kokoro-82m-mlx-int4)
 
 ## formospeech
 - [formospeech/cohere-transcribe-03-2026-taiwanese-hakka](https://huggingface.co/formospeech/cohere-transcribe-03-2026-taiwanese-hakka)
@@ -1765,6 +1732,9 @@
 ## ibleaman
 - [ibleaman/w2v-bert-2.0-yiddish-northeastern](https://huggingface.co/ibleaman/w2v-bert-2.0-yiddish-northeastern)
 
+## ibukunirinyenikan
+- [ibukunirinyenikan/whisperlibr_finetuned](https://huggingface.co/ibukunirinyenikan/whisperlibr_finetuned)
+
 ## idle-intelligence
 - [idle-intelligence/kitten-tts-nano-safetensors](https://huggingface.co/idle-intelligence/kitten-tts-nano-safetensors)
 - [idle-intelligence/personaplex-7b-v1-q4_k-webgpu](https://huggingface.co/idle-intelligence/personaplex-7b-v1-q4_k-webgpu)
@@ -1785,10 +1755,6 @@
 
 ## iky1e
 - [iky1e/demucs-mlx-fp16](https://huggingface.co/iky1e/demucs-mlx-fp16)
-- [iky1e/demucs-mlx](https://huggingface.co/iky1e/demucs-mlx)
-- [iky1e/DeepFilterNet1-MLX](https://huggingface.co/iky1e/DeepFilterNet1-MLX)
-- [iky1e/DeepFilterNet2-MLX](https://huggingface.co/iky1e/DeepFilterNet2-MLX)
-- [iky1e/DeepFilterNet3-MLX](https://huggingface.co/iky1e/DeepFilterNet3-MLX)
 
 ## ilprl-docse
 - [ilprl-docse/NwachaMuna-NepConformer-FT](https://huggingface.co/ilprl-docse/NwachaMuna-NepConformer-FT)
@@ -1816,9 +1782,6 @@
 - [itsarunendra/whisper-medium-tunisian-full-v1.1](https://huggingface.co/itsarunendra/whisper-medium-tunisian-full-v1.1)
 - [itsarunendra/whisper-medium-tunisian-full-v1](https://huggingface.co/itsarunendra/whisper-medium-tunisian-full-v1)
 - [itsarunendra/whisper-medium-tunisian-full-1](https://huggingface.co/itsarunendra/whisper-medium-tunisian-full-1)
-
-## itshamdi404
-- [itshamdi404/Egy_Arabic_whisper-small](https://huggingface.co/itshamdi404/Egy_Arabic_whisper-small)
 
 ## jFettnpn
 - [jFettnpn/speecht5_finetuned_tts_rioplatense](https://huggingface.co/jFettnpn/speecht5_finetuned_tts_rioplatense)
@@ -1908,6 +1871,7 @@
 - [lainlives/OuteTTS-1.0-1B](https://huggingface.co/lainlives/OuteTTS-1.0-1B)
 
 ## laion
+- [laion/sound-effect-captioning-whisper](https://huggingface.co/laion/sound-effect-captioning-whisper)
 - [laion/BUD-E-Whisper_V1.21](https://huggingface.co/laion/BUD-E-Whisper_V1.21)
 - [laion/BUD-E-Whisper_V1.2](https://huggingface.co/laion/BUD-E-Whisper_V1.2)
 
@@ -1969,10 +1933,6 @@
 ## mabahboh
 - [mabahboh/whisper-shami](https://huggingface.co/mabahboh/whisper-shami)
 
-## macarrao12
-- [macarrao12/arq-bk-vocal](https://huggingface.co/macarrao12/arq-bk-vocal)
-- [macarrao12/fish-speech-1.5](https://huggingface.co/macarrao12/fish-speech-1.5)
-
 ## mack1996
 - [mack1996/Qwen3-TTS-12Hz-1.7B-CustomVoice](https://huggingface.co/mack1996/Qwen3-TTS-12Hz-1.7B-CustomVoice)
 
@@ -2014,7 +1974,6 @@
 
 ## mehedihasanbijoy
 - [mehedihasanbijoy/whisper-small-aesrc-multigpu](https://huggingface.co/mehedihasanbijoy/whisper-small-aesrc-multigpu)
-- [mehedihasanbijoy/whisper-small-aesrc](https://huggingface.co/mehedihasanbijoy/whisper-small-aesrc)
 
 ## melonask
 - [melonask/chatterbox-multilingual-ONNX](https://huggingface.co/melonask/chatterbox-multilingual-ONNX)
@@ -2026,6 +1985,8 @@
 - [mingyi456/Ace-Step1.5-XL-DF11-ComfyUI](https://huggingface.co/mingyi456/Ace-Step1.5-XL-DF11-ComfyUI)
 
 ## mlx-community
+- [mlx-community/longcat-audiodit-3.5b-8bit-mlx](https://huggingface.co/mlx-community/longcat-audiodit-3.5b-8bit-mlx)
+- [mlx-community/fishaudio-s2-pro-8bit-mlx](https://huggingface.co/mlx-community/fishaudio-s2-pro-8bit-mlx)
 - [mlx-community/VoxCPM2-4bit](https://huggingface.co/mlx-community/VoxCPM2-4bit)
 - [mlx-community/VoxCPM2-8bit](https://huggingface.co/mlx-community/VoxCPM2-8bit)
 - [mlx-community/VoxCPM2-bf16](https://huggingface.co/mlx-community/VoxCPM2-bf16)
@@ -2034,8 +1995,6 @@
 - [mlx-community/kimi-audio-7b](https://huggingface.co/mlx-community/kimi-audio-7b)
 - [mlx-community/parler-tts-mini](https://huggingface.co/mlx-community/parler-tts-mini)
 - [mlx-community/zipvoice-vietnamese](https://huggingface.co/mlx-community/zipvoice-vietnamese)
-- [mlx-community/kitten-tts-mini](https://huggingface.co/mlx-community/kitten-tts-mini)
-- [mlx-community/MeloTTS-English-v3-MLX](https://huggingface.co/mlx-community/MeloTTS-English-v3-MLX)
 
 ## mm125
 - [mm125/s2-pro](https://huggingface.co/mm125/s2-pro)
@@ -2063,8 +2022,6 @@
 
 ## mradermacher
 - [mradermacher/orpheus-3b-0.1-hindi-male-lora-GGUF](https://huggingface.co/mradermacher/orpheus-3b-0.1-hindi-male-lora-GGUF)
-- [mradermacher/gemma-3n-E4B-it-PaperWitch-heresy-i1-GGUF](https://huggingface.co/mradermacher/gemma-3n-E4B-it-PaperWitch-heresy-i1-GGUF)
-- [mradermacher/gemma-3n-E4B-it-PaperWitch-heresy-GGUF](https://huggingface.co/mradermacher/gemma-3n-E4B-it-PaperWitch-heresy-GGUF)
 
 ## mrluigiclemente
 - [mrluigiclemente/fish-s2-pro](https://huggingface.co/mrluigiclemente/fish-s2-pro)
@@ -2089,7 +2046,6 @@
 
 ## nassimaODL
 - [nassimaODL/wavlm-vocoder](https://huggingface.co/nassimaODL/wavlm-vocoder)
-- [nassimaODL/wavlm-vocoder-french](https://huggingface.co/nassimaODL/wavlm-vocoder-french)
 
 ## nenad1002
 - [nenad1002/nemotron-speech-streaming-es-0.6b-onnx-int4](https://huggingface.co/nenad1002/nemotron-speech-streaming-es-0.6b-onnx-int4)
@@ -2132,6 +2088,7 @@
 - [nur-dev/multilingual-asr](https://huggingface.co/nur-dev/multilingual-asr)
 
 ## nureddin123
+- [nureddin123/whisper_turbo_v1000](https://huggingface.co/nureddin123/whisper_turbo_v1000)
 - [nureddin123/whisper_turbo_1200_r128](https://huggingface.co/nureddin123/whisper_turbo_1200_r128)
 - [nureddin123/whisper_turbo_501_val_r1024](https://huggingface.co/nureddin123/whisper_turbo_501_val_r1024)
 - [nureddin123/whisper_turbo_501_val_r512](https://huggingface.co/nureddin123/whisper_turbo_501_val_r512)
@@ -2154,7 +2111,6 @@
 
 ## offiongbassey
 - [offiongbassey/efik-xlsr-300m](https://huggingface.co/offiongbassey/efik-xlsr-300m)
-- [offiongbassey/efik-whisper](https://huggingface.co/offiongbassey/efik-whisper)
 
 ## okezieowen
 - [okezieowen/Hypa-Whisper-small-20260401_202709-translate-hypa-save-LoRAs](https://huggingface.co/okezieowen/Hypa-Whisper-small-20260401_202709-translate-hypa-save-LoRAs)
@@ -2188,6 +2144,9 @@
 
 ## oulianov
 - [oulianov/slp-rl-aero](https://huggingface.co/oulianov/slp-rl-aero)
+
+## oumni
+- [oumni/darija-wav2vec2-asr](https://huggingface.co/oumni/darija-wav2vec2-asr)
 
 ## pavanmantha
 - [pavanmantha/whisper-medium-sa](https://huggingface.co/pavanmantha/whisper-medium-sa)
@@ -2285,6 +2244,11 @@
 ## reyam123
 - [reyam123/mon-whisper-voxpopuli-fr](https://huggingface.co/reyam123/mon-whisper-voxpopuli-fr)
 
+## riasatsk
+- [riasatsk/Voxtral-4B-TTS-2603](https://huggingface.co/riasatsk/Voxtral-4B-TTS-2603)
+- [riasatsk/Kokoro-82M](https://huggingface.co/riasatsk/Kokoro-82M)
+- [riasatsk/OmniVoice](https://huggingface.co/riasatsk/OmniVoice)
+
 ## richiejp
 - [richiejp/deepvqe-aec-gguf](https://huggingface.co/richiejp/deepvqe-aec-gguf)
 
@@ -2302,9 +2266,6 @@
 
 ## robello2
 - [robello2/whisper-medium-afrispeech-clinical](https://huggingface.co/robello2/whisper-medium-afrispeech-clinical)
-- [robello2/wav2vec2-xlsr-53-afrispeech-clinical](https://huggingface.co/robello2/wav2vec2-xlsr-53-afrispeech-clinical)
-- [robello2/wav2vec2-xlsr-53-afrispeech-general](https://huggingface.co/robello2/wav2vec2-xlsr-53-afrispeech-general)
-- [robello2/wav2vec2-xlsr-53-afrispeech-all](https://huggingface.co/robello2/wav2vec2-xlsr-53-afrispeech-all)
 
 ## rockerritesh
 - [rockerritesh/whisper-tiny-maithili](https://huggingface.co/rockerritesh/whisper-tiny-maithili)
@@ -2340,7 +2301,6 @@
 
 ## sar-aaldamry
 - [sar-aaldamry/natiq-wav2vec-jonatas](https://huggingface.co/sar-aaldamry/natiq-wav2vec-jonatas)
-- [sar-aaldamry/natiq-wav2vec-arabic](https://huggingface.co/sar-aaldamry/natiq-wav2vec-arabic)
 
 ## saravanavel-e
 - [saravanavel-e/XTTS-v2](https://huggingface.co/saravanavel-e/XTTS-v2)
@@ -2371,12 +2331,8 @@
 ## shameez
 - [shameez/whisper-large-v3-turbo-ov](https://huggingface.co/shameez/whisper-large-v3-turbo-ov)
 
-## shantipriya
-- [shantipriya/odia-asr](https://huggingface.co/shantipriya/odia-asr)
-
 ## sharvesh007
 - [sharvesh007/tamil-tts-cosyvoice3-grapheme-checkpoint-3500-pruned](https://huggingface.co/sharvesh007/tamil-tts-cosyvoice3-grapheme-checkpoint-3500-pruned)
-- [sharvesh007/tamil-tts-cosyvoice3-grapheme-checkpoint-2001](https://huggingface.co/sharvesh007/tamil-tts-cosyvoice3-grapheme-checkpoint-2001)
 
 ## shooding
 - [shooding/faster-whisper-large-v3-zh-TW](https://huggingface.co/shooding/faster-whisper-large-v3-zh-TW)
@@ -2481,9 +2437,6 @@
 ## t1315
 - [t1315/GPT-SoVITS](https://huggingface.co/t1315/GPT-SoVITS)
 
-## tahmaz
-- [tahmaz/qwen3-tts-azerbaijani-zenfira](https://huggingface.co/tahmaz/qwen3-tts-azerbaijani-zenfira)
-
 ## takehika
 - [takehika/wav2vec2-ja-cv25-reazon-mixed](https://huggingface.co/takehika/wav2vec2-ja-cv25-reazon-mixed)
 
@@ -2526,6 +2479,7 @@
 - [theoracleguy/Qwen3-TTS-12Hz-0.6B-Base-bf16](https://huggingface.co/theoracleguy/Qwen3-TTS-12Hz-0.6B-Base-bf16)
 
 ## thewh1teagle
+- [thewh1teagle/abjad-he-ipa](https://huggingface.co/thewh1teagle/abjad-he-ipa)
 - [thewh1teagle/whisper-large-v3-turbo-he-ipa](https://huggingface.co/thewh1teagle/whisper-large-v3-turbo-he-ipa)
 
 ## thisniyi
@@ -2551,7 +2505,6 @@
 ## transitionGap
 - [transitionGap/ASR_haryanvi_small_finetuned](https://huggingface.co/transitionGap/ASR_haryanvi_small_finetuned)
 - [transitionGap/ASR_Bhojpuri_small_finetuned](https://huggingface.co/transitionGap/ASR_Bhojpuri_small_finetuned)
-- [transitionGap/ASR_hindi_small_finetuned](https://huggingface.co/transitionGap/ASR_hindi_small_finetuned)
 
 ## tristanripke
 - [tristanripke/cohere-transcribe-onnx-int8](https://huggingface.co/tristanripke/cohere-transcribe-onnx-int8)
@@ -2578,6 +2531,9 @@
 
 ## utachicodes
 - [utachicodes/dikkte-wolof-asr](https://huggingface.co/utachicodes/dikkte-wolof-asr)
+
+## utsav1922
+- [utsav1922/s2-pro](https://huggingface.co/utsav1922/s2-pro)
 
 ## uvlogdev12345
 - [uvlogdev12345/Belle-whisper-large-v3-turbo-zh](https://huggingface.co/uvlogdev12345/Belle-whisper-large-v3-turbo-zh)
@@ -2657,16 +2613,16 @@
 - [wavekat/Qwen3-TTS-1.7B-VoiceDesign-ONNX](https://huggingface.co/wavekat/Qwen3-TTS-1.7B-VoiceDesign-ONNX)
 
 ## waxal-benchmarking
+- [waxal-benchmarking/mms-300m-lin-xathanase](https://huggingface.co/waxal-benchmarking/mms-300m-lin-xathanase)
+- [waxal-benchmarking/mms-300m-lin-atholabahizire](https://huggingface.co/waxal-benchmarking/mms-300m-lin-atholabahizire)
+- [waxal-benchmarking/whisper-tiny-sid-Oreoluwa](https://huggingface.co/waxal-benchmarking/whisper-tiny-sid-Oreoluwa)
+- [waxal-benchmarking/whisper-tiny-amh-matewosx](https://huggingface.co/waxal-benchmarking/whisper-tiny-amh-matewosx)
+- [waxal-benchmarking/whisper-small-amh-matewosx](https://huggingface.co/waxal-benchmarking/whisper-small-amh-matewosx)
+- [waxal-benchmarking/whisper-small-sid-Oreoluwa](https://huggingface.co/waxal-benchmarking/whisper-small-sid-Oreoluwa)
+- [waxal-benchmarking/mms-tts-luo-3mry5](https://huggingface.co/waxal-benchmarking/mms-tts-luo-3mry5)
 - [waxal-benchmarking/mms-300m-mas-gbotemi](https://huggingface.co/waxal-benchmarking/mms-300m-mas-gbotemi)
 - [waxal-benchmarking/whisper-tiny-mas-gbotemi](https://huggingface.co/waxal-benchmarking/whisper-tiny-mas-gbotemi)
 - [waxal-benchmarking/whisper-small-mas-gbotemi](https://huggingface.co/waxal-benchmarking/whisper-small-mas-gbotemi)
-- [waxal-benchmarking/whisper-small-small-learning-rate-kpo-gbotemi](https://huggingface.co/waxal-benchmarking/whisper-small-small-learning-rate-kpo-gbotemi)
-- [waxal-benchmarking/whisper-tiny-orm-victor](https://huggingface.co/waxal-benchmarking/whisper-tiny-orm-victor)
-- [waxal-benchmarking/mms-300m-orm-victor](https://huggingface.co/waxal-benchmarking/mms-300m-orm-victor)
-- [waxal-benchmarking/whisper-tiny-sog-emmily](https://huggingface.co/waxal-benchmarking/whisper-tiny-sog-emmily)
-- [waxal-benchmarking/mms-300m-sog-emmilly](https://huggingface.co/waxal-benchmarking/mms-300m-sog-emmilly)
-- [waxal-benchmarking/mms-300m-sid-Oreoluwa](https://huggingface.co/waxal-benchmarking/mms-300m-sid-Oreoluwa)
-- [waxal-benchmarking/whisper-small-sog-emmilly](https://huggingface.co/waxal-benchmarking/whisper-small-sog-emmilly)
 
 ## weya-ai
 - [weya-ai/hush](https://huggingface.co/weya-ai/hush)
@@ -2686,17 +2642,11 @@
 ## wolfofbackstreet
 - [wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU](https://huggingface.co/wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU)
 
-## wuzhanliai21
-- [wuzhanliai21/Seed-VC](https://huggingface.co/wuzhanliai21/Seed-VC)
-
 ## xDre4m524
 - [xDre4m524/VieNeu-TTS-0.3B-lora-ngoc-huyen](https://huggingface.co/xDre4m524/VieNeu-TTS-0.3B-lora-ngoc-huyen)
 
 ## xandersbell
 - [xandersbell/IndexTTS2-Safetensors](https://huggingface.co/xandersbell/IndexTTS2-Safetensors)
-
-## xaviviro
-- [xaviviro/whisper_euskera_v1](https://huggingface.co/xaviviro/whisper_euskera_v1)
 
 ## xbiglylabs
 - [xbiglylabs/za-anv-multilingual-whisper-v3-turbo](https://huggingface.co/xbiglylabs/za-anv-multilingual-whisper-v3-turbo)
@@ -2709,6 +2659,9 @@
 ## xenoASHO
 - [xenoASHO/s2-pro](https://huggingface.co/xenoASHO/s2-pro)
 
+## xiyef
+- [xiyef/Voxtral-4B-TTS-2603](https://huggingface.co/xiyef/Voxtral-4B-TTS-2603)
+
 ## yachi8000
 - [yachi8000/Tsukuyoid-RVC](https://huggingface.co/yachi8000/Tsukuyoid-RVC)
 
@@ -2719,19 +2672,8 @@
 - [yash3120/OmniVoice](https://huggingface.co/yash3120/OmniVoice)
 
 ## younghan-meta
+- [younghan-meta/Parakeet-TDT-ExecuTorch-MLX](https://huggingface.co/younghan-meta/Parakeet-TDT-ExecuTorch-MLX)
 - [younghan-meta/Voxtral-Mini-4B-Realtime-2602-ExecuTorch-CUDA](https://huggingface.co/younghan-meta/Voxtral-Mini-4B-Realtime-2602-ExecuTorch-CUDA)
-- [younghan-meta/Parakeet-TDT-ExecuTorch-Metal](https://huggingface.co/younghan-meta/Parakeet-TDT-ExecuTorch-Metal)
-- [younghan-meta/Whisper-Tiny-ExecuTorch-Metal](https://huggingface.co/younghan-meta/Whisper-Tiny-ExecuTorch-Metal)
-- [younghan-meta/Parakeet-TDT-ExecuTorch-XNNPACK](https://huggingface.co/younghan-meta/Parakeet-TDT-ExecuTorch-XNNPACK)
-- [younghan-meta/Whisper-Tiny-ExecuTorch-XNNPACK](https://huggingface.co/younghan-meta/Whisper-Tiny-ExecuTorch-XNNPACK)
-- [younghan-meta/Voxtral-Mini-4B-Realtime-2602-ExecuTorch-Metal](https://huggingface.co/younghan-meta/Voxtral-Mini-4B-Realtime-2602-ExecuTorch-Metal)
-- [younghan-meta/Voxtral-Mini-4B-Realtime-2602-ExecuTorch-XNNPACK](https://huggingface.co/younghan-meta/Voxtral-Mini-4B-Realtime-2602-ExecuTorch-XNNPACK)
-
-## youngouk
-- [youngouk/whisper-medium-komixv2-mlx](https://huggingface.co/youngouk/whisper-medium-komixv2-mlx)
-
-## yousefkotp
-- [yousefkotp/TATA-egyptian-arabic-asr-diarization](https://huggingface.co/yousefkotp/TATA-egyptian-arabic-asr-diarization)
 
 ## ysdede
 - [ysdede/nemo-canary-1b-v2-onnx-timestamped](https://huggingface.co/ysdede/nemo-canary-1b-v2-onnx-timestamped)
@@ -2740,12 +2682,6 @@
 
 ## yunus-emre
 - [yunus-emre/whisper-large-tr](https://huggingface.co/yunus-emre/whisper-large-tr)
-
-## yuriyvnv
-- [yuriyvnv/whisper-large-v3-slovenian](https://huggingface.co/yuriyvnv/whisper-large-v3-slovenian)
-- [yuriyvnv/whisper-large-v3-estonian](https://huggingface.co/yuriyvnv/whisper-large-v3-estonian)
-- [yuriyvnv/parakeet-tdt-0.6b-estonian](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-estonian)
-- [yuriyvnv/parakeet-tdt-0.6b-slovenian](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-slovenian)
 
 ## yusufarcher
 - [yusufarcher/parakeet-tdt-1.1b-fp16](https://huggingface.co/yusufarcher/parakeet-tdt-1.1b-fp16)
