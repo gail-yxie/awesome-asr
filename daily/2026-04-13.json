@@ -1,0 +1,593 @@
+{
+  "date": "2026-04-13",
+  "summary": "The primary development today is the release of optimized versions of the MERaLiON-2 model suite, focusing on 3B and 10B parameter variants tailored for Southeast Asian languages. These models utilize Apple’s MLX framework and introduce specialized \"RotorQuant\" and \"TurboQuant\" quantization techniques, reaching extreme bit-widths as low as 2-bit to facilitate high-performance on-device inference. This release highlights an ongoing trend in the speech and language modeling community toward aggressive compression and regional specialization, enabling large-scale architectures to run efficiently on edge hardware. While no new papers were published today, these releases underscore the critical transition from theoretical multi-modal modeling to practical, low-latency deployment for localized speech-language tasks.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "majentik/MERaLiON-2-3B-RotorQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-3B-RotorQuant-MLX-2bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-3B-RotorQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-3B-RotorQuant-MLX-8bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-3B-TurboQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-3B-TurboQuant-MLX-2bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-3B-TurboQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-3B-TurboQuant-MLX-8bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-3B-RotorQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-3B-RotorQuant-MLX-4bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-3B-TurboQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-3B-TurboQuant-MLX-4bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-10B-RotorQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-10B-RotorQuant-MLX-2bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-10B-TurboQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-10B-TurboQuant-MLX-2bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-10B-RotorQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-10B-RotorQuant-MLX-8bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-10B-TurboQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-10B-TurboQuant-MLX-8bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-10B-RotorQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-10B-RotorQuant-MLX-4bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-2-10B-TurboQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-2-10B-TurboQuant-MLX-4bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-3-10B-RotorQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-3-10B-RotorQuant-MLX-2bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-3-10B-TurboQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-3-10B-TurboQuant-MLX-2bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-3-10B-RotorQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-3-10B-RotorQuant-MLX-4bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-3-10B-TurboQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-3-10B-TurboQuant-MLX-4bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-3-10B-RotorQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-3-10B-RotorQuant-MLX-8bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-3-10B-TurboQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-3-10B-TurboQuant-MLX-8bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_turbo_2000_v2",
+      "author": "nureddin123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_turbo_2000_v2",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Quyashbek/wav2vec2-xls-r-300m-karakalpak",
+      "author": "Quyashbek",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Quyashbek/wav2vec2-xls-r-300m-karakalpak",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ns167/whisper-tiny",
+      "author": "ns167",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ns167/whisper-tiny",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kinory24/aero-whisper-small_dbF_1e-4",
+      "author": "kinory24",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kinory24/aero-whisper-small_dbF_1e-4",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KerNeLGaming/whisper-tiny-medical",
+      "author": "KerNeLGaming",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/KerNeLGaming/whisper-tiny-medical",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-medium-it-ct2-int8",
+      "author": "LocalAI-io",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-medium-it-ct2-int8",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_turbo_2000_v1",
+      "author": "nureddin123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_turbo_2000_v1",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "l202147/wav2vec2-base-960h",
+      "author": "l202147",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/l202147/wav2vec2-base-960h",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hyunseop/whisper-tiny-en-au-poly",
+      "author": "hyunseop",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/hyunseop/whisper-tiny-en-au-poly",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "deepdml/whisper-large-v3-distil-dec4-ct2.fr",
+      "author": "deepdml",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/deepdml/whisper-large-v3-distil-dec4-ct2.fr",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "awong-dev/whisper-large-v3-yue-lora-dec-enc4",
+      "author": "awong-dev",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/awong-dev/whisper-large-v3-yue-lora-dec-enc4",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-small-dga-gbotemi",
+      "author": "waxal-benchmarking",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-small-dga-gbotemi",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-tiny-dga-gbotemi",
+      "author": "waxal-benchmarking",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-tiny-dga-gbotemi",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hyunseop/whisper-base-dv",
+      "author": "hyunseop",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hyunseop/whisper-base-dv",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-small-sna-gbotemi",
+      "author": "waxal-benchmarking",
+      "downloads": 104,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-small-sna-gbotemi",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/whisper-tiny-sna-gbotemi",
+      "author": "waxal-benchmarking",
+      "downloads": 121,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/whisper-tiny-sna-gbotemi",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "waxal-benchmarking/mms-300m-sna-gbotemi",
+      "author": "waxal-benchmarking",
+      "downloads": 43,
+      "likes": 0,
+      "url": "https://huggingface.co/waxal-benchmarking/mms-300m-sna-gbotemi",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-medium-it",
+      "author": "LocalAI-io",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-medium-it",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "holotherapper/lilfugu-experimental-transformers",
+      "author": "holotherapper",
+      "downloads": 30,
+      "likes": 0,
+      "url": "https://huggingface.co/holotherapper/lilfugu-experimental-transformers",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "holotherapper/lilfugu-experimental",
+      "author": "holotherapper",
+      "downloads": 58,
+      "likes": 0,
+      "url": "https://huggingface.co/holotherapper/lilfugu-experimental",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "holotherapper/lilfugu-transformers",
+      "author": "holotherapper",
+      "downloads": 39,
+      "likes": 0,
+      "url": "https://huggingface.co/holotherapper/lilfugu-transformers",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "holotherapper/lilfugu",
+      "author": "holotherapper",
+      "downloads": 50,
+      "likes": 0,
+      "url": "https://huggingface.co/holotherapper/lilfugu",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "holotherapper/lilfugu-experimental-8bit",
+      "author": "holotherapper",
+      "downloads": 41,
+      "likes": 0,
+      "url": "https://huggingface.co/holotherapper/lilfugu-experimental-8bit",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "holotherapper/lilfugu-8bit",
+      "author": "holotherapper",
+      "downloads": 44,
+      "likes": 0,
+      "url": "https://huggingface.co/holotherapper/lilfugu-8bit",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "holotherapper/lilfugu-experimental-lora",
+      "author": "holotherapper",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/holotherapper/lilfugu-experimental-lora",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "holotherapper/lilfugu-lora",
+      "author": "holotherapper",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/holotherapper/lilfugu-lora",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kenshi777/whisper-tiny-en-us-minds14",
+      "author": "kenshi777",
+      "downloads": 51,
+      "likes": 0,
+      "url": "https://huggingface.co/kenshi777/whisper-tiny-en-us-minds14",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kkarhm/whisper-nep-eng-codemixed-peft-small",
+      "author": "kkarhm",
+      "downloads": 21,
+      "likes": 1,
+      "url": "https://huggingface.co/kkarhm/whisper-nep-eng-codemixed-peft-small",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Klayt/xlsr-dioula-asr",
+      "author": "Klayt",
+      "downloads": 15,
+      "likes": 0,
+      "url": "https://huggingface.co/Klayt/xlsr-dioula-asr",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Gonalb/whisper_finetune_16bit",
+      "author": "Gonalb",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/Gonalb/whisper_finetune_16bit",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "cstr/wav2vec2-large-xlsr-53-english-GGUF",
+      "author": "cstr",
+      "downloads": 88,
+      "likes": 0,
+      "url": "https://huggingface.co/cstr/wav2vec2-large-xlsr-53-english-GGUF",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "qb2743/faster-whisper-medium",
+      "author": "qb2743",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/qb2743/faster-whisper-medium",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dida-80b/kokoro-deutsch-hui-base",
+      "author": "dida-80b",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/dida-80b/kokoro-deutsch-hui-base",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "TelvoxAI/chatterbox-nepali-tts",
+      "author": "TelvoxAI",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/TelvoxAI/chatterbox-nepali-tts",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Imbatmann/chatterbox-nepali-tts",
+      "author": "Imbatmann",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Imbatmann/chatterbox-nepali-tts",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "brot1234134/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "author": "brot1234134",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/brot1234134/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "aoiandroid/supertonic-2-coreml",
+      "author": "aoiandroid",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/aoiandroid/supertonic-2-coreml",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ai4all8/VoxCPM2-ONNX",
+      "author": "ai4all8",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ai4all8/VoxCPM2-ONNX",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "akh-mysterio/veena-hinglish",
+      "author": "akh-mysterio",
+      "downloads": 61,
+      "likes": 0,
+      "url": "https://huggingface.co/akh-mysterio/veena-hinglish",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Lpx1234/chatterbox",
+      "author": "Lpx1234",
+      "downloads": 11,
+      "likes": 1,
+      "url": "https://huggingface.co/Lpx1234/chatterbox",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "notmax123/blue",
+      "author": "notmax123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/notmax123/blue",
+      "created_at": "2026-04-11",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "XueLiuChengHe/ChatTTS",
+      "author": "XueLiuChengHe",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/XueLiuChengHe/ChatTTS",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "mariammohamed00/speecht5_finetuned",
+      "author": "mariammohamed00",
+      "downloads": 57,
+      "likes": 1,
+      "url": "https://huggingface.co/mariammohamed00/speecht5_finetuned",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "justabigduck/NSFW_MMaudio",
+      "author": "justabigduck",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/justabigduck/NSFW_MMaudio",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "Rokon132/sepformer-wsj02mix",
+      "author": "Rokon132",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Rokon132/sepformer-wsj02mix",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "ShiniChien/VoiceDesign2",
+      "author": "ShiniChien",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/ShiniChien/VoiceDesign2",
+      "created_at": "2026-04-13"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 63,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}
