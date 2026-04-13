@@ -41,7 +41,6 @@
 - [LLMs and Speech: Integration vs. Combination](https://arxiv.org/abs/2603.15045v1)
 - [FireRedASR2S: A State-of-the-Art Industrial-Grade All-in-One Automatic Speech Recognition System](https://arxiv.org/abs/2603.10420v1)
 - [Speech Codec Probing from Semantic and Phonetic Perspectives](https://arxiv.org/abs/2603.10371v1)
-- [A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition](https://arxiv.org/abs/2603.09725v1)
 
 ## q-bio.QM
 - [Impact of automatic speech recognition quality on Alzheimer's disease detection from spontaneous speech: a reproducible benchmark study with lexical modeling and statistical validation](https://arxiv.org/abs/2603.18239v1)

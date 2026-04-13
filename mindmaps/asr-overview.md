@@ -83,6 +83,7 @@
 - nureddin123/whisper_turbo_1200_r128
 - Eimhin03/final2-irish-whisper-pseudo-iter4
 - devrahulbanjara/whisper-small-nepali
+- itsarunendra/whisper-medium-tunisian-full-v2.1
 
 ### Transducer
 - RNN-T
@@ -126,6 +127,7 @@
 - LLMs and Speech: Integration vs. Combination
 - From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs
 - wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU
+- Closing the Speech-Text Gap with Limited Audio for Effective Domain Adaptation in LLM-Based ASR
 
 
 ## Self-Supervised Learning
@@ -351,6 +353,9 @@
 - bubiche/whisper.cpp
 - Iornspider/stt-1b-en_fr-candle
 - cstr/qwen3-asr-0.6b-GGUF
+- majentik/MERaLiON-2-3B-RotorQuant-MLX-2bit
+- majentik/MERaLiON-2-3B-RotorQuant-MLX-8bit
+- majentik/MERaLiON-2-3B-TurboQuant-MLX-2bit
 
 #### Methods
 - Quantization
@@ -369,6 +374,7 @@
 - Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition
 - james-417/tcm-whisper-LoRA-v1
 - Kanompung/whisper-th-lotusdis-lora
+- Two-Stage Adaptation for Non-Normative Speech Recognition: Revisiting Speaker-Independent Initialization for Personalization
 
 ### Model Merging
 - Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR
