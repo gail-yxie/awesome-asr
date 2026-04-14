@@ -1,5 +1,4 @@
 {
-  "2026-03-31": [],
   "2026-04-01": [],
   "2026-04-02": [],
   "2026-04-03": [
@@ -44,5 +43,19 @@
   "2026-04-10": [],
   "2026-04-11": [],
   "2026-04-12": [],
-  "2026-04-13": []
+  "2026-04-13": [],
+  "2026-04-14": [
+    "2604.11594v1",
+    "humdial-eibench: a human-recorded multi-turn emotional intelligence benchmark for audio language models",
+    "2604.11424v1",
+    "bridging what the model thinks and how it speaks: self-aware speech language models for expressive speech generation",
+    "2604.11269v1",
+    "speaker attributed automatic speech recognition using speech aware llms",
+    "2604.11110v1",
+    "ti-audio: the first multi-dialectal end-to-end speech llm for tibetan",
+    "2604.11096v1",
+    "efficient training for cross-lingual speech language models",
+    "2604.10905v1",
+    "audio flamingo next: next-generation open audio-language models for speech, sound, and music"
+  ]
 }

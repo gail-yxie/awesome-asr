@@ -1,0 +1,557 @@
+{
+  "date": "2026-04-14",
+  "summary": "Today’s research highlights a shift from basic Speech Language Model (SLM) capability toward emotional and expressive depth, evidenced by the HumDial-EIBench for multi-turn emotional intelligence evaluation and new \"Self-Aware SLMs\" designed to bridge the gap between semantic intent and acoustic realization. The release of Audio Flamingo Next advances open-source foundational models for holistic reasoning across speech, music, and environment sounds, while work on Ti-Audio and cross-lingual training strategies focuses on scaling these architectures to low-resource and multi-dialectal contexts. Architecturally, the adaptation of Granite-speech for Speaker Attributed ASR (SAA) underscores a trend toward using speech-aware LLMs to unify transcription and diarization into a single end-to-end task. Complementing these advancements, new model releases continue to prioritize efficient inference, with multiple ONNX and CTranslate2 optimizations of the Whisper and Parakeet families appearing for deployment-focused workflows.",
+  "ideas": [
+    "HumDial-EIBench establishes a more realistic evaluation for emotional intelligence by replacing synthetic, single-turn datasets with human-recorded, multi-turn dialogues.",
+    "The \"semantic understanding-acoustic realization gap\" is identified as a primary cause of flat speech in models, requiring new self-aware architectures to ensure expressive intent matches semantic content.",
+    "Speech-aware Large Language Models can perform integrated Speaker-Attributed ASR by learning to interleave relative speaker identity tags directly within the generated transcript.",
+    "Ti-Audio proves that end-to-end speech LLMs can be successfully adapted to low-resource and multi-dialectal environments such as Tibetan despite severe data scarcity.",
+    "New training strategies for cross-lingual speech LLMs offer a path to expand end-to-end audio understanding beyond English through more efficient data utilization and model expansion techniques.",
+    "Audio Flamingo Next demonstrates that scaling foundation models and refining architectures enables a single model to excel at complex reasoning across speech, environmental sounds, and music."
+  ],
+  "papers": [
+    {
+      "id": "2604.11594v1",
+      "title": "HumDial-EIBench: A Human-Recorded Multi-Turn Emotional Intelligence Benchmark for Audio Language Models",
+      "authors": [
+        "Shuiyuan Wang",
+        "Zhixian Zhao",
+        "Hongfei Yue",
+        "Chengyou Wang",
+        "Shuai Wang",
+        "Hui Bu",
+        "Xin Xu",
+        "Lei Xie"
+      ],
+      "abstract": "Evaluating the emotional intelligence (EI) of audio language models (ALMs) is critical. However, existing benchmarks mostly rely on synthesized speech, are limited to single-turn interactions, and depend heavily on open-ended scoring. This paper proposes HumDial-EIBench, a comprehensive benchmark for evaluating ALMs' EI. Using real-recorded human dialogues from the ICASSP 2026 HumDial Challenge, it reformulates emotional tracking and causal reasoning into multiple-choice questions with adversarial distractors, mitigating subjective scoring bias for cognitive tasks. It retains the generation of empathetic responses and introduces an acoustic-semantic conflict task to assess robustness against contradictory multimodal signals. Evaluations of eight ALMs reveal that most models struggle with multi-turn emotional tracking and implicit causal reasoning. Furthermore, all models exhibit decoupled textual and acoustic empathy, alongside a severe text-dominance bias during cross-modal conflicts.",
+      "categories": [
+        "eess.AS",
+        "cs.SD"
+      ],
+      "published": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.11594v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.11594v1"
+    },
+    {
+      "id": "2604.11424v1",
+      "title": "Bridging What the Model Thinks and How It Speaks: Self-Aware Speech Language Models for Expressive Speech Generation",
+      "authors": [
+        "Kuang Wang",
+        "Lai Wei",
+        "Qibing Bai",
+        "Ping Lin",
+        "Wenkai Fang",
+        "Feng Jiang",
+        "Zhongjie Jiang",
+        "Jun Huang",
+        "Yannan Wang",
+        "Haizhou Li"
+      ],
+      "abstract": "Speech Language Models (SLMs) exhibit strong semantic understanding, yet their generated speech often sounds flat and fails to convey expressive intent, undermining user engagement. We term this mismatch the semantic understanding-acoustic realization gap. We attribute this gap to two key deficiencies: (1) intent transmission failure, where SLMs fail to provide the stable utterance-level intent needed for expressive delivery; and (2) realization-unaware training, where no feedback signal verifies whether acoustic outputs faithfully reflect intended expression. To address these issues, we propose SA-SLM (Self-Aware Speech Language Model), built on the principle that the model should be aware of what it thinks during generation and how it speaks during training. SA-SLM addresses this gap through two core contributions: (1) Intent-Aware Bridging, which uses a Variational Information Bottleneck (VIB) objective to translate the model's internal semantics into temporally smooth expressive intent, making speech generation aware of what the model intends to express; and (2) Realization-Aware Alignment, which repurposes the model as its own critic to verify and align acoustic realization with intended expressive intent via rubric-based feedback. Trained on only 800 hours of expressive speech data, our 3B parameter SA-SLM surpasses all open-source baselines and comes within 0.08 points of GPT-4o-Audio in overall expressiveness on the EchoMind benchmark.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.11424v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.11424v1"
+    },
+    {
+      "id": "2604.11269v1",
+      "title": "Speaker Attributed Automatic Speech Recognition Using Speech Aware LLMS",
+      "authors": [
+        "Hagai Aronowitz",
+        "Zvi Kons",
+        "Avihu Dekel",
+        "George Saon",
+        "Ron Hoory"
+      ],
+      "abstract": "Speaker-Attributed Automatic Speech Recognition (SAA) enhances traditional ASR systems by incorporating relative speaker identity tags directly into the transcript (e.g., [Speaker 1]:, [Speaker 2]:). In this work, we extend the capabilities of Granite-speech, a state-of-the-art speech-aware Large Language Model (LLM) originally trained for transcription and translation. We demonstrate that it can be effectively adapted for SAA with only minimal architectural changes. Our core contribution is the introduction of speaker cluster identification tags (e.g., [Speaker 1 cluster 42]:) which are jointly trained with SAA to significantly improve accuracy. To address limitations in training data, we propose a data augmentation method that uses artificially concatenated multi-speaker conversations. Our approach is evaluated across multiple benchmarks and shows superior performance compared to conventional pipelines that sequentially perform speaker diarization followed by ASR.",
+      "categories": [
+        "eess.AS"
+      ],
+      "published": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.11269v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.11269v1"
+    },
+    {
+      "id": "2604.11110v1",
+      "title": "Ti-Audio: The First Multi-Dialectal End-to-End Speech LLM for Tibetan",
+      "authors": [
+        "Jialing Wang",
+        "Yue Zhao",
+        "Yuhao Zhang",
+        "Jing Yu",
+        "Shaosai Li",
+        "Zhanchen Dai",
+        "Benyou Wang",
+        "Haizhou Li"
+      ],
+      "abstract": "Recent advances in Speech Large Language Models (Speech-LLMs) have made significant progress, greatly enhancing multimodal interaction capabilities.However, their application in low-resource and dialect-diverse environments still faces challenges. The severe scarcity of Tibetan data, coupled with the phonetic differences among its major dialects (Ü-Tsang, Amdo, and Kham), is a prime example of this challenge. This paper proposes Ti-Audio, the first multi-dialectal end-to-end Speech-LLM for Tibetan. To efficiently align speech and text, we introduce a Dynamic Q-Former Adapter that extracts essential acoustic features from variable-length speech, ensuring stable cross-modal alignment even with limited data. At the data level, we leverage mutual assistance among related dialects to alleviate data scarcity and employ a temperature-based sampling strategy to maximize this synergy. Experimental results demonstrate that Ti-Audio achieves state-of-the-art performance on Tibetan benchmarks for automatic speech recognition and speech translation. Our work validates the effectiveness of cross-dialectal cooperation and provides a scalable paradigm for the development of Speech-LLM in low-resource scenarios.",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.11110v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.11110v1"
+    },
+    {
+      "id": "2604.11096v1",
+      "title": "Efficient Training for Cross-lingual Speech Language Models",
+      "authors": [
+        "Yan Zhou",
+        "Qingkai Fang",
+        "Yun Hong",
+        "Yang Feng"
+      ],
+      "abstract": "Currently, large language models (LLMs) predominantly focus on the text modality. To enable more natural human-AI interaction, speech LLMs are emerging, but building effective end-to-end speech LLMs remains challenging due to limited data and the difficulty in expanding to more languages. In this paper, we introduce Cross-lingual Speech Language Model (CSLM), an efficient training method for cross-lingual speech LLMs based on discrete speech tokens. We propose a novel alignment strategy that achieves cross-modal and cross-lingual alignment through continual pre-training. By conducting instruction fine-tuning following a speech-text interleaved chain-of-modality generation process, we enhance modal alignment at a finer granularity, thereby improving generation quality and reducing latency. CSLM aligns different modalities and languages simultaneously without the need for massive speech data, thus exhibiting good language scalability. Evaluations on cross-modal tasks, mono-lingual conversational tasks, and cross-lingual conversational tasks demonstrate CSLM's strong cross-modal alignment capabilities and general task abilities. (Code is available at: https://github.com/ictnlp/CSLM)",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SD"
+      ],
+      "published": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.11096v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.11096v1"
+    },
+    {
+      "id": "2604.10905v1",
+      "title": "Audio Flamingo Next: Next-Generation Open Audio-Language Models for Speech, Sound, and Music",
+      "authors": [
+        "Sreyan Ghosh",
+        "Arushi Goel",
+        "Kaousheik Jayakumar",
+        "Lasha Koroshinadze",
+        "Nishit Anand",
+        "Zhifeng Kong",
+        "Siddharth Gururani",
+        "Sang-gil Lee",
+        "Jaehyeon Kim",
+        "Aya Aljafari",
+        "Chao-Han Huck Yang",
+        "Sungwon Kim",
+        "Ramani Duraiswami",
+        "Dinesh Manocha",
+        "Mohammad Shoeybi",
+        "Bryan Catanzaro",
+        "Ming-Yu Liu",
+        "Wei Ping"
+      ],
+      "abstract": "We present Audio Flamingo Next (AF-Next), the next-generation and most capable large audio-language model in the Audio Flamingo series, designed to advance understanding and reasoning over speech, environmental sounds and music. Compared to Audio Flamingo 3, AF-Next introduces: (i) a stronger foundational audio-language model that significantly improves accuracy across diverse audio understanding tasks; (ii) scalable strategies for constructing large-scale audio understanding and reasoning data beyond existing academic benchmarks; (iii) support for long and complex audio inputs up to 30 minutes; and (iv) Temporal Audio Chain-of-Thought, a new reasoning paradigm that explicitly grounds intermediate reasoning steps to timestamps in long audio, enabling fine-grained temporal alignment and improved interpretability. To enable these capabilities, we first conduct a systematic analysis of Audio Flamingo 3 to identify key gaps in audio understanding and reasoning. We then curate and scale new large-scale datasets totaling over 1 million hours to address these limitations and expand the existing AudioSkills-XL, LongAudio-XL, AF-Think and AF-Chat datasets. AF-Next is trained using a curriculum-based strategy spanning pre-training, mid-training and post-training stages. Extensive experiments across 20 audio understanding and reasoning benchmarks, including challenging long-audio tasks, show that AF-Next outperforms similarly sized open models by large margins and remains highly competitive with and sometimes surpasses, much larger open-weight and closed models. Beyond benchmark performance, AF-Next exhibits strong real-world utility and transfers well to unseen tasks, highlighting its robustness and generalization ability. In addition to all data, code and methods, we open-source 3 variants of AF-Next, including AF-Next-Instruct, AF-Next-Think and AF-Next-Captioner.",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.10905v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.10905v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "willopcbeta/whisper-large-v3-turbo-ONNX",
+      "author": "willopcbeta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/willopcbeta/whisper-large-v3-turbo-ONNX",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "QuadroKnoX/parakeet-primeline",
+      "author": "QuadroKnoX",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/QuadroKnoX/parakeet-primeline",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "willopcbeta/lite-whisper-small-fast-ONNX",
+      "author": "willopcbeta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/willopcbeta/lite-whisper-small-fast-ONNX",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "willopcbeta/lite-whisper-small-fast",
+      "author": "willopcbeta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/willopcbeta/lite-whisper-small-fast",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "willopcbeta/whisper-small-ONNX",
+      "author": "willopcbeta",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/willopcbeta/whisper-small-ONNX",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "tong-li-fsx/whisper-small-dv",
+      "author": "tong-li-fsx",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/tong-li-fsx/whisper-small-dv",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "zacdan4801/wav2vec2-lv-60-espeak-cv-ft-phocab-ds-f3-extended",
+      "author": "zacdan4801",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/zacdan4801/wav2vec2-lv-60-espeak-cv-ft-phocab-ds-f3-extended",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Amal23/whisper-base-hindi-finetuned",
+      "author": "Amal23",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Amal23/whisper-base-hindi-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-large-v3-turbo-it-multi-ct2-int8",
+      "author": "LocalAI-io",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-large-v3-turbo-it-multi-ct2-int8",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kasatgaurav/indic-conformer-600m-multilingual",
+      "author": "kasatgaurav",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kasatgaurav/indic-conformer-600m-multilingual",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AmaanP314/telephony-distil-large-v3.5",
+      "author": "AmaanP314",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AmaanP314/telephony-distil-large-v3.5",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-large-v3-turbo-it-multi",
+      "author": "LocalAI-io",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-large-v3-turbo-it-multi",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Aregay01/whisper-medium-tigrinya-experiment",
+      "author": "Aregay01",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Aregay01/whisper-medium-tigrinya-experiment",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Lihuashi/Qwen3-ASR-1.7B",
+      "author": "Lihuashi",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/Lihuashi/Qwen3-ASR-1.7B",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-large-v3-it-ct2-int8",
+      "author": "LocalAI-io",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-large-v3-it-ct2-int8",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Mohcinimohamed/vibevoice-asr-darija-lora",
+      "author": "Mohcinimohamed",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/Mohcinimohamed/vibevoice-asr-darija-lora",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nassimaODL/whisper-small-arabic-cv18-lora",
+      "author": "nassimaODL",
+      "downloads": 33,
+      "likes": 0,
+      "url": "https://huggingface.co/nassimaODL/whisper-small-arabic-cv18-lora",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "skdebela/wav2vec2-base-amharic",
+      "author": "skdebela",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/skdebela/wav2vec2-base-amharic",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/cdli-qwen3-asr-en-finetune-salt-15",
+      "author": "KasuleTrevor",
+      "downloads": 100,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/cdli-qwen3-asr-en-finetune-salt-15",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Musa505/whisper-small-kazakh",
+      "author": "Musa505",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/Musa505/whisper-small-kazakh",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-large-v3-it",
+      "author": "LocalAI-io",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-large-v3-it",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "iulik-pisik/whisper-small-ro-noisy",
+      "author": "iulik-pisik",
+      "downloads": 63,
+      "likes": 0,
+      "url": "https://huggingface.co/iulik-pisik/whisper-small-ro-noisy",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-large-v3-it-multi-ct2-int8",
+      "author": "LocalAI-io",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-large-v3-it-multi-ct2-int8",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Quyashbek/whisper-small-karakalpak",
+      "author": "Quyashbek",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/Quyashbek/whisper-small-karakalpak",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Quyashbek/whisper-medium-karakalpak",
+      "author": "Quyashbek",
+      "downloads": 15,
+      "likes": 0,
+      "url": "https://huggingface.co/Quyashbek/whisper-medium-karakalpak",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Quyashbek/whisper-base-karakalpak",
+      "author": "Quyashbek",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/Quyashbek/whisper-base-karakalpak",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-large-v3-it-multi",
+      "author": "LocalAI-io",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-large-v3-it-multi",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "KasuleTrevor/cdli-qwen3-asr-en-finetune-salt",
+      "author": "KasuleTrevor",
+      "downloads": 48,
+      "likes": 0,
+      "url": "https://huggingface.co/KasuleTrevor/cdli-qwen3-asr-en-finetune-salt",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "thucdangvan020999/polyglot-lion-0.6b-6bit",
+      "author": "thucdangvan020999",
+      "downloads": 5,
+      "likes": 0,
+      "url": "https://huggingface.co/thucdangvan020999/polyglot-lion-0.6b-6bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "thucdangvan020999/polyglot-lion-0.6b-4bit",
+      "author": "thucdangvan020999",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/thucdangvan020999/polyglot-lion-0.6b-4bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "thucdangvan020999/polyglot-lion-0.6b-3bit",
+      "author": "thucdangvan020999",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/thucdangvan020999/polyglot-lion-0.6b-3bit",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mmarron14/whisper-medium-cv17-es-5-steps_sin_proc-def4",
+      "author": "mmarron14",
+      "downloads": 43,
+      "likes": 0,
+      "url": "https://huggingface.co/mmarron14/whisper-medium-cv17-es-5-steps_sin_proc-def4",
+      "created_at": "2026-04-12",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "arthurhenriqueabreu/OmniVoice",
+      "author": "arthurhenriqueabreu",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/arthurhenriqueabreu/OmniVoice",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/Supertonic-TTS-2-ONNX",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/Supertonic-TTS-2-ONNX",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "nikalaasante/mms-tts-kin",
+      "author": "nikalaasante",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nikalaasante/mms-tts-kin",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "haydso/VieNeu-TTS-v2-Turbo-ONNX",
+      "author": "haydso",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/haydso/VieNeu-TTS-v2-Turbo-ONNX",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "ravenxone/mlx-tada-3b",
+      "author": "ravenxone",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ravenxone/mlx-tada-3b",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "maxpar1/kokoro-82m-coreml",
+      "author": "maxpar1",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/maxpar1/kokoro-82m-coreml",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "junkstage/kokoro-deutsch-hui-base",
+      "author": "junkstage",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/junkstage/kokoro-deutsch-hui-base",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "reenigne314/chatterbox-indic-lora",
+      "author": "reenigne314",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/reenigne314/chatterbox-indic-lora",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Hinotsuba/OpenVoice-ONNX-v2",
+      "author": "Hinotsuba",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Hinotsuba/OpenVoice-ONNX-v2",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Dewang-Ji/speecht5-tts-indian-accent-english",
+      "author": "Dewang-Ji",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Dewang-Ji/speecht5-tts-indian-accent-english",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "voces-ai/rapanui-tts-male",
+      "author": "voces-ai",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/voces-ai/rapanui-tts-male",
+      "created_at": "2026-04-13",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "forcepusher/Mini-BS-RoFormer-V2-46.8M",
+      "author": "forcepusher",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/forcepusher/Mini-BS-RoFormer-V2-46.8M",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 6,
+    "model_count": 44,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
