@@ -69,6 +69,7 @@
 - nureddin123/whisper_turbo_501_val_r512
 - Eimhin03/RNG-irish-whisper-pseudo-iter5
 - kinory24/aero-whisper-small_dbC_5e-5
+- kinory24/aero-whisper-small_dbEmod_1e-4
 - laion/BUD-E-Whisper_V1.2
 - AiphoriaTech/aiphoria_english_asr2
 - zacdan4801/whisper-base-whisper-ds-f3
@@ -84,6 +85,7 @@
 - Eimhin03/final2-irish-whisper-pseudo-iter4
 - devrahulbanjara/whisper-small-nepali
 - itsarunendra/whisper-medium-tunisian-full-v2.1
+- MuVeraAI/whisper-large-v3
 
 ### Transducer
 - RNN-T
@@ -95,6 +97,8 @@
 - ae9is/parakeet-tdt-0.6b-v3-onnx
 - ilprl-docse/NwachaMuna-NepConformer-FT
 - aufklarer/Parakeet-EOU-120M-CoreML-INT8
+- invinciblejha01/parakeet-unified-en-0.6b
+- QuadroKnoX/parakeet-primeline
 
 ### Foundation Models
 - USM
@@ -128,6 +132,8 @@
 - From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs
 - wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU
 - Closing the Speech-Text Gap with Limited Audio for Effective Domain Adaptation in LLM-Based ASR
+- Speaker Attributed Automatic Speech Recognition Using Speech Aware LLMs
+- Ti-Audio: The First Multi-Dialectal End-to-End Speech LLM for Tibetan
 
 
 ## Self-Supervised Learning
@@ -174,6 +180,9 @@
 ### Spoken Language Understanding
 - SLURP-TN : Resource for Tunisian Dialect Spoken Language Understanding
 
+### Speaker Attributed ASR
+- Speaker Attributed Automatic Speech Recognition Using Speech Aware LLMs
+
 ### Multilingual
 #### Code-switching
 
@@ -192,6 +201,7 @@
 - mabahboh/whisper-shami
 - AkshitSaxena1/whisper-tiny_to_chinese_accent
 - A Sociolinguistic Analysis of Automatic Speech Recognition Bias in Newcastle English
+- Ti-Audio: The First Multi-Dialectal End-to-End Speech LLM for Tibetan
 
 #### Translation-Guided
 - TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition
@@ -233,11 +243,16 @@
 - Speech-Omni-Lite: Portable Speech Interfaces for Vision-Language Models
 - Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models
 - How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation
+- Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models
+
+#### Temporal Grounding
+- SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding
 
 #### Emotion Recognition
 - Crab: Multi Layer Contrastive Supervision to Improve Speech Emotion Recognition Under Both Acted and Natural Speech Condition
 - Multimodal Emotion Recognition in Conversations (Mixture-of-Experts)
 - A Mixture-of-Experts Model for Multimodal Emotion Recognition in Conversations
+- HumDial-EIBench: A Human-Recorded Multi-Turn Emotional Intelligence Benchmark for Audio Language Models
 
 #### Audio Question Answering
 - Multi-Source Evidence Fusion for Audio Question Answering
@@ -356,6 +371,8 @@
 - majentik/MERaLiON-2-3B-RotorQuant-MLX-2bit
 - majentik/MERaLiON-2-3B-RotorQuant-MLX-8bit
 - majentik/MERaLiON-2-3B-TurboQuant-MLX-2bit
+- willopcbeta/whisper-large-v3-turbo-ONNX
+- willopcbeta/lite-whisper-small-fast-ONNX
 
 #### Methods
 - Quantization
@@ -487,6 +504,9 @@
 ### Efficiency & Optimization
 - AudioKV: KV Cache Eviction in Efficient Large Audio Language Models
 
+### Retrieval-Augmented SLMs
+- MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models
+
 ### Position Papers
 - LLMs and Speech: Integration vs. Combination
 
@@ -506,6 +526,9 @@
 
 ### Structural Tokens
 - ZeroSyl: Simple Zero-Resource Syllable Tokenization for Spoken Language Modeling
+
+### Video-Enhanced Tokenization
+- Why Your Tokenizer Fails in Information Fusion: A Timing-Aware Pre-Quantization Fusion for Video-Enhanced Audio Tokenization
 
 
 ## Text-to-Speech
@@ -556,6 +579,7 @@
 - Resurfacing Paralinguistic Awareness in Large Audio Language Models
 - On the Emotion Understanding of Synthesized Speech
 - Neuron-Level Emotion Control in Speech-Generative Large Audio-Language Models
+- Bridging What the Model Thinks and How It Speaks: Self-Aware Speech Language Models for Expressive Speech Generation
 
 ### Text-to-Audio
 - Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
@@ -584,6 +608,9 @@
 - Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models
 - Does Fine-tuning by Reinforcement Learning Improve Generalization in Binary Speech Deepfake Detection?
 
+### Efficient Training
+- Efficient Training for Cross-lingual Speech Language Models
+
 
 ## Evaluation
 ### Metrics
@@ -600,6 +627,7 @@
 - MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
 - Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models
 - SCENEBench: An Audio Understanding Benchmark
+- HumDial-EIBench: A Human-Recorded Multi-Turn Emotional Intelligence Benchmark
 
 ### Analysis & Interpretability
 - How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation
