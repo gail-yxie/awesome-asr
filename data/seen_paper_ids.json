@@ -1,5 +1,4 @@
 {
-  "2026-04-01": [],
   "2026-04-02": [],
   "2026-04-03": [
     "2604.01760v1",
@@ -57,5 +56,15 @@
     "efficient training for cross-lingual speech language models",
     "2604.10905v1",
     "audio flamingo next: next-generation open audio-language models for speech, sound, and music"
+  ],
+  "2026-04-15": [
+    "2604.13023v1",
+    "spotsound: enhancing large audio-language models with fine-grained temporal grounding",
+    "2604.12928v1",
+    "moshirag: asynchronous knowledge retrieval for full-duplex speech language models",
+    "2604.12527v1",
+    "audio-cogito: towards deep audio reasoning in large audio language models",
+    "2604.12145v1",
+    "why your tokenizer fails in information fusion: a timing-aware pre-quantization fusion for video-enhanced audio tokenization"
   ]
 }

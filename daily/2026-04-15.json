@@ -1,0 +1,861 @@
+{
+  "date": "2026-04-15",
+  "summary": "Today’s research shifts the focus of Large Audio-Language Models (LALMs) from basic perception to sophisticated reasoning and temporal precision, highlighted by **Audio-Cogito’s** implementation of Chain-of-Thought for audio and **SpotSound’s** framework for fine-grained event grounding in long-form recordings. Significant progress in real-time reliability is seen with **MoshiRAG**, which introduces asynchronous knowledge retrieval to full-duplex speech-to-speech models to address factuality during live interactions without compromising latency. Concurrently, the emergence of **timing-aware pre-quantization fusion** for audio-visual tokenization reflects a growing trend toward multimodal integration at the discrete representation level, complemented by the release of efficient edge-ready models like **Qwen3-ASR-1.7B** and domain-specific **Parakeet** variants.",
+  "ideas": [
+    "SpotSound introduces fine-grained temporal grounding to Large Audio-Language Models, enabling them to precisely pinpoint specific events within long-form audio.",
+    "MoshiRAG enables full-duplex speech-to-speech models to maintain fluid, real-time interactivity while significantly improving factual accuracy through asynchronous knowledge retrieval.",
+    "Audio-Cogito addresses the reasoning gap in Large Audio Language Models by integrating structured Chain-of-Thought capabilities for complex audio scene analysis.",
+    "A new timing-aware pre-quantization fusion technique overcomes the limitations of single-modal audio tokenizers by leveraging video-enhanced discrete representations.",
+    "Implementing asynchronous RAG frameworks allows conversational speech models to process pauses and interruptions while concurrently accessing external knowledge bases.",
+    "Incorporating multimodal inputs before the quantization stage facilitates superior cross-modal alignment for end-to-end audio understanding and generation."
+  ],
+  "papers": [
+    {
+      "id": "2604.13023v1",
+      "title": "SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding",
+      "authors": [
+        "Luoyi Sun",
+        "Xiao Zhou",
+        "Zeqian Li",
+        "Ya Zhang",
+        "Yanfeng Wang",
+        "Weidi Xie"
+      ],
+      "abstract": "Large Audio-Language Models (ALMs) have recently demonstrated remarkable capabilities in holistic audio understanding, yet they remain unreliable for temporal grounding, i.e., the task of pinpointing exactly when an event occurs within long-form audio. This limitation stems from two factors: training data dominated by clip-level supervision lacking precise timestamps, and benchmarks that fail to simulate real-world scenarios where short events are obscured by dense background sounds. In this paper, we introduce SpotSound, an audio language model designed for grounding audio events. SpotSound incorporates a novel training objective, specifically designed to suppress hallucinated timestamps for events absent from the input. Additionally, we present SpotSound-Bench, a challenging temporal grounding benchmark where target events occupy less than ~10\\% of each clip, creating a rigorous `needle-in-a-haystack' evaluation. Experiments demonstrate that SpotSound achieves state-of-the-art results on temporal grounding benchmarks while maintaining robust performance across general downstream audio-language tasks. Code, models and benchmark are released on https://loiesun.github.io/spotsound/",
+      "categories": [
+        "cs.SD",
+        "cs.MM"
+      ],
+      "published": "2026-04-14",
+      "url": "https://arxiv.org/abs/2604.13023v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.13023v1"
+    },
+    {
+      "id": "2604.12928v1",
+      "title": "MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models",
+      "authors": [
+        "Chung-Ming Chien",
+        "Manu Orsini",
+        "Eugene Kharitonov",
+        "Neil Zeghidour",
+        "Karen Livescu",
+        "Alexandre Défossez"
+      ],
+      "abstract": "Speech-to-speech language models have recently emerged to enhance the naturalness of conversational AI. In particular, full-duplex models are distinguished by their real-time interactivity, including handling of pauses, interruptions, and backchannels. However, improving their factuality remains an open challenge. While scaling the model size could address this gap, it would make real-time inference prohibitively expensive. In this work, we propose MoshiRAG, a modular approach that combines a compact full-duplex interface with selective retrieval to access more powerful knowledge sources. Our asynchronous framework enables the model to identify knowledge-demanding queries and ground its responses in external information. By leveraging the natural temporal gap between response onset and the delivery of core information, the retrieval process can be completed while maintaining a natural conversation flow. With this approach, MoshiRAG achieves factuality comparable to the best publicly released non-duplex speech language models while preserving the interactivity inherent to full-duplex systems. Moreover, our flexible design supports plug-and-play retrieval methods without retraining and demonstrates strong performance on out-of-domain mathematical reasoning tasks.",
+      "categories": [
+        "cs.CL",
+        "eess.AS"
+      ],
+      "published": "2026-04-14",
+      "url": "https://arxiv.org/abs/2604.12928v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.12928v1"
+    },
+    {
+      "id": "2604.12527v1",
+      "title": "Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models",
+      "authors": [
+        "Longhao Li",
+        "Hongjie Chen",
+        "Zehan Li",
+        "Qihan Hu",
+        "Jian Kang",
+        "Jie Li",
+        "Lei Xie",
+        "Yongxiang Li"
+      ],
+      "abstract": "Recent advances in reasoning models have driven significant progress in text and multimodal domains, yet audio reasoning remains relatively limited. Only a few Large Audio Language Models (LALMs) incorporate explicit Chain-of-Thought (CoT) reasoning, and their capabilities are often inconsistent and insufficient for complex tasks. To bridge this gap, we introduce Audio-Cogito, a fully open-source solution for deep audio reasoning. We develop Cogito-pipe for high-quality audio reasoning data curation, producing 545k reasoning samples that will be released after review. Based on this dataset, we adopt a self-distillation strategy for model fine-tuning. Experiments on the MMAR benchmark, the only audio benchmark evaluating the CoT process, show that our model achieves the best performance among open-source models and matches or surpasses certain closed-source models in specific metrics. Our approach also ranks among the top-tier systems in the Interspeech 2026 Audio Reasoning Challenge.",
+      "categories": [
+        "eess.AS"
+      ],
+      "published": "2026-04-14",
+      "url": "https://arxiv.org/abs/2604.12527v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.12527v1"
+    },
+    {
+      "id": "2604.12145v1",
+      "title": "Why Your Tokenizer Fails in Information Fusion: A Timing-Aware Pre-Quantization Fusion for Video-Enhanced Audio Tokenization",
+      "authors": [
+        "Xiangyu Zhang",
+        "Benjamin John Southwell",
+        "Siqi Pan",
+        "Xinlei Niu",
+        "Beena Ahmed",
+        "Julien Epps"
+      ],
+      "abstract": "Audio tokenization has emerged as a critical component in end-to-end audio language models, enabling efficient discrete representation learning for both audio understanding and generation tasks. However, existing audio tokenizers face fundamental limitations in understanding tasks due to single-modality constraints, particularly when audio signals contain ambiguous or incomplete information. While incorporating additional modality information can significantly enhance audio understanding, current multimodal fusion approaches invariably degrade reconstruction quality. This degradation is unacceptable for end-to-end audio systems that require high-fidelity audio generation capabilities. In this work, we investigate the root causes of reconstruction quality degradation in video-enhanced audio tokenization and present three key findings. First, the location of fusion within the tokenizer architecture is crucial for preserving reconstruction quality. Second, we show that contrastive learning, though effective in continuous representation fusion, is unsuitable for discrete tokenizers as it fails to enhance downstream task performance. Third, while feature-dimension fusion approaches achieve moderate success, we discover that fusing along the temporal axis -- guided by the concept of distinctive features -- yields significantly better results. Building on these insights, we introduce the Timing-Aware Pre-Quantization Fusion for Video-Enhanced Audio Tokenization, the first approach to successfully integrate visual information into audio tokenizer architectures while preserving reconstruction fidelity. Our approach not only maintains high-fidelity reconstruction but also achieves superior performance on downstream understanding tasks compared with audio-only tokenizers and established multimodal fusion baselines.",
+      "categories": [
+        "eess.AS",
+        "cs.SD"
+      ],
+      "published": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.12145v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.12145v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "kinory24/aero-whisper-small_dbEmod_1e-4",
+      "author": "kinory24",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kinory24/aero-whisper-small_dbEmod_1e-4",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "invinciblejha01/parakeet-unified-en-0.6b",
+      "author": "invinciblejha01",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/invinciblejha01/parakeet-unified-en-0.6b",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MuVeraAI/whisper-large-v3",
+      "author": "MuVeraAI",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MuVeraAI/whisper-large-v3",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "usernone1234/whisper-vi-audio",
+      "author": "usernone1234",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/usernone1234/whisper-vi-audio",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mradermacher/lilfugu-GGUF",
+      "author": "mradermacher",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mradermacher/lilfugu-GGUF",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mradermacher/Caspi-1.7B-GGUF",
+      "author": "mradermacher",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mradermacher/Caspi-1.7B-GGUF",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Mediform/parakeet-medical-de-no-enc-e30",
+      "author": "Mediform",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Mediform/parakeet-medical-de-no-enc-e30",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Mediform/parakeet-medical-de-no-enc",
+      "author": "Mediform",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Mediform/parakeet-medical-de-no-enc",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "foryoung365/Qwen3-ASR-1.7B-Q4_K_M-GGUF",
+      "author": "foryoung365",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/foryoung365/Qwen3-ASR-1.7B-Q4_K_M-GGUF",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Libres/whisper-large-v3",
+      "author": "Libres",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Libres/whisper-large-v3",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ZZori/wav2vec2-korean-stt-minds14",
+      "author": "ZZori",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/ZZori/wav2vec2-korean-stt-minds14",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sotirios-slv/whisper-tiny-au-en",
+      "author": "sotirios-slv",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/sotirios-slv/whisper-tiny-au-en",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amanuelbyte/mms-por-finetuned",
+      "author": "amanuelbyte",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/amanuelbyte/mms-por-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sulaimank/wav2vec2-xlsr-luganda-mh",
+      "author": "sulaimank",
+      "downloads": 105,
+      "likes": 0,
+      "url": "https://huggingface.co/sulaimank/wav2vec2-xlsr-luganda-mh",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "younghan-meta/Parakeet-TDT-ExecuTorch-CUDA-Windows-Quantized",
+      "author": "younghan-meta",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/younghan-meta/Parakeet-TDT-ExecuTorch-CUDA-Windows-Quantized",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "younghan-meta/Parakeet-TDT-ExecuTorch-CUDA-Windows",
+      "author": "younghan-meta",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/younghan-meta/Parakeet-TDT-ExecuTorch-CUDA-Windows",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amanuelbyte/mms-zul-finetuned",
+      "author": "amanuelbyte",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/amanuelbyte/mms-zul-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amanuelbyte/mms-arb-finetuned",
+      "author": "amanuelbyte",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/amanuelbyte/mms-arb-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "AsadIsmail/whisper-large-v3-ternary",
+      "author": "AsadIsmail",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AsadIsmail/whisper-large-v3-ternary",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amanuelbyte/mms-som-finetuned",
+      "author": "amanuelbyte",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/amanuelbyte/mms-som-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "avrahamsakal/whisper-large-v3-yeshivish",
+      "author": "avrahamsakal",
+      "downloads": 50,
+      "likes": 0,
+      "url": "https://huggingface.co/avrahamsakal/whisper-large-v3-yeshivish",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "jlacandola/boseskoclp-user2",
+      "author": "jlacandola",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/jlacandola/boseskoclp-user2",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "jlacandola/boseskoclp-user1",
+      "author": "jlacandola",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/jlacandola/boseskoclp-user1",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amanuelbyte/mms-hau-finetuned",
+      "author": "amanuelbyte",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/amanuelbyte/mms-hau-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Saidakbar01/whisper-small-uz-finetuned",
+      "author": "Saidakbar01",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/Saidakbar01/whisper-small-uz-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amanuelbyte/mms-amh-finetuned",
+      "author": "amanuelbyte",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/amanuelbyte/mms-amh-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "duck-hug-567/xls-r-300m-gaphon-full-collapsed",
+      "author": "duck-hug-567",
+      "downloads": 97,
+      "likes": 0,
+      "url": "https://huggingface.co/duck-hug-567/xls-r-300m-gaphon-full-collapsed",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-large-v3-turbo-it-ct2-int8",
+      "author": "LocalAI-io",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-large-v3-turbo-it-ct2-int8",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "eschmidbauer/parakeet-unified-en-0.6b-onnx",
+      "author": "eschmidbauer",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/eschmidbauer/parakeet-unified-en-0.6b-onnx",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "buumba641/bemba-asr-whisper-tiny",
+      "author": "buumba641",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/buumba641/bemba-asr-whisper-tiny",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "LocalAI-io/whisper-large-v3-turbo-it",
+      "author": "LocalAI-io",
+      "downloads": 32,
+      "likes": 0,
+      "url": "https://huggingface.co/LocalAI-io/whisper-large-v3-turbo-it",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Saidakbar01/whisper-base-uz-finetuned",
+      "author": "Saidakbar01",
+      "downloads": 23,
+      "likes": 0,
+      "url": "https://huggingface.co/Saidakbar01/whisper-base-uz-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-4B-Realtime-2602-RotorQuant",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-4B-Realtime-2602-RotorQuant",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-4B-Realtime-2602-TurboQuant",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-4B-Realtime-2602-TurboQuant",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-3B-2507-RotorQuant",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-3B-2507-RotorQuant",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-3B-2507-TurboQuant",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-3B-2507-TurboQuant",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-4B-Realtime-2602-RotorQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-4B-Realtime-2602-RotorQuant-MLX-2bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-4B-Realtime-2602-TurboQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-4B-Realtime-2602-TurboQuant-MLX-2bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-4B-Realtime-2602-RotorQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-4B-Realtime-2602-RotorQuant-MLX-4bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-4B-Realtime-2602-TurboQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-4B-Realtime-2602-TurboQuant-MLX-4bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-4B-Realtime-2602-RotorQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-4B-Realtime-2602-RotorQuant-MLX-8bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-4B-Realtime-2602-TurboQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-4B-Realtime-2602-TurboQuant-MLX-8bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-3B-2507-RotorQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 27,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-3B-2507-RotorQuant-MLX-2bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-3B-2507-TurboQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-3B-2507-TurboQuant-MLX-2bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-3B-2507-RotorQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 26,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-3B-2507-RotorQuant-MLX-4bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-3B-2507-TurboQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 26,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-3B-2507-TurboQuant-MLX-4bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-3B-2507-RotorQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 36,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-3B-2507-RotorQuant-MLX-8bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/Voxtral-Mini-3B-2507-TurboQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 27,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-Mini-3B-2507-TurboQuant-MLX-8bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "amanuelbyte/mms-afr-finetuned",
+      "author": "amanuelbyte",
+      "downloads": 31,
+      "likes": 0,
+      "url": "https://huggingface.co/amanuelbyte/mms-afr-finetuned",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "bpnov/faster-whisper-large-v3-ru-podlodka",
+      "author": "bpnov",
+      "downloads": 32,
+      "likes": 0,
+      "url": "https://huggingface.co/bpnov/faster-whisper-large-v3-ru-podlodka",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nrolinperen/Voxtral-Mini-4B-Realtime-2602-test-gated",
+      "author": "nrolinperen",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/nrolinperen/Voxtral-Mini-4B-Realtime-2602-test-gated",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "willopcbeta/lite-whisper-large-v3-turbo-ONNX",
+      "author": "willopcbeta",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/willopcbeta/lite-whisper-large-v3-turbo-ONNX",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "willopcbeta/unsloth-whisper-large-v3-turbo-ONNX",
+      "author": "willopcbeta",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/willopcbeta/unsloth-whisper-large-v3-turbo-ONNX",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "lion-ai/eskulap-asr-medium-beta",
+      "author": "lion-ai",
+      "downloads": 50,
+      "likes": 0,
+      "url": "https://huggingface.co/lion-ai/eskulap-asr-medium-beta",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "willopcbeta/lite-whisper-large-v3-turbo",
+      "author": "willopcbeta",
+      "downloads": 14,
+      "likes": 0,
+      "url": "https://huggingface.co/willopcbeta/lite-whisper-large-v3-turbo",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "willopcbeta/unsloth-whisper-small-ONNX",
+      "author": "willopcbeta",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/willopcbeta/unsloth-whisper-small-ONNX",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Ganaa0614/whisper-small-fft-commonvoice-mongolian-ver_0.2",
+      "author": "Ganaa0614",
+      "downloads": 380,
+      "likes": 0,
+      "url": "https://huggingface.co/Ganaa0614/whisper-small-fft-commonvoice-mongolian-ver_0.2",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Saravanansriram/Material",
+      "author": "Saravanansriram",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Saravanansriram/Material",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Gwenfight/ma-voix-tarot",
+      "author": "Gwenfight",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Gwenfight/ma-voix-tarot",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "aoiandroid/voxtream2",
+      "author": "aoiandroid",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aoiandroid/voxtream2",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/mms-tts-por",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/mms-tts-por",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/mms-tts-spa",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/mms-tts-spa",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/mms-tts-eng",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/mms-tts-eng",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "EvgenyShivchenkoUIT/mms-tts-fra",
+      "author": "EvgenyShivchenkoUIT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/EvgenyShivchenkoUIT/mms-tts-fra",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "iizc/MOSS-TTS-Nano-100M",
+      "author": "iizc",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/iizc/MOSS-TTS-Nano-100M",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "FINAL-Bench/Darwin-TTS-1.7B-Cross",
+      "author": "FINAL-Bench",
+      "downloads": 0,
+      "likes": 10,
+      "url": "https://huggingface.co/FINAL-Bench/Darwin-TTS-1.7B-Cross",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "kongwang/OmniVoice",
+      "author": "kongwang",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/kongwang/OmniVoice",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "verify01234/chatterbox-multilingual-ONNX-q4",
+      "author": "verify01234",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/verify01234/chatterbox-multilingual-ONNX-q4",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "John9007/MOSS-TTS-Local-GGUF",
+      "author": "John9007",
+      "downloads": 50,
+      "likes": 1,
+      "url": "https://huggingface.co/John9007/MOSS-TTS-Local-GGUF",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "majentik/Voxtral-4B-TTS-2603-RotorQuant",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-4B-TTS-2603-RotorQuant",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "majentik/Voxtral-4B-TTS-2603-TurboQuant",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-4B-TTS-2603-TurboQuant",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "majentik/Voxtral-4B-TTS-2603-RotorQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 37,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-4B-TTS-2603-RotorQuant-MLX-2bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "majentik/Voxtral-4B-TTS-2603-TurboQuant-MLX-2bit",
+      "author": "majentik",
+      "downloads": 35,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-4B-TTS-2603-TurboQuant-MLX-2bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "majentik/Voxtral-4B-TTS-2603-RotorQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 25,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-4B-TTS-2603-RotorQuant-MLX-4bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "majentik/Voxtral-4B-TTS-2603-TurboQuant-MLX-4bit",
+      "author": "majentik",
+      "downloads": 27,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-4B-TTS-2603-TurboQuant-MLX-4bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "majentik/Voxtral-4B-TTS-2603-RotorQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 23,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-4B-TTS-2603-RotorQuant-MLX-8bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "majentik/Voxtral-4B-TTS-2603-TurboQuant-MLX-8bit",
+      "author": "majentik",
+      "downloads": 29,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/Voxtral-4B-TTS-2603-TurboQuant-MLX-8bit",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "lspjzl/musicgen-medium",
+      "author": "lspjzl",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/lspjzl/musicgen-medium",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "LanguaMan/woosh-model",
+      "author": "LanguaMan",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/LanguaMan/woosh-model",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "rikunarita/acestep-v15-xl-turbo-Unsharded",
+      "author": "rikunarita",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/rikunarita/acestep-v15-xl-turbo-Unsharded",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "hrktxz/acestep-captioner-4bit",
+      "author": "hrktxz",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hrktxz/acestep-captioner-4bit",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "sil-ai/alt-AOT-audio-aligned-speecht5",
+      "author": "sil-ai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sil-ai/alt-AOT-audio-aligned-speecht5",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "Thebeachingwaulrus/musicgen-medium",
+      "author": "Thebeachingwaulrus",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Thebeachingwaulrus/musicgen-medium",
+      "created_at": "2026-04-15",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "kenshi777/speecht5-finetuned-voxpopuli-fr",
+      "author": "kenshi777",
+      "downloads": 22,
+      "likes": 0,
+      "url": "https://huggingface.co/kenshi777/speecht5-finetuned-voxpopuli-fr",
+      "created_at": "2026-04-14",
+      "pipeline_tag": "text-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 4,
+    "model_count": 84,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}
