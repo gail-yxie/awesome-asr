@@ -1,5 +1,4 @@
 {
-  "2026-04-02": [],
   "2026-04-03": [
     "2604.01760v1",
     "t5gemma-tts technical report",
@@ -66,5 +65,9 @@
     "audio-cogito: towards deep audio reasoning in large audio language models",
     "2604.12145v1",
     "why your tokenizer fails in information fusion: a timing-aware pre-quantization fusion for video-enhanced audio tokenization"
+  ],
+  "2026-04-16": [
+    "2604.13715v1",
+    "towards fine-grained temporal perception: post-training large audio-language models with audio-side time prompt"
   ]
 }
