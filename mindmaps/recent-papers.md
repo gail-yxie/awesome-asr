@@ -16,17 +16,20 @@
 - [From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs](https://arxiv.org/abs/2603.24034v1)
 - [Ethio-ASR: Joint Multilingual Speech Recognition and Language Identification for Ethiopian Languages](https://arxiv.org/abs/2603.23654v1)
 
+## cs.CR
+- [Hijacking Large Audio-Language Models via Context-Agnostic and Imperceptible Auditory Prompt Injection](https://arxiv.org/abs/2604.14604v1)
+
 ## cs.SD
+- [Listen, Pause, and Reason: Toward Perception-Grounded Hybrid Reasoning for Audio Understanding](https://arxiv.org/abs/2604.14806v1)
+- [ClariCodec: Optimising Neural Speech Codes for 200bps Communication using Reinforcement Learning](https://arxiv.org/abs/2604.14654v1)
+- [VoxSafeBench: Not Just What Is Said, but Who, How, and Where](https://arxiv.org/abs/2604.14548v1)
+- [Towards Fine-grained Temporal Perception: Post-Training Large Audio-Language Models with Audio-Side Time Prompt](https://arxiv.org/abs/2604.13715v1)
 - [SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding](https://arxiv.org/abs/2604.13023v1)
 - [Ti-Audio: The First Multi-Dialectal End-to-End Speech LLM for Tibetan](https://arxiv.org/abs/2604.11110v1)
 - [Audio Flamingo Next: Next-Generation Open Audio-Language Models for Speech, Sound, and Music](https://arxiv.org/abs/2604.10905v1)
 - [AudioKV: KV Cache Eviction in Efficient Large Audio Language Models](https://arxiv.org/abs/2604.06694v1)
 - [Acoustic and perceptual differences between standard and accented Chinese speech and their voice clones](https://arxiv.org/abs/2604.01562v1)
 - [FineLAP: Taming Heterogeneous Supervision for Fine-grained Language-Audio Pretraining](https://arxiv.org/abs/2604.01155v1)
-- [TRACE: Training-Free Partial Audio Deepfake Detection via Embedding Trajectory Analysis of Speech Foundation Models](https://arxiv.org/abs/2604.01083v1)
-- [Enterprise Sales Copilot: Enabling Real-Time AI Support with Automatic Information Retrieval in Live Sales Calls](https://arxiv.org/abs/2603.21416v1)
-- [Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models](https://arxiv.org/abs/2603.18678v1)
-- [Two-Stage Adaptation for Non-Normative Speech Recognition: Revisiting Speaker-Independent Initialization for Personalization](https://arxiv.org/abs/2603.15261v1)
 
 ## eess.AS
 - [Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models](https://arxiv.org/abs/2604.12527v1)

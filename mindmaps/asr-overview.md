@@ -11,6 +11,8 @@
 - bearcove/zipa-small-crctc-ns-no-diacritics-700k-mlx-q8
 - Z1do/vosk-model-small-ru
 - aufklarer/Omnilingual-ASR-CTC-7B-MLX-8bit
+- zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-OtherDiacritics-ds-f8
+- zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-OtherDiacritics-ds-f7
 
 ### Attention-based
 - Whisper
@@ -86,6 +88,7 @@
 - devrahulbanjara/whisper-small-nepali
 - itsarunendra/whisper-medium-tunisian-full-v2.1
 - MuVeraAI/whisper-large-v3
+- lion-ai/eskulap-asr-turbo-beta
 
 ### Transducer
 - RNN-T
@@ -202,6 +205,7 @@
 - AkshitSaxena1/whisper-tiny_to_chinese_accent
 - A Sociolinguistic Analysis of Automatic Speech Recognition Bias in Newcastle English
 - Ti-Audio: The First Multi-Dialectal End-to-End Speech LLM for Tibetan
+- MauriceZHAW/whisper-large-v3-turbo-swiss-german-fire-brigade
 
 #### Translation-Guided
 - TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition
@@ -244,9 +248,11 @@
 - Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models
 - How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation
 - Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models
+- Listen, Pause, and Reason: Toward Perception-Grounded Hybrid Reasoning for Audio Understanding
 
 #### Temporal Grounding
 - SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding
+- Towards Fine-grained Temporal Perception: Post-Training Large Audio-Language Models with Audio-Side Time Prompt
 
 #### Emotion Recognition
 - Crab: Multi Layer Contrastive Supervision to Improve Speech Emotion Recognition Under Both Acted and Natural Speech Condition
@@ -288,11 +294,16 @@
 
 
 ### Security & Anti-spoofing
+#### Deepfake Detection
 - Does Fine-tuning by Reinforcement Learning Improve Generalization in Binary Speech Deepfake Detection?
 - VoiceSHIELD-Small: Real-Time Malicious Speech Detection and Transcription
 - Towards Robust Speech Deepfake Detection via Human-Inspired Reasoning
 - Probabilistic Verification of Voice Anti-Spoofing Models
 - TRACE: Training-Free Partial Audio Deepfake Detection via Embedding Trajectory Analysis of Speech Foundation Models
+
+#### Adversarial Attacks & Prompt Injection
+- Hijacking Large Audio-Language Models via Context-Agnostic and Imperceptible Auditory Prompt Injection
+
 
 
 ## Datasets
@@ -320,6 +331,7 @@
 - Open ASR Leaderboard
 - RO-N3WS: Enhancing Generalization in Low-Resource ASR with Diverse Romanian Speech Benchmarks
 - SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases
+- VoxSafeBench: Not Just What Is Said, but Who, How, and Where
 
 
 ## Techniques
@@ -373,6 +385,8 @@
 - majentik/MERaLiON-2-3B-TurboQuant-MLX-2bit
 - willopcbeta/whisper-large-v3-turbo-ONNX
 - willopcbeta/lite-whisper-small-fast-ONNX
+- holotherapper/lilfugu-onnx
+- Xviers/whisper-large-v3-turbo-GGUF
 
 #### Methods
 - Quantization
@@ -443,6 +457,7 @@
 - SUPERB
 - SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases
 - MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models
+- VoxSafeBench: Not Just What Is Said, but Who, How, and Where
 
 ### Bias & Fairness
 - A Sociolinguistic Analysis of Automatic Speech Recognition Bias in Newcastle English
@@ -523,6 +538,7 @@
 - SoundStream
 - DAC
 - Vocos
+- ClariCodec: Optimising Neural Speech Codes for 200bps Communication using Reinforcement Learning
 
 ### Structural Tokens
 - ZeroSyl: Simple Zero-Resource Syllable Tokenization for Spoken Language Modeling
