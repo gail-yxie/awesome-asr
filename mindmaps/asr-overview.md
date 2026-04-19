@@ -13,6 +13,8 @@
 - aufklarer/Omnilingual-ASR-CTC-7B-MLX-8bit
 - zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-OtherDiacritics-ds-f8
 - zacdan4801/wav2vec2-lv-60-espeak-cv-ft-custom_vocab-OtherDiacritics-ds-f7
+- zacdan4801/wav2vec2-lv-60-espeak-cv-ft-WCTC-phocab-ds-f5
+- zacdan4801/wav2vec2-lv-60-espeak-cv-ft-WCTC-phocab-ds-f4
 
 ### Attention-based
 - Whisper
@@ -89,6 +91,7 @@
 - itsarunendra/whisper-medium-tunisian-full-v2.1
 - MuVeraAI/whisper-large-v3
 - lion-ai/eskulap-asr-turbo-beta
+- rkoulen3/bcm-finetuned
 
 ### Transducer
 - RNN-T
@@ -102,6 +105,7 @@
 - aufklarer/Parakeet-EOU-120M-CoreML-INT8
 - invinciblejha01/parakeet-unified-en-0.6b
 - QuadroKnoX/parakeet-primeline
+- Andrewsab/gigaam-v3-e2e-rnnt-ov
 
 ### Foundation Models
 - USM
@@ -223,6 +227,7 @@
 - Danieljava/whisper-small-finetuned-asr-all_african-20260304_082539
 - uzair0/ghag-ai-katib-finetune
 - Polyglot-Lion: Efficient Multilingual ASR for Singapore
+- espnet/marathi_lrec2020
 
 
 ### Multimodal
@@ -387,6 +392,7 @@
 - willopcbeta/lite-whisper-small-fast-ONNX
 - holotherapper/lilfugu-onnx
 - Xviers/whisper-large-v3-turbo-GGUF
+- WizardForest/faster-whisper-Breeze-ASR-26-int8
 
 #### Methods
 - Quantization
