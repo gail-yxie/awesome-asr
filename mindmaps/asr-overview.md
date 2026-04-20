@@ -33,6 +33,7 @@
 - MinaNasser/whisper-base-arabic
 - dmartu/VibeVoice-ASR-HFI
 - dianavdavidson/wh_l_v3_turbo_mucs_no_langid_mucs_48419_trial
+- dianavdavidson/wh_small_concat_lf_concat_libri_fleurs_52703__val_finetune_trial
 - lewiswoncy/m_test_10
 - lewiswoncy/m_test_8
 - 7ocho/WMAC1
@@ -71,6 +72,7 @@
 - vivekkairi/whisper-large-v3-turbo-finetuned
 - kinory24/aero-whisper-small_1e-4
 - nureddin123/whisper_turbo_501_val_r512
+- nureddin123/whisper_turbo_2000_ve_sft_v1
 - Eimhin03/RNG-irish-whisper-pseudo-iter5
 - kinory24/aero-whisper-small_dbC_5e-5
 - kinory24/aero-whisper-small_dbEmod_1e-4
@@ -92,6 +94,7 @@
 - MuVeraAI/whisper-large-v3
 - lion-ai/eskulap-asr-turbo-beta
 - rkoulen3/bcm-finetuned
+- mogu98/wosota-asr-medium-v1
 
 ### Transducer
 - RNN-T
