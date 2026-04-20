@@ -1,0 +1,422 @@
+{
+  "date": "2026-04-20",
+  "summary": "Today's releases center on the refinement and deployment optimization of existing architectures, notably with the GGUF quantization of the Moonshine and FireRed LID models for efficient edge inference. A significant highlight is the appearance of a Qwen3-ASR-1.7B model, signaling the ongoing industry shift toward leveraging compact, high-performance large language model backends for context-aware speech recognition. Additionally, the community continues to specialize generalist models for niche applications, evidenced by new fine-tunes of Whisper Turbo and targeted ASR solutions for low-resource languages like Luganda using the wav2vec2-XLSR framework.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "dianavdavidson/wh_small_concat_lf_concat_libri_fleurs_52703__val_finetune_trial",
+      "author": "dianavdavidson",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/dianavdavidson/wh_small_concat_lf_concat_libri_fleurs_52703__val_finetune_trial",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_turbo_2000_ve_sft_v1",
+      "author": "nureddin123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_turbo_2000_ve_sft_v1",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mogu98/wosota-asr-medium-v1",
+      "author": "mogu98",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mogu98/wosota-asr-medium-v1",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "takehika/wav2vec2-commonvoice-full-cased-ctc",
+      "author": "takehika",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/takehika/wav2vec2-commonvoice-full-cased-ctc",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "cstr/firered-lid-GGUF",
+      "author": "cstr",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/cstr/firered-lid-GGUF",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Skarrea/faster-nb-whisper-large",
+      "author": "Skarrea",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Skarrea/faster-nb-whisper-large",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "sulaimank/wav2vec2-xlsr-luganda-radio-mh",
+      "author": "sulaimank",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/sulaimank/wav2vec2-xlsr-luganda-radio-mh",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "cstr/moonshine-base-GGUF",
+      "author": "cstr",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/cstr/moonshine-base-GGUF",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "cstr/moonshine-tiny-GGUF",
+      "author": "cstr",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/cstr/moonshine-tiny-GGUF",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "yuriyvnv/Qwen3-ASR-1.7B-NL",
+      "author": "yuriyvnv",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/yuriyvnv/Qwen3-ASR-1.7B-NL",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "MrZeggers/whisper-slim-mlx",
+      "author": "MrZeggers",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/MrZeggers/whisper-slim-mlx",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ko88201/ggml-breeze-asr-26-q4_k",
+      "author": "ko88201",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ko88201/ggml-breeze-asr-26-q4_k",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "cstr/firered-asr2-aed-GGUF",
+      "author": "cstr",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/cstr/firered-asr2-aed-GGUF",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ziywang50/omniASR-LLM-300M",
+      "author": "ziywang50",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ziywang50/omniASR-LLM-300M",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Tilas/qwen2audio-darija-multitask",
+      "author": "Tilas",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/Tilas/qwen2audio-darija-multitask",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "hamza-amin/whisper-small-urdu-v2",
+      "author": "hamza-amin",
+      "downloads": 16,
+      "likes": 0,
+      "url": "https://huggingface.co/hamza-amin/whisper-small-urdu-v2",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "k3rvn/whisper-large-v3",
+      "author": "k3rvn",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/k3rvn/whisper-large-v3",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "keypa/whisper-small-fr-mls",
+      "author": "keypa",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/keypa/whisper-small-fr-mls",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "undertale7909/whisper-turbo-arabic-sa-v4",
+      "author": "undertale7909",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/undertale7909/whisper-turbo-arabic-sa-v4",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "cstr/kyutai-stt-1b-GGUF",
+      "author": "cstr",
+      "downloads": 48,
+      "likes": 0,
+      "url": "https://huggingface.co/cstr/kyutai-stt-1b-GGUF",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "haidaragh007/asr2_mind_model",
+      "author": "haidaragh007",
+      "downloads": 33,
+      "likes": 0,
+      "url": "https://huggingface.co/haidaragh007/asr2_mind_model",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RakhatM/whisper-large-v3-turbo-kk-lora",
+      "author": "RakhatM",
+      "downloads": 101,
+      "likes": 1,
+      "url": "https://huggingface.co/RakhatM/whisper-large-v3-turbo-kk-lora",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "cstr/glm-asr-nano-GGUF",
+      "author": "cstr",
+      "downloads": 89,
+      "likes": 0,
+      "url": "https://huggingface.co/cstr/glm-asr-nano-GGUF",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "eschmidbauer/parakeet-unified-en-0.6b-c",
+      "author": "eschmidbauer",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/eschmidbauer/parakeet-unified-en-0.6b-c",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rayenhizaoui/Whisper-Rayen-Medical",
+      "author": "rayenhizaoui",
+      "downloads": 62,
+      "likes": 1,
+      "url": "https://huggingface.co/rayenhizaoui/Whisper-Rayen-Medical",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "doggy8088/ggml-whisper-large-v2-cantonese",
+      "author": "doggy8088",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/doggy8088/ggml-whisper-large-v2-cantonese",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "doggy8088/ggml-breeze-asr-26",
+      "author": "doggy8088",
+      "downloads": 0,
+      "likes": 6,
+      "url": "https://huggingface.co/doggy8088/ggml-breeze-asr-26",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dk2325/whisper-tiny-indian-accent",
+      "author": "dk2325",
+      "downloads": 22,
+      "likes": 2,
+      "url": "https://huggingface.co/dk2325/whisper-tiny-indian-accent",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "dk2325/whisper-tiny-finetuned",
+      "author": "dk2325",
+      "downloads": 18,
+      "likes": 2,
+      "url": "https://huggingface.co/dk2325/whisper-tiny-finetuned",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "1ease2/faster-whisper-small",
+      "author": "1ease2",
+      "downloads": 8,
+      "likes": 0,
+      "url": "https://huggingface.co/1ease2/faster-whisper-small",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Kiragu/whisper-small-kikuyu-v5",
+      "author": "Kiragu",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/Kiragu/whisper-small-kikuyu-v5",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kundan52524244/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "author": "kundan52524244",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kundan52524244/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "jkorstad/gameforge",
+      "author": "jkorstad",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/jkorstad/gameforge",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Moeeldouma/arabic-tts-xtts-v2",
+      "author": "Moeeldouma",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Moeeldouma/arabic-tts-xtts-v2",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "kenpath/svara-tts-v1-openvino-int4",
+      "author": "kenpath",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kenpath/svara-tts-v1-openvino-int4",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "AnhTuan89/Vira-TTS",
+      "author": "AnhTuan89",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AnhTuan89/Vira-TTS",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "hugbos/chatterbox-multilingual-ONNX-v2",
+      "author": "hugbos",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/hugbos/chatterbox-multilingual-ONNX-v2",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "aufklarer/Kokoro-82M-CoreML-INT8",
+      "author": "aufklarer",
+      "downloads": 94,
+      "likes": 0,
+      "url": "https://huggingface.co/aufklarer/Kokoro-82M-CoreML-INT8",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "herlandes/yemba-tts",
+      "author": "herlandes",
+      "downloads": 38,
+      "likes": 0,
+      "url": "https://huggingface.co/herlandes/yemba-tts",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "FatimahEmadEldin/habibi-tts-najdi-ft",
+      "author": "FatimahEmadEldin",
+      "downloads": 70,
+      "likes": 0,
+      "url": "https://huggingface.co/FatimahEmadEldin/habibi-tts-najdi-ft",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "bekirkabasakal/OmniVoice-LiteRT",
+      "author": "bekirkabasakal",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/bekirkabasakal/OmniVoice-LiteRT",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "wittin/MOSS-TTS-Nano-100M",
+      "author": "wittin",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/wittin/MOSS-TTS-Nano-100M",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "scragnog/ace-step-1.5-gguf-merge-models",
+      "author": "scragnog",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "ahmedjaved812/urdu-tts-phonemes-finetuned-extended",
+      "author": "ahmedjaved812",
+      "downloads": 775,
+      "likes": 0,
+      "url": "https://huggingface.co/ahmedjaved812/urdu-tts-phonemes-finetuned-extended",
+      "created_at": "2026-04-19",
+      "pipeline_tag": "text-to-audio"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "Thomcles/YodaLingua-Hebrew",
+      "author": "Thomcles",
+      "downloads": 0,
+      "url": "https://huggingface.co/datasets/Thomcles/YodaLingua-Hebrew",
+      "created_at": "2026-04-20"
+    }
+  ],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 44,
+    "dataset_count": 1,
+    "tweet_count": 0
+  }
+}

@@ -1,5 +1,4 @@
 {
-  "2026-04-06": [],
   "2026-04-07": [
     "2604.04847v1",
     "full-duplex-bench-v3: benchmarking tool use for full-duplex voice agents under real-world disfluency",
@@ -67,5 +66,6 @@
     "voxsafebench: not just what is said, but who, how, and where"
   ],
   "2026-04-18": [],
-  "2026-04-19": []
+  "2026-04-19": [],
+  "2026-04-20": []
 }
