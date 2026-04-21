@@ -1,10 +1,4 @@
 {
-  "2026-04-07": [
-    "2604.04847v1",
-    "full-duplex-bench-v3: benchmarking tool use for full-duplex voice agents under real-world disfluency",
-    "2604.04598v1",
-    "benchmarking multilingual speech models on pashto: zero-shot asr, script failure, and cross-domain evaluation"
-  ],
   "2026-04-08": [
     "2604.05605v1",
     "interact: an ai-driven extended reality framework for accesible communication featuring real-time sign language interpretation and emotion recognition",
@@ -67,5 +61,6 @@
   ],
   "2026-04-18": [],
   "2026-04-19": [],
-  "2026-04-20": []
+  "2026-04-20": [],
+  "2026-04-21": []
 }
