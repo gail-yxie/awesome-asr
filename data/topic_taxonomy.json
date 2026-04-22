@@ -144,7 +144,12 @@
         "wolfofbackstreet/Qwen3-ASR-0.6B-ONNX-CPU",
         "Closing the Speech-Text Gap with Limited Audio for Effective Domain Adaptation in LLM-Based ASR",
         "Speaker Attributed Automatic Speech Recognition Using Speech Aware LLMs",
-        "Ti-Audio: The First Multi-Dialectal End-to-End Speech LLM for Tibetan"
+        "Ti-Audio: The First Multi-Dialectal End-to-End Speech LLM for Tibetan",
+        "cstr/omniasr-llm-300m-v2-GGUF",
+        "aoiandroid/nemotron-speech-streaming-en-0.6b-coreml",
+        "majentik/MERaLiON-2-3B-RotorQuant-MLX-2bit",
+        "majentik/MERaLiON-2-3B-RotorQuant-MLX-8bit",
+        "majentik/MERaLiON-2-3B-TurboQuant-MLX-2bit"
       ]
     },
     "Self-Supervised Learning": {
@@ -178,6 +183,7 @@
       ],
       "Speaker Diarization": [
         "beargreen/speaker-diarization-community-1",
+        "zjl1998/speaker-diarization-community-1",
         "Exploring Speech Foundation Models for Speaker Diarization Across Lifespan",
         "Make It Hard to Hear, Easy to Learn: Long-Form Bengali ASR and Speaker Diarization",
         "A Holistic Framework for Robust Bangla ASR and Speaker Diarization with Optimized VAD and CTC Alignment",
@@ -395,7 +401,8 @@
           "willopcbeta/lite-whisper-small-fast-ONNX",
           "holotherapper/lilfugu-onnx",
           "Xviers/whisper-large-v3-turbo-GGUF",
-          "WizardForest/faster-whisper-Breeze-ASR-26-int8"
+          "WizardForest/faster-whisper-Breeze-ASR-26-int8",
+          "cstr/omniasr-llm-300m-v2-GGUF"
         ],
         "Methods": [
           "Quantization",
@@ -657,7 +664,8 @@
         "How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation",
         "Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models",
         "Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models",
-        "In-Context Learning in Speech Language Models: Analyzing the Role of Acoustic Features, Linguistic Structure, and Induction Heads"
+        "In-Context Learning in Speech Language Models: Analyzing the Role of Acoustic Features, Linguistic Structure, and Induction Heads",
+        "Listen, Pause, and Reason: Toward Perception-Grounded Hybrid Reasoning for Audio Understanding"
       ]
     }
   }

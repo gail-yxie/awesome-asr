@@ -41,7 +41,6 @@
 - [ACAVCaps: Enabling large-scale training for fine-grained and diverse audio understanding](https://arxiv.org/abs/2603.24038v1)
 - [Crab: Multi Layer Contrastive Supervision to Improve Speech Emotion Recognition Under Both Acted and Natural Speech Condition](https://arxiv.org/abs/2603.23673v1)
 - [How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation](https://arxiv.org/abs/2603.19195v1)
-- [Multi-Source Evidence Fusion for Audio Question Answering](https://arxiv.org/abs/2603.17822v1)
 
 ## q-bio.QM
 - [Impact of automatic speech recognition quality on Alzheimer's disease detection from spontaneous speech: a reproducible benchmark study with lexical modeling and statistical validation](https://arxiv.org/abs/2603.18239v1)
