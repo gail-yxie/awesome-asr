@@ -1,0 +1,1449 @@
+{
+  "date": "2026-04-22",
+  "summary": "The current landscape shows a significant focus on optimizing OpenAI’s Whisper-large-v3-turbo, with the community rapidly releasing fine-tuned LoRA adapters and merged models to leverage the architecture's improved inference speed for domain-specific tasks. Simultaneously, there is a strong push toward edge deployment of NVIDIA’s Parakeet-TDT architecture, evidenced by new CoreML-quantized versions (4-bit, 6-bit, and int8) designed for low-latency, on-device ASR. These developments, alongside experimental fine-tuning of 1.7B-parameter models for AMI diarization, highlight a broader trend of bridging the gap between high-performance speech language models and efficient, localized execution for complex conversational analysis.",
+  "ideas": [
+    "No new papers to analyze today."
+  ],
+  "papers": [],
+  "models": [
+    {
+      "model_id": "futurama2a/whisper-large-v3-turbo",
+      "author": "futurama2a",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/futurama2a/whisper-large-v3-turbo",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_turbo_10000_v2",
+      "author": "nureddin123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_turbo_10000_v2",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "taphuynh/arcawhisper-large-turbo-lora-en",
+      "author": "taphuynh",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/taphuynh/arcawhisper-large-turbo-lora-en",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nureddin123/whisper_turbo_10000_v1",
+      "author": "nureddin123",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/nureddin123/whisper_turbo_10000_v1",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "audarai/audar-asr-f-turbo-merged",
+      "author": "audarai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/audarai/audar-asr-f-turbo-merged",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mweinbach1/parakeet-tdt-0.6b-v3-coreml",
+      "author": "mweinbach1",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mweinbach1/parakeet-tdt-0.6b-v3-coreml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "mrfakename/qwen3-asr-1.7b-ami-diarization-fft-r6-20260422",
+      "author": "mrfakename",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/mrfakename/qwen3-asr-1.7b-ami-diarization-fft-r6-20260422",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml-int8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-slovenian-coreml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml-int8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-portuguese-coreml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-120m-eou-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-120m-eou-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-120m-eou-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-120m-eou-coreml-int8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-120m-eou-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-120m-eou-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-120m-eou-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-120m-eou-coreml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Coidemo/whisper-large-v3-filler-lora",
+      "author": "Coidemo",
+      "downloads": 20,
+      "likes": 0,
+      "url": "https://huggingface.co/Coidemo/whisper-large-v3-filler-lora",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Coidemo/whisper-large-v3-filler-mlx",
+      "author": "Coidemo",
+      "downloads": 19,
+      "likes": 0,
+      "url": "https://huggingface.co/Coidemo/whisper-large-v3-filler-mlx",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-1.1b-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-1.1b-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-1.1b-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-1.1b-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-1.1b-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-1.1b-coreml-int8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-1.1b-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-1.1b-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-1.1b-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-1.1b-coreml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml-int8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v3-coreml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml-int8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml-int8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-0.6b-ja-coreml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-110m-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-110m-coreml-6bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-110m-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-110m-coreml-4bit",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-110m-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-110m-coreml-int8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-110m-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-110m-coreml-fp16",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-ctc-110m-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 5,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-ctc-110m-coreml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "qualcomm/Whisper-Medium",
+      "author": "qualcomm",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/qualcomm/Whisper-Medium",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-110m-da-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 5,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-110m-da-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-110m-da-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-110m-da-coreml-fp16",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-110m-da-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-110m-da-coreml-6bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-110m-da-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 5,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-110m-da-coreml-4bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-110m-da-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-110m-da-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-1.1b-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-1.1b-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-1.1b-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-1.1b-coreml-fp16",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-1.1b-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-1.1b-coreml-6bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-1.1b-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-1.1b-coreml-4bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-1.1b-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-1.1b-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml-4bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-v2-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-1.1b-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-1.1b-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-polish-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-estonian-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-tdt-0.6b-dutch-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-0.6b-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-0.6b-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-0.6b-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-0.6b-coreml-fp16",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-0.6b-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-0.6b-coreml-6bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-0.6b-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-0.6b-coreml-4bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-rnnt-0.6b-coreml",
+      "author": "OpenVoiceOS",
+      "downloads": 9,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-rnnt-0.6b-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-1.1b-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 4,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-1.1b-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-1.1b-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-1.1b-coreml-fp16",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-1.1b-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-1.1b-coreml-6bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-1.1b-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 3,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-1.1b-coreml-4bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml-fp16",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml-6bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-vi-coreml-4bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-coreml-int8",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-coreml-int8",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-coreml-fp16",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-coreml-fp16",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-coreml-6bit",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-coreml-6bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "OpenVoiceOS/parakeet-ctc-0.6b-coreml-4bit",
+      "author": "OpenVoiceOS",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/OpenVoiceOS/parakeet-ctc-0.6b-coreml-4bit",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Moustapha91/hubert-wolof-pular-serere-v2-01",
+      "author": "Moustapha91",
+      "downloads": 30,
+      "likes": 0,
+      "url": "https://huggingface.co/Moustapha91/hubert-wolof-pular-serere-v2-01",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-lt-ct2",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-lt-ct2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-ja-ct2",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-ja-ct2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-az-ct2",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-az-ct2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-nl-ct2",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-nl-ct2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-ms-ct2",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-ms-ct2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-it-ct2",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-it-ct2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-fa-ct2",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-fa-ct2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-ca-ct2",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-ca-ct2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-ja",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-ja",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-si",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-si",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-te",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-te",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-ro",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-ro",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-pa",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-pa",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-mr",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-mr",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-km",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-km",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-kk",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-kk",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-hu",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-hu",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-gu",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-gu",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-bn",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-bn",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-az",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-az",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-hy",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-hy",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-cs",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-cs",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-no",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-no",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-fi",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-fi",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-ms",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-ms",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-ca",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-ca",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-nl",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-nl",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-fa",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-fa",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-pt",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-pt",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lingua-it",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lingua-it",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aymanebiri/whisper-small-darija",
+      "author": "aymanebiri",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aymanebiri/whisper-small-darija",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aconeil/w2v2-queyu_w2v2Phoneme",
+      "author": "aconeil",
+      "downloads": 60,
+      "likes": 0,
+      "url": "https://huggingface.co/aconeil/w2v2-queyu_w2v2Phoneme",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "actableai/fastconformer-hybrid-rnnt-ctc-bpe-streaming-khmer",
+      "author": "actableai",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/actableai/fastconformer-hybrid-rnnt-ctc-bpe-streaming-khmer",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Moustapha91/hubert-wolof-pular-serere-v2",
+      "author": "Moustapha91",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/Moustapha91/hubert-wolof-pular-serere-v2",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-distil-large",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-distil-large",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-distil-medium",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-distil-medium",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-distil-small",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-distil-small",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-edge",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-edge",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-pro-engine",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-pro-engine",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-turbo",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-turbo",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-plus",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-plus",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-core",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-core",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-lite",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-lite",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "WindyWord/listen-windy-nano",
+      "author": "WindyWord",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/WindyWord/listen-windy-nano",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Nasro1/VibeVoice-ASR",
+      "author": "Nasro1",
+      "downloads": 6,
+      "likes": 0,
+      "url": "https://huggingface.co/Nasro1/VibeVoice-ASR",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "Joshua-Abok/finetuning-wav2vec-large-swahili-asr-model_v11",
+      "author": "Joshua-Abok",
+      "downloads": 81,
+      "likes": 0,
+      "url": "https://huggingface.co/Joshua-Abok/finetuning-wav2vec-large-swahili-asr-model_v11",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "abdouaziiz/fpulaar_v3",
+      "author": "abdouaziiz",
+      "downloads": 129,
+      "likes": 0,
+      "url": "https://huggingface.co/abdouaziiz/fpulaar_v3",
+      "created_at": "2026-04-20",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "ZJKLOFFICE/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "author": "ZJKLOFFICE",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ZJKLOFFICE/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "chfm/VoxCPM2-ONNX",
+      "author": "chfm",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chfm/VoxCPM2-ONNX",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "futurama2a/fish-speech-1.5",
+      "author": "futurama2a",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/futurama2a/fish-speech-1.5",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "futurama2a/girl-style-bert-vits2-JPExtra-models",
+      "author": "futurama2a",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/futurama2a/girl-style-bert-vits2-JPExtra-models",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "futurama2a/bert-vits2-2.2-models-jp-6-speaker-tts",
+      "author": "futurama2a",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/futurama2a/bert-vits2-2.2-models-jp-6-speaker-tts",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "weaaaaaa/Qwen3-TTS-12Hz-0.6B-Base",
+      "author": "weaaaaaa",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/weaaaaaa/Qwen3-TTS-12Hz-0.6B-Base",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "CJY/MeloTTS-ZH-BZNSYP",
+      "author": "CJY",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/CJY/MeloTTS-ZH-BZNSYP",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Serdtse2/VoxCPM2",
+      "author": "Serdtse2",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Serdtse2/VoxCPM2",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "smdesai/magpie-tts-multilingual-357m-coreml",
+      "author": "smdesai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/smdesai/magpie-tts-multilingual-357m-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "justmaier/Qwen3-TTS-12Hz-1.7B-VoiceDesign-GGUF",
+      "author": "justmaier",
+      "downloads": 65,
+      "likes": 0,
+      "url": "https://huggingface.co/justmaier/Qwen3-TTS-12Hz-1.7B-VoiceDesign-GGUF",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "chandrashekars/VoxCPM2-Indic-LoRA",
+      "author": "chandrashekars",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/chandrashekars/VoxCPM2-Indic-LoRA",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "FluidInference/CosyVoice3-0.5B-coreml",
+      "author": "FluidInference",
+      "downloads": 10,
+      "likes": 0,
+      "url": "https://huggingface.co/FluidInference/CosyVoice3-0.5B-coreml",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "medyas/Habibi-TTS-TUN",
+      "author": "medyas",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/medyas/Habibi-TTS-TUN",
+      "created_at": "2026-04-21",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "AEmotionStudio/woosh-models",
+      "author": "AEmotionStudio",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/AEmotionStudio/woosh-models",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "ACE-Step/acestep-v15-xl-turbo-diffusers",
+      "author": "ACE-Step",
+      "downloads": 0,
+      "likes": 5,
+      "url": "https://huggingface.co/ACE-Step/acestep-v15-xl-turbo-diffusers",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "skull-sage/VibeVoice-Large-Q8",
+      "author": "skull-sage",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/skull-sage/VibeVoice-Large-Q8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "bakrianto/LFM2.5-Audio-1.5B",
+      "author": "bakrianto",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/bakrianto/LFM2.5-Audio-1.5B",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 0,
+    "model_count": 159,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}

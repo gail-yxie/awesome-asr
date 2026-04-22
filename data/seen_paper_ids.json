@@ -1,12 +1,4 @@
 {
-  "2026-04-08": [
-    "2604.05605v1",
-    "interact: an ai-driven extended reality framework for accesible communication featuring real-time sign language interpretation and emotion recognition",
-    "2604.05591v1",
-    "ai-driven modular services for accessible multilingual education in immersive extended reality settings: integrating speech processing, translation, and sign language rendering",
-    "2604.05201v1",
-    "exploring speech foundation models for speaker diarization across lifespan"
-  ],
   "2026-04-09": [
     "2604.06871v1",
     "do we need distinct representations for every speech token? unveiling and exploiting redundancy in large speech language models",
@@ -62,5 +54,6 @@
   "2026-04-18": [],
   "2026-04-19": [],
   "2026-04-20": [],
-  "2026-04-21": []
+  "2026-04-21": [],
+  "2026-04-22": []
 }
