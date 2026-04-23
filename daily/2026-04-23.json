@@ -1,0 +1,534 @@
+{
+  "date": "2026-04-23",
+  "summary": "Today’s research highlights a significant shift toward \"audio-native\" understanding, exemplified by the introduction of **SpeechParaling-Bench** for evaluating nuanced paralinguistic cues and **ATIR**, which advances audio-text interleaved contextual retrieval beyond traditional text-only benchmarks. Technical robustness is also being addressed through new methods for detecting hallucinations in **SpeechLLMs** using inference-time attention maps, bypassing the need for costly gold-standard references. On the model front, the release of compact, quantized architectures like **Voxtral-Mini-4B-Realtime** and **Qwen3-ASR-0.6B-int8** underscores a prevailing trend toward efficient, low-latency deployment for multimodal speech applications. Together, these developments reflect an industry-wide push to integrate emotional intelligence and retrieval capabilities directly into the speech modeling pipeline.",
+  "ideas": [
+    "SpeechParaling-Bench provides a standardized framework for evaluating paralinguistic-aware speech generation, addressing the limitations of coarse feature coverage and subjective assessment.",
+    "The ATIR framework introduces a novel approach for interleaved audio-text retrieval that preserves emotional and environmental context often lost in text-centric systems.",
+    "Direct audio-text retrieval serves as a low-latency alternative to traditional speech-to-text pipelines for multimodal information retrieval tasks.",
+    "Hallucinations in SpeechLLMs can be accurately identified at inference time by analyzing internal attention maps, removing the need for expensive reference transcripts.",
+    "Hallucination detection in SpeechLLMs is fundamentally different from text-based models because it must capture specific discrepancies between audio input signals and generated outputs.",
+    "The development of specialized benchmarks for paralinguistics helps bridge the gap between human perception and objective model performance in natural human-computer interaction."
+  ],
+  "papers": [
+    {
+      "id": "2604.20842v1",
+      "title": "SpeechParaling-Bench: A Comprehensive Benchmark for Paralinguistic-Aware Speech Generation",
+      "authors": [
+        "Ruohan Liu",
+        "Shukang Yin",
+        "Tao Wang",
+        "Dong Zhang",
+        "Weiji Zhuang",
+        "Shuhuai Ren",
+        "Ran He",
+        "Caifeng Shan",
+        "Chaoyou Fu"
+      ],
+      "abstract": "Paralinguistic cues are essential for natural human-computer interaction, yet their evaluation in Large Audio-Language Models (LALMs) remains limited by coarse feature coverage and the inherent subjectivity of assessment. To address these challenges, we introduce SpeechParaling-Bench, a comprehensive benchmark for paralinguistic-aware speech generation. It expands existing coverage from fewer than 50 to over 100 fine-grained features, supported by more than 1,000 English-Chinese parallel speech queries, and is organized into three progressively challenging tasks: fine-grained control, intra-utterance variation, and context-aware adaptation. To enable reliable evaluation, we further develop a pairwise comparison pipeline, in which candidate responses are evaluated against a fixed baseline by an LALM-based judge. By framing evaluation as relative preference rather than absolute scoring, this approach mitigates subjectivity and yields more stable and scalable assessments without costly human annotation. Extensive experiments reveal substantial limitations in current LALMs. Even leading proprietary models struggle with comprehensive static control and dynamic modulation of paralinguistic features, while failure to correctly interpret paralinguistic cues accounts for 43.3% of errors in situational dialogue. These findings underscore the need for more robust paralinguistic modeling toward human-aligned voice assistants.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SD"
+      ],
+      "published": "2026-04-22",
+      "url": "https://arxiv.org/abs/2604.20842v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.20842v1"
+    },
+    {
+      "id": "2604.20267v1",
+      "title": "ATIR: Towards Audio-Text Interleaved Contextual Retrieval",
+      "authors": [
+        "Tong Zhao",
+        "Chenghao Zhang",
+        "Yutao Zhu",
+        "Zhicheng Dou"
+      ],
+      "abstract": "Audio carries richer information than text, including emotion, speaker traits, and environmental context, while also enabling lower-latency processing compared to speech-to-text pipelines. However, recent multimodal information retrieval research has predominantly focused on images, largely overlooking audio, especially in the setting of interleaved audio-text contextual retrieval. In this work, we introduce the Audio-Text Interleaved contextual Retrieval (ATIR) task, where queries can alternate between audio and text modalities. We construct an ATIR benchmark by integrating several Automatic Speech Recognition (ASR), QA, and retrieval datasets, ultimately unifying four types of contextual retrieval tasks. This benchmark substantially addresses the limitations of existing audio retrieval datasets in semantic retrieval. To study this task, we evaluate several off-the-shelf retrievers and train our ATIR model based on a Multimodal Large Language Model (MLLM). We further introduce a novel token compression mechanism that is orthogonal to existing compression methods, thereby alleviating the issue of excessive audio tokens in MLLM-based ATIR models. Experimental results demonstrate that our ATIR model achieves substantial improvements over strong baselines.",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "published": "2026-04-22",
+      "url": "https://arxiv.org/abs/2604.20267v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.20267v1"
+    },
+    {
+      "id": "2604.19565v1",
+      "title": "Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps",
+      "authors": [
+        "Jonas Waldendorf",
+        "Bashar Awwad Shiekh Hasan",
+        "Evgenii Tsymbalov"
+      ],
+      "abstract": "Hallucinations in Speech Large Language Models (SpeechLLMs) pose significant risks, yet existing detection methods typically rely on gold-standard outputs that are costly or impractical to obtain. Moreover, hallucination detection methods developed for text-based LLMs do not directly capture audio-specific signals. We investigate four attention-derived metrics: AUDIORATIO, AUDIOCONSISTENCY, AUDIOENTROPY, and TEXTENTROPY, designed to capture pathological attention patterns associated with hallucination, and train lightweight logistic regression classifiers on these features for efficient inference-time detection. Across automatic speech recognition and speech-to-text translation tasks, evaluations on Qwen-2-Audio and Voxtral-3B show that our approach outperforms uncertainty-based and prior attention-based baselines on in-domain data, achieving improvements of up to +0.23 PR-AUC, and generalises to out-of-domain ASR settings. We further find that strong performance can be achieved with approximately 100 attention heads, improving out-of-domain generalisation compared to using all heads. While effectiveness is model-dependent and task-specific training is required, our results demonstrate that attention patterns provide a valuable tool for hallucination detection in SpeechLLMs.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-21",
+      "url": "https://arxiv.org/abs/2604.19565v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.19565v1"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "ConsHein/GLM-ASR-Nano-2512",
+      "author": "ConsHein",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/ConsHein/GLM-ASR-Nano-2512",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "RGalliennePeren/Voxtral-rg",
+      "author": "RGalliennePeren",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/RGalliennePeren/Voxtral-rg",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "syvai/hviske-v5.1",
+      "author": "syvai",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/syvai/hviske-v5.1",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "l1yuan/faster-whisper-small",
+      "author": "l1yuan",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/l1yuan/faster-whisper-small",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "kartmannXu/MERaLion-2-3B-Medusa",
+      "author": "kartmannXu",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kartmannXu/MERaLion-2-3B-Medusa",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "PIXMELT/whisper-large-v3-french",
+      "author": "PIXMELT",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/PIXMELT/whisper-large-v3-french",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "pathslash/whisper-small-gujarati",
+      "author": "pathslash",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/pathslash/whisper-small-gujarati",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "vrfai/Qwen3-ASR-0.6B-int8-QAD",
+      "author": "vrfai",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/vrfai/Qwen3-ASR-0.6B-int8-QAD",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "majentik/MERaLiON-3-10B-preview-adaptor-mlx",
+      "author": "majentik",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/majentik/MERaLiON-3-10B-preview-adaptor-mlx",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "iris-sfg/Voxtral-Mini-4B-Realtime-2602-4bit-fp16",
+      "author": "iris-sfg",
+      "downloads": 23,
+      "likes": 0,
+      "url": "https://huggingface.co/iris-sfg/Voxtral-Mini-4B-Realtime-2602-4bit-fp16",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "nrlt/whisper-mn-small-full2",
+      "author": "nrlt",
+      "downloads": 58,
+      "likes": 0,
+      "url": "https://huggingface.co/nrlt/whisper-mn-small-full2",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aman4014/german-asr-live-system",
+      "author": "aman4014",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/aman4014/german-asr-live-system",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "0x3/kotoba-whisper-v2.2",
+      "author": "0x3",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/0x3/kotoba-whisper-v2.2",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "0x3/kotoba-whisper-v2.2-ggml",
+      "author": "0x3",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/0x3/kotoba-whisper-v2.2-ggml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "audarai/audar-asr-h-turbo-merged",
+      "author": "audarai",
+      "downloads": 2,
+      "likes": 0,
+      "url": "https://huggingface.co/audarai/audar-asr-h-turbo-merged",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rishikanthc/whisper-tiny-en",
+      "author": "rishikanthc",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/rishikanthc/whisper-tiny-en",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rishikanthc/whisper-tiny",
+      "author": "rishikanthc",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/rishikanthc/whisper-tiny",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rishikanthc/whisper-small-en",
+      "author": "rishikanthc",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/rishikanthc/whisper-small-en",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rishikanthc/whisper-small",
+      "author": "rishikanthc",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/rishikanthc/whisper-small",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rishikanthc/whisper-base-en",
+      "author": "rishikanthc",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/rishikanthc/whisper-base-en",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "rishikanthc/whisper-base",
+      "author": "rishikanthc",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/rishikanthc/whisper-base",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "udayakumar8214/whisper-classroom-kn-hi-en-v2",
+      "author": "udayakumar8214",
+      "downloads": 35,
+      "likes": 0,
+      "url": "https://huggingface.co/udayakumar8214/whisper-classroom-kn-hi-en-v2",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "munyew/MERaLiON-2-3B-GGUF",
+      "author": "munyew",
+      "downloads": 68,
+      "likes": 0,
+      "url": "https://huggingface.co/munyew/MERaLiON-2-3B-GGUF",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "0x3/kotoba-whisper-v2.0-ggml",
+      "author": "0x3",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/0x3/kotoba-whisper-v2.0-ggml",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "awong-dev/whisper-large-v3-yue-test4-combined",
+      "author": "awong-dev",
+      "downloads": 21,
+      "likes": 0,
+      "url": "https://huggingface.co/awong-dev/whisper-large-v3-yue-test4-combined",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "jakub-02/wav2vec2-base-timit-demo-colab",
+      "author": "jakub-02",
+      "downloads": 18,
+      "likes": 0,
+      "url": "https://huggingface.co/jakub-02/wav2vec2-base-timit-demo-colab",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "aufklarer/Nemotron-Speech-Streaming-0.6B-CoreML-INT8",
+      "author": "aufklarer",
+      "downloads": 35,
+      "likes": 0,
+      "url": "https://huggingface.co/aufklarer/Nemotron-Speech-Streaming-0.6B-CoreML-INT8",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "automatic-speech-recognition"
+    },
+    {
+      "model_id": "muaadh019/voice-arabic-tts",
+      "author": "muaadh019",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/muaadh019/voice-arabic-tts",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "TXRMINXTOR/TXRMINXTOR",
+      "author": "TXRMINXTOR",
+      "downloads": 0,
+      "likes": 1,
+      "url": "https://huggingface.co/TXRMINXTOR/TXRMINXTOR",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Kimyayd/xtts-v2-fongbe",
+      "author": "Kimyayd",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Kimyayd/xtts-v2-fongbe",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "Buyaka/OmniVoice",
+      "author": "Buyaka",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/Buyaka/OmniVoice",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "WWWekyou/Kokoro-82M-v1.1-zh",
+      "author": "WWWekyou",
+      "downloads": 11,
+      "likes": 0,
+      "url": "https://huggingface.co/WWWekyou/Kokoro-82M-v1.1-zh",
+      "created_at": "2026-04-23",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "swapkumbhar31/f5-tts-hindi",
+      "author": "swapkumbhar31",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/swapkumbhar31/f5-tts-hindi",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "miracle-leoma/QWEN3-TTS-12Hz-1.7B",
+      "author": "miracle-leoma",
+      "downloads": 58,
+      "likes": 0,
+      "url": "https://huggingface.co/miracle-leoma/QWEN3-TTS-12Hz-1.7B",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "suleiman2003/hausa-multi-speaker-vits-tts",
+      "author": "suleiman2003",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/suleiman2003/hausa-multi-speaker-vits-tts",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "raghavs1320/tacotron2_ddc-ja-kokoro",
+      "author": "raghavs1320",
+      "downloads": 1,
+      "likes": 0,
+      "url": "https://huggingface.co/raghavs1320/tacotron2_ddc-ja-kokoro",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "demeleww/omnivoice-amharic-finetuned",
+      "author": "demeleww",
+      "downloads": 26,
+      "likes": 0,
+      "url": "https://huggingface.co/demeleww/omnivoice-amharic-finetuned",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "berkelium110/Bert-VITS2-2.3",
+      "author": "berkelium110",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/berkelium110/Bert-VITS2-2.3",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "kikiri-tts/kikiri-german-martin",
+      "author": "kikiri-tts",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kikiri-tts/kikiri-german-martin",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "shangeth/Wren-TTS-360M-v1",
+      "author": "shangeth",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/shangeth/Wren-TTS-360M-v1",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "uselevers/levers-najdi-tts",
+      "author": "uselevers",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/uselevers/levers-najdi-tts",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "kikiri-tts/kikiri-german-victoria",
+      "author": "kikiri-tts",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kikiri-tts/kikiri-german-victoria",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "kikiri-tts/kikiri-german-base-51speakers-synthetic",
+      "author": "kikiri-tts",
+      "downloads": 0,
+      "likes": 0,
+      "url": "https://huggingface.co/kikiri-tts/kikiri-german-base-51speakers-synthetic",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "chfm/VoxCPM2",
+      "author": "chfm",
+      "downloads": 13,
+      "likes": 0,
+      "url": "https://huggingface.co/chfm/VoxCPM2",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "FRANK888666/VibeVoice-1.5B",
+      "author": "FRANK888666",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/FRANK888666/VibeVoice-1.5B",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "3scale/VoxCPM2",
+      "author": "3scale",
+      "downloads": 39,
+      "likes": 0,
+      "url": "https://huggingface.co/3scale/VoxCPM2",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-speech"
+    },
+    {
+      "model_id": "voces-ai/tts-rap-male-v3",
+      "author": "voces-ai",
+      "downloads": 57,
+      "likes": 0,
+      "url": "https://huggingface.co/voces-ai/tts-rap-male-v3",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "voces-ai/tts-rap-male-v44",
+      "author": "voces-ai",
+      "downloads": 7,
+      "likes": 0,
+      "url": "https://huggingface.co/voces-ai/tts-rap-male-v44",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "RobHarder99/acestep-5Hz-lm-4B",
+      "author": "RobHarder99",
+      "downloads": 12,
+      "likes": 0,
+      "url": "https://huggingface.co/RobHarder99/acestep-5Hz-lm-4B",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "text-to-audio"
+    },
+    {
+      "model_id": "AdityaRaikar/mpse-smoe-speech-enhancement",
+      "author": "AdityaRaikar",
+      "downloads": 24,
+      "likes": 0,
+      "url": "https://huggingface.co/AdityaRaikar/mpse-smoe-speech-enhancement",
+      "created_at": "2026-04-22",
+      "pipeline_tag": "audio-to-audio"
+    }
+  ],
+  "datasets": [],
+  "tweets": [],
+  "stats": {
+    "paper_count": 3,
+    "model_count": 50,
+    "dataset_count": 0,
+    "tweet_count": 0
+  }
+}

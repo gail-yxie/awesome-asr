@@ -1,14 +1,4 @@
 {
-  "2026-04-09": [
-    "2604.06871v1",
-    "do we need distinct representations for every speech token? unveiling and exploiting redundancy in large speech language models",
-    "2604.06694v1",
-    "audiokv: kv cache eviction in efficient large audio language models",
-    "2604.06487v1",
-    "closing the speech-text gap with limited audio for effective domain adaptation in llm-based asr",
-    "2604.06356v1",
-    "in-context learning in speech language models: analyzing the role of acoustic features, linguistic structure, and induction heads"
-  ],
   "2026-04-10": [],
   "2026-04-11": [],
   "2026-04-12": [],
@@ -55,5 +45,13 @@
   "2026-04-19": [],
   "2026-04-20": [],
   "2026-04-21": [],
-  "2026-04-22": []
+  "2026-04-22": [],
+  "2026-04-23": [
+    "2604.20842v1",
+    "speechparaling-bench: a comprehensive benchmark for paralinguistic-aware speech generation",
+    "2604.20267v1",
+    "atir: towards audio-text interleaved contextual retrieval",
+    "2604.19565v1",
+    "detecting hallucinations in speechllms at inference time using attention maps"
+  ]
 }
