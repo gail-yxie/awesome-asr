@@ -95,6 +95,10 @@
 - lion-ai/eskulap-asr-turbo-beta
 - rkoulen3/bcm-finetuned
 - mogu98/wosota-asr-medium-v1
+- syvai/hviske-v5.1
+- futurama2a/whisper-large-v3-turbo
+- nureddin123/whisper_turbo_10000_v2
+- taphuynh/arcawhisper-large-turbo-lora-en
 
 ### Transducer
 - RNN-T
@@ -149,6 +153,9 @@
 - majentik/MERaLiON-2-3B-RotorQuant-MLX-2bit
 - majentik/MERaLiON-2-3B-RotorQuant-MLX-8bit
 - majentik/MERaLiON-2-3B-TurboQuant-MLX-2bit
+- ConsHein/GLM-ASR-Nano-2512
+- RGalliennePeren/Voxtral-rg
+- Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps
 
 
 ## Self-Supervised Learning
@@ -459,6 +466,9 @@
 ### Robustness
 - From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs
 
+### Retrieval
+- ATIR: Towards Audio-Text Interleaved Contextual Retrieval
+
 
 ## Evaluation
 ### Metrics
@@ -496,7 +506,7 @@
 ### Enterprise
 - Call Analytics
 - Meeting Notes
-- Enterprise Sales Copilot
+- Enterprise Sales Copilot: Enabling Real-Time AI Support with Automatic Information Retrieval in Live Sales Calls
 
 ### Edge & Robotics
 - UAV-Assisted Emergency Networks
@@ -537,6 +547,7 @@
 
 ### Retrieval-Augmented SLMs
 - MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models
+- ATIR: Towards Audio-Text Interleaved Contextual Retrieval
 
 ### Position Papers
 - LLMs and Speech: Integration vs. Combination
@@ -660,6 +671,7 @@
 - Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models
 - SCENEBench: An Audio Understanding Benchmark
 - HumDial-EIBench: A Human-Recorded Multi-Turn Emotional Intelligence Benchmark
+- SpeechParaling-Bench: A Comprehensive Benchmark for Paralinguistic-Aware Speech Generation
 
 ### Analysis & Interpretability
 - How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation
